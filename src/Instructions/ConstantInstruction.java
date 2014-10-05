@@ -1,17 +1,28 @@
 package Instructions;
 
-import model.Environment;
+import model.ObservableData;
+
 /**
  * This is the class for instructions that only store a constant value.
  * Its evaluate method will return its double value.
  * 
  */
 public class ConstantInstruction implements Instruction{
+	private double myValue;
 
-    @Override
-    public double evaluate (Environment environment) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
+	@Override
+	public double evaluate() {
+		return myValue;
+	}
+
+	@Override
+	public void execute(ObservableData od) {
+	}
+
+	public void setParameter() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 
 }

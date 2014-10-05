@@ -4,8 +4,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
 public class Pen {
-	Color myLineColor;
-	boolean isPenDown;
+	private Color myLineColor;
+	private boolean isPenDown;
 
 	public void setPenColor(Color color) {
 	}

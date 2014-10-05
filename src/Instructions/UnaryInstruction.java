@@ -9,7 +9,8 @@ public abstract class UnaryInstruction extends ParameterInstruction{
      * 
      * @param parameter of the unary instruction.
      */
-    public UnaryInstruction (Instruction parameter){
+    public UnaryInstruction (){
+    	
     }
     
 
