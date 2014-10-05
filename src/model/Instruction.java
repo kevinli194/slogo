@@ -1,10 +1,10 @@
 package model;
 
-public class Instructions {
+public class Instruction {
 
 	public void execute() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

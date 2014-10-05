@@ -14,7 +14,9 @@ public class SlogoModel extends Observable {
 
 	public void executeCommands(List<Instruction> ParsedInstructions) {
 		for (Instruction s : ParsedInstructions) {
+		    
 			s.evaluate(myEnvironment);
+
 		}
 		setChanged();
 		notifyObservers(myEnvironment);
