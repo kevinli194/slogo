@@ -1,5 +1,7 @@
 package Instructions;
 
+import java.util.List;
+
 import model.ObservableData;
 
 /**
@@ -8,6 +10,7 @@ import model.ObservableData;
  */
 
 public interface Instruction {
+	
 	/**
 	 * Evaluates the expression for the double return value only.
 	 * Does not carry out other tasks on any observable data.
@@ -24,5 +27,20 @@ public interface Instruction {
      */
     public void execute(ObservableData od);
 
+    
+	/**
+	 * Gets the number of parameters used in the instruction,
+	 * Used in the parser when evaluating different types of
+	 * instructions with various numbers of parameters
+	 * @return int number of parameters
+	 */
+	public int getNumParams();
+	
+	/**
+	 * Adds a double value to the list of parameters for
+	 * the instruction
+	 * @param value double value used as a parameter in the instruction
+	 */
+	public void addParam(double value);
 
 }
