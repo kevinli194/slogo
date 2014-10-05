@@ -1,12 +1,14 @@
 package model;
 
-import javafx.geometry.Point2D;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 
-/**
- * Define the property of the line
- *
- */
-public class Pen extends Point2D{
-
+public class Pen {
+	Color myLineColor;
+	boolean isPenDown;
+	
+public void setPenColor(Color color){
+	
+}
 	
 }
