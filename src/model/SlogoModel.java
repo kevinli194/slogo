@@ -12,8 +12,8 @@ public class SlogoModel extends Observable {
 		myEnvironment = new Environment();
 	}
 
-	public void executeCommands(List<Instructions> ParsedInstructions) {
-		for (Instructions s : ParsedInstructions) {
+	public void executeCommands(List<Instruction> ParsedInstructions) {
+		for (Instruction s : ParsedInstructions) {
 			s.execute();
 		}
 		setChanged();
