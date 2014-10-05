@@ -2,7 +2,7 @@ package model;
 
 import java.util.List;
 import java.util.Observable;
-
+import Instructions.Instruction;
 import javafx.scene.Group;
 
 public class SlogoModel extends Observable {
@@ -12,9 +12,9 @@ public class SlogoModel extends Observable {
 		myEnvironment = new Environment();
 	}
 
-	public void executeCommands(List<Instructions> ParsedInstructions) {
-		for (Instructions s : ParsedInstructions) {
-			s.execute();
+	public void executeCommands(List<Instruction> ParsedInstructions) {
+		for (Instruction s : ParsedInstructions) {
+			s.evaluate(myEnvironment);
 		}
 		setChanged();
 		notifyObservers(myEnvironment);
