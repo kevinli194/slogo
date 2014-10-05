@@ -9,6 +9,10 @@ import model.ObservableData;
  */
 public class ConstantInstruction implements Instruction{
 	private double myValue;
+	
+	public ConstantInstruction(double value) {
+		myValue = value;
+	}
 
 	@Override
 	public double evaluate() {
@@ -19,9 +23,13 @@ public class ConstantInstruction implements Instruction{
 	public void execute(ObservableData od) {
 	}
 
-	public void setParameter() {
-		// TODO Auto-generated method stub
-		
+	@Override
+	public int getNumParams() {
+		return 0;
+	}
+
+	@Override
+	public void addParam(double value) {
 	}
 	
 
