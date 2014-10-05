@@ -1,54 +1,55 @@
 package model;
 
-import java.util.List;
-import java.util.Map;
 import Instructions.Instruction;
-import javafx.scene.Group;
+
 import javafx.scene.shape.Line;
 
-
 public class ObservableData {
-    private Turtle myTurtle;
-    private Group myDrawing;
+	// Instantiates all instance variables to default values.
+	public ObservableData() {
+	}
 
-    private List<String> myHistory;
-    private Map<String, Instruction> myVariables;
-    private Map<String, Instruction> myBasicInstructions;
-    private Map<String, Instruction> myUserDefinedInstructions;
+	// Shows or hides the turtle
+	public void showTurtle(boolean state) {
 
-    // Instantiates all instance variables to default values.
-    public ObservableData () {
-    }
+	}
 
-    // Add to instruction to history.
-    public void addToHistory (String instructionName) {
+	// Add to instruction to history.
+	public void addToHistory(String instructionName) {
 
-    }
+	}
 
-    // Delete history.
-    public void clearHistory () {
+	// Delete history.
+	public void clearHistory() {
 
-    }
+	}
 
-    // add new user defined instruction to myUserDefinedInstructions
-    public void addInstructions (String instructionName, Instruction instruction) {
-    }
+	// add new user defined instruction to myUserDefinedInstructions
+	public void addInstructions(String instructionName, Instruction instruction) {
+	}
 
-    // add new user defined variable to myVariables.
-    public void addVariable (String variableName, Instruction value) {
-    }
+	// add new user defined variable to myVariables.
+	public void addVariable(String variableName, Instruction value) {
+	}
 
-    public void deleteInstruction (String instructionName) {
+	// delete specific instruction from myUserDefinedInstructions
+	public void deleteInstruction(String instructionName) {
 
-    }
+	}
 
-    public void deleteVariable (String variableName) {
+	// delete a specific variable form myVariables
+	public void deleteVariable(String variableName) {
 
-    }
+	}
 
-    // Adds a line to myDrawing.
-    public void addLine (Line line) {
+	// Adds a line to myDrawing.
+	public void addLine(Line line) {
 
-    }
+	}
+
+	// Clears myDrawing.
+	public void clearDrawing() {
+
+	}
 
 }
