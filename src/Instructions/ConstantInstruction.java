@@ -29,7 +29,7 @@ public class ConstantInstruction implements Instruction{
 	}
 
 	@Override
-	public void addParam(double value) {
+	public void addParam(Instruction instr) {
 	}
 	
 

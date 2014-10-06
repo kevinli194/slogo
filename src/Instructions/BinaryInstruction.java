@@ -5,10 +5,7 @@ package Instructions;
  * 
  */
 public abstract class BinaryInstruction extends ParameterInstruction{
-	private double myParam1;
-	private double myParam2;
-	
-	
+
     /**
      * 
      * @param parameterOne parameter of the binary instruction
@@ -16,13 +13,5 @@ public abstract class BinaryInstruction extends ParameterInstruction{
      */
     public BinaryInstruction (){
     }
-    
-    
-    public void getParameterOne(){
-    }
-    
-    public void getParameterTwo(){      
-    }
-    
     
 }
