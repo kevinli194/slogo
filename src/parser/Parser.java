@@ -1,5 +1,7 @@
 package parser;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Stack;
 
 import Instructions.Instruction;
@@ -28,6 +30,8 @@ import Instructions.Instruction;
  * - Error checks syntax throughout parsing
  */
 public class Parser {
+	private Tokenizer tokenizer;
+	private InstructionFactory iFactory;
 
 	/**
 	 * Parses a string instruction input passed in through Model.
@@ -35,8 +39,49 @@ public class Parser {
 	 * @param input String of instructions
 	 * @return stack of instructions to run (used in Model)
 	 */
+
+	/**
+	 * Constructor for a Parser.
+	 * Creates a new instance of the Tokenizer.
+	 */
+	public Parser() {
+		tokenizer = new Tokenizer();
+		iFactory = new InstructionFactory();
+	}
+
+
 	public Stack<Instruction> parse(String input) {
-		return null;
+		// two stacks for parsing
+		Stack<Instruction> result = new Stack<Instruction>();
+		Stack<Instruction> builder = new Stack<Instruction>();
+
+		// get tokens
+		List<String> tokens = tokenizer.tokenize(input);
+
+		// reverse list of tokens
+		Collections.reverse(tokens);
+
+		// iterate through tokens
+		for (String token : tokens) {
+			Instruction instr = iFactory.makeInstruction(token);
+			// add parameters
+			addParams(instr, builder);
+			// add to both the builder stack and result stack
+			builder.push(instr);
+			result.push(instr);
+		}
+
+		return result;
+	}
+
+	private void addParams(Instruction instr, Stack<Instruction> iStack) {
+		int numParams = instr.getNumParams();
+		for (int i = 0; i < numParams; i++) {
+			// Add error exceptions HERE
+			
+			
+			instr.addParam(iStack.pop());
+		}
 	}
 
 }

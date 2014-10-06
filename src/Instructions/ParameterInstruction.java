@@ -10,7 +10,7 @@ import java.util.List;
  */
 public abstract class ParameterInstruction implements Instruction {
 	protected int numParams;
-	protected List<Double> myParams;
+	protected List<Instruction> myParams;
 
 	@Override
 	public int getNumParams() {
@@ -18,7 +18,7 @@ public abstract class ParameterInstruction implements Instruction {
 	}
 
 	@Override
-	public void addParam(double value) {
-		myParams.add(value);
+	public void addParam(Instruction param) {
+		myParams.add(param);
 	}
 }

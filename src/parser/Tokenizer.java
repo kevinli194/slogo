@@ -1,5 +1,6 @@
 package parser;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -17,8 +18,9 @@ public class Tokenizer {
 	 * @param s String of instructions
 	 * @return List of string tokens
 	 */
-	public List<String> Tokenize(String input) {
-		return null;
+	public List<String> tokenize(String input) {
+		List<String> result = new LinkedList<String>();
+		return result;
 	}
 
 }
