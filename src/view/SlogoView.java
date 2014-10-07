@@ -23,23 +23,23 @@ public class SlogoView extends BorderPane {
 		setVisible(true);
 	}
 
-	private Pane addPane(){
-		Pane pane=new Spane();
+	private Node addPane(){
+		Node pane=new Spane();
 		return pane;
 	}
 	
-	private TableView addCommandTable(){
-		TableView commandTable=new CommandTable();
+	private Node addCommandTable(){
+		Node commandTable=new CommandTable();
 		return commandTable;
 	}
 	
-	private TextArea addInputTextArea(){
-		TextArea inputArea=new InputTextArea();
+	private Node addInputTextArea(){
+		Node inputArea=new InputTextArea();
 		return inputArea;
 	}
 	
-	private TextArea addDisplayArea() {
-		TextArea displayArea=new DisplayTextArea();
+	private Node addDisplayArea() {
+		Node displayArea=new DisplayTextArea();
 		return displayArea;
 	}
 	
