@@ -2,6 +2,8 @@ package model;
 
 import java.util.List;
 import java.util.Map;
+
+import Instructions.Instruction;
 //import Instructions.Instruction;
 import javafx.scene.Group;
 import javafx.scene.shape.Line;
@@ -20,19 +22,6 @@ public class ObservableData {
     public ObservableData () {
     }
 
-    // Add to instruction to history.
-    public void addToHistory (String instructionName) {
-
-    }
-
-    // Delete history.
-    public void clearHistory () {
-
-    }
-
-    // add new user defined instruction to myUserDefinedInstructions
-    public void addInstructions (String instructionName, Instruction instruction) {
-    }
 
     // add new user defined variable to myVariables.
     public void addVariable (String variableName, Instruction value) {

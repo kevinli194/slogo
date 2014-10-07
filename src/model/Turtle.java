@@ -1,47 +1,74 @@
 package model;
 
-import com.sun.javafx.geom.Vec2d;
-
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Line;
 
-public class Turtle {
+public class Turtle extends Feature {
 	ImageView myImage;
 	double[] myCoordinates;
 	double myAngle;
 	Pen myPen;
+	Group myDrawing;
+	Group myLines;
 
-	// Instantiates a turtle with coordinates at (0,0), angle at 90, and a
-	// black/down Pen.
 	public Turtle() {
+
+		// Should create a default image for this. Maybe a triangle;
+		myImage = new ImageView();
+		myPen = new Pen();
+		myCoordinates = new double[2];
+		myCoordinates[0] = 0;
+		myCoordinates[1] = 0;
+		myAngle = 0;
+		myDrawing = new Group();
+		myLines = new Group();
+		myDrawing.getChildren().add(myImage);
+		myDrawing.getChildren().add(myLines);
+
 	}
 
-	// Returns the current coordinates of the turtle;
+	public void changeImage(ImageView image) {
+		myImage = image;
+	}
+
 	public double[] getCoordinates() {
 		return myCoordinates;
 	}
 
-	// Calls the drawLine function in the Pen using the myCoordinates as starts
-	// and the coordinates from the calculateEndCoordinates method. Then it sets
-	// the turtle coordinates to end coordinates.
-	public Line moveTurtleAndDrawLine(int distance) {
-		return new Line();
+	public void setCoordinates(double x, double y) {
+		myCoordinates[0] = x;
+		myCoordinates[1] = y;
 	}
 
-	// Changes the turtle's angle based on
 	public void rotate(double deltaAngle) {
+		myAngle = (myAngle + deltaAngle) % 360;
 	}
 
-	// Sets the turtle's angle.
 	public void setAngle(double angle) {
-
+		myAngle = angle % 360;
 	}
 
-	// Uses the current angle, coordinates, and distance needed to travel in
-	// order to calculate end coordinates.
+	public void moveTurtleAndDrawLine(int distance) {
+		Line line = myPen.drawLine(myCoordinates, calculateEndCoord(distance));
+		myCoordinates = calculateEndCoord(distance);
+		myLines.getChildren().add(line);
+	}
+
 	private double[] calculateEndCoord(double distance) {
-		return new double[2];
+		double[] endCoords = new double[2];
+		endCoords[0] = distance * Math.sin(Math.toRadians(myAngle));
+		endCoords[1] = distance * Math.cos(Math.toRadians(myAngle));
+		return endCoords;
+	}
+
+	@Override
+	public Node drawNode() {
+		myImage.setX(myCoordinates[0]);
+		myImage.setY(myCoordinates[1]);
+		myImage.setRotate(myAngle);
+		return myDrawing;
 	}
 
 }

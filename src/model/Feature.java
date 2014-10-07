@@ -1,5 +1,10 @@
 package model;
 
-public abstract class Feature {
+import java.util.Observable;
+
+import javafx.scene.Node;
+
+public abstract class Feature extends Observable {
+	public abstract Node drawNode();
 
 }
