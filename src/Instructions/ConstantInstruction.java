@@ -1,6 +1,10 @@
 package Instructions;
 
-import model.ObservableData;
+import java.util.Map;
+
+import model.Feature;
+
+
 
 /**
  * This is the class for instructions that only store a constant value.
@@ -20,7 +24,7 @@ public class ConstantInstruction implements Instruction{
 	}
 
 	@Override
-	public void execute(ObservableData od) {
+	public void execute(Map<String, Feature> data) {
 	}
 
 	@Override

@@ -1,19 +1,20 @@
 package view;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 
-import javafx.collections.ObservableList;
-import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import model.Feature;
 import model.SlogoModel;
-import model.Turtle;
 
-public class SlogoView extends BorderPane {
-	
+public class SlogoView extends BorderPane implements Observer {
+	Map<String, Feature> myData;
 
 	public SlogoView(String language, SlogoModel model) {
 		setCenter(addPane());
@@ -21,33 +22,39 @@ public class SlogoView extends BorderPane {
 		setBottom(addInputTextArea());
 		setLeft(addDisplayArea());
 		setVisible(true);
+		myData = new HashMap<String, Feature>();
 	}
 
-	private Pane addPane(){
-		Pane pane=new Spane();
+	private Pane addPane() {
+		Pane pane = new TurtleView();
 		return pane;
 	}
-	
-	private TableView addCommandTable(){
-		TableView commandTable=new CommandTable();
+
+	private TableView<Button> addCommandTable() {
+		TableView<Button> commandTable = new InstructionView();
 		return commandTable;
 	}
-	
-	private TextArea addInputTextArea(){
-		TextArea inputArea=new InputTextArea();
+
+	private TextArea addInputTextArea() {
+		TextArea inputArea = new InputView();
 		return inputArea;
 	}
-	
+
 	private TextArea addDisplayArea() {
-		TextArea displayArea=new DisplayTextArea();
+		TextArea displayArea = new HistoryView();
 		return displayArea;
 	}
-	
-	
+
+	@Override
+	public void update(Observable o, Object arg) {
+		myData = (Map<String, Feature>) arg;
+
+	}
+
 	// Updates the display based on the changes that occurred in the
 	// environment.
-//	@Override
-//	public void update(Observable o, Object arg) {
-//	}
+	// @Override
+	// public void update(Observable o, Object arg) {
+	// }
 
 }
