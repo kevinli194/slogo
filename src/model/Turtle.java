@@ -1,59 +1,79 @@
+
 package model;
 
-import com.sun.javafx.geom.Point2D;
-import com.sun.javafx.geom.Vec2d;
 import javafx.scene.Group;
+import javafx.scene.Node;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Line;
 
+public class Turtle extends Feature {
+        private ImageView myImage;
+        private double[] myCoordinates;
+        private double myAngle;
+        private Pen myPen;
+        private Group myDrawing;
+        private Group myLines;
+        private Image myDefault = new Image(getClass().getResourceAsStream(
+                        "default_turtle.gif"));
 
-public class Turtle {
-    ImageView myImage;
-    Point2D myLocation;
-    Vector myHeading;
-    Pen myPen;
+        public Turtle() {
 
-    // Instantiates a turtle with coordinates at (0,0), angle at 90, and a
-    // black/down Pen.
-    public Turtle () {
-        myPen = new Pen();
-        myLocation = new Point2D(0, 0);
-        myHeading = new Vector(270, 0);
-    }
+                // Should create a default image for this. Maybe a triangle;
+        
+                myImage = new ImageView();
+                myPen = new Pen();
+                myCoordinates = new double[2];
+                myCoordinates[0] = 0;
+                myCoordinates[1] = 0;
+                myAngle = 0;
+                myDrawing = new Group();
+                myLines = new Group();
+                myDrawing.getChildren().add(myImage);
+                myDrawing.getChildren().add(myLines);
 
-//    // Returns the current coordinates of the turtle;
-//    public double[] getCoordinates () {
-//        return myCoordinates;
-//    }
+        }
 
-    public Point2D getLocation(){
-        return myLocation;
-    }
-    
-    // Calls the drawLine function in the Pen using the myCoordinates as starts
-    // and the coordinates from the calculateEndCoordinates method. Then it sets
-    // the turtle coordinates to end coordinates.
-    public Line moveTurtleAndDrawLine (int distance) {
-        return new Line();
-    }
+        public void changeImage(ImageView image) {
+                myImage = image;
+        }
 
-//    // Changes the turtle's angle based on
-//    public void rotate (double deltaAngle) {
-//        
-//    }
-//
-//    // Sets the turtle's angle.
-//    public void setAngle (double angle) {
-//
-//    }
+        public double[] getCoordinates() {
+                return myCoordinates;
+        }
 
-//    // Uses the current angle, coordinates, and distance needed to travel in
-//    // order to calculate end coordinates.
-//    private double[] calculateEndCoord (double distance) {
-//        return new double[2];
-//    }
-    
-    private Point2D calculateDestination(double distance){
-    }
+        public void setCoordinates(double x, double y) {
+                myCoordinates[0] = x;
+                myCoordinates[1] = y;
+        }
+
+        public void rotate(double deltaAngle) {
+                myAngle = (myAngle + deltaAngle) % 360;
+        }
+
+        public void setAngle(double angle) {
+                myAngle = angle % 360;
+        }
+
+        public void moveTurtleAndDrawLine(int distance) {
+                Line line = myPen.drawLine(myCoordinates, calculateEndCoord(distance));
+                myCoordinates = calculateEndCoord(distance);
+                myLines.getChildren().add(line);
+        }
+
+        private double[] calculateEndCoord(double distance) {
+                double[] endCoords = new double[2];
+                endCoords[0] = distance * Math.sin(Math.toRadians(myAngle));
+                endCoords[1] = distance * Math.cos(Math.toRadians(myAngle));
+                return endCoords;
+        }
+
+        @Override
+        public Node generateNode() {
+                myImage.setX(myCoordinates[0]);
+                myImage.setY(myCoordinates[1]);
+                myImage.setRotate(myAngle);
+                return myDrawing;
+        }
 
 }
