@@ -1,5 +1,8 @@
 package view;
 
+import java.util.Map;
+
+import model.Feature;
 import javafx.scene.control.TextArea;
 
 public class HistoryView extends TextArea {
@@ -12,4 +15,8 @@ public class HistoryView extends TextArea {
 		setPrefHeight(height);
 		setMaxSize(width, height);
 	}
+
+	/*public void update(Node node) {
+
+	}*/
 }

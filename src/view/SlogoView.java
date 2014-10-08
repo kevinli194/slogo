@@ -11,47 +11,41 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import model.Feature;
+import model.History;
+import model.ObservableData;
 import model.SlogoModel;
 
 public class SlogoView extends BorderPane implements Observer {
-	Map<String, Feature> myData;
+	TurtleView myTurtleView;
+	InputView myInputView;
+	InstructionView myInstructionView;
+	HistoryView myHistoryView;
+	SlogoModel myModel;
 
 	public SlogoView(String language, SlogoModel model) {
-		setCenter(addPane());
-		setRight(addCommandTable());
-		setBottom(addInputTextArea());
-		setLeft(addDisplayArea());
+		myTurtleView = new TurtleView();
+		myInputView = new InputView();
+		myInstructionView = new InstructionView();
+		myHistoryView = new HistoryView();
+		myModel = model;
+
+		setCenter(myTurtleView);
+		setRight(myInstructionView);
+		setBottom(myInputView);
+		setLeft(myHistoryView);
 		setVisible(true);
-		myData = new HashMap<String, Feature>();
-	}
 
-
-	private Pane addPane() {
-		Pane pane = new TurtleView();
-		return pane;
-	}
-
-	private TableView<Button> addCommandTable() {
-		TableView<Button> commandTable = new InstructionView();
-		return commandTable;
-	}
-
-	private TextArea addInputTextArea() {
-		TextArea inputArea = new InputView();
-		return inputArea;
-	}
-
-	private TextArea addDisplayArea() {
-		TextArea displayArea = new HistoryView();
-		return displayArea;
 	}
 
 	@Override
 	public void update(Observable o, Object arg) {
-		myData = (Map<String, Feature>) arg;
+
+		setCenter(((ObservableData) arg).get("turtle").generateNode());
+		setRight(((ObservableData) arg).get("instructions").generateNode());
+		setBottom(((ObservableData) arg).get("input").generateNode());
+		setLeft(((ObservableData) arg).get("history").generateNode());
 
 	}
-
 	// Updates the display based on the changes that occurred in the
 	// environment.
 	// @Override

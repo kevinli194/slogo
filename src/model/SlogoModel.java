@@ -1,30 +1,30 @@
 package model;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Observable;
 import java.util.Stack;
 
+import parser.Parser;
 import Instructions.Instruction;
 
 public class SlogoModel extends Observable {
-	private Map<String, Feature> ObservableData;
+	private ObservableData myData;
+	Parser myParser;
 
 	public SlogoModel() {
-		ObservableData = new HashMap<String, Feature>();
-		ObservableData.put("History", new History());
-		ObservableData.put("Instruction List", new InstructionList());
-		ObservableData.put("Turtle", new Turtle());
-		ObservableData.put("Variables", new Variables());
+		myData = new ObservableData();
+		myParser = new Parser();
+	}
 
+	public void parseAndExecute(String s) {
+		executeCommands((myParser.parse(s)));
 	}
 
 	public void executeCommands(Stack<Instruction> commandStack) {
 		while (!commandStack.isEmpty()) {
 			Instruction current = commandStack.pop();
-			current.execute(ObservableData);
+			current.execute(myData);
 			setChanged();
-			notifyObservers(ObservableData);
+			notifyObservers(myData);
 		}
 
 	}

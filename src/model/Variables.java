@@ -22,7 +22,7 @@ public class Variables extends Feature {
 	}
 
 	@Override
-	public Node drawNode() {
+	public Node generateNode() {
 		// TODO Auto-generated method stub
 		return null;
 	}
