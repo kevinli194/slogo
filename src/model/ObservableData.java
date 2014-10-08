@@ -24,7 +24,7 @@ public class ObservableData {
 		case "variables":
 			return myVariables;
 		default:
-			return null; //fix this later
+			return null; // fix this later
 		}
 	}
 }

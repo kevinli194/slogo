@@ -21,14 +21,17 @@ public class SlogoView extends BorderPane implements Observer {
 	InstructionView myInstructionView;
 	HistoryView myHistoryView;
 	SlogoModel myModel;
+	ObservableData myOD;
 
 	public SlogoView(String language, SlogoModel model) {
 		myTurtleView = new TurtleView();
 		myInputView = new InputView();
 		myInstructionView = new InstructionView();
 		myHistoryView = new HistoryView();
+		myOD = new ObservableData();
 		myModel = model;
 
+		myTurtleView.update(myOD.get("turtle").generateNode());
 		setCenter(myTurtleView);
 		setRight(myInstructionView);
 		setBottom(myInputView);

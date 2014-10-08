@@ -20,7 +20,7 @@ public class Turtle extends Feature {
 
 		// Should create a default image for this. Maybe a triangle;
 	
-		myImage = new ImageView();
+		myImage = new ImageView(myDefault);
 		myPen = new Pen();
 		myCoordinates = new double[2];
 		myCoordinates[0] = 0;
