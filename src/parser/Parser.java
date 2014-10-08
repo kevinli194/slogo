@@ -68,7 +68,7 @@ public class Parser {
 			addParams(instr, builder);
 			// add to both the builder stack and result stack
 			builder.push(instr);
-			result.push(instr);
+			result.push(instr);          
 		}
 
 		return result;

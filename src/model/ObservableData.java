@@ -50,5 +50,9 @@ public class ObservableData {
     public void addLine (Line line) {
 
     }
+    
+    public Turtle getTurtle(){
+        return myTurtle;
+    }
 
 }
