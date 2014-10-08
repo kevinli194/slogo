@@ -52,13 +52,10 @@ public class Parser {
 
 
 	public Stack<Instruction> parse(String input) {
-		// stack of stacks for parsing 
-		Stack<Stack<Instruction>> builderStack = new Stack<Stack<Instruction>>();
 		// get tokens
 		List<String> tokens = tokenizer.tokenize(input);
 		// reverse list of tokens
 		Collections.reverse(tokens);
-		
 		// parse tokens
 		return parseTokens(tokens);
 	}
