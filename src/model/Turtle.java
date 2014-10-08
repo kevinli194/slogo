@@ -56,13 +56,13 @@ public class Turtle extends Feature {
         myAngle = angle % 360;
     }
 
-    public void moveTurtleAndDrawLine (int distance) {
+    public void moveTurtleAndDrawLine (double distance) {
         Line line = myPen.drawLine(myCoordinates, calculateEndCoord(distance));
         myCoordinates = calculateEndCoord(distance);
         myLines.getChildren().add(line);
     }
 
-    private double[] calculateEndCoord (double distance) {
+    public double[] calculateEndCoord (double distance) {
         double[] endCoords = new double[2];
         endCoords[0] = distance * Math.sin(Math.toRadians(myAngle));
         endCoords[1] = distance * Math.cos(Math.toRadians(myAngle));
