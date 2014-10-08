@@ -3,6 +3,7 @@ package Instructions;
 import java.util.Map;
 
 import model.Feature;
+import model.ObservableData;
 
 /**
  * Highest superclass for the parsing tree tree that will be made to represent
@@ -26,7 +27,7 @@ public interface Instruction {
 	 * 
 	 * @return Double value of the expression
 	 */
-	public void execute(Map<String, Feature> data);
+	public void execute(ObservableData data);
 
 	/**
 	 * Gets the number of parameters used in the instruction, Used in the parser

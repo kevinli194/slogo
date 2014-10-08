@@ -2,20 +2,24 @@ package model;
 
 import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Line;
 
 public class Turtle extends Feature {
-	ImageView myImage;
-	double[] myCoordinates;
-	double myAngle;
-	Pen myPen;
-	Group myDrawing;
-	Group myLines;
+	private ImageView myImage;
+	private double[] myCoordinates;
+	private double myAngle;
+	private Pen myPen;
+	private Group myDrawing;
+	private Group myLines;
+	private Image myDefault = new Image(getClass().getResourceAsStream(
+			"default_turtle.gif"));
 
 	public Turtle() {
 
 		// Should create a default image for this. Maybe a triangle;
+	
 		myImage = new ImageView();
 		myPen = new Pen();
 		myCoordinates = new double[2];

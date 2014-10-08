@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import javafx.scene.Node;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.HBox;
 
 public class History extends Feature {
 
@@ -11,6 +13,7 @@ public class History extends Feature {
 
 	public History() {
 		myHistory = new LinkedList<String>();
+
 	}
 
 	public void add(String element) {
@@ -23,8 +26,6 @@ public class History extends Feature {
 
 	@Override
 	public Node generateNode() {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
 }
