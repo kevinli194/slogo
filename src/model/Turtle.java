@@ -64,7 +64,7 @@ public class Turtle extends Feature {
 	}
 
 	@Override
-	public Node drawNode() {
+	public Node generateNode() {
 		myImage.setX(myCoordinates[0]);
 		myImage.setY(myCoordinates[1]);
 		myImage.setRotate(myAngle);

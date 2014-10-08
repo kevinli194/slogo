@@ -15,6 +15,11 @@ import model.SlogoModel;
 
 public class SlogoView extends BorderPane implements Observer {
 	Map<String, Feature> myData;
+	Pane myTurtleView;
+	TextArea myInputView;
+	TableView<Button> myInstructionView;
+	
+	
 
 	public SlogoView(String language, SlogoModel model) {
 		setCenter(addPane());

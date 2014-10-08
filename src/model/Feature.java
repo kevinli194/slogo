@@ -3,6 +3,6 @@ package model;
 import javafx.scene.Node;
 
 public abstract class Feature {
-	public abstract Node drawNode();
+	public abstract Node generateNode();
 
 }
