@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Stack;
 
 import Instructions.Instruction;
+import Instructions.ListInstruction;
 
 /**
  * Parser for converting strings of instructions
@@ -51,35 +52,74 @@ public class Parser {
 
 
 	public Stack<Instruction> parse(String input) {
-		// two stacks for parsing
-		Stack<Instruction> result = new Stack<Instruction>();
-		Stack<Instruction> builder = new Stack<Instruction>();
-
+		// stack of stacks for parsing 
+		Stack<Stack<Instruction>> builderStack = new Stack<Stack<Instruction>>();
 		// get tokens
 		List<String> tokens = tokenizer.tokenize(input);
-
 		// reverse list of tokens
 		Collections.reverse(tokens);
+		
+		// parse tokens
+		return parseTokens(tokens);
+	}
 
-		// iterate through tokens
-		for (String token : tokens) {
-			Instruction instr = iFactory.makeInstruction(token);
-			// add parameters
-			addParams(instr, builder);
+	private Stack<Instruction> parseTokens(List<String> tokens) {
+		// stack for parsing 
+		Stack<Instruction> builderStack = new Stack<Instruction>();
+		Instruction instr;
+		int iter = 0;
+		while (iter < tokens.size()) {
+			String token = tokens.get(iter);
+			if (isRightBracket(token)) {
+				// if right bracket found, find matching left bracket in subList
+				List<String> subList = tokens.subList(iter+1,tokens.size());
+				int bracketInd = findMatchingBracket(subList);
+				// Parse tokens contained in brackets
+				Stack<Instruction> listStack = parseTokens(subList.subList(1,bracketInd));
+				// Add listStack to new instance of a ListInstruction class
+				instr = new ListInstruction(listStack);
+				// update iterator
+				iter = iter + bracketInd;
+			}
+			else {
+				instr = iFactory.makeInstruction(token);
+				// add parameters
+				addParams(instr, builderStack);
+			}
 			// add to both the builder stack and result stack
-			builder.push(instr);
-			result.push(instr);
+			builderStack.push(instr);
+			iter++;
 		}
+		return builderStack;
+	}
 
-		return result;
+	private boolean isRightBracket(String token) {
+		return token.equals("]");
+	}
+
+	private boolean isLeftBracket(String token) {
+		return token.equals("[");
+	}
+
+	private int findMatchingBracket(List<String> tokens) {
+		int matchCounter = 0;
+		int index = 0;
+		while (matchCounter >= 0) {
+			String token = tokens.get(index);
+			if (isRightBracket(token)) {
+				matchCounter++;
+			} else if (isLeftBracket(token)) {
+				matchCounter--;
+			}
+			index++;
+		}
+		return index;
 	}
 
 	private void addParams(Instruction instr, Stack<Instruction> iStack) {
 		int numParams = instr.getNumParams();
 		for (int i = 0; i < numParams; i++) {
 			// Add error exceptions HERE
-			
-			
 			instr.addParam(iStack.pop());
 		}
 	}
