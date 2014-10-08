@@ -1,6 +1,7 @@
 package model;
 
 import java.util.Observable;
+import java.util.Random;
 import java.util.Stack;
 
 import parser.Parser;
@@ -26,6 +27,18 @@ public class SlogoModel extends Observable {
 			setChanged();
 			notifyObservers(myData);
 		}
+
+	}
+
+	// Test code without the parser.
+
+	public void moveTurtle() {
+		Random rn = new Random();
+		double x = rn.nextInt(50);
+		((Turtle) myData.get("turtle")).rotate(0);
+		((Turtle) myData.get("turtle")).moveTurtleAndDrawLine(1);
+		setChanged();
+		notifyObservers(myData);
 
 	}
 }
