@@ -1,15 +1,18 @@
 package Instructions;
 
+import java.util.Map;
+
+import model.Feature;
 import model.ObservableData;
 
 /**
- * This is the class for instructions that only store a constant value.
- * Its evaluate method will return its double value.
+ * This is the class for instructions that only store a constant value. Its
+ * evaluate method will return its double value.
  * 
  */
-public class ConstantInstruction implements Instruction{
+public class ConstantInstruction implements Instruction {
 	private double myValue;
-	
+
 	public ConstantInstruction(double value) {
 		myValue = value;
 	}
@@ -20,7 +23,7 @@ public class ConstantInstruction implements Instruction{
 	}
 
 	@Override
-	public void execute(ObservableData od) {
+	public void execute(ObservableData data) {
 	}
 
 	@Override
@@ -31,6 +34,5 @@ public class ConstantInstruction implements Instruction{
 	@Override
 	public void addParam(Instruction instr) {
 	}
-	
 
 }
