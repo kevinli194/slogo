@@ -10,7 +10,6 @@ public class TurtleView extends Pane {
 	private static final double width = 600;
 	private static final double height = 600;
 
-
 	public TurtleView() {
 
 		setPrefWidth(width);
@@ -21,6 +20,7 @@ public class TurtleView extends Pane {
 	}
 
 	public void update(Node node) {
+		this.getChildren().clear();
 		this.getChildren().add(node);
 
 	}

@@ -17,8 +17,10 @@ public class Turtle extends Feature {
 			"default_turtle.gif"));
 
 	public Turtle() {
-	
+
 		myImage = new ImageView(myDefault);
+		myImage.setFitWidth(30);
+		myImage.setFitHeight(30);
 		myPen = new Pen();
 		myCoordinates = new double[2];
 		myCoordinates[0] = 230;
@@ -55,13 +57,16 @@ public class Turtle extends Feature {
 	public void moveTurtleAndDrawLine(int distance) {
 		Line line = myPen.drawLine(myCoordinates, calculateEndCoord(distance));
 		myCoordinates = calculateEndCoord(distance);
+
 		myLines.getChildren().add(line);
 	}
 
 	private double[] calculateEndCoord(double distance) {
 		double[] endCoords = new double[2];
-		endCoords[0] = distance * Math.sin(Math.toRadians(myAngle));
-		endCoords[1] = distance * Math.cos(Math.toRadians(myAngle));
+		endCoords[0] = myCoordinates[0] + distance
+				* Math.sin(Math.toRadians(myAngle));
+		endCoords[1] = myCoordinates[1] + distance
+				* Math.cos(Math.toRadians(myAngle));
 		return endCoords;
 	}
 
