@@ -2,9 +2,7 @@ package model;
 
 import javafx.scene.Node;
 
-public abstract class Feature {
-
-	Node myDisplay;
+public interface Feature {
 
 	public abstract Node generateNode();
 

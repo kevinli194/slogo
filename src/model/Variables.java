@@ -2,11 +2,12 @@ package model;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Observable;
 
 import Instructions.Instruction;
 import javafx.scene.Node;
 
-public class Variables extends Feature {
+public class Variables extends Observable implements Feature {
 	private Map<String, Instruction> myVariables;
 
 	public Variables() {

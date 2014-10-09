@@ -16,7 +16,6 @@ public class Main extends Application {
 		String language = "English";
 		myModel = new SlogoModel();
 		myView = new SlogoView(language, myModel);
-		myModel.addObserver(myView);
 		Scene scene = new Scene(myView, SCREEN_WIDTH, SCREEN_HEIGHT);
 
 		primaryStage.setScene(scene);

@@ -1,12 +1,14 @@
 package model;
 
+import java.util.Observable;
+
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Line;
 
-public class Turtle extends Feature {
+public class Turtle extends Observable implements Feature{
 	private ImageView myImage;
 	private double[] myCoordinates;
 	private double myAngle;

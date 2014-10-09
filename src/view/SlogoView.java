@@ -19,7 +19,7 @@ import model.History;
 import model.ObservableData;
 import model.SlogoModel;
 
-public class SlogoView extends BorderPane implements Observer {
+public class SlogoView extends BorderPane {
 	TurtleView myTurtleView;
 	InputView myInputView;
 	InstructionView myInstructionView;
@@ -35,10 +35,10 @@ public class SlogoView extends BorderPane implements Observer {
 		myOD = new ObservableData();
 		myModel = model;
 
-		setCenter(myTurtleView);
-		setRight(myInstructionView);
-		setBottom(myInputView);
-		setLeft(myHistoryView);
+		setCenter(myTurtleView.generatePane());
+		setRight(myInstructionView.generatePane());
+		setBottom(myInputView.generatePane());
+		setLeft(myHistoryView.generatePane());
 		setVisible(true);
 
 		// Button to test code.
@@ -57,17 +57,5 @@ public class SlogoView extends BorderPane implements Observer {
 		result.setOnAction(handler);
 		return result;
 	}
-
-	@Override
-	public void update(Observable o, Object arg) {
-		myTurtleView
-				.update(((ObservableData) arg).get("turtle").generateNode());
-
-	}
-	// Updates the display based on the changes that occurred in the
-	// environment.
-	// @Override
-	// public void update(Observable o, Object arg) {
-	// }
 
 }

@@ -1,25 +1,33 @@
 package view;
 
+import java.util.Observable;
+import java.util.Observer;
+
 import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 
-public class TurtleView extends Pane {
+public class TurtleView implements DisplayElement, Observer {
 	private static final double width = 600;
 	private static final double height = 600;
+	private Pane myMainDisplay;
 
 	public TurtleView() {
 
-		setPrefWidth(width);
-		setPrefHeight(height);
-		setMaxSize(width, height);
-		setStyle("-fx-background-color:black;");
+		myMainDisplay = new Pane();
+		myMainDisplay.setStyle("-fx-background-color: black;");
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
 
 	}
 
-	public void update(Node node) {
-		this.getChildren().clear();
-		this.getChildren().add(node);
-
+	@Override
+	public Node generatePane() {
+		// TODO Auto-generated method stub
+		return myMainDisplay;
 	}
 }

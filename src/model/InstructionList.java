@@ -2,11 +2,12 @@ package model;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Observable;
 
 import Instructions.Instruction;
 import javafx.scene.Node;
 
-public class InstructionList extends Feature {
+public class InstructionList extends Observable implements Feature {
 	private Map<String, Instruction> myBasicInstructions;
 	private Map<String, Instruction> myUserDefinedFunctions;
 

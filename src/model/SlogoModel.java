@@ -7,7 +7,7 @@ import java.util.Stack;
 import parser.Parser;
 import Instructions.Instruction;
 
-public class SlogoModel extends Observable {
+public class SlogoModel{
 	private ObservableData myData;
 	Parser myParser;
 
@@ -23,10 +23,7 @@ public class SlogoModel extends Observable {
 	public void executeCommands(Stack<Instruction> commandStack) {
 		while (!commandStack.isEmpty()) {
 			Instruction current = commandStack.pop();
-			current.execute(myData);
-			setChanged();
-			notifyObservers(myData);
-		}
+			current.execute(myData);		}
 
 	}
 
@@ -37,8 +34,6 @@ public class SlogoModel extends Observable {
 		double x = rn.nextInt(50);
 		((Turtle) myData.get("turtle")).rotate(30);
 		((Turtle) myData.get("turtle")).moveTurtleAndDrawLine(10);
-		setChanged();
-		notifyObservers(myData);
 
 	}
 }

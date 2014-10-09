@@ -2,12 +2,11 @@ package model;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Observable;
 
 import javafx.scene.Node;
-import javafx.scene.control.TextArea;
-import javafx.scene.layout.HBox;
 
-public class History extends Feature {
+public class History extends Observable implements Feature {
 
 	private List<String> myHistory;
 

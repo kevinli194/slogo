@@ -1,19 +1,32 @@
 package view;
 
+import java.util.Observable;
+import java.util.Observer;
+
+import javafx.scene.Node;
 import javafx.scene.control.TextArea;
 
-public class InputView extends TextArea {
-	private static final double width = 1000;
-	private static final double height = 500;
+public class InputView implements DisplayElement, Observer {
+	private static final double WIDTH = 1000;
+	private static final double HEIGHT = 200;
+	public TextArea myInputArea;
 
 	public InputView() {
-		setPrefWidth(width);
-		setPrefHeight(height);
-		setMaxSize(width, height);
+		myInputArea = new TextArea();
+		myInputArea.setPrefHeight(HEIGHT);
+		myInputArea.setPrefWidth(WIDTH);
 	}
 
-	public void generateNode() {
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public Node generatePane() {
+		// TODO Auto-generated method stub
+		return myInputArea;
 	}
 
 }
