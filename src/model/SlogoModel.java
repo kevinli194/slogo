@@ -35,8 +35,8 @@ public class SlogoModel extends Observable {
 	public void moveTurtle() {
 		Random rn = new Random();
 		double x = rn.nextInt(50);
-		((Turtle) myData.get("turtle")).rotate(0);
-		((Turtle) myData.get("turtle")).moveTurtleAndDrawLine(1);
+		((Turtle) myData.get("turtle")).rotate(30);
+		((Turtle) myData.get("turtle")).moveTurtleAndDrawLine(10);
 		setChanged();
 		notifyObservers(myData);
 

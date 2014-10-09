@@ -1,9 +1,7 @@
 package view;
 
-import model.Turtle;
 import javafx.scene.Node;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
 public class TurtleView extends Pane {
