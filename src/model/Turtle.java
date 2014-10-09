@@ -17,14 +17,12 @@ public class Turtle extends Feature {
 			"default_turtle.gif"));
 
 	public Turtle() {
-
-		// Should create a default image for this. Maybe a triangle;
 	
 		myImage = new ImageView(myDefault);
 		myPen = new Pen();
 		myCoordinates = new double[2];
-		myCoordinates[0] = 0;
-		myCoordinates[1] = 0;
+		myCoordinates[0] = 230;
+		myCoordinates[1] = 200;
 		myAngle = 0;
 		myDrawing = new Group();
 		myLines = new Group();

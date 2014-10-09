@@ -14,6 +14,8 @@ public class HistoryView extends TextArea {
 		setPrefWidth(width);
 		setPrefHeight(height);
 		setMaxSize(width, height);
+		
+		
 	}
 
 	/*public void update(Node node) {

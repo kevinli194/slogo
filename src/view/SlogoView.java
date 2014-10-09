@@ -43,10 +43,10 @@ public class SlogoView extends BorderPane implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 
-		setCenter(((ObservableData) arg).get("turtle").generateNode());
-		setRight(((ObservableData) arg).get("instructions").generateNode());
-		setBottom(((ObservableData) arg).get("input").generateNode());
-		setLeft(((ObservableData) arg).get("history").generateNode());
+//		setCenter(((ObservableData) arg).get("turtle").generateNode());
+//		setRight(((ObservableData) arg).get("instructions").generateNode());
+//		setBottom(((ObservableData) arg).get("input").generateNode());
+//		setLeft(((ObservableData) arg).get("history").generateNode());
 
 	}
 	// Updates the display based on the changes that occurred in the
