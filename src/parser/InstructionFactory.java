@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import Instructions.ConstantInstruction;
 import Instructions.Instruction;
 import Instructions.TurtleCommand.Forward;
 
@@ -19,6 +20,10 @@ public class InstructionFactory {
 	private Pattern constantPattern;
 	private Pattern variablePattern;
 	private Pattern commandPattern;
+	private static final String CONSTANT_REGEX = "-?[0-9]+\\.?[0-9]*";
+    private static final String VARIABLE_REGEX = ":[a-zA-z]+";
+    private static final String COMMAND_REGEX = "[a-zA-z_]+(\\?)?";
+    private static final String SPLIT_REGEX = "\\s+";
 
 	/**
 	 * Takes a string type of instruction and
@@ -27,9 +32,11 @@ public class InstructionFactory {
 	 * @return Instruction class of that type
 	 */
 
-	//	public InstructionFactory(ResourceBundle bundle) {
-	//		languageMap = createLanguageMap(bundle);
-	//	}
+		public InstructionFactory() {
+//			languageMap = createLanguageMap(bundle);
+			
+			
+		}
 
 	private Map<String, String> createLanguageMap(ResourceBundle bundle) {
 		Map<String,String> map = new HashMap<String,String>();
@@ -44,6 +51,11 @@ public class InstructionFactory {
 	}
 
 	public Instruction makeInstruction(String type) {
+		if (type.matches(CONSTANT_REGEX)) {
+			double value = Double.parseDouble(type);
+			new ConstantInstruction(value);
+		}
+		
 		if (type.equals("forward")) {
 			return new Forward();
 		}
