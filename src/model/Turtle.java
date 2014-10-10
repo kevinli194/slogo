@@ -60,7 +60,7 @@ public class Turtle extends Feature {
 		myImage.setRotate(myAngle);
 	}
 
-	public void moveTurtleAndDrawLine(int distance) {
+	public void moveTurtleAndDrawLine(double distance) {
 		Line line = myPen.drawLine(myCoordinates, calculateEndCoord(distance));
 		myLines.getChildren().add(line);
 		setCoordinates(calculateEndCoord(distance)[0], calculateEndCoord(distance)[1]);

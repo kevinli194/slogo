@@ -36,17 +36,17 @@ public class SlogoModel extends Observable {
 		setChanged();
 		notifyObservers(myData);
 	}
-//	public void testThings() {
-//		Random rn = new Random();
-//		double x = rn.nextInt(50);
-//		((Turtle) myData.get("turtle")).rotate(x);
-//		((Turtle) myData.get("turtle")).moveTurtleAndDrawLine(10);
-//		((History) myData.get("history")).add("Turtle Rotated By: " + x);
-//      
-//	}
-//
-//	public void clear() {
-//		myData.clear();
-//
-//	}
+	public void testThings() {
+		Random rn = new Random();
+		double x = rn.nextInt(50);
+		((Turtle) myData.get("turtle")).rotate(x);
+		((Turtle) myData.get("turtle")).moveTurtleAndDrawLine(10);
+		((History) myData.get("history")).add("Turtle Rotated By: " + x);
+      
+	}
+
+	public void clear() {
+		myData.clear();
+
+	}
 }
