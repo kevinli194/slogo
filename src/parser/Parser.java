@@ -2,6 +2,7 @@ package parser;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.Stack;
 
 import Instructions.Instruction;
@@ -31,6 +32,7 @@ import Instructions.ListInstruction;
  * - Error checks syntax throughout parsing
  */
 public class Parser {
+	private ResourceBundle languageBundle;
 	private Tokenizer tokenizer;
 	private InstructionFactory iFactory;
 
@@ -47,7 +49,11 @@ public class Parser {
 	 */
 	public Parser() {
 		tokenizer = new Tokenizer();
-		iFactory = new InstructionFactory();
+		iFactory = new InstructionFactory(languageBundle);
+	}
+	
+	public void setLanguage(ResourceBundle bundle) {
+		languageBundle = bundle;
 	}
 
 

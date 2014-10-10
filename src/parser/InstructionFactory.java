@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 import Instructions.Instruction;
 
@@ -13,20 +14,22 @@ import Instructions.Instruction;
  *
  */
 public class InstructionFactory {
-	ResourceBundle languageBundle;
-	Map<String,String> languageMap;
-	
+	private Map<String,String> languageMap;
+	private Pattern constantPattern;
+	private Pattern variablePattern;
+	private Pattern commandPattern;
+
 	/**
 	 * Takes a string type of instruction and
 	 * instantiates the class based on the type
 	 * @param type String name of type of instruction
 	 * @return Instruction class of that type
 	 */
-	
-	public InstructionFactory() {
-		languageMap = createLanguageMap(languageBundle);
+
+	public InstructionFactory(ResourceBundle bundle) {
+		languageMap = createLanguageMap(bundle);
 	}
-	
+
 	private Map<String, String> createLanguageMap(ResourceBundle bundle) {
 		Map<String,String> map = new HashMap<String,String>();
 		Set<String> languageKeys = bundle.keySet();
@@ -40,6 +43,9 @@ public class InstructionFactory {
 	}
 
 	public Instruction makeInstruction(String type) {
+		//		if (type.equals("forward")) {
+		//			return new forward();
+		//		}
 		return null;
 	}
 
