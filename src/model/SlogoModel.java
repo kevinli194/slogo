@@ -32,11 +32,13 @@ public class SlogoModel extends Observable {
 
 	// Test code without the parser.
 
-	public void moveTurtle() {
+	public void testThings() {
 		Random rn = new Random();
 		double x = rn.nextInt(50);
 		((Turtle) myData.get("turtle")).rotate(45);
 		((Turtle) myData.get("turtle")).moveTurtleAndDrawLine(10);
+		((History) myData.get("history")).add("Hi. This is a history test");
+
 		setChanged();
 		notifyObservers(myData);
 	}

@@ -45,7 +45,7 @@ public class SlogoView extends BorderPane implements Observer {
 		setTop(makeButton("Move", new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				myModel.moveTurtle();
+				myModel.testThings();
 			}
 		}));
 
@@ -63,7 +63,8 @@ public class SlogoView extends BorderPane implements Observer {
 		myTurtleView
 				.update(((ObservableData) arg).get("turtle").generateNode());
 		myInstructionView.update();
-		myHistoryView.update();
+		myHistoryView.update(((ObservableData) arg).get("history")
+				.generateNode());
 
 	}
 
