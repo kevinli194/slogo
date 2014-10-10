@@ -1,10 +1,13 @@
 package model;
 
+import view.InputView;
+
 public class ObservableData {
 	private Turtle myTurtle;
 	private History myHistory;
 	private InstructionList myInstructions;
 	private Variables myVariables;
+
 
 	public ObservableData() {
 		myTurtle = new Turtle();

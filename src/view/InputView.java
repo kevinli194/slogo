@@ -5,17 +5,18 @@ import parser.Tokenizer;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
 
 public class InputView extends Pane {
 	private static final double VIEW_WIDTH = 1000;
-	private static final double VIEW_HEIGHT = 500;
+	private static final double VIEW_HEIGHT = 70;
 	
 	private TextArea myInput;
 	private Button mySubmitButton;
 	private SlogoModel myModel;
-	private String myText="Let's gooooo\nXD";
+	private String myText="";
 
 	public InputView(SlogoModel model) {
 	
@@ -33,6 +34,7 @@ public class InputView extends Pane {
 		myInput.setPrefWidth(VIEW_WIDTH-70);
 		myInput.setPrefHeight(VIEW_HEIGHT);
 		myInput.setMaxSize(VIEW_WIDTH-70, VIEW_HEIGHT);
+		myInput.setScrollLeft(30);
 		
 		mySubmitButton=new Button();
 		mySubmitButton.setText("Submit");
@@ -52,7 +54,9 @@ public class InputView extends Pane {
 	}
 
 	public void addAndShowText(String text){
+		myText=myInput.getText();
 		myText+=text+"\n";
+		myInput.clear();
 		myInput.setText(myText);
 
 	}
