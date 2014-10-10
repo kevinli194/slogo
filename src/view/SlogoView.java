@@ -62,11 +62,9 @@ public class SlogoView extends BorderPane implements Observer {
 	public void update(Observable o, Object arg) {
 		myTurtleView
 				.update(((ObservableData) arg).get("turtle").generateNode());
-		// Updates the display based on the changes that occurred in the
-		// environment.
-		// @Override
-		// public void update(Observable o, Object arg) {
-		// }
+		myInstructionView.update();
+		myHistoryView.update();
 
 	}
+
 }

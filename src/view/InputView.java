@@ -5,6 +5,8 @@ import javafx.scene.control.TextArea;
 public class InputView extends TextArea {
 	private static final double width = 1000;
 	private static final double height = 500;
+	
+	private String myText;
 
 	public InputView() {
 		setPrefWidth(width);
@@ -12,7 +14,9 @@ public class InputView extends TextArea {
 		setMaxSize(width, height);
 	}
 
-	public void generateNode() {
+	public void addAndShowText(String text){
+		myText+=text+"\n";
+		setText(myText);
 
 	}
 
