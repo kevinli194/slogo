@@ -21,12 +21,12 @@ public class History extends Feature {
 		// myView = new VBox();
 		myView = new VBox();
 		// myView.getChildren().add(text);
-		
 
 	}
 
 	public void add(String element) {
 		myHistory.add(element);
+		myView.getChildren().add(new Text(element));
 	}
 
 	public void clear() {
@@ -36,12 +36,6 @@ public class History extends Feature {
 
 	@Override
 	public Node generateNode() {
-		myView.getChildren().clear();
-
-		for (String i : myHistory) {
-			Text text = new Text(i);
-			myView.getChildren().add(text);
-		}
 
 		return myView;
 	}

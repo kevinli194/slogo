@@ -19,6 +19,13 @@ public class SettingsView extends Pane {
 		mySettings = new HBox();
 		this.getChildren().add(mySettings);
 		mySettings.getChildren().add(
+				makeButton("Load", new EventHandler<ActionEvent>() {
+					@Override
+					public void handle(ActionEvent event) {
+						model.load();
+					}
+				}));
+		mySettings.getChildren().add(
 				makeButton("Move", new EventHandler<ActionEvent>() {
 					@Override
 					public void handle(ActionEvent event) {

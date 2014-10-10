@@ -20,7 +20,7 @@ public class TurtleView extends Pane {
 	}
 
 	public void update(Node node) {
-		this.getChildren().clear();
+	///	this.getChildren().clear();
 		this.getChildren().add(node);
 
 	}

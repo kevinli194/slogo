@@ -44,21 +44,24 @@ public class Turtle extends Feature {
 	public void setCoordinates(double x, double y) {
 		myCoordinates[0] = x;
 		myCoordinates[1] = y;
+		myImage.setX(myCoordinates[0]);
+		myImage.setY(myCoordinates[1]);
 	}
 
 	public void rotate(double deltaAngle) {
 		myAngle = (myAngle + deltaAngle) % 360;
+		myImage.setRotate(myAngle);
 	}
 
 	public void setAngle(double angle) {
 		myAngle = angle % 360;
+		myImage.setRotate(myAngle);
 	}
 
 	public void moveTurtleAndDrawLine(int distance) {
 		Line line = myPen.drawLine(myCoordinates, calculateEndCoord(distance));
-		myCoordinates = calculateEndCoord(distance);
-
 		myLines.getChildren().add(line);
+		setCoordinates(calculateEndCoord(distance)[0], calculateEndCoord(distance)[1]);
 	}
 
 	private double[] calculateEndCoord(double distance) {
@@ -72,9 +75,6 @@ public class Turtle extends Feature {
 
 	@Override
 	public Node generateNode() {
-		myImage.setX(myCoordinates[0]);
-		myImage.setY(myCoordinates[1]);
-		myImage.setRotate(myAngle);
 		return myDrawing;
 	}
 
@@ -83,9 +83,6 @@ public class Turtle extends Feature {
 		myLines.getChildren().clear();
 		setCoordinates(300, 300);
 		setAngle(0);
-		myImage.setX(myCoordinates[0]);
-		myImage.setY(myCoordinates[1]);
-		myImage.setRotate(myAngle);
 
 	}
 }
