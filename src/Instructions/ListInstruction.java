@@ -7,19 +7,13 @@ import model.ObservableData;
 public class ListInstruction implements Instruction {
 
 	public ListInstruction(Stack<Instruction> s) {
-		
+
 	}
 
 	@Override
-	public double evaluate() {
+	public double execute(ObservableData od) {
 		// TODO Auto-generated method stub
 		return 0;
-	}
-
-	@Override
-	public void execute(ObservableData od) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override

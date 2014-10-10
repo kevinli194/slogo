@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.regex.Pattern;
 
 import Instructions.Instruction;
+import Instructions.TurtleCommand.Forward;
 
 /**
  * Factory design pattern for creating 
@@ -26,9 +27,9 @@ public class InstructionFactory {
 	 * @return Instruction class of that type
 	 */
 
-	public InstructionFactory(ResourceBundle bundle) {
-		languageMap = createLanguageMap(bundle);
-	}
+	//	public InstructionFactory(ResourceBundle bundle) {
+	//		languageMap = createLanguageMap(bundle);
+	//	}
 
 	private Map<String, String> createLanguageMap(ResourceBundle bundle) {
 		Map<String,String> map = new HashMap<String,String>();
@@ -43,9 +44,9 @@ public class InstructionFactory {
 	}
 
 	public Instruction makeInstruction(String type) {
-		//		if (type.equals("forward")) {
-		//			return new forward();
-		//		}
+		if (type.equals("forward")) {
+			return new Forward();
+		}
 		return null;
 	}
 
