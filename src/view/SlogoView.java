@@ -29,7 +29,7 @@ public class SlogoView extends BorderPane implements Observer {
 
 	public SlogoView(String language, SlogoModel model) {
 		myTurtleView = new TurtleView();
-		myInputView = new InputView();
+		myInputView = new InputView(model);
 		myInstructionView = new InstructionView();
 		myHistoryView = new HistoryView();
 		myOD = new ObservableData();
