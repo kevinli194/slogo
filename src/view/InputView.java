@@ -1,5 +1,6 @@
 package view;
 
+import model.SlogoModel;
 import parser.Tokenizer;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -13,10 +14,10 @@ public class InputView extends Pane {
 	
 	private TextArea myInput;
 	private Button mySubmitButton;
-	private Tokenizer myToken;
+	private SlogoModel myModel;
 	private String myText="Let's gooooo\nXD";
 
-	public InputView() {
+	public InputView(SlogoModel model) {
 	
 		setPrefWidth(VIEW_WIDTH);
 		setPrefHeight(VIEW_HEIGHT);
@@ -24,6 +25,7 @@ public class InputView extends Pane {
 		update();
 		this.getChildren().add(myInput);
 		this.getChildren().add(mySubmitButton);
+		myModel=model;
 	}
 
 	private void update() {
@@ -41,8 +43,7 @@ public class InputView extends Pane {
 			// give the string to the back end parser
 			@Override
 			public void handle(ActionEvent event) {
-				myToken=new Tokenizer();
-				myToken.tokenize(myInput.getText());
+				myModel.parseAndExecute(myInput.getText());
 				System.out.println(myInput.getText());
 				myInput.clear();
 			}
