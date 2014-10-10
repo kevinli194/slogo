@@ -16,7 +16,7 @@ import javafx.scene.input.MouseEvent;
 public class InstructionView extends TableView<InstructionsOnView> {
 
 	private static final double width = 200;
-	private static final double height = 600;
+	private static final double height = 575;
 	
 //	private ObservableList<InstructionsOnView> myData;
 	//Test Data

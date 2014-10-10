@@ -31,6 +31,7 @@ public class History extends Feature {
 
 	public void clear() {
 		myHistory.clear();
+		myView.getChildren().clear();
 	}
 
 	@Override

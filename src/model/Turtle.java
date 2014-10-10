@@ -23,8 +23,8 @@ public class Turtle extends Feature {
 		myImage.setFitHeight(30);
 		myPen = new Pen();
 		myCoordinates = new double[2];
-		myCoordinates[0] = 230;
-		myCoordinates[1] = 200;
+		myCoordinates[0] = 300;
+		myCoordinates[1] = 300;
 		myAngle = 0;
 		myDrawing = new Group();
 		myLines = new Group();
@@ -78,4 +78,14 @@ public class Turtle extends Feature {
 		return myDrawing;
 	}
 
+	@Override
+	public void clear() {
+		myLines.getChildren().clear();
+		setCoordinates(300, 300);
+		setAngle(0);
+		myImage.setX(myCoordinates[0]);
+		myImage.setY(myCoordinates[1]);
+		myImage.setRotate(myAngle);
+
+	}
 }

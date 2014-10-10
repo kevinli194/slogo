@@ -27,4 +27,12 @@ public class ObservableData {
 			return null; // fix this later
 		}
 	}
+
+	public void clear() {
+		myTurtle.clear();
+		myHistory.clear();
+		myInstructions.clear();
+		myVariables.clear();
+
+	}
 }

@@ -35,11 +35,16 @@ public class SlogoModel extends Observable {
 	public void testThings() {
 		Random rn = new Random();
 		double x = rn.nextInt(50);
-		((Turtle) myData.get("turtle")).rotate(45);
+		((Turtle) myData.get("turtle")).rotate(x);
 		((Turtle) myData.get("turtle")).moveTurtleAndDrawLine(10);
-		((History) myData.get("history")).add("Hi. This is a history test");
+		((History) myData.get("history")).add("Turtle Rotated By: " + x);
 
-		setChanged();
+	    setChanged();
 		notifyObservers(myData);
+	}
+
+	public void clear() {
+		myData.clear();
+
 	}
 }

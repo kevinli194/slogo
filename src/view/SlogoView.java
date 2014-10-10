@@ -24,6 +24,7 @@ public class SlogoView extends BorderPane implements Observer {
 	InputView myInputView;
 	InstructionView myInstructionView;
 	HistoryView myHistoryView;
+	SettingsView mySettingsView;
 	SlogoModel myModel;
 	ObservableData myOD;
 
@@ -32,6 +33,7 @@ public class SlogoView extends BorderPane implements Observer {
 		myInputView = new InputView(model);
 		myInstructionView = new InstructionView();
 		myHistoryView = new HistoryView();
+		mySettingsView = new SettingsView(model);
 		myOD = new ObservableData();
 		myModel = model;
 
@@ -39,23 +41,9 @@ public class SlogoView extends BorderPane implements Observer {
 		setRight(myInstructionView);
 		setBottom(myInputView);
 		setLeft(myHistoryView);
+		setTop(mySettingsView);
 		setVisible(true);
 
-		// Button to test code.
-		setTop(makeButton("Move", new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				myModel.testThings();
-			}
-		}));
-
-	}
-
-	private Button makeButton(String property, EventHandler<ActionEvent> handler) {
-		Button result = new Button();
-		result.setText(property);
-		result.setOnAction(handler);
-		return result;
 	}
 
 	@Override
