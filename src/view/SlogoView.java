@@ -33,7 +33,7 @@ public class SlogoView extends BorderPane implements Observer {
 		myInputView = new InputView(model);
 		myInstructionView = new InstructionView();
 		myHistoryView = new HistoryView();
-		mySettingsView = new SettingsView(model);
+		mySettingsView = new SettingsView(model, myTurtleView);
 		myOD = new ObservableData();
 		myModel = model;
 

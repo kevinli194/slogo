@@ -19,8 +19,12 @@ public class TurtleView extends Pane {
 
 	}
 
+	public void changeColor(String color) {
+		setStyle("-fx-background-color:" + color + ";");
+	}
+
 	public void update(Node node) {
-	///	this.getChildren().clear();
+		// / this.getChildren().clear();
 		this.getChildren().add(node);
 
 	}

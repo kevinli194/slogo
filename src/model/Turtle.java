@@ -23,9 +23,8 @@ public class Turtle extends Feature {
 		myImage.setFitHeight(30);
 		myPen = new Pen();
 		myCoordinates = new double[2];
-		myCoordinates[0] = 300;
-		myCoordinates[1] = 300;
-		myAngle = 0;
+		setCoordinates(300, 300);
+		setAngle(0);
 		myDrawing = new Group();
 		myLines = new Group();
 		myDrawing.getChildren().add(myImage);
@@ -61,7 +60,8 @@ public class Turtle extends Feature {
 	public void moveTurtleAndDrawLine(int distance) {
 		Line line = myPen.drawLine(myCoordinates, calculateEndCoord(distance));
 		myLines.getChildren().add(line);
-		setCoordinates(calculateEndCoord(distance)[0], calculateEndCoord(distance)[1]);
+		setCoordinates(calculateEndCoord(distance)[0],
+				calculateEndCoord(distance)[1]);
 	}
 
 	private double[] calculateEndCoord(double distance) {
