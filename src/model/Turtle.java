@@ -6,7 +6,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Line;
 
+
 public class Turtle extends Feature {
+
 	private ImageView myImage;
 	private double[] myCoordinates;
 	private double myAngle;
@@ -57,7 +59,7 @@ public class Turtle extends Feature {
 		myImage.setRotate(myAngle);
 	}
 
-	public void moveTurtleAndDrawLine(int distance) {
+	public void moveTurtleAndDrawLine(double distance) {
 		Line line = myPen.drawLine(myCoordinates, calculateEndCoord(distance));
 		myLines.getChildren().add(line);
 		setCoordinates(calculateEndCoord(distance)[0],
@@ -77,6 +79,7 @@ public class Turtle extends Feature {
 	public Node generateNode() {
 		return myDrawing;
 	}
+
 
 	@Override
 	public void clear() {

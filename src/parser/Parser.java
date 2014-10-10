@@ -2,9 +2,11 @@ package parser;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.Stack;
-
 import Instructions.Instruction;
+import Instructions.ListInstruction;
+
 
 /**
  * Parser for converting strings of instructions
@@ -17,9 +19,9 @@ import Instructions.Instruction;
  * 
  * - Takes a string input into the parse method
  * - Tokenizes the string using the Tokenizer class
- * - Iterates through string tokens in reverse order 
+ * - Iterates through string tokens in reverse order
  * to create Instruction classes with the InstructionFactory
- * - For each instruction, checks to see how many inputs 
+ * - For each instruction, checks to see how many inputs
  * are needed for the instruction
  * - Pops from double value stack if inputs are needed
  * - Evaluates instruction for double value
@@ -30,15 +32,9 @@ import Instructions.Instruction;
  * - Error checks syntax throughout parsing
  */
 public class Parser {
+	private ResourceBundle languageBundle;
 	private Tokenizer tokenizer;
 	private InstructionFactory iFactory;
-
-	/**
-	 * Parses a string instruction input passed in through Model.
-	 * Makes use of the Tokenizer to split the string into tokens.
-	 * @param input String of instructions
-	 * @return stack of instructions to run (used in Model)
-	 */
 
 	/**
 	 * Constructor for a Parser.
@@ -49,37 +45,79 @@ public class Parser {
 		iFactory = new InstructionFactory();
 	}
 
-
-	public Stack<Instruction> parse(String input) {
-		// two stacks for parsing
-		Stack<Instruction> result = new Stack<Instruction>();
-		Stack<Instruction> builder = new Stack<Instruction>();
-
-		// get tokens
-		List<String> tokens = tokenizer.tokenize(input);
-
-		// reverse list of tokens
-		Collections.reverse(tokens);
-
-		// iterate through tokens
-		for (String token : tokens) {
-			Instruction instr = iFactory.makeInstruction(token);
-			// add parameters
-			addParams(instr, builder);
-			// add to both the builder stack and result stack
-			builder.push(instr);
-			result.push(instr);
-		}
-
-		return result;
+	public void setLanguage(ResourceBundle bundle) {
+		languageBundle = bundle;
 	}
 
-	private void addParams(Instruction instr, Stack<Instruction> iStack) {
+
+	public Stack<Instruction> parse(String input) {
+		// get tokens
+		List<String> tokens = tokenizer.tokenize(input);
+		// reverse list of tokens
+		Collections.reverse(tokens);
+		// parse tokens
+		return parseTokens(tokens);
+	}
+
+	private Stack<Instruction> parseTokens (List<String> tokens) {
+		// stack for parsing
+		Stack<Instruction> builderStack = new Stack<Instruction>();
+		Instruction instr;
+		int iter = 0;
+		while (iter < tokens.size()) {
+			String token = tokens.get(iter);
+			if (isRightBracket(token)) {
+				// if right bracket found, find matching left bracket in subList
+				List<String> subList = tokens.subList(iter + 1, tokens.size());
+				int bracketInd = findMatchingBracket(subList);
+				// Parse tokens contained in brackets
+				Stack<Instruction> listStack = parseTokens(subList.subList(1, bracketInd));
+				// Add listStack to new instance of a ListInstruction class
+				instr = new ListInstruction(listStack);
+				// update iterator
+				iter = iter + bracketInd;
+			}
+			else {
+				instr = iFactory.makeInstruction(token);
+				// add parameters
+				addParams(instr, builderStack);
+			}
+			// add to both the builder stack and result stack
+
+			builderStack.push(instr);
+			iter++;
+		}
+		return builderStack;
+	}
+
+	private boolean isRightBracket (String token) {
+		return token.equals("]");
+	}
+
+	private boolean isLeftBracket (String token) {
+		return token.equals("[");
+	}
+
+	private int findMatchingBracket (List<String> tokens) {
+		int matchCounter = 0;
+		int index = 0;
+		while (matchCounter >= 0) {
+			String token = tokens.get(index);
+			if (isRightBracket(token)) {
+				matchCounter++;
+			}
+			else if (isLeftBracket(token)) {
+				matchCounter--;
+			}
+			index++;
+		}
+		return index;
+	}
+
+	private void addParams (Instruction instr, Stack<Instruction> iStack) {
 		int numParams = instr.getNumParams();
 		for (int i = 0; i < numParams; i++) {
 			// Add error exceptions HERE
-			
-			
 			instr.addParam(iStack.pop());
 		}
 	}
