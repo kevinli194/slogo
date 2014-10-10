@@ -21,9 +21,9 @@ public class InstructionFactory {
 	private Pattern variablePattern;
 	private Pattern commandPattern;
 	private static final String CONSTANT_REGEX = "-?[0-9]+\\.?[0-9]*";
-    private static final String VARIABLE_REGEX = ":[a-zA-z]+";
-    private static final String COMMAND_REGEX = "[a-zA-z_]+(\\?)?";
-    private static final String SPLIT_REGEX = "\\s+";
+	private static final String VARIABLE_REGEX = ":[a-zA-z]+";
+	private static final String COMMAND_REGEX = "[a-zA-z_]+(\\?)?";
+	private static final String SPLIT_REGEX = "\\s+";
 
 	/**
 	 * Takes a string type of instruction and
@@ -32,11 +32,11 @@ public class InstructionFactory {
 	 * @return Instruction class of that type
 	 */
 
-		public InstructionFactory() {
-//			languageMap = createLanguageMap(bundle);
-			
-			
-		}
+	public InstructionFactory() {
+		//			languageMap = createLanguageMap(bundle);
+
+
+	}
 
 	private Map<String, String> createLanguageMap(ResourceBundle bundle) {
 		Map<String,String> map = new HashMap<String,String>();
@@ -53,13 +53,15 @@ public class InstructionFactory {
 	public Instruction makeInstruction(String type) {
 		if (type.matches(CONSTANT_REGEX)) {
 			double value = Double.parseDouble(type);
-			new ConstantInstruction(value);
+			return new ConstantInstruction(value);
 		}
-		
-		if (type.equals("forward")) {
+		else if (type.equals("forward")) {
+			System.out.println("forward!");
 			return new Forward();
 		}
-		return null;
+		else {
+			return null;
+		}
 	}
 
 }

@@ -79,6 +79,9 @@ public class Parser {
 			}
 			else {
 				instr = iFactory.makeInstruction(token);
+				if (instr == null) {
+					System.out.println("214523");
+				}
 				// add parameters
 				addParams(instr, builderStack);
 			}
