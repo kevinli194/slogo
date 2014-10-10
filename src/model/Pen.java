@@ -9,8 +9,9 @@ public class Pen {
 	private double myStrokeWidth;
 
 	public Pen() {
-		myLineColor = Color.BLACK;
+		myLineColor = Color.WHITE;
 		isPenDown = true;
+		myStrokeWidth = 1;
 	}
 
 	public void setStrokeWidth(double width) {

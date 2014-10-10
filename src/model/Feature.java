@@ -8,4 +8,6 @@ public abstract class Feature {
 
 	public abstract Node generateNode();
 
+	public abstract void clear();
+
 }
