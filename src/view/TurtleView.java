@@ -8,7 +8,7 @@ import javafx.scene.layout.Pane;
 
 public class TurtleView extends Pane {
 	private static final double width = 600;
-	private static final double height = 575;
+	private static final double height = 600;
 
 	public TurtleView() {
 
@@ -19,8 +19,12 @@ public class TurtleView extends Pane {
 
 	}
 
+	public void changeColor(String color) {
+		setStyle("-fx-background-color:" + color + ";");
+	}
+
 	public void update(Node node) {
-	///	this.getChildren().clear();
+		// / this.getChildren().clear();
 		this.getChildren().add(node);
 
 	}
