@@ -1,7 +1,10 @@
 package parser;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 /**
  * Splits the instruction string into
@@ -19,8 +22,9 @@ public class Tokenizer {
 	 * @return List of string tokens
 	 */
 	public List<String> tokenize(String input) {
-		List<String> result = new LinkedList<String>();
-		return result;
+		String[] tokenArray = input.split("\\s+");
+	
+		return Arrays.asList(tokenArray);
 	}
 
 }

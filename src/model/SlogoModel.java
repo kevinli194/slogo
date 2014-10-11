@@ -23,7 +23,8 @@ public class SlogoModel extends Observable {
 	public void executeCommands(Stack<Instruction> commandStack) {
 		while (!commandStack.isEmpty()) {
 			Instruction current = commandStack.pop();
-			current.execute(myData);
+			double returnValue = current.execute(myData);
+			System.out.println("final return:" + returnValue);
 			setChanged();
 			notifyObservers(myData);
 		}

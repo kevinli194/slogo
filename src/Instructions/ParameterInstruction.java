@@ -1,5 +1,6 @@
 package Instructions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,6 +12,10 @@ import java.util.List;
 public abstract class ParameterInstruction implements Instruction {
 	protected int numParams;
 	protected List<Instruction> myParams;
+	
+	protected ParameterInstruction() {
+		myParams = new ArrayList<Instruction>();
+	}
 	
 	@Override
 	public int getNumParams() {
