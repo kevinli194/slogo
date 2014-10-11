@@ -1,5 +1,6 @@
 package model;
 
+import view.InputView;
 import javafx.scene.Node;
 
 public abstract class Feature {
@@ -8,6 +9,9 @@ public abstract class Feature {
 
 	public abstract Node generateNode();
 
-	public abstract void clear();
+	public Node generateNode(InputView myInputView) {
+		return null;
+	}
 
+	public abstract void clear();
 }

@@ -11,7 +11,7 @@ public class Pen {
 	public Pen() {
 		myLineColor = Color.WHITE;
 		isPenDown = true;
-		myStrokeWidth = 1;
+		myStrokeWidth = 3;
 	}
 
 	public void setStrokeWidth(double width) {
@@ -26,6 +26,7 @@ public class Pen {
 		isPenDown = state;
 	}
 
+	
 	public Line drawLine(double[] start, double[] end) {
 		if (isPenDown) {
 			Line line = new Line(start[0], start[1], end[0], end[1]);

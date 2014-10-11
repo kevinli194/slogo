@@ -27,7 +27,6 @@ public class Variables extends Feature {
 		return null;
 	}
 
-	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
 		
