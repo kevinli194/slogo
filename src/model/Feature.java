@@ -13,5 +13,5 @@ public abstract class Feature {
 		return null;
 	}
 
-
+	public abstract void clear();
 }
