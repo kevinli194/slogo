@@ -25,7 +25,7 @@ public class Turtle extends Feature {
 		myImage.setFitHeight(30);
 		myPen = new Pen();
 		myCoordinates = new double[2];
-		setCoordinates(300, 300);
+		setCoordinates(0, 0);
 		setAngle(0);
 		myDrawing = new Group();
 		myLines = new Group();

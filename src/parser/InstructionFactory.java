@@ -50,7 +50,6 @@ public class InstructionFactory {
 				map.put(s,key);
 			}
 		}
-		System.out.println(map.toString());
 		return map;
 	}
 
@@ -58,16 +57,13 @@ public class InstructionFactory {
 		type = type.toLowerCase();
 
 		if (type.matches(CONSTANT_REGEX)) {
-			System.out.println("YIPEE A CONSTANT!");
 			double value = Double.parseDouble(type);
 			return new ConstantInstruction(value);
 		}
 		else if (type.matches(VARIABLE_REGEX)){
-			System.out.println("I WANT A VARIABLE RIGHT NOW!");
 			return null;
 		}
 		else if (type.matches(COMMAND_REGEX)) {
-			System.out.println("Ooh Commands.");
 			try {
 				Class<?> comClass = Class.forName("Instructions.TurtleCommand." + languageMap.get(type));
 				Constructor<?> comConstructor = comClass.getConstructor();
@@ -80,11 +76,11 @@ public class InstructionFactory {
 					IllegalAccessException |
 					IllegalArgumentException |
 					InvocationTargetException e) {
-				e.printStackTrace(); // DON'T LEAVE THIS HERE
+				System.out.println("NOT A VALID COMMAND");
+				// Put better error checking here
 			}
 		}
 
-		System.out.println("Wut?");
 		return null;
 	}
 
