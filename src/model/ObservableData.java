@@ -16,6 +16,7 @@ public class ObservableData {
 		myVariables = new Variables();
 	}
 
+
 	public Feature get(String id) {
 		switch (id) {
 		case "turtle":
@@ -29,5 +30,13 @@ public class ObservableData {
 		default:
 			return null; // fix this later
 		}
+	}
+
+	public void clear() {
+		myTurtle.clear();
+		myHistory.clear();
+		myInstructions.clear();
+		myVariables.clear();
+
 	}
 }

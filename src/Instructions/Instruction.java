@@ -13,13 +13,6 @@ import model.ObservableData;
 
 public interface Instruction {
 
-	/**
-	 * Evaluates the expression for the double return value only. Does not carry
-	 * out other tasks on any observable data.
-	 * 
-	 * @return Double value of the expression
-	 */
-	public double evaluate();
 
 	/**
 	 * Executes the functionality of the instruction to change data in the
@@ -27,7 +20,7 @@ public interface Instruction {
 	 * 
 	 * @return Double value of the expression
 	 */
-	public void execute(ObservableData data);
+	public double execute(ObservableData data);
 
 	/**
 	 * Gets the number of parameters used in the instruction, Used in the parser

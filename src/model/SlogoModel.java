@@ -32,12 +32,21 @@ public class SlogoModel extends Observable {
 
 	// Test code without the parser.
 
-	public void moveTurtle() {
-		Random rn = new Random();
-		double x = rn.nextInt(50);
-		((Turtle) myData.get("turtle")).rotate(45);
-		((Turtle) myData.get("turtle")).moveTurtleAndDrawLine(10);
+	public void load(){
 		setChanged();
 		notifyObservers(myData);
+	}
+	public void testThings() {
+		Random rn = new Random();
+		double x = rn.nextInt(50);
+		((Turtle) myData.get("turtle")).rotate(x);
+		((Turtle) myData.get("turtle")).moveTurtleAndDrawLine(10);
+		((History) myData.get("history")).add("Turtle Rotated By: " + x);
+      
+	}
+
+	public void clear() {
+		myData.clear();
+
 	}
 }

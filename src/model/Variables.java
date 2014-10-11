@@ -27,4 +27,9 @@ public class Variables extends Feature {
 		return null;
 	}
 
+	public void clear() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

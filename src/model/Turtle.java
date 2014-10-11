@@ -6,7 +6,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Line;
 
+
 public class Turtle extends Feature {
+
 	private ImageView myImage;
 	private double[] myCoordinates;
 	private double myAngle;
@@ -23,9 +25,8 @@ public class Turtle extends Feature {
 		myImage.setFitHeight(30);
 		myPen = new Pen();
 		myCoordinates = new double[2];
-		myCoordinates[0] = 230;
-		myCoordinates[1] = 200;
-		myAngle = 0;
+		setCoordinates(300, 300);
+		setAngle(0);
 		myDrawing = new Group();
 		myLines = new Group();
 		myDrawing.getChildren().add(myImage);
@@ -44,21 +45,25 @@ public class Turtle extends Feature {
 	public void setCoordinates(double x, double y) {
 		myCoordinates[0] = x;
 		myCoordinates[1] = y;
+		myImage.setX(myCoordinates[0]);
+		myImage.setY(myCoordinates[1]);
 	}
 
 	public void rotate(double deltaAngle) {
 		myAngle = (myAngle + deltaAngle) % 360;
+		myImage.setRotate(myAngle);
 	}
 
 	public void setAngle(double angle) {
 		myAngle = angle % 360;
+		myImage.setRotate(myAngle);
 	}
 
-	public void moveTurtleAndDrawLine(int distance) {
+	public void moveTurtleAndDrawLine(double distance) {
 		Line line = myPen.drawLine(myCoordinates, calculateEndCoord(distance));
-		myCoordinates = calculateEndCoord(distance);
-
 		myLines.getChildren().add(line);
+		setCoordinates(calculateEndCoord(distance)[0],
+				calculateEndCoord(distance)[1]);
 	}
 
 	private double[] calculateEndCoord(double distance) {
@@ -72,10 +77,14 @@ public class Turtle extends Feature {
 
 	@Override
 	public Node generateNode() {
-		myImage.setX(myCoordinates[0]);
-		myImage.setY(myCoordinates[1]);
-		myImage.setRotate(myAngle);
 		return myDrawing;
 	}
 
+
+	public void clear() {
+		myLines.getChildren().clear();
+		setCoordinates(300, 300);
+		setAngle(0);
+
+	}
 }
