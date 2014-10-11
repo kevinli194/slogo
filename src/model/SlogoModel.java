@@ -41,12 +41,19 @@ public class SlogoModel extends Observable {
 		double x = rn.nextInt(50);
 		((Turtle) myData.get("turtle")).rotate(x);
 		((Turtle) myData.get("turtle")).moveTurtleAndDrawLine(10);
-		((History) myData.get("history")).add("Turtle Rotated By: " + x);
-      
+		((History) myData.get("history")).add("Turtle Rotated By: " + x);  
 	}
+	
+ 
 
 	public void clear() {
 		myData.clear();
 
+	}
+
+	public void showToHistoryView(String text) {
+		((History) myData.get("history")).add(text+"\n");  
+
+		
 	}
 }

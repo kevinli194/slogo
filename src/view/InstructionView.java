@@ -16,9 +16,7 @@ public class InstructionView extends ScrollPane {
 		setMinSize(width, height);
 		setMaxSize(width, height);
 		
-//		Text b=new Text();
-//		b.setText("TRY");
-//		setContent(b);
+
 	}
 	
 	public void update(Node node) {
