@@ -47,6 +47,7 @@ public class InputView extends Pane {
 			public void handle(ActionEvent event) {
 				myModel.parseAndExecute(myInput.getText());
 				System.out.println(myInput.getText());
+				myModel.showToHistoryView(myInput.getText());
 				myInput.clear();
 			}
 			

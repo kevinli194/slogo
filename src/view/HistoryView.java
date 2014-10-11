@@ -18,7 +18,7 @@ import javafx.scene.text.Text;
 public class HistoryView extends ScrollPane {
 
 	private static final double width = 200;
-	private static final double height = 575;
+	private static final double height = 600;
 
 	// Test by setting myText as a string
 
