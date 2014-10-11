@@ -5,10 +5,18 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.regex.Pattern;
-
 import Instructions.ConstantInstruction;
 import Instructions.Instruction;
+import Instructions.TurtleCommand.Back;
 import Instructions.TurtleCommand.Forward;
+import Instructions.TurtleCommand.If;
+import Instructions.TurtleCommand.Left;
+import Instructions.TurtleCommand.Less;
+import Instructions.TurtleCommand.Repeat;
+import Instructions.TurtleCommand.Right;
+import Instructions.TurtleCommand.SetHeading;
+import Instructions.TurtleCommand.Sum;
+import Instructions.TurtleCommand.Towards;
 
 /**
  * Factory design pattern for creating 
@@ -59,6 +67,46 @@ public class InstructionFactory {
 			System.out.println("forward!");
 			return new Forward();
 		}
+		else if (type.equals("back")) {
+                    System.out.println("back!");
+                    return new Back();
+            }
+		else if (type.equals("repeat")) {
+                    System.out.println("repeat!");
+                    return new Repeat();
+            }
+		else if (type.equals("if")) {
+                    System.out.println("if!");
+                    return new If();
+		}
+		else if (type.equals("sum")) {
+                    System.out.println("sum!");
+                    return new Sum();
+                }
+		else if (type.equals("right")) {
+                    System.out.println("right!");
+                    return new Right();
+                }
+		else if (type.equals("left")) {
+                    System.out.println("left!");
+                    return new Left();
+                }
+		else if (type.equals("sum")) {
+                    System.out.println("sum!");
+                    return new Sum();
+                }
+		else if (type.equals("less")) {
+                    System.out.println("less!");
+                    return new Less();
+                }
+		else if (type.equals("setheading")) {
+                    System.out.println("setheading!");
+                    return new SetHeading();
+                }
+		else if (type.equals("towards")) {
+                    System.out.println("Towards!");
+                    return new Towards();
+                }
 		else {
 			return null;
 		}
