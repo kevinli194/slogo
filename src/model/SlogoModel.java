@@ -45,7 +45,6 @@ public class SlogoModel extends Observable {
 	}
 	
  
-
 	public void clear() {
 		myData.clear();
 
