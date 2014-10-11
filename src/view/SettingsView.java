@@ -43,13 +43,7 @@ public class SettingsView extends Pane {
 						model.clear();
 					}
 				}));
-		mySettings.getChildren().add(
-				makeButton("Clear", new EventHandler<ActionEvent>() {
-					@Override
-					public void handle(ActionEvent event) {
-						model.clear();
-					}
-				}));
+
 
 		// Combo box that lets you change color of the background
 		ObservableList<String> options = FXCollections.observableArrayList(
