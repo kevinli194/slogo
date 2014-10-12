@@ -12,26 +12,25 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
-public class InstructionList extends Feature{
-	private Map<String, Instruction> myBasicInstructions;
-	private Map<String, Instruction> myUserDefinedFunctions;
-	
+public class CommandsList extends Feature {
+	private Map<String, String> myBasicInstructions;
+
 	private VBox myView;
 	private InputView myInput;
 
 	// When instantiating an instruction list. The basic instructions should be
 	// created. Should we use reflections for this?
-	public InstructionList() {
-		myBasicInstructions = new HashMap<String, Instruction>();
-		myUserDefinedFunctions = new HashMap<String, Instruction>();
-		
+	public CommandsList() {
+//		myBasicInstructions = new HashMap<String, Instruction>();
+//		myUserDefinedFunctions = new HashMap<String, Instruction>();
+
 		myView=new VBox();
 		myBasicInstructions.put("forward", null);
 		myBasicInstructions.put("backward", null);
 
 
 		initiateInstructionTable();
-		
+
 	}
 
 	private void initiateInstructionTable() {
@@ -50,7 +49,7 @@ public class InstructionList extends Feature{
 	 *            user defined function to be stored
 	 */
 	public void add(String instructionName, Instruction instruction) {
-		myUserDefinedFunctions.put(instructionName, instruction);
+//		myUserDefinedFunctions.put(instructionName, instruction);
 	}
 
 	/**
@@ -60,23 +59,23 @@ public class InstructionList extends Feature{
 	 *            name of function to delete
 	 */
 	public void delete(String instructionName) {
-		myUserDefinedFunctions.remove(instructionName);
+//		myUserDefinedFunctions.remove(instructionName);
 	}
 
 	/**
 	 * Clears the map of user defined functions.
 	 */
 	public void clear() {
-		myUserDefinedFunctions.clear();
+
 	}
-	
+
 	public HBox preDefinedInstructionRow(String s, InputView input){
 		myInput=input;
 		HBox row=new HBox();
 		Text t=new Text();
 		t.setText(s);
-//		t.setScaleX(2);
-//		t.setScaleY(2);
+		//		t.setScaleX(2);
+		//		t.setScaleY(2);
 		t.setOnMousePressed(new EventHandler<MouseEvent>(){
 			@Override
 			public void handle(MouseEvent event) {
@@ -91,7 +90,7 @@ public class InstructionList extends Feature{
 	public Node generateNode() {
 		return generateNode(myInput);
 	}
-	
+
 	public Node generateNode(InputView inputView) {
 		myInput=inputView;
 		myView.getChildren().clear();
@@ -99,11 +98,8 @@ public class InstructionList extends Feature{
 			HBox row=preDefinedInstructionRow(s,inputView);
 			myView.getChildren().add(row);
 		}
-	return myView;
+		return myView;
 	}
-
-
-
 
 
 }

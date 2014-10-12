@@ -1,22 +1,15 @@
 package parser;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
-import java.util.regex.Pattern;
+
+
 import Instructions.ConstantInstruction;
 import Instructions.Instruction;
-import Instructions.TurtleCommand.Back;
-import Instructions.TurtleCommand.Forward;
-import Instructions.TurtleCommand.If;
-import Instructions.TurtleCommand.Left;
-import Instructions.TurtleCommand.Less;
-import Instructions.TurtleCommand.Repeat;
-import Instructions.TurtleCommand.Right;
-import Instructions.TurtleCommand.SetHeading;
-import Instructions.TurtleCommand.Sum;
-import Instructions.TurtleCommand.Towards;
 
 /**
  * Factory design pattern for creating 
@@ -24,14 +17,12 @@ import Instructions.TurtleCommand.Towards;
  *
  */
 public class InstructionFactory {
-	private Map<String,String> languageMap;
-	private Pattern constantPattern;
-	private Pattern variablePattern;
-	private Pattern commandPattern;
 	private static final String CONSTANT_REGEX = "-?[0-9]+\\.?[0-9]*";
 	private static final String VARIABLE_REGEX = ":[a-zA-z]+";
 	private static final String COMMAND_REGEX = "[a-zA-z_]+(\\?)?";
-	private static final String SPLIT_REGEX = "\\s+";
+
+	private ResourceBundle languageBundle;
+	private Map<String,String> languageMap;
 
 	/**
 	 * Takes a string type of instruction and
@@ -41,75 +32,63 @@ public class InstructionFactory {
 	 */
 
 	public InstructionFactory() {
-		//			languageMap = createLanguageMap(bundle);
+		languageBundle = loadResourceBundle("resources.languages/English");
+		languageMap = createLanguageMap(languageBundle);
 
+	}
 
+	private ResourceBundle loadResourceBundle(String filepath) {
+		return ResourceBundle.getBundle(filepath);
 	}
 
 	private Map<String, String> createLanguageMap(ResourceBundle bundle) {
 		Map<String,String> map = new HashMap<String,String>();
 		Set<String> languageKeys = bundle.keySet();
 		for (String key : languageKeys) {
-			String[] strings = bundle.getStringArray(key);
-			for (String s : strings) {
+			String value = bundle.getString(key);
+			String[] commands = value.split(",");
+			for (String s : commands) {
 				map.put(s,key);
 			}
 		}
+		System.out.println(map.toString());
 		return map;
 	}
 
 	public Instruction makeInstruction(String type) {
+		type = type.toLowerCase();
+
 		if (type.matches(CONSTANT_REGEX)) {
+			System.out.println("YIPEE A CONSTANT!");
 			double value = Double.parseDouble(type);
 			return new ConstantInstruction(value);
 		}
-		else if (type.equals("forward")) {
-			System.out.println("forward!");
-			return new Forward();
-		}
-		else if (type.equals("back")) {
-                    System.out.println("back!");
-                    return new Back();
-            }
-		else if (type.equals("repeat")) {
-                    System.out.println("repeat!");
-                    return new Repeat();
-            }
-		else if (type.equals("if")) {
-                    System.out.println("if!");
-                    return new If();
-		}
-		else if (type.equals("sum")) {
-                    System.out.println("sum!");
-                    return new Sum();
-                }
-		else if (type.equals("right")) {
-                    System.out.println("right!");
-                    return new Right();
-                }
-		else if (type.equals("left")) {
-                    System.out.println("left!");
-                    return new Left();
-                }
-		else if (type.equals("sum")) {
-                    System.out.println("sum!");
-                    return new Sum();
-                }
-		else if (type.equals("less")) {
-                    System.out.println("less!");
-                    return new Less();
-                }
-		else if (type.equals("setheading")) {
-                    System.out.println("setheading!");
-                    return new SetHeading();
-                }
-		else if (type.equals("towards")) {
-                    System.out.println("Towards!");
-                    return new Towards();
-                }
-		else {
+
+		else if (type.matches(VARIABLE_REGEX)){
+			System.out.println("I WANT A VARIABLE RIGHT NOW!");
 			return null;
 		}
+		else if (type.matches(COMMAND_REGEX)) {
+			System.out.println("Ooh Commands.");
+			try {
+				Class<?> comClass = Class.forName("Instructions.TurtleCommand." + languageMap.get(type));
+				Constructor<?> comConstructor = comClass.getConstructor();
+				return (Instruction) comConstructor.newInstance();
+			}
+			catch (ClassNotFoundException |
+					NoSuchMethodException |
+					SecurityException |
+					InstantiationException |
+					IllegalAccessException |
+					IllegalArgumentException |
+					InvocationTargetException e) {
+				e.printStackTrace(); // DON'T LEAVE THIS HERE
+			}
+		}
+
+		System.out.println("Wut?");
+		return null;
 	}
+
 
 }
