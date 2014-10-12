@@ -5,13 +5,14 @@ import model.ObservableData;
 import model.Turtle;
 import Instructions.Instruction;
 
-public class PenUp implements Instruction{
+
+public class HideTurtle implements Instruction {
 
     @Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
         Feature myTurtle = data.get("turtle");
-        ((Turtle) myTurtle).getPen().setPenDown(false);
+        ((Turtle) myTurtle).setVisible(false);
         return 0;
     }
 
@@ -24,7 +25,7 @@ public class PenUp implements Instruction{
     @Override
     public void addParam (Instruction param) {
         // TODO Auto-generated method stub
-        
+
     }
 
 }

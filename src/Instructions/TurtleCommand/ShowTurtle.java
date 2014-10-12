@@ -5,14 +5,15 @@ import model.ObservableData;
 import model.Turtle;
 import Instructions.Instruction;
 
-public class PenUp implements Instruction{
+public class ShowTurtle implements Instruction{
 
     @Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
         Feature myTurtle = data.get("turtle");
-        ((Turtle) myTurtle).getPen().setPenDown(false);
-        return 0;
+        ((Turtle) myTurtle).setVisible(true);
+        ((Turtle) myTurtle).getDrawing().getChildren().add(  ((Turtle) myTurtle).getTurtleImg());
+        return 1;
     }
 
     @Override
