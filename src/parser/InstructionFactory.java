@@ -7,9 +7,14 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
 
+
 import Instructions.ConstantInstruction;
 import Instructions.Instruction;
 
+import java.util.regex.Pattern;
+import Instructions.ConstantInstruction;
+import Instructions.Instruction;
+import Instructions.TurtleCommand.*;
 /**
  * Factory design pattern for creating 
  * instances of different instructions
@@ -50,7 +55,6 @@ public class InstructionFactory {
 				map.put(s,key);
 			}
 		}
-		System.out.println(map.toString());
 		return map;
 	}
 
@@ -58,16 +62,15 @@ public class InstructionFactory {
 		type = type.toLowerCase();
 
 		if (type.matches(CONSTANT_REGEX)) {
-			System.out.println("YIPEE A CONSTANT!");
 			double value = Double.parseDouble(type);
 			return new ConstantInstruction(value);
 		}
+		
 		else if (type.matches(VARIABLE_REGEX)){
-			System.out.println("I WANT A VARIABLE RIGHT NOW!");
 			return null;
 		}
 		else if (type.matches(COMMAND_REGEX)) {
-			System.out.println("Ooh Commands.");
+			
 			try {
 				Class<?> comClass = Class.forName("Instructions.TurtleCommand." + languageMap.get(type));
 				Constructor<?> comConstructor = comClass.getConstructor();
@@ -80,11 +83,11 @@ public class InstructionFactory {
 					IllegalAccessException |
 					IllegalArgumentException |
 					InvocationTargetException e) {
-				e.printStackTrace(); // DON'T LEAVE THIS HERE
+				System.out.println("NOT A VALID COMMAND.");
+				// Need to add error checking
 			}
 		}
 
-		System.out.println("Wut?");
 		return null;
 	}
 
