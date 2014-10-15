@@ -1,14 +1,15 @@
 package view;
 
 import model.Turtle;
-import javafx.geometry.Pos;
+
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
-public class TurtleView extends StackPane {
+public class TurtleView extends Pane {
 	private static final double width = 600;
 	private static final double height = 600;
 

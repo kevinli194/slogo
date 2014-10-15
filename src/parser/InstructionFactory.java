@@ -7,9 +7,13 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
 
+
+
+
+import java.util.regex.Pattern;
 import Instructions.ConstantInstruction;
 import Instructions.Instruction;
-
+import Instructions.TurtleCommand.*;
 /**
  * Factory design pattern for creating 
  * instances of different instructions
@@ -60,10 +64,13 @@ public class InstructionFactory {
 			double value = Double.parseDouble(type);
 			return new ConstantInstruction(value);
 		}
+
+		
 		else if (type.matches(VARIABLE_REGEX)){
 			return null;
 		}
 		else if (type.matches(COMMAND_REGEX)) {
+
 			try {
 				Class<?> comClass = Class.forName("Instructions.TurtleCommand." + languageMap.get(type));
 				Constructor<?> comConstructor = comClass.getConstructor();
@@ -76,8 +83,9 @@ public class InstructionFactory {
 					IllegalAccessException |
 					IllegalArgumentException |
 					InvocationTargetException e) {
-				System.out.println("NOT A VALID COMMAND");
-				// Put better error checking here
+
+				System.out.println("NOT A VALID COMMAND.");
+				// Need to add error checking
 			}
 		}
 

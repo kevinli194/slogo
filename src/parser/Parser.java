@@ -1,5 +1,6 @@
 package parser;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -68,20 +69,29 @@ public class Parser {
 			String token = tokens.get(iter);
 			if (isRightBracket(token)) {
 				// if right bracket found, find matching left bracket in subList
-				List<String> subList = tokens.subList(iter + 1, tokens.size());
-				int bracketInd = findMatchingBracket(subList);
+			    
+				int bracketInd = findMatchingBracket(tokens, iter);
+				
 				// Parse tokens contained in brackets
-				Stack<Instruction> listStack = parseTokens(subList.subList(1, bracketInd));
+				Stack<Instruction> listStack = parseTokens(tokens.subList(iter+1, bracketInd));
+				
+				//for repeat..
+				List<Instruction> lst = new ArrayList<Instruction>();
+				
+				while (! listStack.isEmpty()) {
+			            Instruction current = listStack.pop();
+			            lst.add(current);
+			        }
+				
 				// Add listStack to new instance of a ListInstruction class
-				instr = new ListInstruction(listStack);
+				instr = new ListInstruction(lst);
+				
 				// update iterator
 				iter = iter + bracketInd;
+			
 			}
 			else {
 				instr = iFactory.makeInstruction(token);
-				if (instr == null) {
-					System.out.println("214523");
-				}
 				// add parameters
 				addParams(instr, builderStack);
 			}
@@ -101,20 +111,19 @@ public class Parser {
 		return token.equals("[");
 	}
 
-	private int findMatchingBracket (List<String> tokens) {
+	private int findMatchingBracket (List<String> tokens, int openPos) {
 		int matchCounter = 0;
-		int index = 0;
+		int closePos = openPos;
 		while (matchCounter >= 0) {
-			String token = tokens.get(index);
+			String token = tokens.get(++closePos);
 			if (isRightBracket(token)) {
 				matchCounter++;
 			}
 			else if (isLeftBracket(token)) {
 				matchCounter--;
 			}
-			index++;
 		}
-		return index;
+		return closePos;
 	}
 
 	private void addParams (Instruction instr, Stack<Instruction> iStack) {
