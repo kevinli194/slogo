@@ -17,16 +17,16 @@ import javafx.scene.text.Text;
 
 public class HistoryView extends ScrollPane {
 
-	private static final double width = 200;
-	private static final double height = 600;
+	private static final double HISTORYVIEW_WIDTH = 200;
+	private static final double HISTORYVIEW_HEIGHT = 600;
 
 	// Test by setting myText as a string
 
 	public HistoryView() {
-		setPrefWidth(width);
-		setPrefHeight(height);
-		setMaxSize(width, height);
-
+		setPrefWidth(HISTORYVIEW_WIDTH);
+		setPrefHeight(HISTORYVIEW_HEIGHT);
+		setMaxSize(HISTORYVIEW_WIDTH, HISTORYVIEW_HEIGHT);
+		
 		// setText(myText);
 
 	}
