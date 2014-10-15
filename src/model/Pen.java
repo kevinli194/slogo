@@ -26,6 +26,13 @@ public class Pen {
     public void setPenDown (boolean state) {
         isPenDown = state;
     }
+    
+    public double isPenDown () {
+        if (isPenDown){
+            return 1;
+        }
+        return 0;
+    }
 
     public Line drawLine (double[] start, double[] end) {
         if (isPenDown) { return createLine(start, end, myLineColor); }

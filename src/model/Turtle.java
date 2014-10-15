@@ -43,13 +43,21 @@ public class Turtle extends Feature {
     public double[] getCoordinates () {
         return myCoordinates;
     }
-    
+
     public void setVisible (boolean state) {
         isVisible = state;
-        if (!isVisible){
+        if (!isVisible) {
             myDrawing.getChildren().remove(myImage);
 
         }
+    }
+
+    public double isVisible () {
+
+        if (isVisible) { return 1;
+
+        }
+        return 0;
     }
 
     public void setCoordinates (double x, double y) {
@@ -93,10 +101,11 @@ public class Turtle extends Feature {
                        * Math.cos(Math.toRadians(myAngle));
         return endCoords;
     }
-    
+
     public Group getDrawing () {
         return myDrawing;
     }
+
     public ImageView getTurtleImg () {
         return myImage;
     }
