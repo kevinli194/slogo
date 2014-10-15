@@ -1,18 +1,19 @@
 package model;
 
+import instructions.Instruction;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import view.InputView;
-import Instructions.Instruction;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-
-public class InstructionList extends Feature{
+// NEEDS TO GET MOVED TO THE VIEW PACKAGE
+public class InstructionList implements Feature{
 	private Map<String, Instruction> myBasicInstructions;
 	private Map<String, Instruction> myUserDefinedFunctions;
 	
@@ -87,7 +88,6 @@ public class InstructionList extends Feature{
 		return row;
 	}
 
-	@Override
 	public Node generateNode() {
 		return generateNode(myInput);
 	}

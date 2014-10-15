@@ -1,5 +1,9 @@
 package parser;
 
+import instructions.ConstantInstruction;
+import instructions.Instruction;
+
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
@@ -10,10 +14,6 @@ import java.util.Set;
 
 
 
-import java.util.regex.Pattern;
-import Instructions.ConstantInstruction;
-import Instructions.Instruction;
-import Instructions.TurtleCommand.*;
 /**
  * Factory design pattern for creating 
  * instances of different instructions
@@ -72,7 +72,7 @@ public class InstructionFactory {
 		else if (type.matches(COMMAND_REGEX)) {
 
 			try {
-				Class<?> comClass = Class.forName("Instructions.TurtleCommand." + languageMap.get(type));
+				Class<?> comClass = Class.forName("instructions.commands." + languageMap.get(type));
 				Constructor<?> comConstructor = comClass.getConstructor();
 				return (Instruction) comConstructor.newInstance();
 			}

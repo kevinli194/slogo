@@ -1,9 +1,8 @@
-package Instructions;
+package instructions;
 
 import java.util.Map;
 import model.Feature;
 import model.ObservableData;
-
 
 /**
  * This is the class for instructions that only store a constant value. Its
@@ -11,24 +10,24 @@ import model.ObservableData;
  * 
  */
 public class ConstantInstruction implements Instruction {
-    private double myValue;
+	private double myValue;
 
-    public ConstantInstruction (double value) {
-        myValue = value;
-    }
+	public ConstantInstruction(double value) {
+		myValue = value;
+	}
 
-    @Override
-    public double execute (ObservableData data) {
-        return myValue;
-    }
+	@Override
+	public double execute(ObservableData data) {
+		return myValue;
+	}
 
-    @Override
-    public int getNumParams () {
-        return 0;
-    }
+	@Override
+	public int getNumParams() {
+		return 0;
+	}
 
-    @Override
-    public void addParam (Instruction instr) {
-    }
+	@Override
+	public void addParam(Instruction instr) {
+	}
 
 }

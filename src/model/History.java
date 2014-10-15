@@ -10,8 +10,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-
-public class History extends Feature {
+// NEEDS TO GET MOVED TO THE VIEW PACKAGE
+public class History implements Feature {
 
 	private List<String> myHistory;
 	private VBox myView;
@@ -33,8 +33,7 @@ public class History extends Feature {
 		myHistory.clear();
 		myView.getChildren().clear();
 	}
-
-	@Override
+	
 	public Node generateNode() {
 
 		return myView;

@@ -1,19 +1,29 @@
 package model;
 
-import javafx.scene.Node;
+import instructions.Instruction;
 
-public class VariablesList extends Feature {
+import java.util.HashMap;
+import java.util.Map;
 
-	@Override
-	public Node generateNode() {
-		// TODO Auto-generated method stub
-		return null;
+
+public class VariablesList implements Feature {
+	private Map<String, Instruction> myVariables;
+
+	public VariablesList() {
+		myVariables = new HashMap<String, Instruction>();
 	}
 
+	public void add(String variableName, Instruction value) {
+		myVariables.put(variableName, value);
+	}
+
+	public void remove(String variableName) {
+		myVariables.remove(variableName);
+	}
+	
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
-
+		myVariables.clear();
 	}
 
 }

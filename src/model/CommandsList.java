@@ -1,104 +1,68 @@
 package model;
 
+import instructions.Instruction;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.ResourceBundle;
+import java.util.Set;
 
-import view.InputView;
-import Instructions.Instruction;
-import javafx.event.EventHandler;
-import javafx.scene.Node;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
+public class CommandsList implements Feature {
+	public static final String DEFAULT_LANGUAGE_PACKAGE = "resources.languages/";
+	public static final String DEFAULT_LANGUAGE_BUNDLE = DEFAULT_LANGUAGE_PACKAGE + "English";
 
-public class CommandsList extends Feature {
-	private Map<String, String> myBasicInstructions;
+	private ResourceBundle languageBundle;
+	private Map<String, String> PreDefinedCommands;
+	private Map<String, Instruction> UserDefinedCommands;
 
-	private VBox myView;
-	private InputView myInput;
-
-	// When instantiating an instruction list. The basic instructions should be
-	// created. Should we use reflections for this?
 	public CommandsList() {
-//		myBasicInstructions = new HashMap<String, Instruction>();
-//		myUserDefinedFunctions = new HashMap<String, Instruction>();
-
-		myView=new VBox();
-		myBasicInstructions.put("forward", null);
-		myBasicInstructions.put("backward", null);
-
-
-		initiateInstructionTable();
-
+		languageBundle = loadResourceBundle(DEFAULT_LANGUAGE_BUNDLE);
+		PreDefinedCommands = initPreDefinedCommands(languageBundle);
+		UserDefinedCommands = new HashMap<String, Instruction>();
+	}
+	private ResourceBundle loadResourceBundle(String filepath) {
+		return ResourceBundle.getBundle(filepath);
 	}
 
-	private void initiateInstructionTable() {
-		for (String s:myBasicInstructions.keySet()){
-			HBox row=preDefinedInstructionRow(s,myInput);
-			myView.getChildren().add(row);
-		}
-	}
-
-	/**
-	 * Adds a user defined function to the map of functions.
-	 * 
-	 * @param instructionName
-	 *            function identifier
-	 * @param instruction
-	 *            user defined function to be stored
-	 */
-	public void add(String instructionName, Instruction instruction) {
-//		myUserDefinedFunctions.put(instructionName, instruction);
-	}
-
-	/**
-	 * Deletes a user defined function to the map of functions.
-	 * 
-	 * @param instructionName
-	 *            name of function to delete
-	 */
-	public void delete(String instructionName) {
-//		myUserDefinedFunctions.remove(instructionName);
-	}
-
-	/**
-	 * Clears the map of user defined functions.
-	 */
-	public void clear() {
-
-	}
-
-	public HBox preDefinedInstructionRow(String s, InputView input){
-		myInput=input;
-		HBox row=new HBox();
-		Text t=new Text();
-		t.setText(s);
-		//		t.setScaleX(2);
-		//		t.setScaleY(2);
-		t.setOnMousePressed(new EventHandler<MouseEvent>(){
-			@Override
-			public void handle(MouseEvent event) {
-				myInput.addAndShowText(s);
+	private Map<String,String> initPreDefinedCommands(ResourceBundle bundle) {
+		Map<String,String> map = new HashMap<String,String>();
+		Set<String> languageKeys = bundle.keySet();
+		for (String key : languageKeys) {
+			String value = bundle.getString(key);
+			String[] commands = value.split(",");
+			for (String s : commands) {
+				map.put(s,key);
 			}
-		});
-		row.getChildren().add(t);
-		return row;
-	}
-
-	@Override
-	public Node generateNode() {
-		return generateNode(myInput);
-	}
-
-	public Node generateNode(InputView inputView) {
-		myInput=inputView;
-		myView.getChildren().clear();
-		for (String s:myBasicInstructions.keySet()){
-			HBox row=preDefinedInstructionRow(s,inputView);
-			myView.getChildren().add(row);
 		}
-		return myView;
+		return map;
+	}
+
+	public void addCommand(String commandSyntax, Instruction instr) {
+		UserDefinedCommands.put(commandSyntax, instr);
+		
+	}
+
+	public void deleteCommand(String command) {
+		//Error Check for command
+		UserDefinedCommands.remove(command);
+	}
+
+	public void changeLanguage(String language) {
+		languageBundle = loadResourceBundle(DEFAULT_LANGUAGE_PACKAGE + language);
+		PreDefinedCommands = initPreDefinedCommands(languageBundle);
+	}
+
+	public List<String> getCommandSyntaxes() {
+		List<String> commands = new ArrayList<String>();
+		commands.addAll(PreDefinedCommands.keySet());
+		commands.addAll(UserDefinedCommands.keySet());
+		return commands;
+	}
+
+	public void clear() {
+		UserDefinedCommands.clear();
 	}
 
 
