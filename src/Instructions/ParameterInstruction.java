@@ -1,4 +1,4 @@
-package instructions;
+package Instructions;
 
 import java.util.ArrayList;
 import java.util.List;

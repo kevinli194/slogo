@@ -1,7 +1,7 @@
 //This class does not function. It is for testing the extensibility of the program.
 package model;
 
-import instructions.Instruction;
+import Instructions.Instruction;
 
 import java.util.ArrayList;
 import java.util.HashMap;

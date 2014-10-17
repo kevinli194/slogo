@@ -1,4 +1,4 @@
-package instructions;
+package Instructions;
 
 import model.ObservableData;
 
