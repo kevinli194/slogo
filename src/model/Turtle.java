@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.shape.Line;
 
 
-public class Turtle extends Feature {
+public class Turtle implements Feature {
 
     private ImageView myImage;
     private double[] myCoordinates;
@@ -110,7 +110,6 @@ public class Turtle extends Feature {
         return myImage;
     }
 
-    @Override
     public Node generateNode () {
         return myDrawing;
     }

@@ -1,4 +1,4 @@
-package Instructions;
+package instructions;
 
 import java.util.Map;
 
@@ -12,7 +12,6 @@ import model.ObservableData;
  */
 
 public interface Instruction {
-
 
 	/**
 	 * Executes the functionality of the instruction to change data in the
