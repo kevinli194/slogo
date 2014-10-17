@@ -27,9 +27,8 @@ public class InstructionList implements Feature{
 		myUserDefinedFunctions = new HashMap<String, Instruction>();
 		
 		myView=new VBox();
-		myBasicInstructions.put("forward", null);
-		myBasicInstructions.put("backward", null);
-
+//		myBasicInstructions.put("forward", null);
+//		myBasicInstructions.put("backward", null);
 
 		initiateInstructionTable();
 		

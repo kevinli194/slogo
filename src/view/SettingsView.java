@@ -13,39 +13,26 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 public class SettingsView extends Pane {
+	private static final double SETTINGSVIEW_WIDTH = 1000;
+	private static final double SETTINGSVIEW_HEIGHT = 25;
 
 	private HBox mySettings;
 
 	public SettingsView(SlogoModel model, TurtleView view) {
 
-		this.setPrefWidth(1000);
-		this.setPrefHeight(25);
+		setPrefWidth(SETTINGSVIEW_WIDTH);
+		setPrefHeight(SETTINGSVIEW_HEIGHT);
+		
 		mySettings = new HBox();
 		this.getChildren().add(mySettings);
-		mySettings.getChildren().add(
-				makeButton("Load", new EventHandler<ActionEvent>() {
-					@Override
-					public void handle(ActionEvent event) {
-						model.load();
-					}
-				}));
-		mySettings.getChildren().add(
-				makeButton("Move", new EventHandler<ActionEvent>() {
-					@Override
-					public void handle(ActionEvent event) {
-						model.testThings();
-					}
-				}));
-		mySettings.getChildren().add(
-				makeButton("Clear", new EventHandler<ActionEvent>() {
-					@Override
-					public void handle(ActionEvent event) {
-						model.clear();
-					}
-				}));
 
+		addButtons(model);
+		
+		changeBackgroundColor(view);
 
-		// Combo box that lets you change color of the background
+	}
+
+	private void changeBackgroundColor(TurtleView view) {
 		ObservableList<String> options = FXCollections.observableArrayList(
 				"Black", "Red", "Blue", "Green");
 		ComboBox<String> colorOptions = new ComboBox<String>(options);
@@ -57,7 +44,13 @@ public class SettingsView extends Pane {
 			view.changeColor(selectedColor);
 
 		});
+	}
 
+	private void addButtons(SlogoModel model) {
+		Button load=makeButton("Load", handle->model.load()); 
+		Button move=makeButton("Move",handle->model.testThings());
+		Button clear=makeButton("Clear",handle->model.clear());
+		mySettings.getChildren().addAll(load,move,clear);
 	}
 
 	private Button makeButton(String property, EventHandler<ActionEvent> handler) {

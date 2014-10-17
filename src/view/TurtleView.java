@@ -9,14 +9,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
-public class TurtleView extends Pane {
-	private static final double width = 600;
-	private static final double height = 600;
+public class TurtleView extends Pane implements View{
+	private static final double TURTLEVIEW_WIDTH = 600;
+	private static final double TURTLEVIEW_HEIGHT = 600;
 
 	public TurtleView() {
-		setPrefWidth(width);
-		setPrefHeight(height);
-		setMaxSize(width, height);
+		setView(TURTLEVIEW_WIDTH,TURTLEVIEW_HEIGHT);
 		setStyle("-fx-background-color:black;");
 
 	}
@@ -26,8 +24,13 @@ public class TurtleView extends Pane {
 	}
 
 	public void update(Node node) {
-		// / this.getChildren().clear();
 		this.getChildren().add(node);
 
+	}
+
+	public void setView(double width, double height) {
+		setPrefWidth(width);
+		setPrefHeight(height);
+		setMaxSize(width, height);
 	}
 }

@@ -15,27 +15,25 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
-public class HistoryView extends ScrollPane {
+public class HistoryView extends ScrollPane implements View{
 
 	private static final double HISTORYVIEW_WIDTH = 200;
 	private static final double HISTORYVIEW_HEIGHT = 600;
 
-	// Test by setting myText as a string
 
 	public HistoryView() {
-		setPrefWidth(HISTORYVIEW_WIDTH);
-		setPrefHeight(HISTORYVIEW_HEIGHT);
-		setMaxSize(HISTORYVIEW_WIDTH, HISTORYVIEW_HEIGHT);
-		
-		// setText(myText);
-
+		setView(HISTORYVIEW_WIDTH, HISTORYVIEW_HEIGHT);
 	}
 
+	@Override
 	public void update(Node node) {
-		// Get the display contents from a class where all the history and
-		// output value are stored.
-		// myText=display.getContents();
-
 		this.setContent(node);
+	}
+
+	@Override
+	public void setView(double width, double height) {
+		setPrefWidth(width);
+		setPrefHeight(height);
+		setMaxSize(width, height);
 	}
 }
