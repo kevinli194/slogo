@@ -1,6 +1,6 @@
 package model;
 
-import Instructions.Instruction;
+import instructions.Instruction;
 
 import java.util.Observable;
 import java.util.Random;

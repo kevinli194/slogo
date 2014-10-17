@@ -1,8 +1,8 @@
-package Instructions.commands;
+package instructions.commands;
 
-import Instructions.BinaryInstruction;
-import Instructions.Instruction;
-import Instructions.UnaryInstruction;
+import instructions.BinaryInstruction;
+import instructions.Instruction;
+import instructions.UnaryInstruction;
 import model.ObservableData;
 
 public class Minus extends UnaryInstruction {

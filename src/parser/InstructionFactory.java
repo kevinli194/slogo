@@ -1,7 +1,7 @@
 package parser;
 
-import Instructions.ConstantInstruction;
-import Instructions.Instruction;
+import instructions.ConstantInstruction;
+import instructions.Instruction;
 
 
 import java.lang.reflect.Constructor;

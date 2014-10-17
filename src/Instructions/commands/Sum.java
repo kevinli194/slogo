@@ -1,7 +1,7 @@
-package Instructions.commands;
+package instructions.commands;
 
-import Instructions.BinaryInstruction;
-import Instructions.Instruction;
+import instructions.BinaryInstruction;
+import instructions.Instruction;
 import model.ObservableData;
 
 

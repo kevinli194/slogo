@@ -1,7 +1,7 @@
 package parser;
 
-import Instructions.Instruction;
-import Instructions.ListInstruction;
+import instructions.Instruction;
+import instructions.ListInstruction;
 
 import java.util.ArrayList;
 import java.util.Collections;

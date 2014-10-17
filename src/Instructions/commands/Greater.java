@@ -1,6 +1,6 @@
-package Instructions.commands;
+package instructions.commands;
 
-import Instructions.BinaryInstruction;
+import instructions.BinaryInstruction;
 import model.ObservableData;
 
 public class Greater extends BinaryInstruction {

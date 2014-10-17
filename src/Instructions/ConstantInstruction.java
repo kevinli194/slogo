@@ -1,4 +1,4 @@
-package Instructions;
+package instructions;
 
 import java.util.Map;
 import model.Feature;

@@ -1,4 +1,4 @@
-package Instructions;
+package instructions;
 
 /**
  * This represents the super class for instructions with one parameter

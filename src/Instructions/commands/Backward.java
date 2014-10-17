@@ -1,7 +1,7 @@
-package Instructions.commands;
+package instructions.commands;
 
-import Instructions.Instruction;
-import Instructions.UnaryInstruction;
+import instructions.Instruction;
+import instructions.UnaryInstruction;
 import model.Feature;
 import model.ObservableData;
 import model.Turtle;

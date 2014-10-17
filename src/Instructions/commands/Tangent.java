@@ -1,6 +1,6 @@
-package Instructions.commands;
+package instructions.commands;
 
-import Instructions.UnaryInstruction;
+import instructions.UnaryInstruction;
 import model.ObservableData;
 
 public class Tangent extends UnaryInstruction {
