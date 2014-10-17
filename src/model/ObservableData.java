@@ -1,41 +1,43 @@
 package model;
 
-import view.InputView;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ObservableData {
-	private Turtle myTurtle;
-	private History myHistory;
-	private InstructionList myInstructions;
-	private Variables myVariables;
-
+	private Map<String,Feature> myFeatures;
 
 	public ObservableData() {
-		myTurtle = new Turtle();
-		myHistory = new History();
-		myInstructions = new InstructionList();
-		myVariables = new Variables();
+		myFeatures = new HashMap<String,Feature>();
+		
+		// Add new features to this list
+		addAllToMyFeatures(new Turtle(),
+			new History(),
+			new CommandsList(),
+			new VariablesList());
 	}
 
-
-	public Feature get(String id) {
-		switch (id) {
-		case "turtle":
-			return myTurtle;
-		case "history":
-			return myHistory;
-		case "instructions":
-			return myInstructions;
-		case "variables":
-			return myVariables;
-		default:
-			return null; // fix this later
+	private void addAllToMyFeatures(Feature... features) {
+		for (Feature f : features) {
+			String classKey = f.getClass().getSimpleName();
+			classKey = classKey.toLowerCase();
+			myFeatures.put(classKey, f);
 		}
 	}
 
+	// If feature needed, get feature by class name
+	public Feature get(String classKey) {
+		classKey = classKey.toLowerCase();
+		if (myFeatures.containsKey(classKey)) {
+			return myFeatures.get(classKey);
+		}
+		return null;
+	}
+
 	public void clear() {
-		myTurtle.clear();
-		myHistory.clear();
-		myInstructions.clear();
-		myVariables.clear();
+
+		for (String key : myFeatures.keySet()) {
+			myFeatures.get(key).clear();
+		}
+
 	}
 }

@@ -1,17 +1,7 @@
 package model;
 
-import view.InputView;
-import javafx.scene.Node;
+public interface Feature {
 
-public abstract class Feature {
-
-	Node myDisplay;
-
-	public abstract Node generateNode();
-
-	public Node generateNode(InputView myInputView) {
-		return null;
-	}
-
-	public abstract void clear();
+	public void clear();
+	
 }
