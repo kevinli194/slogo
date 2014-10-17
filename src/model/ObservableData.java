@@ -37,6 +37,5 @@ public class ObservableData {
 		myHistory.clear();
 		myInstructions.clear();
 		myVariables.clear();
-
 	}
 }

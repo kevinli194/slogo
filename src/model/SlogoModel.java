@@ -25,6 +25,7 @@ public class SlogoModel extends Observable {
 			Instruction current = commandStack.pop();
 			double returnValue = current.execute(myData);
 			System.out.println("final return:" + returnValue);
+			showOnView(returnValue);
 			setChanged();
 			notifyObservers(myData);
 		}
@@ -32,6 +33,10 @@ public class SlogoModel extends Observable {
 	}
 
 	// Test code without the parser.
+
+	private void showOnView(double returnValue) {
+		((History) myData.get("history")).add("==>"+returnValue);
+	}
 
 	public void load(){
 		setChanged();

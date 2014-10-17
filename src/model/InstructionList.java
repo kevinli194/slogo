@@ -26,6 +26,7 @@ public class InstructionList extends Feature{
 		myUserDefinedFunctions = new HashMap<String, Instruction>();
 		
 		myView=new VBox();
+		//Testing data
 //		myBasicInstructions.put("forward", null);
 //		myBasicInstructions.put("backward", null);
 
@@ -74,8 +75,7 @@ public class InstructionList extends Feature{
 		HBox row=new HBox();
 		Text t=new Text();
 		t.setText(s);
-//		t.setScaleX(2);
-//		t.setScaleY(2);
+
 		t.setOnMousePressed(new EventHandler<MouseEvent>(){
 			@Override
 			public void handle(MouseEvent event) {

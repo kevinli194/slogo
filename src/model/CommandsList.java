@@ -1,3 +1,4 @@
+//This class does not function. It is for testing the extensibility of the program.
 package model;
 
 import java.util.HashMap;

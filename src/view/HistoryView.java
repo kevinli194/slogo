@@ -20,7 +20,6 @@ public class HistoryView extends ScrollPane implements View{
 	private static final double HISTORYVIEW_WIDTH = 200;
 	private static final double HISTORYVIEW_HEIGHT = 600;
 
-
 	public HistoryView() {
 		setView(HISTORYVIEW_WIDTH, HISTORYVIEW_HEIGHT);
 	}
