@@ -1,0 +1,6269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>CodePro Code Audit for codepro.audit</title>
+
+	<meta name="GENERATOR" content="CodePro Server"/>
+
+	<style type="text/css">
+	.highSeverity { background-color: #ff9999; }
+	.mediumSeverity { }
+	.lowSeverity { }
+	</style>
+
+	<style type="text/css">
+	body {font: 70% verdana,arial,helvetica; color: #000000}
+p  {margin-top:  3px; line-height: 1.5em}
+h1 {margin-top:  0px; margin-bottom: 6px; font: bold 150% verdana,arial,helvetica}
+h2 {margin-top: 12px; margin-bottom: 6px; font: bold 125% verdana,arial,helvetica}
+h3 {margin-top: 12px; margin-bottom: 6px; font: bold 100% verdana,arial,helvetica}
+h4 {margin-top: 12px; margin-bottom: 6px; font: bold 100% verdana,arial,helvetica}
+.rounded_page{display:block}
+.rounded_page *{display:block; height:1px; overflow:hidden; font-size:.01em; background:#7799DD}
+.rounded_page1{ margin-left:3px; margin-right:3px; padding-left:1px; padding-right:1px; border-left:1px solid #c4d3ef; border-right:1px solid #c4d3ef; background:#99b2e5}
+.rounded_page2{ margin-left:1px; margin-right:1px; padding-right:1px; padding-left:1px; border-left:1px solid #f1f4fa; border-right:1px solid #f1f4fa; background:#90ace3}
+.rounded_page3{ margin-left:1px; margin-right:1px; border-left:1px solid #90ace3; border-right:1px solid #90ace3;}
+.rounded_page4{ border-left:1px solid #c4d3ef; border-right:1px solid #c4d3ef}
+.rounded_page5{ border-left:1px solid #99b2e5; border-right:1px solid #99b2e5}
+.rounded_pagefg{ background:#7799DD}
+.rounded_section{display:block}
+.rounded_section *{display:block; height:1px; overflow:hidden; font-size:.01em; background:#C3D9FF}
+.rounded_section1{ margin-left:3px; margin-right:3px; padding-left:1px; padding-right:1px; border-left:1px solid #e5eefe; border-right:1px solid #e5eefe; background:#d2e2fe}
+.rounded_section2{ margin-left:1px; margin-right:1px; padding-right:1px; padding-left:1px; border-left:1px solid #f9fbfe; border-right:1px solid #f9fbfe; background:#cee0fe}
+.rounded_section3{ margin-left:1px; margin-right:1px; border-left:1px solid #cee0fe; border-right:1px solid #cee0fe;}
+.rounded_section4{ border-left:1px solid #e5eefe; border-right:1px solid #e5eefe}
+.rounded_section5{ border-left:1px solid #d2e2fe; border-right:1px solid #d2e2fe}
+.rounded_sectionfg{ background:#C3D9FF}
+.page-title { color: #FFFFFE; font-weight: bold; font-size: large; margin: 0px 0px 0px 8px; }
+.page-title-details { color: #FFFFFE; font-weight: bold; margin-right: 8px; margin-left: 8px; }
+.page-footer { color: #FFFFFE; font-weight: bold; margin-left: 8px}
+.page-footer-details { color: #FFFFFE; font-weight: bold; margin-right: 8px; margin-left: 8px; }
+.majorsection-title { color: #FFFFFE; font-weight: bold; margin: 0px 0px 0px 8px; }
+.majorsection-title-details { color: #FFFFFE; font-weight: bold; margin-right: 8px; margin-left: 8px; }
+.majorsection-contents { margin: 0px 0px 15px 16px; }
+.section-title { color: #1F4F8F; font-weight: bold; margin: 0px 0px 0px 6px; }
+.section-title-details { font-weight: bold; margin-left: 6px; margin-right: 6px; }
+.section-contents { margin: 6px 0px 15px 14px; }
+.bodyTable { border: 0px solid #777777; width:100%; border-collapse: collapse; }
+.bodyTable th { border: 1px solid #777777; white-space:nowrap; background-color: #EEEEEE; padding-left: 3px; padding-right: 3px; }
+.bodyTable td { border: 1px solid #777777; vertical-align: top; padding-left: 3px; padding-right: 3px; }
+td[class=emptyborder] { border: 0px solid #777777; padding: 3px 0px 3px 0px; }
+
+	</style>
+
+</head>
+
+<body>
+
+<div>
+		<b class="rounded_page"><b class="rounded_page1"><b></b></b><b class="rounded_page2"><b></b></b><b class="rounded_page3"></b><b class="rounded_page4"></b><b class="rounded_page5"></b></b>
+		<div class="rounded_pagefg">
+			<h2 class="page-title"><a name="top">CodePro Code Audit for codepro.audit</a></h2>
+		</div>
+		<b class="rounded_page"><b class="rounded_page5"></b><b class="rounded_page4"></b><b class="rounded_page3"></b><b class="rounded_page2"><b></b></b><b class="rounded_page1"><b></b></b></b>
+	</div>
+	<div class="majorsection-contents">
+		<p>This document contains the results of auditing codepro.audit at 10/18/14 3:54 PM, using the audit rule set CS308Rules.</p>
+	</div>
+	<table width="100%" border="0">
+		<tr>
+			<td valign="top" width="68%">
+				<div>
+					<b class="rounded_page"><b class="rounded_page1"><b></b></b><b class="rounded_page2"><b></b></b><b class="rounded_page3"></b><b class="rounded_page4"></b><b class="rounded_page5"></b></b>
+					<div class="rounded_pagefg">
+						<h3 class="majorsection-title">Violations by Audit Rule</h3>
+					</div>
+					<b class="rounded_page"><b class="rounded_page5"></b><b class="rounded_page4"></b><b class="rounded_page3"></b><b class="rounded_page2"><b></b></b><b class="rounded_page1"><b></b></b></b>
+				</div>
+				<div class="section-contents">
+					<table>
+					<tr>
+					<td valign="top"><a href="#Brace_Position">Brace Position</a>
+					</td>	<td width="10"/>
+					<td valign="top"><a href="#Missing_Block">Missing Block</a>
+					</td>	<td width="10"/>
+					<td valign="top"><a href="#Too_Many_Violations">Too Many Violations</a>
+					</td></tr>
+					<tr>
+					<td valign="top"><a href="#Constructors_Only_Invoke_Final_Methods">Constructors Only Invoke Final Methods</a>
+					</td>	<td width="10"/>
+					<td valign="top"><a href="#Numeric_Literals">Numeric Literals</a>
+					</td>	<td width="10"/>
+					<td valign="top"><a href="#Type_Javadoc_Conventions">Type Javadoc Conventions</a>
+					</td></tr>
+					<tr>
+					<td valign="top"><a href="#Indent_Code_Within_Blocks">Indent Code Within Blocks</a>
+					</td>	<td width="10"/>
+					<td valign="top"><a href="#Package_Prefix_Naming_Convention">Package Prefix Naming Convention</a>
+					</td>	<td width="10"/>
+					<td valign="top"><a href="#Unused_Field">Unused Field</a>
+					</td></tr>
+					<tr>
+					<td valign="top"><a href="#Instance_Field_Naming_Convention">Instance Field Naming Convention</a>
+					</td>	<td width="10"/>
+					<td valign="top"><a href="#Questionable_Name">Questionable Name</a>
+					</td>	<td width="10"/>
+					<td valign="top"><a href="#Unused_Method">Unused Method</a>
+					</td></tr>
+					<tr>
+					<td valign="top"><a href="#Instance_Field_Visibility">Instance Field Visibility</a>
+					</td>	<td width="10"/>
+					<td valign="top"><a href="#Space_Around_Operators">Space Around Operators</a>
+					</td>	<td width="10"/>
+					<td valign="top"><a href="#White_Space_Usage">White Space Usage</a>
+					</td></tr>
+					<tr>
+					<td valign="top"><a href="#Line_Length">Line Length</a>
+					</td>	<td width="10"/>
+					<td valign="top"><a href="#String_Literals">String Literals</a>
+					</td>	<td width="10"/>
+					<td valign="top">&nbsp;</td>
+					</tr>
+					</table>
+				</div>
+			</td>
+			<td width="2%">
+				 </td>
+			<td valign="top" width="30%">
+				<div>
+					<b class="rounded_page"><b class="rounded_page1"><b></b></b><b class="rounded_page2"><b></b></b><b class="rounded_page3"></b><b class="rounded_page4"></b><b class="rounded_page5"></b></b>
+					<div class="rounded_pagefg">
+						<h3 class="majorsection-title">Violation Counts by Severity</h3>
+					</div>
+					<b class="rounded_page"><b class="rounded_page5"></b><b class="rounded_page4"></b><b class="rounded_page3"></b><b class="rounded_page2"><b></b></b><b class="rounded_page1"><b></b></b></b>
+				</div>
+				<div class="section-contents">
+					<table class="bodyTable">
+						<tr><th>Violation Severity</th><th>Violation Count</th></tr>
+						<tr class="a"><td>High</td><td align="right">73</td></tr>
+						<tr class="b"><td>Medium</td><td align="right">118</td></tr>
+						<tr class="a"><td>Low</td><td align="right">452</td></tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div class="section-contents">
+		<table class="bodyTable">
+			<tr><td class="emptyborder" colspan="5">&nbsp;
+			<div>
+				<b class="rounded_section"><b class="rounded_section1"><b></b></b><b class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b class="rounded_section4"></b><b class="rounded_section5"></b></b>
+				<div class="rounded_sectionfg">
+					<h4 class="section-title"><a name="Brace_Position">Brace Position (1)</a></h4>
+				</div>
+				<b class="rounded_section"><b class="rounded_section5"></b><b class="rounded_section4"></b><b class="rounded_section3"></b><b class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+			</div>
+			</td></tr>
+			<tr><td class="emptyborder" colspan="5"></td></tr>
+	<tr class="a">
+			<th>Violation</th>
+<th>Recommendation</th>
+<th>Severity</th>
+<th>Resource</th>
+<th>Line</th>
+	</tr>
+	<tr class="lowSeverity a"><td>Closing braces should appear on a new line</td>
+<td>
+Move the closing brace to the next line.		</td>
+<td>Low</td>
+<td>
+Pen.java</td>
+<td>
+38</td>
+</tr>
+			<tr><td class="emptyborder" colspan="5"> </td></tr>
+			<tr><td class="emptyborder" colspan="5">&nbsp;
+			<div>
+				<b class="rounded_section"><b class="rounded_section1"><b></b></b><b class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b class="rounded_section4"></b><b class="rounded_section5"></b></b>
+				<div class="rounded_sectionfg">
+					<h4 class="section-title"><a name="Constructors_Only_Invoke_Final_Methods">Constructors Only Invoke Final Methods (4)</a></h4>
+				</div>
+				<b class="rounded_section"><b class="rounded_section5"></b><b class="rounded_section4"></b><b class="rounded_section3"></b><b class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+			</div>
+			</td></tr>
+			<tr><td class="emptyborder" colspan="5"></td></tr>
+	<tr class="a">
+			<th>Violation</th>
+<th>Recommendation</th>
+<th>Severity</th>
+<th>Resource</th>
+<th>Line</th>
+	</tr>
+	<tr class="mediumSeverity a"><td>The constructor invokes a non-final method</td>
+<td>
+Rewrite the constructor so it does not invoke any non-final methods on the object being constructed.		</td>
+<td>Medium</td>
+<td>
+HistoryView.java</td>
+<td>
+23</td>
+</tr>
+	<tr class="mediumSeverity b"><td>The constructor invokes a non-final method</td>
+<td>
+Rewrite the constructor so it does not invoke any non-final methods on the object being constructed.		</td>
+<td>Medium</td>
+<td>
+InputView.java</td>
+<td>
+28</td>
+</tr>
+	<tr class="mediumSeverity a"><td>The constructor invokes a non-final method</td>
+<td>
+Rewrite the constructor so it does not invoke any non-final methods on the object being constructed.		</td>
+<td>Medium</td>
+<td>
+InstructionView.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="mediumSeverity b"><td>The constructor invokes a non-final method</td>
+<td>
+Rewrite the constructor so it does not invoke any non-final methods on the object being constructed.		</td>
+<td>Medium</td>
+<td>
+TurtleView.java</td>
+<td>
+16</td>
+</tr>
+			<tr><td class="emptyborder" colspan="5"> </td></tr>
+			<tr><td class="emptyborder" colspan="5">&nbsp;
+			<div>
+				<b class="rounded_section"><b class="rounded_section1"><b></b></b><b class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b class="rounded_section4"></b><b class="rounded_section5"></b></b>
+				<div class="rounded_sectionfg">
+					<h4 class="section-title"><a name="Indent_Code_Within_Blocks">Indent Code Within Blocks (41)</a></h4>
+				</div>
+				<b class="rounded_section"><b class="rounded_section5"></b><b class="rounded_section4"></b><b class="rounded_section3"></b><b class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+			</div>
+			</td></tr>
+			<tr><td class="emptyborder" colspan="5"></td></tr>
+	<tr class="a">
+			<th>Violation</th>
+<th>Recommendation</th>
+<th>Severity</th>
+<th>Resource</th>
+<th>Line</th>
+	</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+And.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+Equal.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+Greater.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+Less.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+Not.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+NotEqual.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+Or.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+SetPosition.java</td>
+<td>
+31</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+SetTowards.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+Towards.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+31</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+32</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+101</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+14</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+Turtle.java</td>
+<td>
+19</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+Turtle.java</td>
+<td>
+99</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+Turtle.java</td>
+<td>
+101</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+80</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+81</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+82</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+83</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+84</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+85</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+83</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+84</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+85</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+37</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+42</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+43</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+44</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+18</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+19</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+28</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+34</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+36</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+50</td>
+</tr>
+	<tr class="lowSeverity b"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+51</td>
+</tr>
+	<tr class="lowSeverity a"><td>Code within a block is not indented</td>
+<td>
+Reformat the code so that the code within the block is properly indented one level more than the code containing the block.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+52</td>
+</tr>
+			<tr><td class="emptyborder" colspan="5"> </td></tr>
+			<tr><td class="emptyborder" colspan="5">&nbsp;
+			<div>
+				<b class="rounded_section"><b class="rounded_section1"><b></b></b><b class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b class="rounded_section4"></b><b class="rounded_section5"></b></b>
+				<div class="rounded_sectionfg">
+					<h4 class="section-title"><a name="Instance_Field_Naming_Convention">Instance Field Naming Convention (2)</a></h4>
+				</div>
+				<b class="rounded_section"><b class="rounded_section5"></b><b class="rounded_section4"></b><b class="rounded_section3"></b><b class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+			</div>
+			</td></tr>
+			<tr><td class="emptyborder" colspan="5"></td></tr>
+	<tr class="a">
+			<th>Violation</th>
+<th>Recommendation</th>
+<th>Severity</th>
+<th>Resource</th>
+<th>Line</th>
+	</tr>
+	<tr class="mediumSeverity a"><td>Invalid field name: &quot;PreDefinedCommands&quot; starts with uppercase letters</td>
+<td>
+Rename the field from &quot;PreDefinedCommands&quot; to &quot;preDefinedCommands&quot;.		</td>
+<td>Medium</td>
+<td>
+CommandsList.java</td>
+<td>
+18</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Invalid field name: &quot;UserDefinedCommands&quot; starts with uppercase letters</td>
+<td>
+Rename the field from &quot;UserDefinedCommands&quot; to &quot;userDefinedCommands&quot;.		</td>
+<td>Medium</td>
+<td>
+CommandsList.java</td>
+<td>
+19</td>
+</tr>
+			<tr><td class="emptyborder" colspan="5"> </td></tr>
+			<tr><td class="emptyborder" colspan="5">&nbsp;
+			<div>
+				<b class="rounded_section"><b class="rounded_section1"><b></b></b><b class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b class="rounded_section4"></b><b class="rounded_section5"></b></b>
+				<div class="rounded_sectionfg">
+					<h4 class="section-title"><a name="Instance_Field_Visibility">Instance Field Visibility (13)</a></h4>
+				</div>
+				<b class="rounded_section"><b class="rounded_section5"></b><b class="rounded_section4"></b><b class="rounded_section3"></b><b class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+			</div>
+			</td></tr>
+			<tr><td class="emptyborder" colspan="5"></td></tr>
+	<tr class="a">
+			<th>Violation</th>
+<th>Recommendation</th>
+<th>Severity</th>
+<th>Resource</th>
+<th>Line</th>
+	</tr>
+	<tr class="mediumSeverity a"><td>Invalid visibility for field: package</td>
+<td>
+Correct the visibility of the field.		</td>
+<td>Medium</td>
+<td>
+SlogoController.java</td>
+<td>
+7</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Invalid visibility for field: package</td>
+<td>
+Correct the visibility of the field.		</td>
+<td>Medium</td>
+<td>
+SlogoController.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Invalid visibility for field: protected</td>
+<td>
+Correct the visibility of the field.		</td>
+<td>Medium</td>
+<td>
+ParameterInstruction.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Invalid visibility for field: protected</td>
+<td>
+Correct the visibility of the field.		</td>
+<td>Medium</td>
+<td>
+ParameterInstruction.java</td>
+<td>
+14</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Invalid visibility for field: package</td>
+<td>
+Correct the visibility of the field.		</td>
+<td>Medium</td>
+<td>
+VariableInstruction.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Invalid visibility for field: package</td>
+<td>
+Correct the visibility of the field.		</td>
+<td>Medium</td>
+<td>
+Main.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Invalid visibility for field: package</td>
+<td>
+Correct the visibility of the field.		</td>
+<td>Medium</td>
+<td>
+Main.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Invalid visibility for field: package</td>
+<td>
+Correct the visibility of the field.		</td>
+<td>Medium</td>
+<td>
+SlogoModel.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Invalid visibility for field: package</td>
+<td>
+Correct the visibility of the field.		</td>
+<td>Medium</td>
+<td>
+SlogoView.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Invalid visibility for field: package</td>
+<td>
+Correct the visibility of the field.		</td>
+<td>Medium</td>
+<td>
+SlogoView.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Invalid visibility for field: package</td>
+<td>
+Correct the visibility of the field.		</td>
+<td>Medium</td>
+<td>
+SlogoView.java</td>
+<td>
+20</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Invalid visibility for field: package</td>
+<td>
+Correct the visibility of the field.		</td>
+<td>Medium</td>
+<td>
+SlogoView.java</td>
+<td>
+21</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Invalid visibility for field: package</td>
+<td>
+Correct the visibility of the field.		</td>
+<td>Medium</td>
+<td>
+SlogoView.java</td>
+<td>
+22</td>
+</tr>
+			<tr><td class="emptyborder" colspan="5"> </td></tr>
+			<tr><td class="emptyborder" colspan="5">&nbsp;
+			<div>
+				<b class="rounded_section"><b class="rounded_section1"><b></b></b><b class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b class="rounded_section4"></b><b class="rounded_section5"></b></b>
+				<div class="rounded_sectionfg">
+					<h4 class="section-title"><a name="Line_Length">Line Length (15)</a></h4>
+				</div>
+				<b class="rounded_section"><b class="rounded_section5"></b><b class="rounded_section4"></b><b class="rounded_section3"></b><b class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+			</div>
+			</td></tr>
+			<tr><td class="emptyborder" colspan="5"></td></tr>
+	<tr class="a">
+			<th>Violation</th>
+<th>Recommendation</th>
+<th>Severity</th>
+<th>Resource</th>
+<th>Line</th>
+	</tr>
+	<tr class="lowSeverity a"><td>Line 11 is longer than 80 characters</td>
+<td>
+Break the line into multiple shorter lines.		</td>
+<td>Low</td>
+<td>
+And.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity b"><td>Line 22 is longer than 80 characters</td>
+<td>
+Break the line into multiple shorter lines.		</td>
+<td>Low</td>
+<td>
+ClearScreen.java</td>
+<td>
+22</td>
+</tr>
+	<tr class="lowSeverity a"><td>Line 24 is longer than 80 characters</td>
+<td>
+Break the line into multiple shorter lines.		</td>
+<td>Low</td>
+<td>
+Home.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="lowSeverity b"><td>Line 11 is longer than 80 characters</td>
+<td>
+Break the line into multiple shorter lines.		</td>
+<td>Low</td>
+<td>
+Or.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity a"><td>Line 11 is longer than 80 characters</td>
+<td>
+Break the line into multiple shorter lines.		</td>
+<td>Low</td>
+<td>
+Power.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity b"><td>Line 26 is longer than 80 characters</td>
+<td>
+Break the line into multiple shorter lines.		</td>
+<td>Low</td>
+<td>
+SetPosition.java</td>
+<td>
+26</td>
+</tr>
+	<tr class="lowSeverity a"><td>Line 15 is longer than 80 characters</td>
+<td>
+Break the line into multiple shorter lines.		</td>
+<td>Low</td>
+<td>
+ShowTurtle.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="lowSeverity b"><td>Line 14 is longer than 80 characters</td>
+<td>
+Break the line into multiple shorter lines.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+14</td>
+</tr>
+	<tr class="lowSeverity a"><td>Line 15 is longer than 80 characters</td>
+<td>
+Break the line into multiple shorter lines.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="lowSeverity b"><td>Line 54 is longer than 80 characters</td>
+<td>
+Break the line into multiple shorter lines.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+54</td>
+</tr>
+	<tr class="lowSeverity a"><td>Line 19 is longer than 80 characters</td>
+<td>
+Break the line into multiple shorter lines.		</td>
+<td>Low</td>
+<td>
+Turtle.java</td>
+<td>
+19</td>
+</tr>
+	<tr class="lowSeverity b"><td>Line 93 is longer than 80 characters</td>
+<td>
+Break the line into multiple shorter lines.		</td>
+<td>Low</td>
+<td>
+Turtle.java</td>
+<td>
+93</td>
+</tr>
+	<tr class="lowSeverity a"><td>Line 75 is longer than 80 characters</td>
+<td>
+Break the line into multiple shorter lines.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+75</td>
+</tr>
+	<tr class="lowSeverity b"><td>Line 77 is longer than 80 characters</td>
+<td>
+Break the line into multiple shorter lines.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+77</td>
+</tr>
+	<tr class="lowSeverity a"><td>Line 56 is longer than 80 characters</td>
+<td>
+Break the line into multiple shorter lines.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+56</td>
+</tr>
+			<tr><td class="emptyborder" colspan="5"> </td></tr>
+			<tr><td class="emptyborder" colspan="5">&nbsp;
+			<div>
+				<b class="rounded_section"><b class="rounded_section1"><b></b></b><b class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b class="rounded_section4"></b><b class="rounded_section5"></b></b>
+				<div class="rounded_sectionfg">
+					<h4 class="section-title"><a name="Missing_Block">Missing Block (7)</a></h4>
+				</div>
+				<b class="rounded_section"><b class="rounded_section5"></b><b class="rounded_section4"></b><b class="rounded_section3"></b><b class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+			</div>
+			</td></tr>
+			<tr><td class="emptyborder" colspan="5"></td></tr>
+	<tr class="a">
+			<th>Violation</th>
+<th>Recommendation</th>
+<th>Severity</th>
+<th>Resource</th>
+<th>Line</th>
+	</tr>
+	<tr class="mediumSeverity a"><td>Missing block in if clause: return 1;</td>
+<td>
+Add a block around the body of the if clause.		</td>
+<td>Medium</td>
+<td>
+And.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing block in if clause: return 1;</td>
+<td>
+Add a block around the body of the if clause.		</td>
+<td>Medium</td>
+<td>
+Equal.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing block in if clause: return 1;</td>
+<td>
+Add a block around the body of the if clause.		</td>
+<td>Medium</td>
+<td>
+Greater.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing block in if clause: return 1;</td>
+<td>
+Add a block around the body of the if clause.		</td>
+<td>Medium</td>
+<td>
+Less.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing block in if clause: return 1;</td>
+<td>
+Add a block around the body of the if clause.		</td>
+<td>Medium</td>
+<td>
+Not.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing block in if clause: return 1;</td>
+<td>
+Add a block around the body of the if clause.		</td>
+<td>Medium</td>
+<td>
+NotEqual.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing block in if clause: return 1;</td>
+<td>
+Add a block around the body of the if clause.		</td>
+<td>Medium</td>
+<td>
+Or.java</td>
+<td>
+12</td>
+</tr>
+			<tr><td class="emptyborder" colspan="5"> </td></tr>
+			<tr><td class="emptyborder" colspan="5">&nbsp;
+			<div>
+				<b class="rounded_section"><b class="rounded_section1"><b></b></b><b class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b class="rounded_section4"></b><b class="rounded_section5"></b></b>
+				<div class="rounded_sectionfg">
+					<h4 class="section-title"><a name="Numeric_Literals">Numeric Literals (14)</a></h4>
+				</div>
+				<b class="rounded_section"><b class="rounded_section5"></b><b class="rounded_section4"></b><b class="rounded_section3"></b><b class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+			</div>
+			</td></tr>
+			<tr><td class="emptyborder" colspan="5"></td></tr>
+	<tr class="a">
+			<th>Violation</th>
+<th>Recommendation</th>
+<th>Severity</th>
+<th>Resource</th>
+<th>Line</th>
+	</tr>
+	<tr class="highSeverity a"><td>Invalid numeric literal: 360</td>
+<td>
+Consider defining a constant name to represent the value.		</td>
+<td>High</td>
+<td>
+Left.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid numeric literal: 3</td>
+<td>
+Consider defining a constant name to represent the value.		</td>
+<td>High</td>
+<td>
+Pen.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid numeric literal: 50</td>
+<td>
+Consider defining a constant name to represent the value.		</td>
+<td>High</td>
+<td>
+SlogoModel.java</td>
+<td>
+48</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid numeric literal: 10</td>
+<td>
+Consider defining a constant name to represent the value.		</td>
+<td>High</td>
+<td>
+SlogoModel.java</td>
+<td>
+50</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid numeric literal: 30</td>
+<td>
+Consider defining a constant name to represent the value.		</td>
+<td>High</td>
+<td>
+Turtle.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid numeric literal: 30</td>
+<td>
+Consider defining a constant name to represent the value.		</td>
+<td>High</td>
+<td>
+Turtle.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid numeric literal: 2</td>
+<td>
+Consider defining a constant name to represent the value.		</td>
+<td>High</td>
+<td>
+Turtle.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid numeric literal: 300</td>
+<td>
+Consider defining a constant name to represent the value.		</td>
+<td>High</td>
+<td>
+Turtle.java</td>
+<td>
+28</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid numeric literal: 300</td>
+<td>
+Consider defining a constant name to represent the value.		</td>
+<td>High</td>
+<td>
+Turtle.java</td>
+<td>
+29</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid numeric literal: 360</td>
+<td>
+Consider defining a constant name to represent the value.		</td>
+<td>High</td>
+<td>
+Turtle.java</td>
+<td>
+73</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid numeric literal: 360</td>
+<td>
+Consider defining a constant name to represent the value.		</td>
+<td>High</td>
+<td>
+Turtle.java</td>
+<td>
+78</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid numeric literal: 2</td>
+<td>
+Consider defining a constant name to represent the value.		</td>
+<td>High</td>
+<td>
+Turtle.java</td>
+<td>
+97</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid numeric literal: 300</td>
+<td>
+Consider defining a constant name to represent the value.		</td>
+<td>High</td>
+<td>
+Turtle.java</td>
+<td>
+120</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid numeric literal: 300</td>
+<td>
+Consider defining a constant name to represent the value.		</td>
+<td>High</td>
+<td>
+Turtle.java</td>
+<td>
+120</td>
+</tr>
+			<tr><td class="emptyborder" colspan="5"> </td></tr>
+			<tr><td class="emptyborder" colspan="5">&nbsp;
+			<div>
+				<b class="rounded_section"><b class="rounded_section1"><b></b></b><b class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b class="rounded_section4"></b><b class="rounded_section5"></b></b>
+				<div class="rounded_sectionfg">
+					<h4 class="section-title"><a name="Package_Prefix_Naming_Convention">Package Prefix Naming Convention (7)</a></h4>
+				</div>
+				<b class="rounded_section"><b class="rounded_section5"></b><b class="rounded_section4"></b><b class="rounded_section3"></b><b class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+			</div>
+			</td></tr>
+			<tr><td class="emptyborder" colspan="5"></td></tr>
+	<tr class="a">
+			<th>Violation</th>
+<th>Recommendation</th>
+<th>Severity</th>
+<th>Resource</th>
+<th>Line</th>
+	</tr>
+	<tr class="mediumSeverity a"><td>Invalid package prefix: &quot;controller&quot;</td>
+<td>
+Rename the package.		</td>
+<td>Medium</td>
+<td>
+SlogoController.java</td>
+<td>
+1</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Invalid package prefix: &quot;instructions&quot;</td>
+<td>
+Rename the package.		</td>
+<td>Medium</td>
+<td>
+BinaryInstruction.java</td>
+<td>
+1</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Invalid package prefix: &quot;instructions&quot;</td>
+<td>
+Rename the package.		</td>
+<td>Medium</td>
+<td>
+And.java</td>
+<td>
+1</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Invalid package prefix: &quot;main&quot;</td>
+<td>
+Rename the package.		</td>
+<td>Medium</td>
+<td>
+Main.java</td>
+<td>
+1</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Invalid package prefix: &quot;model&quot;</td>
+<td>
+Rename the package.		</td>
+<td>Medium</td>
+<td>
+CommandsList.java</td>
+<td>
+2</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Invalid package prefix: &quot;parser&quot;</td>
+<td>
+Rename the package.		</td>
+<td>Medium</td>
+<td>
+InstructionFactory.java</td>
+<td>
+1</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Invalid package prefix: &quot;view&quot;</td>
+<td>
+Rename the package.		</td>
+<td>Medium</td>
+<td>
+HistoryView.java</td>
+<td>
+1</td>
+</tr>
+			<tr><td class="emptyborder" colspan="5"> </td></tr>
+			<tr><td class="emptyborder" colspan="5">&nbsp;
+			<div>
+				<b class="rounded_section"><b class="rounded_section1"><b></b></b><b class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b class="rounded_section4"></b><b class="rounded_section5"></b></b>
+				<div class="rounded_sectionfg">
+					<h4 class="section-title"><a name="Questionable_Name">Questionable Name (1)</a></h4>
+				</div>
+				<b class="rounded_section"><b class="rounded_section5"></b><b class="rounded_section4"></b><b class="rounded_section3"></b><b class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+			</div>
+			</td></tr>
+			<tr><td class="emptyborder" colspan="5"></td></tr>
+	<tr class="a">
+			<th>Violation</th>
+<th>Recommendation</th>
+<th>Severity</th>
+<th>Resource</th>
+<th>Line</th>
+	</tr>
+	<tr class="highSeverity a"><td>Short name found: t</td>
+<td>
+Rename.		</td>
+<td>High</td>
+<td>
+InstructionList.java</td>
+<td>
+77</td>
+</tr>
+			<tr><td class="emptyborder" colspan="5"> </td></tr>
+			<tr><td class="emptyborder" colspan="5">&nbsp;
+			<div>
+				<b class="rounded_section"><b class="rounded_section1"><b></b></b><b class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b class="rounded_section4"></b><b class="rounded_section5"></b></b>
+				<div class="rounded_sectionfg">
+					<h4 class="section-title"><a name="Space_Around_Operators">Space Around Operators (20)</a></h4>
+				</div>
+				<b class="rounded_section"><b class="rounded_section5"></b><b class="rounded_section4"></b><b class="rounded_section3"></b><b class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+			</div>
+			</td></tr>
+			<tr><td class="emptyborder" colspan="5"></td></tr>
+	<tr class="a">
+			<th>Violation</th>
+<th>Recommendation</th>
+<th>Severity</th>
+<th>Resource</th>
+<th>Line</th>
+	</tr>
+	<tr class="lowSeverity a"><td>Missing space before operator &quot;!=&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+And.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity b"><td>Missing space after operator &quot;!=&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+And.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity a"><td>Missing space before operator &quot;!=&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+And.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity b"><td>Missing space after operator &quot;!=&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+And.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity a"><td>Missing space before operator &quot;-&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+Left.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity b"><td>Missing space after operator &quot;-&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+Left.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity a"><td>Missing space before operator &quot;==&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+Not.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity b"><td>Missing space after operator &quot;==&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+Not.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity a"><td>Missing space before operator &quot;!=&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+Or.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity b"><td>Missing space after operator &quot;!=&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+Or.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity a"><td>Missing space before operator &quot;!=&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+Or.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity b"><td>Missing space after operator &quot;!=&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+Or.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity a"><td>Missing space before operator &quot;+&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+39</td>
+</tr>
+	<tr class="lowSeverity b"><td>Missing space after operator &quot;+&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+39</td>
+</tr>
+	<tr class="lowSeverity a"><td>Missing space before operator &quot;+&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+61</td>
+</tr>
+	<tr class="lowSeverity b"><td>Missing space after operator &quot;+&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+61</td>
+</tr>
+	<tr class="lowSeverity a"><td>Missing space before operator &quot;+&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+77</td>
+</tr>
+	<tr class="lowSeverity b"><td>Missing space after operator &quot;+&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+77</td>
+</tr>
+	<tr class="lowSeverity a"><td>Missing space before operator &quot;+&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+70</td>
+</tr>
+	<tr class="lowSeverity b"><td>Missing space after operator &quot;+&quot;</td>
+<td>
+Insert the missing space.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+70</td>
+</tr>
+			<tr><td class="emptyborder" colspan="5"> </td></tr>
+			<tr><td class="emptyborder" colspan="5">&nbsp;
+			<div>
+				<b class="rounded_section"><b class="rounded_section1"><b></b></b><b class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b class="rounded_section4"></b><b class="rounded_section5"></b></b>
+				<div class="rounded_sectionfg">
+					<h4 class="section-title"><a name="String_Literals">String Literals (47)</a></h4>
+				</div>
+				<b class="rounded_section"><b class="rounded_section5"></b><b class="rounded_section4"></b><b class="rounded_section3"></b><b class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+			</div>
+			</td></tr>
+			<tr><td class="emptyborder" colspan="5"></td></tr>
+	<tr class="a">
+			<th>Violation</th>
+<th>Recommendation</th>
+<th>Severity</th>
+<th>Resource</th>
+<th>Line</th>
+	</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+Backward.java</td>
+<td>
+19</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+ClearScreen.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+Forward.java</td>
+<td>
+23</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+Heading.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+HideTurtle.java</td>
+<td>
+14</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+Home.java</td>
+<td>
+14</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+IsPenDown.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+IsShowing.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+Left.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+PenDown.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+PenUp.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+Right.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SetHeading.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SetPosition.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+ShowTurtle.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+XCoordinate.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+YCoordinate.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;English&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+Main.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;resources.languages/&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+CommandsList.java</td>
+<td>
+14</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;English&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+CommandsList.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;final return:&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SlogoModel.java</td>
+<td>
+28</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;history&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SlogoModel.java</td>
+<td>
+39</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;==&gt;&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SlogoModel.java</td>
+<td>
+39</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SlogoModel.java</td>
+<td>
+49</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SlogoModel.java</td>
+<td>
+50</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;history&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SlogoModel.java</td>
+<td>
+51</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;Turtle Rotated By: &quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SlogoModel.java</td>
+<td>
+51</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;history&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SlogoModel.java</td>
+<td>
+61</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;default_turtle.gif&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+Turtle.java</td>
+<td>
+19</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;-?[0-9]+\\.?[0-9]*&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+InstructionFactory.java</td>
+<td>
+23</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;:[a-zA-z]+&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+InstructionFactory.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;[a-zA-z_]+(\\?)?&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+InstructionFactory.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;resources.languages/English&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+InstructionFactory.java</td>
+<td>
+38</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;instructions.commands.&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+InstructionFactory.java</td>
+<td>
+75</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;NOT A VALID COMMAND.&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+InstructionFactory.java</td>
+<td>
+87</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;\\s+&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+Tokenizer.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;Submit&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+InputView.java</td>
+<td>
+44</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;Black&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SettingsView.java</td>
+<td>
+37</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;Red&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SettingsView.java</td>
+<td>
+37</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;Blue&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SettingsView.java</td>
+<td>
+37</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;Green&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SettingsView.java</td>
+<td>
+37</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;Load&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SettingsView.java</td>
+<td>
+50</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;Move&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SettingsView.java</td>
+<td>
+51</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;Clear&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SettingsView.java</td>
+<td>
+52</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;turtle&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+SlogoView.java</td>
+<td>
+47</td>
+</tr>
+	<tr class="highSeverity b"><td>Invalid string literal: &quot;-fx-background-color:black;&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+TurtleView.java</td>
+<td>
+18</td>
+</tr>
+	<tr class="highSeverity a"><td>Invalid string literal: &quot;-fx-background-color:&quot;</td>
+<td>
+Consider defining a constant to represent the string or move it to a resource bundle.		</td>
+<td>High</td>
+<td>
+TurtleView.java</td>
+<td>
+23</td>
+</tr>
+			<tr><td class="emptyborder" colspan="5"> </td></tr>
+			<tr><td class="emptyborder" colspan="5">&nbsp;
+			<div>
+				<b class="rounded_section"><b class="rounded_section1"><b></b></b><b class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b class="rounded_section4"></b><b class="rounded_section5"></b></b>
+				<div class="rounded_sectionfg">
+					<h4 class="section-title"><a name="Too_Many_Violations">Too Many Violations (11)</a></h4>
+				</div>
+				<b class="rounded_section"><b class="rounded_section5"></b><b class="rounded_section4"></b><b class="rounded_section3"></b><b class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+			</div>
+			</td></tr>
+			<tr><td class="emptyborder" colspan="5"></td></tr>
+	<tr class="a">
+			<th>Violation</th>
+<th>Recommendation</th>
+<th>Severity</th>
+<th>Resource</th>
+<th>Line</th>
+	</tr>
+	<tr class="highSeverity a"><td>Maximum violation count of 20 exceeded for the rule &quot;White Space Usage&quot; in &quot;/TempCodeProProject1/src1/instructions/ListInstruction.java&quot;</td>
+<td>
+&nbsp;
+		</td>
+<td>High</td>
+<td>
+ListInstruction.java</td>
+<td>
+1</td>
+</tr>
+	<tr class="highSeverity b"><td>Maximum violation count of 20 exceeded for the rule &quot;White Space Usage&quot; in &quot;/TempCodeProProject1/src1/model/CommandsList.java&quot;</td>
+<td>
+&nbsp;
+		</td>
+<td>High</td>
+<td>
+CommandsList.java</td>
+<td>
+1</td>
+</tr>
+	<tr class="highSeverity a"><td>Maximum violation count of 20 exceeded for the rule &quot;White Space Usage&quot; in &quot;/TempCodeProProject1/src1/model/InstructionList.java&quot;</td>
+<td>
+&nbsp;
+		</td>
+<td>High</td>
+<td>
+InstructionList.java</td>
+<td>
+1</td>
+</tr>
+	<tr class="highSeverity b"><td>Maximum violation count of 20 exceeded for the rule &quot;White Space Usage&quot; in &quot;/TempCodeProProject1/src1/model/ObservableData.java&quot;</td>
+<td>
+&nbsp;
+		</td>
+<td>High</td>
+<td>
+ObservableData.java</td>
+<td>
+1</td>
+</tr>
+	<tr class="highSeverity a"><td>Maximum violation count of 20 exceeded for the rule &quot;White Space Usage&quot; in &quot;/TempCodeProProject1/src1/model/SlogoModel.java&quot;</td>
+<td>
+&nbsp;
+		</td>
+<td>High</td>
+<td>
+SlogoModel.java</td>
+<td>
+1</td>
+</tr>
+	<tr class="highSeverity b"><td>Maximum violation count of 20 exceeded for the rule &quot;White Space Usage&quot; in &quot;/TempCodeProProject1/src1/parser/InstructionFactory.java&quot;</td>
+<td>
+&nbsp;
+		</td>
+<td>High</td>
+<td>
+InstructionFactory.java</td>
+<td>
+1</td>
+</tr>
+	<tr class="highSeverity a"><td>Maximum violation count of 20 exceeded for the rule &quot;White Space Usage&quot; in &quot;/TempCodeProProject1/src1/parser/Parser.java&quot;</td>
+<td>
+&nbsp;
+		</td>
+<td>High</td>
+<td>
+Parser.java</td>
+<td>
+1</td>
+</tr>
+	<tr class="highSeverity b"><td>Maximum violation count of 20 exceeded for the rule &quot;White Space Usage&quot; in &quot;/TempCodeProProject1/src1/view/InputView.java&quot;</td>
+<td>
+&nbsp;
+		</td>
+<td>High</td>
+<td>
+InputView.java</td>
+<td>
+1</td>
+</tr>
+	<tr class="highSeverity a"><td>Maximum violation count of 20 exceeded for the rule &quot;White Space Usage&quot; in &quot;/TempCodeProProject1/src1/view/InstructionView.java&quot;</td>
+<td>
+&nbsp;
+		</td>
+<td>High</td>
+<td>
+InstructionView.java</td>
+<td>
+1</td>
+</tr>
+	<tr class="highSeverity b"><td>Maximum violation count of 20 exceeded for the rule &quot;White Space Usage&quot; in &quot;/TempCodeProProject1/src1/view/SettingsView.java&quot;</td>
+<td>
+&nbsp;
+		</td>
+<td>High</td>
+<td>
+SettingsView.java</td>
+<td>
+1</td>
+</tr>
+	<tr class="highSeverity a"><td>Maximum violation count of 20 exceeded for the rule &quot;White Space Usage&quot; in &quot;/TempCodeProProject1/src1/view/SlogoView.java&quot;</td>
+<td>
+&nbsp;
+		</td>
+<td>High</td>
+<td>
+SlogoView.java</td>
+<td>
+1</td>
+</tr>
+			<tr><td class="emptyborder" colspan="5"> </td></tr>
+			<tr><td class="emptyborder" colspan="5">&nbsp;
+			<div>
+				<b class="rounded_section"><b class="rounded_section1"><b></b></b><b class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b class="rounded_section4"></b><b class="rounded_section5"></b></b>
+				<div class="rounded_sectionfg">
+					<h4 class="section-title"><a name="Type_Javadoc_Conventions">Type Javadoc Conventions (78)</a></h4>
+				</div>
+				<b class="rounded_section"><b class="rounded_section5"></b><b class="rounded_section4"></b><b class="rounded_section3"></b><b class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+			</div>
+			</td></tr>
+			<tr><td class="emptyborder" colspan="5"></td></tr>
+	<tr class="a">
+			<th>Violation</th>
+<th>Recommendation</th>
+<th>Severity</th>
+<th>Resource</th>
+<th>Line</th>
+	</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type SlogoController</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+SlogoController.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing @author tag for type BinaryInstruction</td>
+<td>
+Run the Javadoc Repair tool on this type to add the missing @author tag.		</td>
+<td>Medium</td>
+<td>
+BinaryInstruction.java</td>
+<td>
+3</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing @version tag for type BinaryInstruction</td>
+<td>
+Run the Javadoc Repair tool on this type to add the missing @version tag.		</td>
+<td>Medium</td>
+<td>
+BinaryInstruction.java</td>
+<td>
+3</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type And</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+And.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type ArcTangent</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+ArcTangent.java</td>
+<td>
+7</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Backward</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Backward.java</td>
+<td>
+9</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type ClearScreen</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+ClearScreen.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Cosine</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Cosine.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type Difference</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Difference.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Equal</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Equal.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing @version tag for type Forward</td>
+<td>
+Run the Javadoc Repair tool on this type to add the missing @version tag.		</td>
+<td>Medium</td>
+<td>
+Forward.java</td>
+<td>
+10</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Empty @author tag for type Forward</td>
+<td>
+Run the Javadoc Repair tool on this type to correct the @author tag.		</td>
+<td>Medium</td>
+<td>
+Forward.java</td>
+<td>
+14</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type Greater</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Greater.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Heading</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Heading.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type HideTurtle</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+HideTurtle.java</td>
+<td>
+9</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Home</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Home.java</td>
+<td>
+9</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type If</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+If.java</td>
+<td>
+7</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type IsPenDown</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+IsPenDown.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type IsShowing</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+IsShowing.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Left</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Left.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type Less</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Less.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Minus</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Minus.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type NaturalLog</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+NaturalLog.java</td>
+<td>
+7</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Not</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Not.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type NotEqual</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+NotEqual.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Or</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Or.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type PenDown</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+PenDown.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type PenUp</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+PenUp.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type Power</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Power.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Product</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Product.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type Quotient</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Quotient.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Random</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Random.java</td>
+<td>
+7</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type Remainder</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Remainder.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Repeat</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Repeat.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type Right</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Right.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type SetHeading</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+SetHeading.java</td>
+<td>
+9</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type SetPosition</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+SetPosition.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type SetTowards</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+SetTowards.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type ShowTurtle</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+ShowTurtle.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Sine</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Sine.java</td>
+<td>
+7</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type Sum</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Sum.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Tangent</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Tangent.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type Towards</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Towards.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type XCoordinate</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+XCoordinate.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type YCoordinate</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+YCoordinate.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing @author tag for type ConstantInstruction</td>
+<td>
+Run the Javadoc Repair tool on this type to add the missing @author tag.		</td>
+<td>Medium</td>
+<td>
+ConstantInstruction.java</td>
+<td>
+7</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing @version tag for type ConstantInstruction</td>
+<td>
+Run the Javadoc Repair tool on this type to add the missing @version tag.		</td>
+<td>Medium</td>
+<td>
+ConstantInstruction.java</td>
+<td>
+7</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing @author tag for type Instruction</td>
+<td>
+Run the Javadoc Repair tool on this type to add the missing @author tag.		</td>
+<td>Medium</td>
+<td>
+Instruction.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing @version tag for type Instruction</td>
+<td>
+Run the Javadoc Repair tool on this type to add the missing @version tag.		</td>
+<td>Medium</td>
+<td>
+Instruction.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type ListInstruction</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+ListInstruction.java</td>
+<td>
+7</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing @author tag for type ParameterInstruction</td>
+<td>
+Run the Javadoc Repair tool on this type to add the missing @author tag.		</td>
+<td>Medium</td>
+<td>
+ParameterInstruction.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing @version tag for type ParameterInstruction</td>
+<td>
+Run the Javadoc Repair tool on this type to add the missing @version tag.		</td>
+<td>Medium</td>
+<td>
+ParameterInstruction.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing @author tag for type UnaryInstruction</td>
+<td>
+Run the Javadoc Repair tool on this type to add the missing @author tag.		</td>
+<td>Medium</td>
+<td>
+UnaryInstruction.java</td>
+<td>
+3</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing @version tag for type UnaryInstruction</td>
+<td>
+Run the Javadoc Repair tool on this type to add the missing @version tag.		</td>
+<td>Medium</td>
+<td>
+UnaryInstruction.java</td>
+<td>
+3</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type VariableInstruction</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+VariableInstruction.java</td>
+<td>
+5</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Main</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Main.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type CommandsList</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+CommandsList.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Feature</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Feature.java</td>
+<td>
+3</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type History</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+History.java</td>
+<td>
+14</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type InstructionList</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+InstructionList.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type ObservableData</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+ObservableData.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Pen</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Pen.java</td>
+<td>
+7</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type SlogoModel</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+SlogoModel.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type Turtle</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+Turtle.java</td>
+<td>
+10</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type VariablesList</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+VariablesList.java</td>
+<td>
+9</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing @author tag for type InstructionFactory</td>
+<td>
+Run the Javadoc Repair tool on this type to add the missing @author tag.		</td>
+<td>Medium</td>
+<td>
+InstructionFactory.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing @version tag for type InstructionFactory</td>
+<td>
+Run the Javadoc Repair tool on this type to add the missing @version tag.		</td>
+<td>Medium</td>
+<td>
+InstructionFactory.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing @author tag for type Parser</td>
+<td>
+Run the Javadoc Repair tool on this type to add the missing @author tag.		</td>
+<td>Medium</td>
+<td>
+Parser.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing @version tag for type Parser</td>
+<td>
+Run the Javadoc Repair tool on this type to add the missing @version tag.		</td>
+<td>Medium</td>
+<td>
+Parser.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing @author tag for type Tokenizer</td>
+<td>
+Run the Javadoc Repair tool on this type to add the missing @author tag.		</td>
+<td>Medium</td>
+<td>
+Tokenizer.java</td>
+<td>
+9</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing @version tag for type Tokenizer</td>
+<td>
+Run the Javadoc Repair tool on this type to add the missing @version tag.		</td>
+<td>Medium</td>
+<td>
+Tokenizer.java</td>
+<td>
+9</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type HistoryView</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+HistoryView.java</td>
+<td>
+18</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type InputView</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+InputView.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type InstructionView</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+InstructionView.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type SettingsView</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+SettingsView.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type SlogoView</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+SlogoView.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Missing Javadoc comment for type TurtleView</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+TurtleView.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Missing Javadoc comment for type View</td>
+<td>
+Run the Javadoc Repair tool on this type to add missing type Javadoc.		</td>
+<td>Medium</td>
+<td>
+View.java</td>
+<td>
+5</td>
+</tr>
+			<tr><td class="emptyborder" colspan="5"> </td></tr>
+			<tr><td class="emptyborder" colspan="5">&nbsp;
+			<div>
+				<b class="rounded_section"><b class="rounded_section1"><b></b></b><b class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b class="rounded_section4"></b><b class="rounded_section5"></b></b>
+				<div class="rounded_sectionfg">
+					<h4 class="section-title"><a name="Unused_Field">Unused Field (6)</a></h4>
+				</div>
+				<b class="rounded_section"><b class="rounded_section5"></b><b class="rounded_section4"></b><b class="rounded_section3"></b><b class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+			</div>
+			</td></tr>
+			<tr><td class="emptyborder" colspan="5"></td></tr>
+	<tr class="a">
+			<th>Violation</th>
+<th>Recommendation</th>
+<th>Severity</th>
+<th>Resource</th>
+<th>Line</th>
+	</tr>
+	<tr class="mediumSeverity a"><td>Unused field: myView</td>
+<td>
+Delete the unused field.		</td>
+<td>Medium</td>
+<td>
+History.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Unused field: myView</td>
+<td>
+Delete the unused field.		</td>
+<td>Medium</td>
+<td>
+InstructionList.java</td>
+<td>
+20</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Unused field: myLineColor</td>
+<td>
+Delete the unused field.		</td>
+<td>Medium</td>
+<td>
+Pen.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Unused field: myDefault</td>
+<td>
+Delete the unused field.		</td>
+<td>Medium</td>
+<td>
+Turtle.java</td>
+<td>
+18</td>
+</tr>
+	<tr class="mediumSeverity a"><td>Unused field: mySubmitButton</td>
+<td>
+Delete the unused field.		</td>
+<td>Medium</td>
+<td>
+InputView.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="mediumSeverity b"><td>Unused field: mySettings</td>
+<td>
+Delete the unused field.		</td>
+<td>Medium</td>
+<td>
+SettingsView.java</td>
+<td>
+19</td>
+</tr>
+			<tr><td class="emptyborder" colspan="5"> </td></tr>
+			<tr><td class="emptyborder" colspan="5">&nbsp;
+			<div>
+				<b class="rounded_section"><b class="rounded_section1"><b></b></b><b class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b class="rounded_section4"></b><b class="rounded_section5"></b></b>
+				<div class="rounded_sectionfg">
+					<h4 class="section-title"><a name="Unused_Method">Unused Method (1)</a></h4>
+				</div>
+				<b class="rounded_section"><b class="rounded_section5"></b><b class="rounded_section4"></b><b class="rounded_section3"></b><b class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+			</div>
+			</td></tr>
+			<tr><td class="emptyborder" colspan="5"></td></tr>
+	<tr class="a">
+			<th>Violation</th>
+<th>Recommendation</th>
+<th>Severity</th>
+<th>Resource</th>
+<th>Line</th>
+	</tr>
+	<tr class="mediumSeverity a"><td>Unused method: makeButton</td>
+<td>
+Delete the unused method.		</td>
+<td>Medium</td>
+<td>
+SettingsView.java</td>
+<td>
+56</td>
+</tr>
+			<tr><td class="emptyborder" colspan="5"> </td></tr>
+			<tr><td class="emptyborder" colspan="5">&nbsp;
+			<div>
+				<b class="rounded_section"><b class="rounded_section1"><b></b></b><b class="rounded_section2"><b></b></b><b class="rounded_section3"></b><b class="rounded_section4"></b><b class="rounded_section5"></b></b>
+				<div class="rounded_sectionfg">
+					<h4 class="section-title"><a name="White_Space_Usage">White Space Usage (375)</a></h4>
+				</div>
+				<b class="rounded_section"><b class="rounded_section5"></b><b class="rounded_section4"></b><b class="rounded_section3"></b><b class="rounded_section2"><b></b></b><b class="rounded_section1"><b></b></b></b>
+			</div>
+			</td></tr>
+			<tr><td class="emptyborder" colspan="5"></td></tr>
+	<tr class="a">
+			<th>Violation</th>
+<th>Recommendation</th>
+<th>Severity</th>
+<th>Resource</th>
+<th>Line</th>
+	</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoController.java</td>
+<td>
+7</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoController.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoController.java</td>
+<td>
+10</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoController.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoController.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoController.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+BinaryInstruction.java</td>
+<td>
+9</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+BinaryInstruction.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+BinaryInstruction.java</td>
+<td>
+18</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+BinaryInstruction.java</td>
+<td>
+19</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+BinaryInstruction.java</td>
+<td>
+20</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ConstantInstruction.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ConstantInstruction.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ConstantInstruction.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ConstantInstruction.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ConstantInstruction.java</td>
+<td>
+19</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ConstantInstruction.java</td>
+<td>
+20</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ConstantInstruction.java</td>
+<td>
+21</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ConstantInstruction.java</td>
+<td>
+22</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ConstantInstruction.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ConstantInstruction.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ConstantInstruction.java</td>
+<td>
+26</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ConstantInstruction.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ConstantInstruction.java</td>
+<td>
+29</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ConstantInstruction.java</td>
+<td>
+30</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ConstantInstruction.java</td>
+<td>
+31</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Instruction.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Instruction.java</td>
+<td>
+22</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Instruction.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Instruction.java</td>
+<td>
+31</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Instruction.java</td>
+<td>
+33</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Instruction.java</td>
+<td>
+39</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+10</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+18</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+19</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+20</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+21</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+23</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+28</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+29</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+30</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+31</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+33</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ListInstruction.java</td>
+<td>
+34</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ParameterInstruction.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ParameterInstruction.java</td>
+<td>
+14</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ParameterInstruction.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ParameterInstruction.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ParameterInstruction.java</td>
+<td>
+18</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ParameterInstruction.java</td>
+<td>
+20</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ParameterInstruction.java</td>
+<td>
+21</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ParameterInstruction.java</td>
+<td>
+22</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ParameterInstruction.java</td>
+<td>
+23</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ParameterInstruction.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ParameterInstruction.java</td>
+<td>
+26</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ParameterInstruction.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ParameterInstruction.java</td>
+<td>
+28</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+UnaryInstruction.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+UnaryInstruction.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+UnaryInstruction.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+UnaryInstruction.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+UnaryInstruction.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariableInstruction.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariableInstruction.java</td>
+<td>
+7</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariableInstruction.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariableInstruction.java</td>
+<td>
+9</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariableInstruction.java</td>
+<td>
+10</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariableInstruction.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariableInstruction.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariableInstruction.java</td>
+<td>
+14</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariableInstruction.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Main.java</td>
+<td>
+10</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Main.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Main.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Main.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Main.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Main.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Main.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Main.java</td>
+<td>
+18</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Main.java</td>
+<td>
+19</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Main.java</td>
+<td>
+20</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Main.java</td>
+<td>
+21</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Main.java</td>
+<td>
+23</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Main.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Main.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Main.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Main.java</td>
+<td>
+28</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Main.java</td>
+<td>
+29</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+14</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+18</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+19</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+21</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+22</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+23</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+26</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+28</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+30</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+31</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+32</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+33</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+34</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+35</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+CommandsList.java</td>
+<td>
+36</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Feature.java</td>
+<td>
+5</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Feature.java</td>
+<td>
+6</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+19</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+20</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+21</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+22</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+23</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+28</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+29</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+30</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+32</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+33</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+34</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+35</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+36</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+37</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+39</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+History.java</td>
+<td>
+40</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+18</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+19</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+20</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+21</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+23</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+26</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+28</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+29</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+30</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+34</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+35</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+36</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+38</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+39</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+40</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionList.java</td>
+<td>
+41</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+7</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+9</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+10</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+14</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+19</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+20</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+21</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+22</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+23</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+28</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+ObservableData.java</td>
+<td>
+29</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+18</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+20</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+21</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+22</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+26</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+28</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+29</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+30</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+31</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+32</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+34</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoModel.java</td>
+<td>
+36</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariablesList.java</td>
+<td>
+10</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariablesList.java</td>
+<td>
+12</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariablesList.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariablesList.java</td>
+<td>
+14</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariablesList.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariablesList.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariablesList.java</td>
+<td>
+18</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariablesList.java</td>
+<td>
+20</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariablesList.java</td>
+<td>
+21</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariablesList.java</td>
+<td>
+22</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariablesList.java</td>
+<td>
+23</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariablesList.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariablesList.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariablesList.java</td>
+<td>
+26</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+VariablesList.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+23</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+28</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+30</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+37</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+38</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+39</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+41</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+43</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+44</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+45</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+47</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+48</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+49</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+50</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+51</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+52</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionFactory.java</td>
+<td>
+53</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+37</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+38</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+39</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+41</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+45</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+46</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+47</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+48</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+50</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+51</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+52</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+55</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+56</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+57</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+58</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+59</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+60</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+61</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+62</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Parser.java</td>
+<td>
+64</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Tokenizer.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Tokenizer.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Tokenizer.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Tokenizer.java</td>
+<td>
+26</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Tokenizer.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+Tokenizer.java</td>
+<td>
+28</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+HistoryView.java</td>
+<td>
+20</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+HistoryView.java</td>
+<td>
+21</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+HistoryView.java</td>
+<td>
+23</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+HistoryView.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+HistoryView.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+HistoryView.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+HistoryView.java</td>
+<td>
+28</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+HistoryView.java</td>
+<td>
+29</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+HistoryView.java</td>
+<td>
+30</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+HistoryView.java</td>
+<td>
+32</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+HistoryView.java</td>
+<td>
+33</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+HistoryView.java</td>
+<td>
+34</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+HistoryView.java</td>
+<td>
+35</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+HistoryView.java</td>
+<td>
+36</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+HistoryView.java</td>
+<td>
+37</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+14</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+18</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+19</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+22</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+23</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+26</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+28</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+29</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+30</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+31</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+32</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+33</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+34</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+36</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InputView.java</td>
+<td>
+37</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+10</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+11</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+14</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+15</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+18</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+19</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+20</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+22</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+23</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+26</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+28</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+29</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+30</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+InstructionView.java</td>
+<td>
+31</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+19</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+21</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+23</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+26</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+29</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+30</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+31</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+33</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+35</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+36</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+37</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+38</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+39</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+41</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SettingsView.java</td>
+<td>
+42</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+20</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+21</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+22</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+25</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+26</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+29</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+30</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+31</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+32</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+33</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+35</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+37</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+38</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+40</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+42</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+43</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+SlogoView.java</td>
+<td>
+45</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+TurtleView.java</td>
+<td>
+13</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+TurtleView.java</td>
+<td>
+14</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+TurtleView.java</td>
+<td>
+16</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+TurtleView.java</td>
+<td>
+17</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+TurtleView.java</td>
+<td>
+18</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+TurtleView.java</td>
+<td>
+20</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+TurtleView.java</td>
+<td>
+22</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+TurtleView.java</td>
+<td>
+23</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+TurtleView.java</td>
+<td>
+24</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+TurtleView.java</td>
+<td>
+26</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+TurtleView.java</td>
+<td>
+27</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+TurtleView.java</td>
+<td>
+29</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+TurtleView.java</td>
+<td>
+31</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+TurtleView.java</td>
+<td>
+32</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+TurtleView.java</td>
+<td>
+33</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+TurtleView.java</td>
+<td>
+34</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+TurtleView.java</td>
+<td>
+35</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+View.java</td>
+<td>
+7</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+View.java</td>
+<td>
+8</td>
+</tr>
+	<tr class="lowSeverity b"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+View.java</td>
+<td>
+9</td>
+</tr>
+	<tr class="lowSeverity a"><td>Use of tab character after start of line</td>
+<td>
+Use spaces rather than tabs.		</td>
+<td>Low</td>
+<td>
+View.java</td>
+<td>
+10</td>
+</tr>
+		</table>
+	</div>
+	<div>
+		<b class="rounded_page"><b class="rounded_page1"><b></b></b><b class="rounded_page2"><b></b></b><b class="rounded_page3"></b><b class="rounded_page4"></b><b class="rounded_page5"></b></b>
+		<div class="rounded_pagefg">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" ><tr><td valign="middle">
+			<span class="page-footer">Generated at 10/18/14 3:54 PM</span>
+			</td><td align="right" valign="middle">
+			<span class="page-footer-details">Powered by <span title="0.0.0, UNKNOWN">CodePro Server</span></span></td></tr></table>
+		</div>
+		<b class="rounded_page"><b class="rounded_page5"></b><b class="rounded_page4"></b><b class="rounded_page3"></b><b class="rounded_page2"><b></b></b><b class="rounded_page1"><b></b></b></b>
+	</div>
+
+</body>
+
+</html>
