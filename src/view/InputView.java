@@ -54,9 +54,8 @@ public class InputView extends Pane implements View{
 			// give the string to the back-end parser
 			@Override
 			public void handle(ActionEvent event) {
-				myModel.parseAndExecute(myInput.getText());
-				System.out.println(myInput.getText());
 				myModel.showToHistoryView(myInput.getText());
+				myModel.parseAndExecute(myInput.getText());
 				myInput.clear();
 			}
 			
@@ -65,7 +64,10 @@ public class InputView extends Pane implements View{
 
 	public void addAndShowText(String text){
 		myText=myInput.getText();
-		myText+=text+"\n";
+		if (!myText.trim().equals(""))
+			myText+="\n"+text.trim();
+		else myText+=text.trim();
+
 		myInput.clear();
 		myInput.setText(myText);
 	}

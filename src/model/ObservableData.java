@@ -10,9 +10,10 @@ public class ObservableData {
 		myFeatures = new HashMap<String,Feature>();
 		
 		// Add new features to this list
-		addAllToMyFeatures(new Turtle(),
+		addAllToMyFeatures(
+			new Turtle(),
 			new History(),
-			new CommandsList(),
+			new InstructionList(),
 			new VariablesList());
 	}
 

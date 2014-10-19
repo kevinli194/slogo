@@ -25,18 +25,14 @@ public class SlogoModel extends Observable {
 		while (!commandStack.isEmpty()) {
 			Instruction current = commandStack.pop();
 			double returnValue = current.execute(myData);
-			System.out.println("final return:" + returnValue);
 			showOnView(returnValue);
 			setChanged();
 			notifyObservers(myData);
 		}
-
 	}
 
-	// Test code without the parser.
-
 	private void showOnView(double returnValue) {
-		((History) myData.get("history")).add("==>"+returnValue);
+		((History) myData.get("history")).add("final return:"+returnValue+"\n");
 	}
 
 	public void load(){
@@ -56,7 +52,7 @@ public class SlogoModel extends Observable {
 	}
 
 	public void showToHistoryView(String text) {
-		((History) myData.get("history")).add(text+"\n");  
+		((History) myData.get("history")).addTextBox(text);  
 		
 	}
 }

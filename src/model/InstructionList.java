@@ -28,8 +28,8 @@ public class InstructionList implements Feature{
 		
 		myView=new VBox();
 		//Testing data
-//		myBasicInstructions.put("forward", null);
-//		myBasicInstructions.put("backward", null);
+		myBasicInstructions.put("forward", null);
+		myBasicInstructions.put("back", null);
 
 		initiateInstructionTable();
 		
@@ -86,10 +86,6 @@ public class InstructionList implements Feature{
 		});
 		row.getChildren().add(t);
 		return row;
-	}
-
-	public Node generateNode() {
-		return generateNode(myInput);
 	}
 	
 	public Node generateNode(InputView inputView) {

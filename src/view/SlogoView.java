@@ -5,9 +5,13 @@ import java.util.Observer;
 
 
 
+
+
 import javafx.scene.layout.BorderPane;
 import javafx.scene.Node;
 import model.Feature;
+import model.History;
+import model.InstructionList;
 import model.ObservableData;
 import model.SlogoModel;
 import model.Turtle;
@@ -47,9 +51,13 @@ public class SlogoView extends BorderPane implements Observer {
 			Turtle turtle = (Turtle) ((ObservableData) arg).get("turtle");
 			Node drawing = turtle.generateNode();
 			myTurtleView.update(drawing);
-//			myInstructionView.update(((ObservableData) arg).get("instructions").generateNode(myInputView));
-//			myHistoryView.update(((ObservableData) arg).get("history")
-//					.generateNode());
+			
+//			InstructionList instrList=(InstructionList)((ObservableData) arg).get("InstructionList");
+//			Node instructionBox=instrList.generateNode(myInputView);
+//			myInstructionView.update(instructionBox);
+			myInstructionView.update(((InstructionList) ((ObservableData) arg).get("InstructionList")).generateNode(myInputView));
+			myHistoryView.update(((History) ((ObservableData) arg).get("history"))
+					.generateNode(myInputView));
 		}
 
 	}
