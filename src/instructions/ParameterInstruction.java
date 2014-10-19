@@ -26,4 +26,5 @@ public abstract class ParameterInstruction implements Instruction {
 	public void addParam(Instruction param) {
 		myParams.add(param);
 	}
+	
 }

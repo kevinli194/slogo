@@ -29,11 +29,21 @@ public class VariablesList implements Feature {
 		}
 		myVariables.put(variableName, value);
 	}
+	
+	public double get(String variableName) {
+		// TODO: Update to throwing better errors (window perhaps)
+		// Same error as one in REMOVE method
+		if (!myVariables.containsKey(variableName)) {
+			System.out.println("VARIABLE DOES NOT EXIST. CANNOT GET.");
+			return 0;
+		}
+		return myVariables.get(variableName);
+	}
 
 	public void remove(String variableName) {
 		// TODO: Update to throwing better errors (window perhaps)
 		if (!myVariables.containsKey(variableName)) {
-			System.out.println("VARIABLE DOES NOT EXIST.");
+			System.out.println("VARIABLE DOES NOT EXIST. CANNOT REMOVE.");
 			return;
 		}
 		myVariables.remove(variableName);
