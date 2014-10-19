@@ -10,7 +10,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
 
-public class InputView extends Pane implements View{
+public class InputView extends Pane implements View {
 	private static final double VIEW_WIDTH = 1000;
 	private static final double VIEW_HEIGHT = 70;
 	private static final double INPUT_WIDTH = 930;
@@ -18,18 +18,17 @@ public class InputView extends Pane implements View{
 	private static final double SUBMIT_BUTTON_Y_LAYOUT = 0;
 	private static final double SUBMIT_BUTTON_SIZE = 70;
 
-
 	private TextArea myInput;
 	private Button mySubmitButton;
 	private SlogoModel myModel;
-	private String myText="";
+	private String myText = "";
 
 	public InputView(SlogoModel model) {
-		setView(VIEW_WIDTH,VIEW_HEIGHT);
+		setView(VIEW_WIDTH, VIEW_HEIGHT);
 		update();
 		this.getChildren().add(myInput);
 		this.getChildren().add(mySubmitButton);
-		myModel=model;
+		myModel = model;
 	}
 
 	private void update() {
@@ -38,19 +37,19 @@ public class InputView extends Pane implements View{
 	}
 
 	private void setInputArea() {
-		myInput=new TextArea();
+		myInput = new TextArea();
 		myInput.setPrefWidth(INPUT_WIDTH);
 		myInput.setPrefHeight(VIEW_HEIGHT);
 		myInput.setMaxSize(INPUT_WIDTH, VIEW_HEIGHT);
 	}
-	
+
 	private void setSubmitButton() {
-		mySubmitButton=new Button();
+		mySubmitButton = new Button();
 		mySubmitButton.setText("Submit");
 		mySubmitButton.setLayoutX(SUBMIT_BUTTON_X_LAYOUT);
 		mySubmitButton.setLayoutY(SUBMIT_BUTTON_Y_LAYOUT);
 		mySubmitButton.setMinSize(SUBMIT_BUTTON_SIZE, SUBMIT_BUTTON_SIZE);
-		mySubmitButton.setOnAction(new EventHandler<ActionEvent>(){
+		mySubmitButton.setOnAction(new EventHandler<ActionEvent>() {
 			// give the string to the back-end parser
 			@Override
 			public void handle(ActionEvent event) {
@@ -58,15 +57,16 @@ public class InputView extends Pane implements View{
 				myModel.parseAndExecute(myInput.getText());
 				myInput.clear();
 			}
-			
+
 		});
 	}
 
-	public void addAndShowText(String text){
-		myText=myInput.getText();
+	public void addAndShowText(String text) {
+		myText = myInput.getText();
 		if (!myText.trim().equals(""))
-			myText+="\n"+text.trim();
-		else myText+=text.trim();
+			myText += "\n" + text.trim();
+		else
+			myText += text.trim();
 
 		myInput.clear();
 		myInput.setText(myText);
@@ -76,10 +76,9 @@ public class InputView extends Pane implements View{
 	public void setView(double width, double height) {
 		setPrefWidth(width);
 		setPrefHeight(height);
-		setMinSize(width, height);		
+		setMinSize(width, height);
 	}
 
-	@Override
 	public void update(Node node) {
 		update();
 	}

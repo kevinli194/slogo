@@ -6,6 +6,4 @@ public interface View {
 
 	public void setView(double width, double height);
 	
-	public void update(Node node);
-	
 }

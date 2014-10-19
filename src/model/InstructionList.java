@@ -12,34 +12,22 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+
 // NEEDS TO GET MOVED TO THE VIEW PACKAGE
-public class InstructionList implements Feature{
+public class InstructionList implements Feature {
 	private Map<String, Instruction> myBasicInstructions;
 	private Map<String, Instruction> myUserDefinedFunctions;
-	
-	private VBox myView;
-	private InputView myInput;
 
 	// When instantiating an instruction list. The basic instructions should be
 	// created. Should we use reflections for this?
 	public InstructionList() {
 		myBasicInstructions = new HashMap<String, Instruction>();
 		myUserDefinedFunctions = new HashMap<String, Instruction>();
-		
-		myView=new VBox();
-		//Testing data
+
+		// Testing data
 		myBasicInstructions.put("forward", null);
 		myBasicInstructions.put("back", null);
 
-		initiateInstructionTable();
-		
-	}
-
-	private void initiateInstructionTable() {
-		for (String s:myBasicInstructions.keySet()){
-			HBox row=preDefinedInstructionRow(s,myInput);
-			myView.getChildren().add(row);
-		}
 	}
 
 	/**
@@ -71,35 +59,11 @@ public class InstructionList implements Feature{
 	public void clear() {
 		myUserDefinedFunctions.clear();
 	}
-	
-	public HBox preDefinedInstructionRow(String s, InputView input){
-		myInput=input;
-		HBox row=new HBox();
-		Text t=new Text();
-		t.setText(s);
 
-		t.setOnMousePressed(new EventHandler<MouseEvent>(){
-			@Override
-			public void handle(MouseEvent event) {
-				myInput.addAndShowText(s);
-			}
-		});
-		row.getChildren().add(t);
-		return row;
+	// Make sure to add for UserDefined Functions
+
+	public Map<String, Instruction> generate() {
+		return myBasicInstructions;
 	}
-	
-	public Node generateNode(InputView inputView) {
-		myInput=inputView;
-		myView.getChildren().clear();
-		for (String s:myBasicInstructions.keySet()){
-			HBox row=preDefinedInstructionRow(s,inputView);
-			myView.getChildren().add(row);
-		}
-	return myView;
-	}
-
-
-
-
 
 }
