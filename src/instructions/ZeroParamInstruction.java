@@ -6,6 +6,7 @@ package instructions;
  * @author slogo_team02 a.k.a. TEAM ROCKET
  *
  */
+
 public abstract class ZeroParamInstruction implements Instruction {
 
 	/**
