@@ -15,8 +15,8 @@ import model.Turtle;
 public class SlogoView extends BorderPane implements Observer {
 	TurtleView myTurtleView;
 	InputView myInputView;
-//	InstructionView myInstructionView;
-//	HistoryView myHistoryView;
+	InstructionView myInstructionView;
+	HistoryView myHistoryView;
 	SettingsView mySettingsView;
 	SlogoModel myModel;
 	ObservableData myOD;
@@ -24,16 +24,16 @@ public class SlogoView extends BorderPane implements Observer {
 	public SlogoView(String language, SlogoModel model) {
 		myTurtleView = new TurtleView();
 		myInputView = new InputView(model);
-//		myInstructionView = new InstructionView();
-//		myHistoryView = new HistoryView();
+		myInstructionView = new InstructionView();
+		myHistoryView = new HistoryView();
 		mySettingsView = new SettingsView(model, myTurtleView);
 		myOD = new ObservableData();
 		myModel = model;
 	
 		setCenter(myTurtleView);
-//		setRight(myInstructionView);
+		setRight(myInstructionView);
 		setBottom(myInputView);
-//		setLeft(myHistoryView);
+		setLeft(myHistoryView);
 		setTop(mySettingsView);
 		setVisible(true);
 

@@ -27,7 +27,6 @@ public class SettingsView extends Pane {
 		this.getChildren().add(mySettings);
 
 		addButtons(model);
-		
 		changeBackgroundColor(view);
 
 	}

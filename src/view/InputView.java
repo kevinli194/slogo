@@ -19,7 +19,6 @@ public class InputView extends Pane implements View{
 	private static final double SUBMIT_BUTTON_SIZE = 70;
 
 
-	
 	private TextArea myInput;
 	private Button mySubmitButton;
 	private SlogoModel myModel;
@@ -35,10 +34,16 @@ public class InputView extends Pane implements View{
 
 	private void update() {
 		setInputArea();
-		
 		setSubmitButton();
 	}
 
+	private void setInputArea() {
+		myInput=new TextArea();
+		myInput.setPrefWidth(INPUT_WIDTH);
+		myInput.setPrefHeight(VIEW_HEIGHT);
+		myInput.setMaxSize(INPUT_WIDTH, VIEW_HEIGHT);
+	}
+	
 	private void setSubmitButton() {
 		mySubmitButton=new Button();
 		mySubmitButton.setText("Submit");
@@ -46,7 +51,7 @@ public class InputView extends Pane implements View{
 		mySubmitButton.setLayoutY(SUBMIT_BUTTON_Y_LAYOUT);
 		mySubmitButton.setMinSize(SUBMIT_BUTTON_SIZE, SUBMIT_BUTTON_SIZE);
 		mySubmitButton.setOnAction(new EventHandler<ActionEvent>(){
-			// give the string to the back end parser
+			// give the string to the back-end parser
 			@Override
 			public void handle(ActionEvent event) {
 				myModel.parseAndExecute(myInput.getText());
@@ -56,13 +61,6 @@ public class InputView extends Pane implements View{
 			}
 			
 		});
-	}
-
-	private void setInputArea() {
-		myInput=new TextArea();
-		myInput.setPrefWidth(INPUT_WIDTH);
-		myInput.setPrefHeight(VIEW_HEIGHT);
-		myInput.setMaxSize(INPUT_WIDTH, VIEW_HEIGHT);
 	}
 
 	public void addAndShowText(String text){

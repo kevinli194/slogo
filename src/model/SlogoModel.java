@@ -51,15 +51,12 @@ public class SlogoModel extends Observable {
 		((History) myData.get("history")).add("Turtle Rotated By: " + x);  
 	}
 	
- 
 	public void clear() {
 		myData.clear();
-
 	}
 
 	public void showToHistoryView(String text) {
 		((History) myData.get("history")).add(text+"\n");  
-
 		
 	}
 }

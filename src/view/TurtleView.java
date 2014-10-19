@@ -22,15 +22,17 @@ public class TurtleView extends Pane implements View{
 	public void changeColor(String color) {
 		setStyle("-fx-background-color:" + color + ";");
 	}
-
+	
+	@Override
 	public void update(Node node) {
 		this.getChildren().add(node);
 
 	}
-
+	
+	@Override
 	public void setView(double width, double height) {
 		setPrefWidth(width);
 		setPrefHeight(height);
-		setMaxSize(width, height);
+		setMinSize(width, height);
 	}
 }

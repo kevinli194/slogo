@@ -18,10 +18,7 @@ public class History implements Feature {
 
 	public History() {
 		myHistory = new LinkedList<String>();
-		// myView = new VBox();
 		myView = new VBox();
-		// myView.getChildren().add(text);
-
 	}
 
 	public void add(String element) {
@@ -29,6 +26,7 @@ public class History implements Feature {
 		myView.getChildren().add(new Text(element));
 	}
 
+	@Override
 	public void clear() {
 		myHistory.clear();
 		myView.getChildren().clear();

@@ -64,6 +64,7 @@ public class InstructionList implements Feature{
 		myUserDefinedFunctions.remove(instructionName);
 	}
 
+	@Override
 	/**
 	 * Clears the map of user defined functions.
 	 */

@@ -33,6 +33,6 @@ public class HistoryView extends ScrollPane implements View{
 	public void setView(double width, double height) {
 		setPrefWidth(width);
 		setPrefHeight(height);
-		setMaxSize(width, height);
+		setMinSize(width, height);
 	}
 }
