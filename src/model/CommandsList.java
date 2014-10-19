@@ -10,6 +10,14 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
 
+/**
+ * CommandsList class.
+ * Contains the list of pre-defined and user-defined commands.
+ * Class is to be accessed by the commands AND by the instruction factory.
+ * 
+ * @author slogo_team02 a.k.a. TEAM ROCKET
+ *
+ */
 public class CommandsList implements Feature {
 	public static final String DEFAULT_LANGUAGE_PACKAGE = "resources.languages/";
 	public static final String DEFAULT_LANGUAGE_BUNDLE = DEFAULT_LANGUAGE_PACKAGE + "English";
@@ -23,6 +31,7 @@ public class CommandsList implements Feature {
 		PreDefinedCommands = initPreDefinedCommands(languageBundle);
 		UserDefinedCommands = new HashMap<String, Instruction>();
 	}
+	
 	private ResourceBundle loadResourceBundle(String filepath) {
 		return ResourceBundle.getBundle(filepath);
 	}
@@ -41,15 +50,25 @@ public class CommandsList implements Feature {
 	}
 
 	public void addCommand(String commandSyntax, Instruction instr) {
+		if (PreDefinedCommands.containsKey(commandSyntax) ||
+			UserDefinedCommands.containsKey(commandSyntax)) {
+			System.out.println("COMMAND ALREADY DEFINED.");
+		}
 		UserDefinedCommands.put(commandSyntax, instr);
 		
 	}
 
 	public void deleteCommand(String command) {
-		//Error Check for command
+		if (!UserDefinedCommands.containsKey(command)) {
+			System.out.println("USER DEFINED COMMAND NOT FOUND.");
+		}
 		UserDefinedCommands.remove(command);
 	}
 
+	/**
+	 * Allows switching of language
+	 * @param language string of language to change to
+	 */
 	public void changeLanguage(String language) {
 		languageBundle = loadResourceBundle(DEFAULT_LANGUAGE_PACKAGE + language);
 		PreDefinedCommands = initPreDefinedCommands(languageBundle);
