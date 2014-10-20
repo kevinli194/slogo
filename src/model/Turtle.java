@@ -104,7 +104,7 @@ public class Turtle implements Feature {
         double[] endCoords = new double[2];
         endCoords[0] = myCoordinates[0] + distance
                        * Math.sin(Math.toRadians(myAngle));
-        endCoords[1] = myCoordinates[1] + distance
+        endCoords[1] = myCoordinates[1] - distance
                        * Math.cos(Math.toRadians(myAngle));
         return endCoords;
     }

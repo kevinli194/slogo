@@ -8,10 +8,6 @@ public class VariableInstruction extends UserDefinedInstruction {
 	public VariableInstruction(String name) {
 		super(name);
 	}
-
-	protected String getName() {
-		return myName;
-	}
 	
 	/**
 	 * Gets value of variable from VariablesList
@@ -19,7 +15,7 @@ public class VariableInstruction extends UserDefinedInstruction {
 	@Override
 	public double execute(ObservableData data) {
 		VariablesList varList = (VariablesList) data.get("VariablesList");
-		return varList.get(super.myName);
+		return varList.get(super.myName).execute(data);
 	}
 
 }
