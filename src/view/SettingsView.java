@@ -49,7 +49,8 @@ public class SettingsView extends Pane {
 		Button load=makeButton("Load", handle->model.load()); 
 		Button move=makeButton("Move",handle->model.testThings());
 		Button clear=makeButton("Clear",handle->model.clear());
-		mySettings.getChildren().addAll(load,move,clear);
+		Button help=makeButton("HelpPage", handle->model.accessHelpHTML());
+		mySettings.getChildren().addAll(load,move,clear,help);
 	}
 
 	private Button makeButton(String property, EventHandler<ActionEvent> handler) {

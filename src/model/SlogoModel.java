@@ -2,13 +2,16 @@ package model;
 
 import instructions.Instruction;
 
+import java.io.IOException;
 import java.util.Observable;
 import java.util.Random;
 import java.util.Stack;
 
+import javafx.application.Application;
 import parser.Parser;
 
 public class SlogoModel extends Observable {
+	private static final String HELP_URL="http://www.cs.duke.edu/courses/compsci308/current/assign/03_slogo/commands.php";
 	private ObservableData myData;
 	Parser myParser;
 
@@ -56,6 +59,17 @@ public class SlogoModel extends Observable {
 	public void showToHistoryView(String text) {
 		((History) myData.get("history")).add(text);
 
+	}
+
+	public void accessHelpHTML() {
+		 try {
+			 Runtime.getRuntime().exec(
+					 new String[] {
+					 "/usr/bin/open", HELP_URL
+					 });
+		    } catch (IOException e) {
+		        e.printStackTrace();
+		    }
 	}
 
 }
