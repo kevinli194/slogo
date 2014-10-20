@@ -24,6 +24,7 @@ public class TurtleView extends Pane implements View {
 	}
 
 	public void update(Node node) {
+		this.getChildren().clear();
 		this.getChildren().add(node);
 
 	}

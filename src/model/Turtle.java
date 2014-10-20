@@ -117,7 +117,7 @@ public class Turtle implements Feature {
 		return myImage;
 	}
 
-	public Node generateNode() {
+	public Node generate() {
 		return myDrawing;
 	}
 

@@ -28,7 +28,7 @@ public class InstructionView extends ScrollPane implements View {
 
 	public void update(List<Map<String, Instruction>> instructions) {
 		myView.getChildren().clear();
-		for (String s : instructions.get(1).keySet()) {
+		for (String s : instructions.get(0).keySet()) {
 			HBox row = preDefinedInstructionRow(s);
 			myView.getChildren().add(row);
 		}

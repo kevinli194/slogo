@@ -64,9 +64,9 @@ public class InstructionFactory {
 			double value = Double.parseDouble(type);
 			return new ConstantInstruction(value);
 		}
-		else if (type.matches(VARIABLE_REGEX)){
+/*		else if (type.matches(VARIABLE_REGEX)){
 			return new VariableInstruction(type);
-		}
+		}*/
 		else if (type.matches(COMMAND_REGEX)) {
 			try {
 				Class<?> comClass = Class.forName("instructions.commands." + languageMap.get(type));

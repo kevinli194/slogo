@@ -44,20 +44,19 @@ public class SlogoView extends BorderPane implements Observer {
 
 		if (!arg.equals(myOD)) {
 			myOD = (ObservableData) arg;
-			Turtle turtle = (Turtle) ((ObservableData) arg).get("turtle");
-			Node drawing = turtle.generateNode();
-			myTurtleView.update(drawing);
-
-			// InstructionList instrList=(InstructionList)((ObservableData)
-			// arg).get("InstructionList");
-			// Node instructionBox=instrList.generateNode(myInputView);
-			// myInstructionView.update(instructionBox);
-			myInstructionView.update(((InstructionList) ((ObservableData) arg)
-					.get("InstructionList")).generate());
-			myHistoryView.update(((History) ((ObservableData) arg)
-					.get("history")).generate());
 		}
 
+		myTurtleView.update(((Turtle) ((ObservableData) arg).get("turtle"))
+				.generate());
+
+		// InstructionList instrList=(InstructionList)((ObservableData)
+		// arg).get("InstructionList");
+		// Node instructionBox=instrList.generateNode(myInputView);
+		// myInstructionView.update(instructionBox);
+		myInstructionView.update(((InstructionList) ((ObservableData) arg)
+				.get("InstructionList")).generate());
+		myHistoryView.update(((History) ((ObservableData) arg).get("history"))
+				.generate());
 	}
 
 }
