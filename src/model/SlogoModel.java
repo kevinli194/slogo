@@ -32,27 +32,29 @@ public class SlogoModel extends Observable {
 	}
 
 	private void showOnView(double returnValue) {
-		((History) myData.get("history")).add("final return:"+returnValue+"\n");
+		((History) myData.get("history")).add("final return:" + returnValue
+				+ "\n");
 	}
 
-	public void load(){
+	public void load() {
 		setChanged();
 		notifyObservers(myData);
 	}
+
 	public void testThings() {
 		Random rn = new Random();
 		double x = rn.nextInt(50);
 		((Turtle) myData.get("turtle")).rotate(x);
 		((Turtle) myData.get("turtle")).moveTurtleAndDrawLine(10);
-		((History) myData.get("history")).add("Turtle Rotated By: " + x);  
+		((History) myData.get("history")).add("Turtle Rotated By: " + x);
 	}
-	
+
 	public void clear() {
 		myData.clear();
 	}
 
 	public void showToHistoryView(String text) {
-		((History) myData.get("history")).addTextBox(text);  
-		
+		((History) myData.get("history")).addTextBox(text);
+
 	}
 }

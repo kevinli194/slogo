@@ -2,7 +2,9 @@ package model;
 
 import instructions.Instruction;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import view.InputView;
@@ -13,7 +15,14 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
-// NEEDS TO GET MOVED TO THE VIEW PACKAGE
+/**
+ * This class generates and creates the data structure used to store the
+ * instructions (basic and user-defined) for the program.
+ * 
+ * @author Kevin Li
+ * @author Meng'en Huang
+ *
+ */
 public class InstructionList implements Feature {
 	private Map<String, Instruction> myBasicInstructions;
 	private Map<String, Instruction> myUserDefinedFunctions;
@@ -53,17 +62,20 @@ public class InstructionList implements Feature {
 	}
 
 	@Override
-	/**
-	 * Clears the map of user defined functions.
-	 */
 	public void clear() {
 		myUserDefinedFunctions.clear();
 	}
 
-	// Make sure to add for UserDefined Functions
-
-	public Map<String, Instruction> generate() {
-		return myBasicInstructions;
+	/**
+	 * Returns the data held in the InstructionList model as a list of maps.
+	 * 
+	 * @return List containing the two maps for basic and user defined
+	 *         functions.
+	 */
+	public List<Map<String, Instruction>> generate() {
+		List<Map<String, Instruction>> instructions = new ArrayList<Map<String, Instruction>>();
+		instructions.add(myBasicInstructions);
+		instructions.add(myUserDefinedFunctions);
+		return instructions;
 	}
-
 }

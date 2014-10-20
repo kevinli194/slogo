@@ -3,18 +3,21 @@ package model;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 
+ * @author Jennie Ju
+ * @author Kevin Li
+ *
+ */
 public class ObservableData {
-	private Map<String,Feature> myFeatures;
+	private Map<String, Feature> myFeatures;
 
 	public ObservableData() {
-		myFeatures = new HashMap<String,Feature>();
-		
+		myFeatures = new HashMap<String, Feature>();
+
 		// Add new features to this list
-		addAllToMyFeatures(
-			new Turtle(),
-			new History(),
-			new InstructionList(),
-			new VariablesList());
+		addAllToMyFeatures(new Turtle(), new History(), new InstructionList(),
+				new VariablesList());
 	}
 
 	private void addAllToMyFeatures(Feature... features) {

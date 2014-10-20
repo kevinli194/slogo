@@ -5,7 +5,6 @@ import instructions.Instruction;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class VariablesList implements Feature {
 	private Map<String, Instruction> myVariables;
 
@@ -20,7 +19,7 @@ public class VariablesList implements Feature {
 	public void remove(String variableName) {
 		myVariables.remove(variableName);
 	}
-	
+
 	@Override
 	public void clear() {
 		myVariables.clear();

@@ -13,16 +13,20 @@ import java.util.Set;
 public class CommandsList implements Feature {
 	public static final String DEFAULT_LANGUAGE_PACKAGE = "resources.languages/";
 	public static final String DEFAULT_LANGUAGE_BUNDLE = DEFAULT_LANGUAGE_PACKAGE + "English";
-
 	private ResourceBundle languageBundle;
+	
 	private Map<String, String> PreDefinedCommands;
 	private Map<String, Instruction> UserDefinedCommands;
 
+	/**
+	 * 
+	 */
 	public CommandsList() {
 		languageBundle = loadResourceBundle(DEFAULT_LANGUAGE_BUNDLE);
 		PreDefinedCommands = initPreDefinedCommands(languageBundle);
 		UserDefinedCommands = new HashMap<String, Instruction>();
 	}
+	
 	private ResourceBundle loadResourceBundle(String filepath) {
 		return ResourceBundle.getBundle(filepath);
 	}

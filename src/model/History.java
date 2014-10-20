@@ -1,28 +1,28 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import view.InputView;
-import javafx.event.EventHandler;
-import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.control.TextArea;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-
-// NEEDS TO GET MOVED TO THE VIEW PACKAGE
+/**
+ * Class that contains the data storing the history of all the commands used.
+ * 
+ * @author Kevin Li
+ *
+ */
 public class History implements Feature {
 
 	private List<String> myHistory;
-	private InputView myInput;
 
 	public History() {
 		myHistory = new LinkedList<String>();
 	}
+
+	/**
+	 * Adds a history element to the history list.
+	 * 
+	 * @param element
+	 *            history element
+	 */
 
 	public void add(String element) {
 		myHistory.add(element);
@@ -33,7 +33,13 @@ public class History implements Feature {
 		myHistory.clear();
 	}
 
-	public List<String> generateNode() {
+	/**
+	 * Returns the data structure containing the history.
+	 * 
+	 * @return myHistory - a list of strings containing the history.
+	 */
+
+	public List<String> generate() {
 		return myHistory;
 	}
 }
