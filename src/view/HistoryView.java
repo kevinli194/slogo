@@ -30,6 +30,7 @@ public class HistoryView extends ScrollPane implements View {
 		setView(HISTORYVIEW_WIDTH, HISTORYVIEW_HEIGHT);
 		myView = new VBox();
 		myInput = inputView;
+		this.setContent(myView);
 	}
 
 	// Takes the history and converts it into a graphical element
