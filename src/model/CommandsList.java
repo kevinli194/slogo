@@ -58,11 +58,11 @@ public class CommandsList implements Feature {
 		
 	}
 
-	public void deleteCommand(String command) {
-		if (!UserDefinedCommands.containsKey(command)) {
+	public void deleteCommand(String commandSyntax) {
+		if (!UserDefinedCommands.containsKey(commandSyntax)) {
 			System.out.println("USER DEFINED COMMAND NOT FOUND.");
 		}
-		UserDefinedCommands.remove(command);
+		UserDefinedCommands.remove(commandSyntax);
 	}
 
 	/**
@@ -73,6 +73,10 @@ public class CommandsList implements Feature {
 		languageBundle = loadResourceBundle(DEFAULT_LANGUAGE_PACKAGE + language);
 		PreDefinedCommands = initPreDefinedCommands(languageBundle);
 	}
+	
+//	public String getCommand(String commandSyntax) {
+//		
+//	}
 
 	public List<String> getCommandSyntaxes() {
 		List<String> commands = new ArrayList<String>();
