@@ -1,11 +1,11 @@
 package instructions.commands;
 
-import instructions.Instruction;
+import instructions.ZeroParamInstruction;
 import model.Feature;
 import model.ObservableData;
 import model.Turtle;
 
-public class ClearScreen implements Instruction{
+public class ClearScreen extends ZeroParamInstruction {
 
     @Override
     public double execute (ObservableData data) {
@@ -24,18 +24,6 @@ public class ClearScreen implements Instruction{
         double yDiff = finalCoords[1] - startCoords[1];
 
         return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
-    }
-
-    @Override
-    public int getNumParams () {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public void addParam (Instruction param) {
-        // TODO Auto-generated method stub
-
     }
 
 }

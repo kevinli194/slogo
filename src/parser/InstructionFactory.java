@@ -2,7 +2,7 @@ package parser;
 
 import instructions.ConstantInstruction;
 import instructions.Instruction;
-
+import instructions.VariableInstruction;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -64,13 +64,10 @@ public class InstructionFactory {
 			double value = Double.parseDouble(type);
 			return new ConstantInstruction(value);
 		}
-
-		
 		else if (type.matches(VARIABLE_REGEX)){
-			return null;
+			return new VariableInstruction(type);
 		}
 		else if (type.matches(COMMAND_REGEX)) {
-
 			try {
 				Class<?> comClass = Class.forName("instructions.commands." + languageMap.get(type));
 				Constructor<?> comConstructor = comClass.getConstructor();

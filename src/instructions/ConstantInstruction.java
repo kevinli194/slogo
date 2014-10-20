@@ -1,7 +1,5 @@
 package instructions;
 
-import java.util.Map;
-import model.Feature;
 import model.ObservableData;
 
 /**
@@ -9,7 +7,7 @@ import model.ObservableData;
  * evaluate method will return its double value.
  * 
  */
-public class ConstantInstruction implements Instruction {
+public class ConstantInstruction extends ZeroParamInstruction {
 	private double myValue;
 
 	public ConstantInstruction(double value) {
@@ -20,14 +18,4 @@ public class ConstantInstruction implements Instruction {
 	public double execute(ObservableData data) {
 		return myValue;
 	}
-
-	@Override
-	public int getNumParams() {
-		return 0;
-	}
-
-	@Override
-	public void addParam(Instruction instr) {
-	}
-
 }
