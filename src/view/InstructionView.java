@@ -2,6 +2,7 @@ package view;
 
 import instructions.Instruction;
 
+import java.util.List;
 import java.util.Map;
 
 import javafx.event.EventHandler;
@@ -22,11 +23,12 @@ public class InstructionView extends ScrollPane implements View {
 	public InstructionView(InputView input) {
 		setView(INSTRUCTIONVIEW_WIDTH, INSTRUCTIONVIEW_HEIGHT);
 		myInput = input;
+		myView = new VBox();
 	}
 
-	public void update(Map<String, Instruction> instructions) {
+	public void update(List<Map<String, Instruction>> instructions) {
 		myView.getChildren().clear();
-		for (String s : instructions.keySet()) {
+		for (String s : instructions.get(1).keySet()) {
 			HBox row = preDefinedInstructionRow(s);
 			myView.getChildren().add(row);
 		}

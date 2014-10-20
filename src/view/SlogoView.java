@@ -53,9 +53,9 @@ public class SlogoView extends BorderPane implements Observer {
 			// Node instructionBox=instrList.generateNode(myInputView);
 			// myInstructionView.update(instructionBox);
 			myInstructionView.update(((InstructionList) ((ObservableData) arg)
-					.get("InstructionList")).generateNode(myInputView));
+					.get("InstructionList")).generate());
 			myHistoryView.update(((History) ((ObservableData) arg)
-					.get("history")).generateNode(myInputView));
+					.get("history")).generate());
 		}
 
 	}

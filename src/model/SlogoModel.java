@@ -54,7 +54,8 @@ public class SlogoModel extends Observable {
 	}
 
 	public void showToHistoryView(String text) {
-		((History) myData.get("history")).addTextBox(text);
+		((History) myData.get("history")).add(text);
 
 	}
+
 }
