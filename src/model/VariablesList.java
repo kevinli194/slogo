@@ -1,5 +1,7 @@
 package model;
 
+import instructions.Instruction;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,13 +15,13 @@ import java.util.Map;
  *
  */
 public class VariablesList implements Feature {
-	private Map<String, Double> myVariables;
+	private Map<String, Instruction> myVariables;
 
 	public VariablesList() {
-		myVariables = new HashMap<String, Double>();
+		myVariables = new HashMap<String, Instruction>();
 	}
 
-	public void add(String variableName, Double value) {
+	public void add(String variableName, Instruction value) {
 		// TODO: Update to throwing better errors (window perhaps)
 		// Could maybe update to ask user if they want to overwrite
 		// the variable
@@ -30,23 +32,23 @@ public class VariablesList implements Feature {
 		myVariables.put(variableName, value);
 	}
 	
-	public double get(String variableName) {
+	public Instruction get(String variableName) {
 		// TODO: Update to throwing better errors (window perhaps)
 		// Same error as one in REMOVE method
 		if (!myVariables.containsKey(variableName)) {
 			System.out.println("VARIABLE DOES NOT EXIST. CANNOT GET.");
-			return 0;
+			return null;
 		}
 		return myVariables.get(variableName);
 	}
 
-	public void remove(String variableName) {
+	public Instruction remove(String variableName) {
 		// TODO: Update to throwing better errors (window perhaps)
 		if (!myVariables.containsKey(variableName)) {
 			System.out.println("VARIABLE DOES NOT EXIST. CANNOT REMOVE.");
-			return;
+			return null;
 		}
-		myVariables.remove(variableName);
+		return myVariables.remove(variableName);
 	}
 	
 	/**

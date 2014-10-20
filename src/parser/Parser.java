@@ -51,7 +51,6 @@ public class Parser {
 		languageBundle = bundle;
 	}
 
-
 	public Stack<Instruction> parse(String input) {
 		// get tokens
 		List<String> tokens = tokenizer.tokenize(input);

@@ -13,9 +13,12 @@ public class ListInstruction extends ZeroParamInstruction {
 
 	}
 
+	protected List<Instruction> getInstructionList() {
+		return myInstructionList;
+	}
+	
 	@Override
 	public double execute(ObservableData od) {
-		// TODO Auto-generated method stub
 		double returnAmt = 0;
 		for (Instruction instr : myInstructionList) {
 			returnAmt = instr.execute(od);
