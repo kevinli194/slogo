@@ -63,10 +63,11 @@ public class Turtle implements Feature {
 	}
 
 	public double[] getCoordinates() {
-		for (int i = 0; i < 2; i++) {
-			myRelativeCoordinates[i] = Math.round((myCoordinates[i]
+			myRelativeCoordinates[0] = Math.round((myCoordinates[0]
 					- DEFAULT_CENTRE_COORDINATE)*10)/10.0;
-		}
+			myRelativeCoordinates[1] = -Math.round((myCoordinates[1]
+					- DEFAULT_CENTRE_COORDINATE)*10)/10.0;
+		
 		return myRelativeCoordinates;
 	}
 
@@ -121,7 +122,7 @@ public class Turtle implements Feature {
 		double[] endCoords = new double[2];
 		endCoords[0] = myCoordinates[0] + distance
 				* Math.sin(Math.toRadians(myAngle));
-		endCoords[1] = myCoordinates[1] + distance
+		endCoords[1] = myCoordinates[1] - distance
 				* Math.cos(Math.toRadians(myAngle));
 		return endCoords;
 	}
