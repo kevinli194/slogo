@@ -13,7 +13,7 @@ public class ListInstruction extends ZeroParamInstruction {
 
 	}
 
-	protected List<Instruction> getInstructionList() {
+	public List<Instruction> getInstructionList() {
 		return myInstructionList;
 	}
 	

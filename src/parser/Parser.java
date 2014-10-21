@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Stack;
 
+import model.ObservableData;
+
 
 /**
  * Parser for converting strings of instructions
@@ -42,9 +44,9 @@ public class Parser {
 	 * Constructor for a Parser.
 	 * Creates a new instance of the Tokenizer.
 	 */
-	public Parser() {
+	public Parser(ObservableData data) {
 		tokenizer = new Tokenizer();
-		iFactory = new InstructionFactory();
+		iFactory = new InstructionFactory(data);
 	}
 
 	public void setLanguage(ResourceBundle bundle) {
@@ -87,8 +89,7 @@ public class Parser {
 				instr = new ListInstruction(lst);
 				
 				// update iterator
-				iter = iter + bracketInd;
-			
+				iter = bracketInd;
 			}
 			else {
 				instr = iFactory.makeInstruction(token);

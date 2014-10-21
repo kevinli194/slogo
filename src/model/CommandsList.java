@@ -60,6 +60,14 @@ public class CommandsList implements Feature {
 		UserDefinedCommands.put(commandSyntax, instr);
 		
 	}
+	
+	public Instruction getCommand(String commandSyntax) {
+		if (!UserDefinedCommands.containsKey(commandSyntax)) {
+			System.out.println("COMMAND DOES NOT EXIST.");
+		}
+		return UserDefinedCommands.get(commandSyntax);
+		
+	}
 
 	public void deleteCommand(String commandSyntax) {
 		if (!UserDefinedCommands.containsKey(commandSyntax)) {
@@ -77,10 +85,6 @@ public class CommandsList implements Feature {
 		PreDefinedCommands = initPreDefinedCommands(languageBundle);
 	}
 	
-//	public String getCommand(String commandSyntax) {
-//		
-//	}
-
 	public List<String> getCommandSyntaxes() {
 		List<String> commands = new ArrayList<String>();
 		commands.addAll(PreDefinedCommands.keySet());
