@@ -11,7 +11,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 public class Turtle implements Feature {
-	private static final double DEFAULT_CENTRE_COORDINATE = 0;
+	private static final double DEFAULT_COORDINATE = 0;
 	private static final double DEFAULT_TURTLE_ANGLE = 0;
 	private static final double DEFAULT_TURTLE_SIZE = 30;
 	private static final double FULL_ROTATION_DEGREE = 360;
@@ -19,9 +19,8 @@ public class Turtle implements Feature {
 	private static final String DEFAULT_TURTLE_IMAGE = "default_turtle.gif";
 
 	private ImageView myImage;
-	private double[] myRelativeCoordinates={0,0};
-	private double[] myCoordinates = { DEFAULT_CENTRE_COORDINATE,
-			DEFAULT_CENTRE_COORDINATE };
+	// private double[] myRelativeCoordinates = { 0, 0 };
+	private double[] myCoordinates = { DEFAULT_COORDINATE, DEFAULT_COORDINATE };
 	private double myAngle = DEFAULT_TURTLE_ANGLE;
 	private Pen myPen;
 	private Group myDrawing;
@@ -30,12 +29,12 @@ public class Turtle implements Feature {
 	private Image myDefault = new Image(getClass().getResourceAsStream(
 			DEFAULT_TURTLE_IMAGE));
 	private boolean isVisible;
-	private boolean infoVis=true;
+	private boolean infoVis = true;
 
 	public Turtle() {
 		myImage = new ImageView(myDefault);
 		myPen = new Pen();
-		myTurtleInfo=new Text();
+		myTurtleInfo = new Text();
 		myLines = new Group();
 		myDrawing = new Group();
 		InitializeTurtle();
@@ -61,12 +60,8 @@ public class Turtle implements Feature {
 	}
 
 	public double[] getCoordinates() {
-			myRelativeCoordinates[0] = Math.round((myCoordinates[0]
-					- DEFAULT_CENTRE_COORDINATE)*10)/10.0;
-			myRelativeCoordinates[1] = -Math.round((myCoordinates[1]
-					- DEFAULT_CENTRE_COORDINATE)*10)/10.0;
-		
-		return myRelativeCoordinates;
+
+		return myCoordinates;
 	}
 
 	public void setVisible(boolean state) {
@@ -101,7 +96,7 @@ public class Turtle implements Feature {
 	}
 
 	public double getAngle() {
-		return Math.round(myAngle*10)/10.0;
+		return Math.round(myAngle * 10) / 10.0;
 	}
 
 	public Pen getPen() {
@@ -124,11 +119,12 @@ public class Turtle implements Feature {
 				* Math.cos(Math.toRadians(myAngle));
 		return endCoords;
 	}
-	
+
 	private void updateTurtleInfo() {
-		myTurtleInfo.setText("x:"+getCoordinates()[0]+" y:"+getCoordinates()[1]+" °:"+getAngle());
+		myTurtleInfo.setText("x:" + getCoordinates()[0] + " y:"
+				+ getCoordinates()[1] + " °:" + getAngle());
 		myTurtleInfo.setFill(Color.GREEN);
-		myTurtleInfo.setFont(Font.font(null,FontWeight.BOLD,12));
+		myTurtleInfo.setFont(Font.font(null, FontWeight.BOLD, 12));
 	}
 
 	public Group getDrawing() {
@@ -146,16 +142,15 @@ public class Turtle implements Feature {
 	@Override
 	public void clear() {
 		myLines.getChildren().clear();
-		setCoordinates(DEFAULT_CENTRE_COORDINATE, DEFAULT_CENTRE_COORDINATE);
+		setCoordinates(DEFAULT_COORDINATE, DEFAULT_COORDINATE);
 		setAngle(DEFAULT_TURTLE_ANGLE);
 		updateTurtleInfo();
 
 	}
 
 	public void switchInfoVis() {
-		infoVis=!infoVis;
-		myTurtleInfo.setVisible(infoVis);		
+		infoVis = !infoVis;
+		myTurtleInfo.setVisible(infoVis);
 	}
-
 
 }

@@ -28,12 +28,13 @@ public class SlogoView extends BorderPane implements Observer {
 		mySettingsView = new SettingsView(model, myTurtleView);
 		myOD = new ObservableData();
 		myModel = model;
-
+		
 		setCenter(myTurtleView);
 		setRight(myInstructionView);
 		setBottom(myInputView);
 		setLeft(myHistoryView);
 		setTop(mySettingsView);
+
 		setVisible(true);
 
 	}

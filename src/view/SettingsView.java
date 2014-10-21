@@ -7,6 +7,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Separator;
+import javafx.scene.control.ToolBar;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
@@ -18,18 +20,15 @@ public class SettingsView extends Pane {
 			.getVisualBounds().getHeight()
 			* 1 / 16 * 4 / 5;
 
-	private HBox mySettings;
+	private ToolBar mySettings;
 
 	public SettingsView(SlogoModel model, TurtleView view) {
-
 		setPrefWidth(SETTINGSVIEW_WIDTH);
 		setPrefHeight(SETTINGSVIEW_HEIGHT);
-
-		mySettings = new HBox();
-		this.getChildren().add(mySettings);
-
+		mySettings = new ToolBar();
 		addButtons(model);
 		changeBackgroundColor(view);
+		this.getChildren().add(mySettings);
 
 	}
 
@@ -37,7 +36,7 @@ public class SettingsView extends Pane {
 		ObservableList<String> options = FXCollections.observableArrayList(
 				"Black", "Red", "Blue", "Green");
 		ComboBox<String> colorOptions = new ComboBox<String>(options);
-		mySettings.getChildren().add(colorOptions);
+		mySettings.getItems().add(colorOptions);
 
 		colorOptions.setOnAction((event) -> {
 			String selectedColor = colorOptions.getSelectionModel()
@@ -54,7 +53,8 @@ public class SettingsView extends Pane {
 		Button turtleInfo = makeButton("Show/Hide Info",
 				handle -> model.changeInfoVis());
 		Button help = makeButton("HelpPage", handle -> model.accessHelpHTML());
-		mySettings.getChildren().addAll(load, move, clear, turtleInfo, help);
+		mySettings.getItems().addAll(load, move, clear, turtleInfo, help);
+
 	}
 
 	private Button makeButton(String property, EventHandler<ActionEvent> handler) {

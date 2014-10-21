@@ -32,6 +32,7 @@ public abstract class SideView extends ScrollPane {
 	public void setView(double width, double height) {
 		setPrefSize(width, height);
 		setMinSize(width, height);
+		setMaxSize(width, height);
 	}
 
 	public void addTextBox(String s) {
