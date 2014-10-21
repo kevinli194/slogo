@@ -39,9 +39,7 @@ public class Turtle implements Feature {
 		myLines = new Group();
 		myDrawing = new Group();
 		InitializeTurtle();
-		myDrawing.getChildren().add(myTurtleInfo);
-		myDrawing.getChildren().add(myLines);
-		myDrawing.getChildren().add(myImage);
+		myDrawing.getChildren().addAll(myTurtleInfo, myLines, myImage);
 		isVisible = true;
 
 	}

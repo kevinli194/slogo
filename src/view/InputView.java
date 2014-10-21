@@ -1,16 +1,13 @@
 package view;
 
 import model.SlogoModel;
-import parser.Tokenizer;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.Pane;
 
-public class InputView extends Pane implements View {
+public class InputView extends PaneView {
 	private static final double VIEW_WIDTH = 1000;
 	private static final double VIEW_HEIGHT = 70;
 	private static final double INPUT_WIDTH = 930;
@@ -70,13 +67,6 @@ public class InputView extends Pane implements View {
 
 		myInput.clear();
 		myInput.setText(myText);
-	}
-
-	@Override
-	public void setView(double width, double height) {
-		setPrefWidth(width);
-		setPrefHeight(height);
-		setMinSize(width, height);
 	}
 
 	public void update(Node node) {

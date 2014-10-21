@@ -4,8 +4,6 @@ import java.util.Observable;
 import java.util.Observer;
 
 import javafx.scene.layout.BorderPane;
-import javafx.scene.Node;
-import model.Feature;
 import model.History;
 import model.InstructionList;
 import model.ObservableData;

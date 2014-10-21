@@ -1,7 +1,9 @@
 package main;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import view.SlogoView;
 import model.SlogoModel;
 
@@ -15,6 +17,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		String language = "English";
+		primaryStage.initStyle(StageStyle.UTILITY);
 		myModel = new SlogoModel();
 		myView = new SlogoView(language, myModel);
 		myModel.addObserver(myView);

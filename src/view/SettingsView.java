@@ -9,8 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 
 public class SettingsView extends Pane {
 	private static final double SETTINGSVIEW_WIDTH = 1000;
