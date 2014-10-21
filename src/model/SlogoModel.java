@@ -72,4 +72,9 @@ public class SlogoModel extends Observable {
 		    }
 	}
 
+	public void changeInfoVis() {
+		((Turtle) myData.get("turtle")).switchInfoVis();
+		
+	}
+
 }
