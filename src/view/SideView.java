@@ -6,11 +6,16 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Screen;
 
 public abstract class SideView extends ScrollPane {
 
-	private static final double SIDEVIEW_WIDTH = 200;
-	private static final double SIDEVIEW_HEIGHT = 600;
+	private static final double SIDEVIEW_WIDTH = Screen.getPrimary()
+			.getVisualBounds().getWidth()
+			* 1 / 5 * 3 / 4;
+	private static final double SIDEVIEW_HEIGHT = Screen.getPrimary()
+			.getVisualBounds().getHeight()
+			* 11 / 16 * 4 / 5;
 	private InputView myInput;
 	protected VBox myView;
 
@@ -25,8 +30,7 @@ public abstract class SideView extends ScrollPane {
 	}
 
 	public void setView(double width, double height) {
-		setPrefWidth(width);
-		setPrefHeight(height);
+		setPrefSize(width, height);
 		setMinSize(width, height);
 	}
 
@@ -34,7 +38,6 @@ public abstract class SideView extends ScrollPane {
 		HBox h = new HBox();
 		Text t = new Text(s);
 		h.getChildren().add(t);
-	
 
 		t.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override

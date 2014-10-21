@@ -4,8 +4,6 @@ import java.util.List;
 
 public class HistoryView extends SideView {
 
-	private static final double HISTORYVIEW_WIDTH = 200;
-	private static final double HISTORYVIEW_HEIGHT = 600;
 
 	public HistoryView(InputView input) {
 		super(input);

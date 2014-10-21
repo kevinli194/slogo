@@ -1,10 +1,15 @@
 package view;
 
 import javafx.scene.Node;
+import javafx.stage.Screen;
 
 public class TurtleView extends PaneView {
-	private static final double TURTLEVIEW_WIDTH = 600;
-	private static final double TURTLEVIEW_HEIGHT = 600;
+	private static final double TURTLEVIEW_WIDTH = Screen.getPrimary()
+			.getVisualBounds().getWidth()
+			* 3 / 5 * 3 / 4;
+	private static final double TURTLEVIEW_HEIGHT = Screen.getPrimary()
+			.getVisualBounds().getHeight()
+			* 11 / 16 * 4 / 5;
 
 	public TurtleView() {
 		setView(TURTLEVIEW_WIDTH, TURTLEVIEW_HEIGHT);
@@ -22,10 +27,4 @@ public class TurtleView extends PaneView {
 
 	}
 
-	@Override
-	public void setView(double width, double height) {
-		setPrefWidth(width);
-		setPrefHeight(height);
-		setMinSize(width, height);
-	}
 }

@@ -6,10 +6,14 @@ import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.stage.Screen;
 
 public class InputView extends PaneView {
-	private static final double VIEW_WIDTH = 1000;
-	private static final double VIEW_HEIGHT = 70;
+	private static final double VIEW_WIDTH = Screen.getPrimary()
+			.getVisualBounds().getWidth() * 3 / 4;
+	private static final double VIEW_HEIGHT = Screen.getPrimary()
+			.getVisualBounds().getHeight()
+			* 1 / 4 * 4 / 5;
 	private static final double INPUT_WIDTH = 930;
 	private static final double SUBMIT_BUTTON_X_LAYOUT = 930;
 	private static final double SUBMIT_BUTTON_Y_LAYOUT = 0;

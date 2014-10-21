@@ -9,10 +9,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.stage.Screen;
 
 public class SettingsView extends Pane {
-	private static final double SETTINGSVIEW_WIDTH = 1000;
-	private static final double SETTINGSVIEW_HEIGHT = 25;
+	private static final double SETTINGSVIEW_WIDTH = Screen.getPrimary()
+			.getVisualBounds().getWidth() * 3 / 4;
+	private static final double SETTINGSVIEW_HEIGHT = Screen.getPrimary()
+			.getVisualBounds().getHeight()
+			* 1 / 16 * 4 / 5;
 
 	private HBox mySettings;
 
@@ -20,7 +24,7 @@ public class SettingsView extends Pane {
 
 		setPrefWidth(SETTINGSVIEW_WIDTH);
 		setPrefHeight(SETTINGSVIEW_HEIGHT);
-		
+
 		mySettings = new HBox();
 		this.getChildren().add(mySettings);
 
@@ -44,12 +48,13 @@ public class SettingsView extends Pane {
 	}
 
 	private void addButtons(SlogoModel model) {
-		Button load=makeButton("Load", handle->model.load()); 
-		Button move=makeButton("Move",handle->model.testThings());
-		Button clear=makeButton("Clear",handle->model.clear());
-		Button turtleInfo=makeButton("Show/Hide Info", handle->model.changeInfoVis());
-		Button help=makeButton("HelpPage", handle->model.accessHelpHTML());
-		mySettings.getChildren().addAll(load,move,clear,turtleInfo,help);
+		Button load = makeButton("Load", handle -> model.load());
+		Button move = makeButton("Move", handle -> model.testThings());
+		Button clear = makeButton("Clear", handle -> model.clear());
+		Button turtleInfo = makeButton("Show/Hide Info",
+				handle -> model.changeInfoVis());
+		Button help = makeButton("HelpPage", handle -> model.accessHelpHTML());
+		mySettings.getChildren().addAll(load, move, clear, turtleInfo, help);
 	}
 
 	private Button makeButton(String property, EventHandler<ActionEvent> handler) {
