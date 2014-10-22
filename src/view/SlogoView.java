@@ -1,62 +1,59 @@
 package view;
 
-import java.util.Observable;
-import java.util.Observer;
-
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.ToolBar;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.Node;
-import model.Feature;
-import model.History;
-import model.InstructionList;
-import model.ObservableData;
-import model.SlogoModel;
-import model.Turtle;
 
-public class SlogoView extends BorderPane implements Observer {
-	TurtleView myTurtleView;
-	InputView myInputView;
-	InstructionView myInstructionView;
-	HistoryView myHistoryView;
-	SettingsView mySettingsView;
-	SlogoModel myModel;
-	ObservableData myOD;
+public class SlogoView {
+	private Scene myScene;
+	private BorderPane myRoot;
+	private TabPane myTabs;
+	private Button myAddButton = new Button("+");
+	private int myTabCount;
 
-	public SlogoView(String language, SlogoModel model) {
-		myTurtleView = new TurtleView();
-		myInputView = new InputView(model);
-		myInstructionView = new InstructionView(myInputView);
-		myHistoryView = new HistoryView(myInputView);
-		mySettingsView = new SettingsView(model, myTurtleView);
-		myOD = new ObservableData();
-		myModel = model;
+	public SlogoView(String language, double width, double height) {
+		myTabs = new TabPane();
+		myTabCount = 1;
 
-		setCenter(myTurtleView);
-		setRight(myInstructionView);
-		setBottom(myInputView);
-		setLeft(myHistoryView);
-		setTop(mySettingsView);
-		setVisible(true);
+		SlogoWindow firstWindow = new SlogoWindow(language, width,
+				height * 9 / 10);
+		Tab tab = new Tab("Program " + myTabCount++);
+		tab.setContent(firstWindow);
+		myTabs.getTabs().add(tab);
+		setTabView(width, height * 19 / 20);
 
+		myRoot = new BorderPane();
+		myRoot.setCenter(myTabs);
+		myRoot.setTop(new ToolBar(myAddButton));
+
+		myAddButton.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				Tab tab = new Tab("Program " + myTabCount++);
+				SlogoWindow additionalWindow = new SlogoWindow(language, width,
+						height * 9 / 10);
+				tab.setContent(additionalWindow);
+				myTabs.getTabs().add(tab);
+				myTabs.getSelectionModel().select(tab);
+			}
+		});
+
+		myScene = new Scene(myRoot, width, height);
 	}
 
-	@Override
-	public void update(Observable o, Object arg) {
-
-		if (!arg.equals(myOD)) {
-			myOD = (ObservableData) arg;
-		}
-
-		myTurtleView.update(((Turtle) ((ObservableData) arg).get("turtle"))
-				.generate());
-
-		// InstructionList instrList=(InstructionList)((ObservableData)
-		// arg).get("InstructionList");
-		// Node instructionBox=instrList.generateNode(myInputView);
-		// myInstructionView.update(instructionBox);
-		myInstructionView.update(((InstructionList) ((ObservableData) arg)
-				.get("InstructionList")).generate());
-		myHistoryView.update(((History) ((ObservableData) arg).get("history"))
-				.generate());
+	private void setTabView(double width, double height) {
+		myTabs.setPrefSize(width, height);
+		myTabs.setMaxSize(width, height);
+		myTabs.setMinSize(width, height);
 	}
 
+	public Scene generateScene() {
+		return myScene;
+	}
 }

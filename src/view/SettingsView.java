@@ -7,35 +7,27 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
+import javafx.scene.control.ToolBar;
 
-public class SettingsView extends Pane {
-	private static final double SETTINGSVIEW_WIDTH = 1000;
-	private static final double SETTINGSVIEW_HEIGHT = 25;
+public class SettingsView extends ToolBar {
 
-	private HBox mySettings;
-
-	public SettingsView(SlogoModel model, TurtleView view) {
-
-		setPrefWidth(SETTINGSVIEW_WIDTH);
-		setPrefHeight(SETTINGSVIEW_HEIGHT);
-		
-		mySettings = new HBox();
-		this.getChildren().add(mySettings);
-
+	public SettingsView(SlogoModel model, TurtleView view, double width,
+			double height) {
+		setView(width, height);
 		addButtons(model);
 		changeBackgroundColor(view);
+	}
 
+
+	private void setView(double width, double height) {
+		setPrefSize(width, height * 1 / 16);
 	}
 
 	private void changeBackgroundColor(TurtleView view) {
 		ObservableList<String> options = FXCollections.observableArrayList(
 				"Black", "Red", "Blue", "Green");
 		ComboBox<String> colorOptions = new ComboBox<String>(options);
-		mySettings.getChildren().add(colorOptions);
+		this.getItems().add(colorOptions);
 
 		colorOptions.setOnAction((event) -> {
 			String selectedColor = colorOptions.getSelectionModel()
@@ -46,11 +38,14 @@ public class SettingsView extends Pane {
 	}
 
 	private void addButtons(SlogoModel model) {
-		Button load=makeButton("Load", handle->model.load()); 
-		Button move=makeButton("Move",handle->model.testThings());
-		Button clear=makeButton("Clear",handle->model.clear());
-		Button help=makeButton("HelpPage", handle->model.accessHelpHTML());
-		mySettings.getChildren().addAll(load,move,clear,help);
+		Button load = makeButton("Load", handle -> model.load());
+		Button move = makeButton("Move", handle -> model.testThings());
+		Button clear = makeButton("Clear", handle -> model.clear());
+		Button turtleInfo = makeButton("Show/Hide Info",
+				handle -> model.changeInfoVis());
+		Button help = makeButton("HelpPage", handle -> model.accessHelpHTML());
+		this.getItems().addAll(load, move, clear, turtleInfo, help);
+
 	}
 
 	private Button makeButton(String property, EventHandler<ActionEvent> handler) {

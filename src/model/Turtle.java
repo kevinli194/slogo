@@ -4,10 +4,16 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 
 public class Turtle implements Feature {
-	private static final double DEFAULT_CENTRE_COORDINATE = 300;
+	private static final double DEFAULT_XCOORDINATE = 300;
+	private static final double DEFAULT_YCOORDINATE = 150;
+	
 	private static final double DEFAULT_TURTLE_ANGLE = 0;
 	private static final double DEFAULT_TURTLE_SIZE = 30;
 	private static final double FULL_ROTATION_DEGREE = 360;
@@ -15,32 +21,40 @@ public class Turtle implements Feature {
 	private static final String DEFAULT_TURTLE_IMAGE = "default_turtle.gif";
 
 	private ImageView myImage;
-	private double[] myRelativeCoordinates;
-	private double[] myCoordinates = { DEFAULT_CENTRE_COORDINATE,
-			DEFAULT_CENTRE_COORDINATE };
+	// private double[] myRelativeCoordinates = { 0, 0 };
+	private double[] myCoordinates = { DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE };
 	private double myAngle = DEFAULT_TURTLE_ANGLE;
 	private Pen myPen;
 	private Group myDrawing;
 	private Group myLines;
+	private Text myTurtleInfo;
 	private Image myDefault = new Image(getClass().getResourceAsStream(
 			DEFAULT_TURTLE_IMAGE));
 	private boolean isVisible;
+	private boolean infoVis = true;
 
 	public Turtle() {
 		myImage = new ImageView(myDefault);
 		myPen = new Pen();
-		myDrawing = new Group();
+		myTurtleInfo = new Text();
 		myLines = new Group();
+		myDrawing = new Group();
 		InitializeTurtle();
-		myDrawing.getChildren().add(myLines);
-		myDrawing.getChildren().add(myImage);
+		myDrawing.getChildren().addAll(myTurtleInfo, myLines, myImage);
 		isVisible = true;
+
 	}
 
 	private void InitializeTurtle() {
 		myImage.setFitWidth(DEFAULT_TURTLE_SIZE);
 		myImage.setFitHeight(DEFAULT_TURTLE_SIZE);
+		setTurtleInfo();
 		clear();
+	}
+
+	private void setTurtleInfo() {
+		myTurtleInfo.setTranslateX(480);
+		myTurtleInfo.setTranslateY(20);
 	}
 
 	public void changeImage(ImageView image) {
@@ -48,11 +62,8 @@ public class Turtle implements Feature {
 	}
 
 	public double[] getCoordinates() {
-		for (int i = 0; i < 2; i++) {
-			myRelativeCoordinates[i] = myCoordinates[i]
-					- DEFAULT_CENTRE_COORDINATE;
-		}
-		return myRelativeCoordinates;
+
+		return myCoordinates;
 	}
 
 	public void setVisible(boolean state) {
@@ -78,6 +89,7 @@ public class Turtle implements Feature {
 	public void rotate(double deltaAngle) {
 		myAngle = (myAngle + deltaAngle) % FULL_ROTATION_DEGREE;
 		myImage.setRotate(myAngle);
+		updateTurtleInfo();
 	}
 
 	public void setAngle(double angle) {
@@ -86,7 +98,7 @@ public class Turtle implements Feature {
 	}
 
 	public double getAngle() {
-		return myAngle;
+		return Math.round(myAngle * 10) / 10.0;
 	}
 
 	public Pen getPen() {
@@ -98,15 +110,23 @@ public class Turtle implements Feature {
 		myLines.getChildren().add(line);
 		setCoordinates(calculateEndCoord(distance)[0],
 				calculateEndCoord(distance)[1]);
+		updateTurtleInfo();
 	}
 
 	private double[] calculateEndCoord(double distance) {
 		double[] endCoords = new double[2];
 		endCoords[0] = myCoordinates[0] + distance
 				* Math.sin(Math.toRadians(myAngle));
-		endCoords[1] = myCoordinates[1] + distance
+		endCoords[1] = myCoordinates[1] - distance
 				* Math.cos(Math.toRadians(myAngle));
 		return endCoords;
+	}
+
+	private void updateTurtleInfo() {
+		myTurtleInfo.setText("x:" + getCoordinates()[0] + " y:"
+				+ getCoordinates()[1] + " °:" + getAngle());
+		myTurtleInfo.setFill(Color.GREEN);
+		myTurtleInfo.setFont(Font.font(null, FontWeight.BOLD, 12));
 	}
 
 	public Group getDrawing() {
@@ -124,8 +144,15 @@ public class Turtle implements Feature {
 	@Override
 	public void clear() {
 		myLines.getChildren().clear();
-		setCoordinates(DEFAULT_CENTRE_COORDINATE, DEFAULT_CENTRE_COORDINATE);
+		setCoordinates(DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE);
 		setAngle(DEFAULT_TURTLE_ANGLE);
+		updateTurtleInfo();
 
 	}
+
+	public void switchInfoVis() {
+		infoVis = !infoVis;
+		myTurtleInfo.setVisible(infoVis);
+	}
+
 }

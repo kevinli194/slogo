@@ -1,4 +1,3 @@
-//This class does not function. It is for testing the extensibility of the program.
 package model;
 
 import instructions.Instruction;
@@ -100,6 +99,13 @@ public class CommandsList implements Feature {
 
 	public void clear() {
 		UserDefinedCommands.clear();
+	}
+	
+	public List<String[]> generate(){
+		List<String[]> instructionList=new ArrayList<String[]>();
+		instructionList.add(PreDefinedCommands.keySet().toArray(new String[PreDefinedCommands.keySet().size()]));
+		instructionList.add(UserDefinedCommands.keySet().toArray(new String[UserDefinedCommands.keySet().size()]));	
+		return instructionList;
 	}
 
 

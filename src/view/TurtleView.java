@@ -1,22 +1,15 @@
 package view;
 
-import model.Turtle;
-
-import javafx.scene.Group;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Screen;
 
-public class TurtleView extends Pane implements View {
-	private static final double TURTLEVIEW_WIDTH = 600;
-	private static final double TURTLEVIEW_HEIGHT = 600;
+public class TurtleView extends PaneView {
 
-	public TurtleView() {
-		setView(TURTLEVIEW_WIDTH, TURTLEVIEW_HEIGHT);
+	public TurtleView(double width, double height) {
+		setView(width * 3 / 5, height * 11 / 16);
 		setStyle("-fx-background-color:black;");
-
 	}
 
 	public void changeColor(String color) {
@@ -29,10 +22,4 @@ public class TurtleView extends Pane implements View {
 
 	}
 
-	@Override
-	public void setView(double width, double height) {
-		setPrefWidth(width);
-		setPrefHeight(height);
-		setMinSize(width, height);
-	}
 }

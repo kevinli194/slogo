@@ -1,13 +1,13 @@
 package controller;
 
 import model.SlogoModel;
-import view.SlogoView;
+import view.SlogoWindow;
 
 public class SlogoController {
 	SlogoModel myModel;
-	SlogoView myView;
+	SlogoWindow myView;
 
-	public SlogoController(SlogoModel model, SlogoView view) {
+	public SlogoController(SlogoModel model, SlogoWindow view) {
 		myModel = model;
 		myView = view;
 	}
