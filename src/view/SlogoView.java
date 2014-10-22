@@ -3,9 +3,8 @@ package view;
 import java.util.Observable;
 import java.util.Observer;
 
+import javafx.geometry.Rectangle2D;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.Node;
-import model.Feature;
 import model.History;
 import model.InstructionList;
 import model.ObservableData;
@@ -29,12 +28,13 @@ public class SlogoView extends BorderPane implements Observer {
 		mySettingsView = new SettingsView(model, myTurtleView);
 		myOD = new ObservableData();
 		myModel = model;
-
+		
 		setCenter(myTurtleView);
 		setRight(myInstructionView);
 		setBottom(myInputView);
 		setLeft(myHistoryView);
 		setTop(mySettingsView);
+
 		setVisible(true);
 
 	}

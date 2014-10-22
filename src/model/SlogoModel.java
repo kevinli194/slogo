@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.Observable;
 import java.util.Random;
 import java.util.Stack;
+
+
 import parser.Parser;
 
 public class SlogoModel extends Observable {
@@ -32,8 +34,10 @@ public class SlogoModel extends Observable {
 	}
 
 	private void showOnView(double returnValue) {
-		((History) myData.get("history")).add("final return:" + returnValue
+		((History) myData.get("history")).add("Final Return: " + returnValue
 				+ "\n");
+		setChanged();
+		notifyObservers(myData);
 	}
 
 	public void load() {
@@ -47,14 +51,20 @@ public class SlogoModel extends Observable {
 		((Turtle) myData.get("turtle")).rotate(x);
 		((Turtle) myData.get("turtle")).moveTurtleAndDrawLine(10);
 		((History) myData.get("history")).add("Turtle Rotated By: " + x);
+		setChanged();
+		notifyObservers(myData);
 	}
 
 	public void clear() {
 		myData.clear();
+		setChanged();
+		notifyObservers(myData);
 	}
 
 	public void showToHistoryView(String text) {
 		((History) myData.get("history")).add(text);
+		setChanged();
+		notifyObservers(myData);
 
 	}
 
@@ -67,6 +77,11 @@ public class SlogoModel extends Observable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void changeInfoVis() {
+		((Turtle) myData.get("turtle")).switchInfoVis();
+		
 	}
 
 }

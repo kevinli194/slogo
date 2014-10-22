@@ -8,21 +8,20 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
-public class HistoryView extends ScrollPane implements View {
+public class HistoryView extends SideView {
 
-	private static final double HISTORYVIEW_WIDTH = 200;
-	private static final double HISTORYVIEW_HEIGHT = 600;
-	private VBox myView;
-	private InputView myInput;
 
-	public HistoryView(InputView inputView) {
-		setView(HISTORYVIEW_WIDTH, HISTORYVIEW_HEIGHT);
-		myView = new VBox();
-		myInput = inputView;
-		this.setContent(myView);
+	public HistoryView(InputView input) {
+		super(input);
 	}
 
-	// Takes the history and converts it into a graphical element
+	/**
+	 * Takes the data structure for history and converts it into display
+	 * elements to be displayed on the view. *
+	 * 
+	 * @param history
+	 *            List of strings containing the history of the program.
+	 */
 	public void update(List<String> history) {
 		myView.getChildren().clear();
 		for (String i : history) {
@@ -30,29 +29,7 @@ public class HistoryView extends ScrollPane implements View {
 		}
 	}
 
-	@Override
-	public void setView(double width, double height) {
-		setPrefWidth(width);
-		setPrefHeight(height);
-		setMinSize(width, height);
-	}
-
 	// Duplicated code as in InstructionList. Refactor after combining model to
 	// view;
-
-	public void addTextBox(String s) {
-		HBox row = new HBox();
-		Text t = new Text();
-		t.setText(s);
-
-		t.setOnMousePressed(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent event) {
-				myInput.addAndShowText(s);
-			}
-		});
-		row.getChildren().add(t);
-		myView.getChildren().add(row);
-	}
 
 }
