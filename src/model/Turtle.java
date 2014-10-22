@@ -13,7 +13,7 @@ import javafx.scene.text.Text;
 public class Turtle implements Feature {
 	private static final double DEFAULT_XCOORDINATE = 300;
 	private static final double DEFAULT_YCOORDINATE = 150;
-	
+
 	private static final double DEFAULT_TURTLE_ANGLE = 0;
 	private static final double DEFAULT_TURTLE_SIZE = 30;
 	private static final double FULL_ROTATION_DEGREE = 360;
