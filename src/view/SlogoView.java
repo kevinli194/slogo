@@ -1,30 +1,48 @@
 package view;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.layout.AnchorPane;
 
 public class SlogoView {
 	private Scene myScene;
-	TabPane myView;
-	int TabCount;
+	private AnchorPane myRoot;
+	private TabPane myTabs;
+	private Button myAddButton = new Button("+");
+	private int myTabCount;
 
 	public SlogoView(String language, double width, double height) {
-		myView = new TabPane();
-		TabCount = 1;
-		SlogoWindow window = new SlogoWindow(language, width, height);
-		Tab tab = new Tab();
-		tab.setText("Program " + TabCount);
-		TabCount++;
-		tab.setContent(window);
-		myView.getTabs().add(tab);
-		SlogoWindow window2 = new SlogoWindow(language, width, height);
-		Tab tab2 = new Tab();
-		tab2.setText("Program " + TabCount);
-		tab2.setContent(window2);
-		myView.getTabs().add(tab2);
+		myTabs = new TabPane();
+		myTabCount = 1;
+		SlogoWindow firstWindow = new SlogoWindow(language, width, height);
+		Tab tab = new Tab("Program " + myTabCount++);
+		tab.setContent(firstWindow);
+		myTabs.getTabs().add(tab);
+		myRoot = new AnchorPane();
+		AnchorPane.setTopAnchor(myTabs, 5.0);
+		AnchorPane.setLeftAnchor(myTabs, 5.0);
+		AnchorPane.setRightAnchor(myTabs, 5.0);
+		AnchorPane.setTopAnchor(myAddButton, 10.0);
+		AnchorPane.setLeftAnchor(myAddButton, 10.0);
 
-		myScene = new Scene(myView, width, height);
+		myAddButton.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				final Tab tab = new Tab("Program " + myTabCount++);
+				SlogoWindow additionalWindow = new SlogoWindow(language, width,
+						height);
+				tab.setContent(additionalWindow);
+				myTabs.getTabs().add(tab);
+				myTabs.getSelectionModel().select(tab);
+			}
+		});
+		myRoot.getChildren().addAll(myTabs, myAddButton);
+
+		myScene = new Scene(myRoot, width, height);
 	}
 
 	public Scene generateScene() {
