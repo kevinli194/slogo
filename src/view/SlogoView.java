@@ -20,12 +20,14 @@ public class SlogoView {
 	public SlogoView(String language, double width, double height) {
 		myTabs = new TabPane();
 		myTabCount = 1;
+
 		SlogoWindow firstWindow = new SlogoWindow(language, width,
 				height * 9 / 10);
 		Tab tab = new Tab("Program " + myTabCount++);
 		tab.setContent(firstWindow);
 		myTabs.getTabs().add(tab);
 		setTabView(width, height * 19 / 20);
+
 		myRoot = new BorderPane();
 		myRoot.setCenter(myTabs);
 		myRoot.setTop(new ToolBar(myAddButton));

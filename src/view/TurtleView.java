@@ -1,6 +1,8 @@
 package view;
 
+import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Screen;
 
 public class TurtleView extends PaneView {

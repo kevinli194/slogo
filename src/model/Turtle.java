@@ -11,7 +11,9 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 public class Turtle implements Feature {
-	private static final double DEFAULT_COORDINATE = 0;
+	private static final double DEFAULT_XCOORDINATE = 300;
+	private static final double DEFAULT_YCOORDINATE = 150;
+	
 	private static final double DEFAULT_TURTLE_ANGLE = 0;
 	private static final double DEFAULT_TURTLE_SIZE = 30;
 	private static final double FULL_ROTATION_DEGREE = 360;
@@ -20,7 +22,7 @@ public class Turtle implements Feature {
 
 	private ImageView myImage;
 	// private double[] myRelativeCoordinates = { 0, 0 };
-	private double[] myCoordinates = { DEFAULT_COORDINATE, DEFAULT_COORDINATE };
+	private double[] myCoordinates = { DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE };
 	private double myAngle = DEFAULT_TURTLE_ANGLE;
 	private Pen myPen;
 	private Group myDrawing;
@@ -142,7 +144,7 @@ public class Turtle implements Feature {
 	@Override
 	public void clear() {
 		myLines.getChildren().clear();
-		setCoordinates(DEFAULT_COORDINATE, DEFAULT_COORDINATE);
+		setCoordinates(DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE);
 		setAngle(DEFAULT_TURTLE_ANGLE);
 		updateTurtleInfo();
 
