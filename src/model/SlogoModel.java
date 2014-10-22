@@ -83,7 +83,7 @@ public class SlogoModel extends Observable {
 
 	}
 
-//Test keys
+	// Test keys
 	public void up() {
 		parseAndExecute("Right 90 Forward 20");
 	}

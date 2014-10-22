@@ -10,22 +10,16 @@ import javafx.stage.Screen;
 
 public abstract class SideView extends ScrollPane {
 
-	private static final double SIDEVIEW_WIDTH = Screen.getPrimary()
-			.getVisualBounds().getWidth()
-			* 1 / 5 * 3 / 4;
-	private static final double SIDEVIEW_HEIGHT = Screen.getPrimary()
-			.getVisualBounds().getHeight()
-			* 11 / 16 * 4 / 5;
 	private InputView myInput;
 	protected VBox myView;
 
 	public SideView() {
 	}
 
-	public SideView(InputView input) {
+	public SideView(InputView input, double width, double height) {
 		myInput = input;
 		myView = new VBox();
-		setView(SIDEVIEW_WIDTH, SIDEVIEW_HEIGHT);
+		setView(width * 1 / 5, height * 11 / 16);
 		this.setContent(myView);
 	}
 

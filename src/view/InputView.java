@@ -24,8 +24,8 @@ public class InputView extends PaneView {
 	private SlogoModel myModel;
 	private String myText = "";
 
-	public InputView(SlogoModel model) {
-		setView(VIEW_WIDTH, VIEW_HEIGHT);
+	public InputView(SlogoModel model, double width, double height) {
+		setView(width, height * 1 / 4);
 		update();
 		this.getChildren().add(myInput);
 		this.getChildren().add(mySubmitButton);

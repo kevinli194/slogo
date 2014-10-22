@@ -4,6 +4,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 import javafx.geometry.Rectangle2D;
+import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import main.KeyControls;
 import model.History;
@@ -12,7 +13,9 @@ import model.ObservableData;
 import model.SlogoModel;
 import model.Turtle;
 
-public class SlogoView extends BorderPane implements Observer {
+public class SlogoView implements Observer {
+	Scene myScene;
+	BorderPane myView;
 	TurtleView myTurtleView;
 	InputView myInputView;
 	InstructionView myInstructionView;
@@ -21,22 +24,25 @@ public class SlogoView extends BorderPane implements Observer {
 	SlogoModel myModel;
 	ObservableData myOD;
 
-	public SlogoView(String language, SlogoModel model) {
-		myTurtleView = new TurtleView();
-		myInputView = new InputView(model);
-		myInstructionView = new InstructionView(myInputView);
-		myHistoryView = new HistoryView(myInputView);
-		mySettingsView = new SettingsView(model, myTurtleView);
-		myOD = new ObservableData();
+	public SlogoView(String language, SlogoModel model, double width,
+			double height) {
 		myModel = model;
+		myTurtleView = new TurtleView(width, height);
+		myInputView = new InputView(myModel, width, height);
+		myInstructionView = new InstructionView(myInputView, width, height);
+		myHistoryView = new HistoryView(myInputView, width, height);
+		mySettingsView = new SettingsView(myModel, myTurtleView, width, height);
+		myOD = new ObservableData();
 
-		setCenter(myTurtleView);
-		setRight(myInstructionView);
-		setBottom(myInputView);
-		setLeft(myHistoryView);
-		setTop(mySettingsView);
+		myView = new BorderPane();
+		myView.setCenter(myTurtleView);
+		myView.setRight(myInstructionView);
+		myView.setBottom(myInputView);
+		myView.setLeft(myHistoryView);
+		myView.setTop(mySettingsView);
+		myView.setVisible(true);
 
-		setVisible(true);
+		myScene = new Scene(myView, width, height);
 
 	}
 
@@ -58,6 +64,11 @@ public class SlogoView extends BorderPane implements Observer {
 				.get("InstructionList")).generate());
 		myHistoryView.update(((History) ((ObservableData) arg).get("history"))
 				.generate());
+	}
+
+	public Scene generateScene() {
+
+		return myScene;
 	}
 
 }
