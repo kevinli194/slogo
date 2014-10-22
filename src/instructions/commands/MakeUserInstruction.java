@@ -22,10 +22,6 @@ public class MakeUserInstruction extends ParameterInstruction {
 	@Override
 	public double execute(ObservableData data) {
 		CommandsList allCommands = (CommandsList) data.get("CommandsList");
-		
-		if (super.myParams.size() > 1) {
-			System.out.println("TOO MANY INPUTS TO MAKEUSERINSTRUCTION.");
-		}
 		try {
 			// TODO: Check if UserDefinedCommand (error)
 			UserDefinedCommand udcommand = (UserDefinedCommand) super.myParams.get(USERDEFINEDCOMMAND_INDEX);

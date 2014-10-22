@@ -43,6 +43,7 @@ public class InstructionFactory {
 	public InstructionFactory(ObservableData data) {
 		languageBundle = loadResourceBundle("resources.languages/English");
 		languageMap = createLanguageMap(languageBundle);
+		myData = data;
 
 	}
 
@@ -75,7 +76,6 @@ public class InstructionFactory {
 			return new VariableInstruction(type);
 		}
 		else if (type.matches(COMMAND_REGEX)) {
-			System.out.println("BOOP");
 			// TODO: LOOK UP TRY CATCHES
 			try {
 				Class<?> comClass = Class.forName("instructions.commands." + languageMap.get(type));
@@ -91,9 +91,10 @@ public class InstructionFactory {
 					InvocationTargetException e) {
 
 				CommandsList allCommands = (CommandsList) myData.get("CommandsList");
-				try {
+				if (allCommands.contains(type)) {
+					System.out.println("BOOP");
 					return allCommands.getCommand(type);
-				} 			catch (NullPointerException nullE) {
+				} else {
 					return new UserDefinedCommand(type);
 				}
 			}

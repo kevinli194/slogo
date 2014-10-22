@@ -24,10 +24,6 @@ public class VariablesList implements Feature {
 		// TODO: Update to throwing better errors (window perhaps)
 		// Could maybe update to ask user if they want to overwrite
 		// the variable
-		if (myVariables.containsKey(variableName)) {
-			System.out.println("VARIABLE ALREADY EXISTS.");
-			return;
-		}
 		myVariables.put(variableName, value);
 	}
 

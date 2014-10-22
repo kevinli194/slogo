@@ -68,6 +68,11 @@ public class CommandsList implements Feature {
 		return UserDefinedCommands.get(commandSyntax);
 		
 	}
+	
+	public boolean contains(String commandSyntax) {
+		return (UserDefinedCommands.containsKey(commandSyntax) ||
+				PreDefinedCommands.containsKey(commandSyntax));
+	}
 
 	public void deleteCommand(String commandSyntax) {
 		if (!UserDefinedCommands.containsKey(commandSyntax)) {

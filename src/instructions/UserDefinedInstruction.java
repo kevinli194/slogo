@@ -10,6 +10,5 @@ public abstract class UserDefinedInstruction extends ParameterInstruction {
 	public String getName() {
 		return myName;
 	}
-	
 
 }
