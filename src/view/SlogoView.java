@@ -6,6 +6,7 @@ import java.util.Observer;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.layout.BorderPane;
 import main.KeyControls;
+import model.CommandsList;
 import model.History;
 import model.InstructionList;
 import model.ObservableData;
@@ -54,8 +55,8 @@ public class SlogoView extends BorderPane implements Observer {
 		// arg).get("InstructionList");
 		// Node instructionBox=instrList.generateNode(myInputView);
 		// myInstructionView.update(instructionBox);
-		myInstructionView.update(((InstructionList) ((ObservableData) arg)
-				.get("InstructionList")).generate());
+		myInstructionView.update(((CommandsList) ((ObservableData) arg)
+				.get("CommandsList")).generate());
 		myHistoryView.update(((History) ((ObservableData) arg).get("history"))
 				.generate());
 	}

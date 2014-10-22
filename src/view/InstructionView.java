@@ -11,9 +11,9 @@ public class InstructionView extends SideView {
 		super(input);
 	}
 
-	public void update(List<Map<String, Instruction>> instructions) {
+	public void update(List<String[]> instructions) {
 		myView.getChildren().clear();
-		for (String s : instructions.get(0).keySet()) {
+		for (String s : instructions.get(0)) {
 			addTextBox(s);
 		}
 	}
