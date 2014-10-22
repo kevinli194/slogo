@@ -20,8 +20,8 @@ public class SlogoModel extends Observable {
 	}
 
 	public void parseAndExecute(String s) {
-		executeCommands((myParser.parse(s)));
 		showToHistoryView(s);
+		executeCommands((myParser.parse(s)));
 	}
 
 	public void executeCommands(Stack<Instruction> commandStack) {
@@ -90,9 +90,5 @@ public class SlogoModel extends Observable {
 		return myParser;
 	}
 
-	// Test keys
-	// public void up() {
-	// parseAndExecute("Right 90 Forward 20");
-	// }
 
 }

@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.BorderPane;
+import model.CommandsList;
 import model.History;
 import model.InstructionList;
 import model.ObservableData;
@@ -59,8 +60,8 @@ public class SlogoWindow extends BorderPane implements Observer {
 		// arg).get("InstructionList");
 		// Node instructionBox=instrList.generateNode(myInputView);
 		// myInstructionView.update(instructionBox);
-		myInstructionView.update(((InstructionList) ((ObservableData) arg)
-				.get("InstructionList")).generate());
+		myInstructionView.update(((CommandsList) ((ObservableData) arg)
+				.get("CommandsList")).generate());
 		myHistoryView.update(((History) ((ObservableData) arg).get("history"))
 				.generate());
 	}
