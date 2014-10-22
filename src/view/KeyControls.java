@@ -1,4 +1,4 @@
-package main;
+package view;
 
 import instructions.Instruction;
 
@@ -16,22 +16,23 @@ import model.SlogoModel;
 public class KeyControls {
 	SlogoModel myModel;
 	Scene myScene;
-	
-	private Map<KeyCode,Instruction> keyMap=new HashMap<KeyCode,Instruction>();
+
+	private Map<KeyCode, Instruction> keyMap = new HashMap<KeyCode, Instruction>();
 
 	public KeyControls(SlogoModel model, Scene scene) {
 		myModel = model;
 		myScene = scene;
 		setKeyMap();
+		makeKeyCommands();
 	}
 
 	private void setKeyMap() {
-		Parser p=myModel.getParser();
+		Parser p = myModel.getParser();
 		keyMap.put(KeyCode.UP, p.parse("forward 5").pop());
 		keyMap.put(KeyCode.DOWN, p.parse("back 5").pop());
 		keyMap.put(KeyCode.LEFT, p.parse("left 10").pop());
 		keyMap.put(KeyCode.RIGHT, p.parse("right 10").pop());
-//		keyMap.put(KeyCode.SPACE, p.parse("seth").pop());
+		// keyMap.put(KeyCode.SPACE, p.parse("seth").pop());
 	}
 
 	public void makeKeyCommands() {
@@ -39,7 +40,7 @@ public class KeyControls {
 
 			@Override
 			public void handle(KeyEvent arg0) {
-				ObservableData data=myModel.getMyData();
+				ObservableData data = myModel.getMyData();
 				if (keyMap.keySet().contains(arg0.getCode())) {
 					keyMap.get(arg0.getCode()).execute(data);
 				}

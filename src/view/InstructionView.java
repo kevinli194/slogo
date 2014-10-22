@@ -7,8 +7,8 @@ import java.util.Map;
 
 public class InstructionView extends SideView {
 
-	public InstructionView(InputView input) {
-		super(input);
+	public InstructionView(InputView input, double width, double height) {
+		super(input, width, height);
 	}
 
 	public void update(List<String[]> instructions) {

@@ -4,15 +4,9 @@ import javafx.scene.Node;
 import javafx.stage.Screen;
 
 public class TurtleView extends PaneView {
-	private static final double TURTLEVIEW_WIDTH = Screen.getPrimary()
-			.getVisualBounds().getWidth()
-			* 3 / 5 * 3 / 4;
-	private static final double TURTLEVIEW_HEIGHT = Screen.getPrimary()
-			.getVisualBounds().getHeight()
-			* 11 / 16 * 4 / 5;
 
-	public TurtleView() {
-		setView(TURTLEVIEW_WIDTH, TURTLEVIEW_HEIGHT);
+	public TurtleView(double width, double height) {
+		setView(width * 3 / 5, height * 11 / 16);
 		setStyle("-fx-background-color:black;");
 	}
 

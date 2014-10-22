@@ -81,14 +81,14 @@ public class SlogoModel extends Observable {
 		((Turtle) myData.get("turtle")).switchInfoVis();
 
 	}
-	
-	public ObservableData getMyData(){
+
+	public ObservableData getMyData() {
 		return myData;
 	}
-	
-	public Parser getParser(){
+
+	public Parser getParser() {
 		return myParser;
 	}
-	
+
 
 }

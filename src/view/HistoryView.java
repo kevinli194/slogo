@@ -4,9 +4,8 @@ import java.util.List;
 
 public class HistoryView extends SideView {
 
-
-	public HistoryView(InputView input) {
-		super(input);
+	public HistoryView(InputView input, double width, double height) {
+		super(input, width, height);
 	}
 
 	/**
@@ -22,8 +21,4 @@ public class HistoryView extends SideView {
 			addTextBox(i);
 		}
 	}
-
-	// Duplicated code as in InstructionList. Refactor after combining model to
-	// view;
-
 }

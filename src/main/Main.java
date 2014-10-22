@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import view.KeyControls;
 import view.SlogoView;
 import model.SlogoModel;
 
@@ -27,12 +28,9 @@ public class Main extends Application {
 		primaryStage.setResizable(false);
 
 		myModel = new SlogoModel();
-		myView = new SlogoView(language, myModel);
+		myView = new SlogoView(language, myModel, SCREEN_WIDTH, SCREEN_HEIGHT);
 		myModel.addObserver(myView);
-		Scene scene = new Scene(myView, SCREEN_WIDTH, SCREEN_HEIGHT);
-		myKeyControls = new KeyControls(myModel, scene);
-		myKeyControls.makeKeyCommands();
-		primaryStage.setScene(scene);
+		primaryStage.setScene(myView.generateScene());
 		primaryStage.show();
 
 	}
