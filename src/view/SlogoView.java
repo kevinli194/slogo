@@ -6,7 +6,6 @@ import java.util.Observer;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
-import main.KeyControls;
 import model.History;
 import model.InstructionList;
 import model.ObservableData;
@@ -15,6 +14,7 @@ import model.Turtle;
 
 public class SlogoView implements Observer {
 	Scene myScene;
+	KeyControls myControls;
 	BorderPane myView;
 	TurtleView myTurtleView;
 	InputView myInputView;
@@ -43,6 +43,7 @@ public class SlogoView implements Observer {
 		myView.setVisible(true);
 
 		myScene = new Scene(myView, width, height);
+		myControls = new KeyControls(myModel, myScene);
 
 	}
 

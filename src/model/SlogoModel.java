@@ -29,8 +29,7 @@ public class SlogoModel extends Observable {
 			Instruction current = commandStack.pop();
 			double returnValue = current.execute(myData);
 			showOnView(returnValue);
-			setChanged();
-			notifyObservers(myData);
+			load();
 		}
 	}
 
@@ -83,9 +82,17 @@ public class SlogoModel extends Observable {
 
 	}
 
-	// Test keys
-	public void up() {
-		parseAndExecute("Right 90 Forward 20");
+	public ObservableData getMyData() {
+		return myData;
 	}
+
+	public Parser getParser() {
+		return myParser;
+	}
+
+	// Test keys
+	// public void up() {
+	// parseAndExecute("Right 90 Forward 20");
+	// }
 
 }

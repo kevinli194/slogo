@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import view.KeyControls;
 import view.SlogoView;
 import model.SlogoModel;
 
