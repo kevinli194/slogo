@@ -6,6 +6,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import view.KeyControls;
 import view.SlogoView;
+import view.SlogoWindow;
 import model.SlogoModel;
 
 public class Main extends Application {
@@ -19,7 +20,6 @@ public class Main extends Application {
 			.getVisualBounds().getHeight() * 4 / 5;
 	SlogoModel myModel;
 	SlogoView myView;
-	KeyControls myKeyControls;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -28,8 +28,8 @@ public class Main extends Application {
 		primaryStage.setResizable(false);
 
 		myModel = new SlogoModel();
-		myView = new SlogoView(language, myModel, SCREEN_WIDTH, SCREEN_HEIGHT);
-		myModel.addObserver(myView);
+		myView = new SlogoView(language, SCREEN_WIDTH, SCREEN_HEIGHT);
+
 		primaryStage.setScene(myView.generateScene());
 		primaryStage.show();
 

@@ -1,75 +1,33 @@
 package view;
 
-import java.util.Observable;
-import java.util.Observer;
-
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import model.History;
-import model.InstructionList;
-import model.ObservableData;
-import model.SlogoModel;
-import model.Turtle;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 
-public class SlogoView implements Observer {
-	Scene myScene;
-	KeyControls myControls;
-	BorderPane myView;
-	TurtleView myTurtleView;
-	InputView myInputView;
-	InstructionView myInstructionView;
-	HistoryView myHistoryView;
-	SettingsView mySettingsView;
-	SlogoModel myModel;
-	ObservableData myOD;
+public class SlogoView {
+	private Scene myScene;
+	TabPane myView;
+	int TabCount;
 
-	public SlogoView(String language, SlogoModel model, double width,
-			double height) {
-		myModel = model;
-		myTurtleView = new TurtleView(width, height);
-		myInputView = new InputView(myModel, width, height);
-		myInstructionView = new InstructionView(myInputView, width, height);
-		myHistoryView = new HistoryView(myInputView, width, height);
-		mySettingsView = new SettingsView(myModel, myTurtleView, width, height);
-		myOD = new ObservableData();
-
-		myView = new BorderPane();
-		myView.setCenter(myTurtleView);
-		myView.setRight(myInstructionView);
-		myView.setBottom(myInputView);
-		myView.setLeft(myHistoryView);
-		myView.setTop(mySettingsView);
-		myView.setVisible(true);
+	public SlogoView(String language, double width, double height) {
+		myView = new TabPane();
+		TabCount = 1;
+		SlogoWindow window = new SlogoWindow(language, width, height);
+		Tab tab = new Tab();
+		tab.setText("Program " + TabCount);
+		TabCount++;
+		tab.setContent(window);
+		myView.getTabs().add(tab);
+		SlogoWindow window2 = new SlogoWindow(language, width, height);
+		Tab tab2 = new Tab();
+		tab2.setText("Program " + TabCount);
+		tab2.setContent(window2);
+		myView.getTabs().add(tab2);
 
 		myScene = new Scene(myView, width, height);
-		myControls = new KeyControls(myModel, myScene);
-
-	}
-
-	@Override
-	public void update(Observable o, Object arg) {
-
-		if (!arg.equals(myOD)) {
-			myOD = (ObservableData) arg;
-		}
-
-		myTurtleView.update(((Turtle) ((ObservableData) arg).get("turtle"))
-				.generate());
-
-		// InstructionList instrList=(InstructionList)((ObservableData)
-		// arg).get("InstructionList");
-		// Node instructionBox=instrList.generateNode(myInputView);
-		// myInstructionView.update(instructionBox);
-		myInstructionView.update(((InstructionList) ((ObservableData) arg)
-				.get("InstructionList")).generate());
-		myHistoryView.update(((History) ((ObservableData) arg).get("history"))
-				.generate());
 	}
 
 	public Scene generateScene() {
-
 		return myScene;
 	}
-
 }
