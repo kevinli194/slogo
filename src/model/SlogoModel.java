@@ -16,7 +16,7 @@ public class SlogoModel extends Observable {
 
 	public SlogoModel() {
 		myData = new ObservableData();
-		myParser = new Parser();
+		myParser = new Parser(myData);
 	}
 
 	public void parseAndExecute(String s) {
@@ -72,6 +72,7 @@ public class SlogoModel extends Observable {
 		try {
 			Runtime.getRuntime().exec(
 					new String[] { "/usr/bin/open", HELP_URL });
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

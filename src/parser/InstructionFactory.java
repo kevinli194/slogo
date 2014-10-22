@@ -2,6 +2,7 @@ package parser;
 
 import instructions.ConstantInstruction;
 import instructions.Instruction;
+import instructions.UserDefinedCommand;
 import instructions.VariableInstruction;
 
 import java.lang.reflect.Constructor;
@@ -10,6 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
+
+import model.CommandsList;
+import model.ObservableData;
 
 
 
@@ -26,6 +30,8 @@ public class InstructionFactory {
 
 	private ResourceBundle languageBundle;
 	private Map<String,String> languageMap;
+	// DON'T KEEP THIS IN THIS MANNER (DISORGANIZED)
+	private ObservableData myData;
 
 	/**
 	 * Takes a string type of instruction and
@@ -34,9 +40,10 @@ public class InstructionFactory {
 	 * @return Instruction class of that type
 	 */
 
-	public InstructionFactory() {
+	public InstructionFactory(ObservableData data) {
 		languageBundle = loadResourceBundle("resources.languages/English");
 		languageMap = createLanguageMap(languageBundle);
+		myData = data;
 
 	}
 
@@ -64,10 +71,11 @@ public class InstructionFactory {
 			double value = Double.parseDouble(type);
 			return new ConstantInstruction(value);
 		}
-/*		else if (type.matches(VARIABLE_REGEX)){
+		else if (type.matches(VARIABLE_REGEX)){
 			return new VariableInstruction(type);
-		}*/
+		}
 		else if (type.matches(COMMAND_REGEX)) {
+			// TODO: LOOK UP TRY CATCHES
 			try {
 				Class<?> comClass = Class.forName("instructions.commands." + languageMap.get(type));
 				Constructor<?> comConstructor = comClass.getConstructor();
@@ -81,9 +89,16 @@ public class InstructionFactory {
 					IllegalArgumentException |
 					InvocationTargetException e) {
 
-				System.out.println("NOT A VALID COMMAND.");
-				// Need to add error checking
+				CommandsList allCommands = (CommandsList) myData.get("CommandsList");
+				if (allCommands.contains(type)) {
+					return new UserDefinedCommand(allCommands.getCommand(type));
+				} else {
+					return new UserDefinedCommand(type);
+				}
 			}
+
+			//				System.out.println(type + " IS NOT A VALID COMMAND.");
+			// Need to add error checking
 		}
 
 		return null;

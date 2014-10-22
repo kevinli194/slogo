@@ -1,6 +1,7 @@
 package model;
 
 import instructions.Instruction;
+import instructions.UserDefinedCommand;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,7 +24,7 @@ public class CommandsList implements Feature {
 	private ResourceBundle languageBundle;
 	
 	private Map<String, String> PreDefinedCommands;
-	private Map<String, Instruction> UserDefinedCommands;
+	private Map<String, UserDefinedCommand> UserDefinedCommands;
 
 	/**
 	 * 
@@ -31,7 +32,7 @@ public class CommandsList implements Feature {
 	public CommandsList() {
 		languageBundle = loadResourceBundle(DEFAULT_LANGUAGE_BUNDLE);
 		PreDefinedCommands = initPreDefinedCommands(languageBundle);
-		UserDefinedCommands = new HashMap<String, Instruction>();
+		UserDefinedCommands = new HashMap<String, UserDefinedCommand>();
 	}
 	
 	private ResourceBundle loadResourceBundle(String filepath) {
@@ -51,13 +52,26 @@ public class CommandsList implements Feature {
 		return map;
 	}
 
-	public void addCommand(String commandSyntax, Instruction instr) {
+	public void addCommand(String commandSyntax, UserDefinedCommand instr) {
 		if (PreDefinedCommands.containsKey(commandSyntax) ||
 			UserDefinedCommands.containsKey(commandSyntax)) {
 			System.out.println("COMMAND ALREADY DEFINED.");
 		}
 		UserDefinedCommands.put(commandSyntax, instr);
 		
+	}
+	
+	public UserDefinedCommand getCommand(String commandSyntax) {
+		if (!UserDefinedCommands.containsKey(commandSyntax)) {
+			System.out.println("COMMAND DOES NOT EXIST.");
+		}
+		return UserDefinedCommands.get(commandSyntax);
+		
+	}
+	
+	public boolean contains(String commandSyntax) {
+		return (UserDefinedCommands.containsKey(commandSyntax) ||
+				PreDefinedCommands.containsKey(commandSyntax));
 	}
 
 	public void deleteCommand(String commandSyntax) {
@@ -76,10 +90,6 @@ public class CommandsList implements Feature {
 		PreDefinedCommands = initPreDefinedCommands(languageBundle);
 	}
 	
-//	public String getCommand(String commandSyntax) {
-//		
-//	}
-
 	public List<String> getCommandSyntaxes() {
 		List<String> commands = new ArrayList<String>();
 		commands.addAll(PreDefinedCommands.keySet());

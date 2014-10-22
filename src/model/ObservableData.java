@@ -16,8 +16,11 @@ public class ObservableData {
 		myFeatures = new HashMap<String, Feature>();
 
 		// Add new features to this list
-		addAllToMyFeatures(new Turtle(), new History(), new CommandsList(),
-				new VariablesList());
+		addAllToMyFeatures(new Turtle(), 
+				new History(), 
+				new InstructionList(),
+				new VariablesList(),
+				new CommandsList());
 	}
 
 	private void addAllToMyFeatures(Feature... features) {
