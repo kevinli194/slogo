@@ -65,7 +65,6 @@ public class InstructionFactory {
 	}
 
 	public Instruction makeInstruction(String type) {
-		System.out.println(type);
 		type = type.toLowerCase();
 
 		if (type.matches(CONSTANT_REGEX)) {
@@ -92,8 +91,7 @@ public class InstructionFactory {
 
 				CommandsList allCommands = (CommandsList) myData.get("CommandsList");
 				if (allCommands.contains(type)) {
-					System.out.println("BOOP");
-					return allCommands.getCommand(type);
+					return new UserDefinedCommand(allCommands.getCommand(type));
 				} else {
 					return new UserDefinedCommand(type);
 				}

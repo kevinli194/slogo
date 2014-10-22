@@ -13,6 +13,12 @@ public class UserDefinedCommand extends UserDefinedInstruction {
 	public UserDefinedCommand(String name) {
 		super(name);
 	}
+	
+	public UserDefinedCommand(UserDefinedCommand udcommand) {
+		super(udcommand.myName);
+		defineFunction(udcommand.myVariables, udcommand.myCommands);
+	}
+
 
 	public void defineFunction(List<Instruction> variables, Instruction commands) {
 		myVariables = variables;
@@ -45,5 +51,4 @@ public class UserDefinedCommand extends UserDefinedInstruction {
 		}
 		
 	}
-
 }

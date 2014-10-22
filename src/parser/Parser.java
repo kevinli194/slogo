@@ -98,7 +98,7 @@ public class Parser {
 			}
 			// add to both the builder stack and result stack
 
-			builderStack.push(instr);
+  			builderStack.push(instr);
 			iter++;
 		}
 		return builderStack;

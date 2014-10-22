@@ -2,6 +2,7 @@
 package model;
 
 import instructions.Instruction;
+import instructions.UserDefinedCommand;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,7 +25,7 @@ public class CommandsList implements Feature {
 	private ResourceBundle languageBundle;
 	
 	private Map<String, String> PreDefinedCommands;
-	private Map<String, Instruction> UserDefinedCommands;
+	private Map<String, UserDefinedCommand> UserDefinedCommands;
 
 	/**
 	 * 
@@ -32,7 +33,7 @@ public class CommandsList implements Feature {
 	public CommandsList() {
 		languageBundle = loadResourceBundle(DEFAULT_LANGUAGE_BUNDLE);
 		PreDefinedCommands = initPreDefinedCommands(languageBundle);
-		UserDefinedCommands = new HashMap<String, Instruction>();
+		UserDefinedCommands = new HashMap<String, UserDefinedCommand>();
 	}
 	
 	private ResourceBundle loadResourceBundle(String filepath) {
@@ -52,7 +53,7 @@ public class CommandsList implements Feature {
 		return map;
 	}
 
-	public void addCommand(String commandSyntax, Instruction instr) {
+	public void addCommand(String commandSyntax, UserDefinedCommand instr) {
 		if (PreDefinedCommands.containsKey(commandSyntax) ||
 			UserDefinedCommands.containsKey(commandSyntax)) {
 			System.out.println("COMMAND ALREADY DEFINED.");
@@ -61,7 +62,7 @@ public class CommandsList implements Feature {
 		
 	}
 	
-	public Instruction getCommand(String commandSyntax) {
+	public UserDefinedCommand getCommand(String commandSyntax) {
 		if (!UserDefinedCommands.containsKey(commandSyntax)) {
 			System.out.println("COMMAND DOES NOT EXIST.");
 		}
