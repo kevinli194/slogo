@@ -26,7 +26,6 @@ public class Main extends Application {
 		String language = "English";
 
 		primaryStage.setResizable(false);
-
 		myModel = new SlogoModel();
 		myView = new SlogoView(language, SCREEN_WIDTH, SCREEN_HEIGHT);
 
