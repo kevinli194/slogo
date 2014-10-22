@@ -7,20 +7,20 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Separator;
 import javafx.scene.control.ToolBar;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.stage.Screen;
 
 public class SettingsView extends ToolBar {
 
 	public SettingsView(SlogoModel model, TurtleView view, double width,
 			double height) {
-		setPrefSize(width, height * 1 / 16);
+		setView(width, height);
 		addButtons(model);
 		changeBackgroundColor(view);
+	}
 
+
+	private void setView(double width, double height) {
+		setPrefSize(width, height * 1 / 16);
 	}
 
 	private void changeBackgroundColor(TurtleView view) {

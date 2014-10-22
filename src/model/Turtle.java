@@ -11,7 +11,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 public class Turtle implements Feature {
-	private static final double DEFAULT_COORDINATE = 100;
+	private static final double DEFAULT_COORDINATE = 0;
 	private static final double DEFAULT_TURTLE_ANGLE = 0;
 	private static final double DEFAULT_TURTLE_SIZE = 30;
 	private static final double FULL_ROTATION_DEGREE = 360;
