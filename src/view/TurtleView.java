@@ -14,7 +14,6 @@ public class TurtleView extends PaneView {
 	public TurtleView() {
 		setView(TURTLEVIEW_WIDTH, TURTLEVIEW_HEIGHT);
 		setStyle("-fx-background-color:black;");
-
 	}
 
 	public void changeColor(String color) {
