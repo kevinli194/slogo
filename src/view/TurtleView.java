@@ -1,7 +1,7 @@
 package view;
 
+import model.Feature;
 import model.Turtle;
-
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
@@ -9,7 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
-public class TurtleView extends Pane implements View {
+public class TurtleView extends Pane implements View, Feature {
 	private static final double TURTLEVIEW_WIDTH = 600;
 	private static final double TURTLEVIEW_HEIGHT = 600;
 
@@ -35,4 +35,10 @@ public class TurtleView extends Pane implements View {
 		setPrefHeight(height);
 		setMinSize(width, height);
 	}
+
+    @Override
+    public void clear () {
+        // TODO Auto-generated method stub
+        
+    }
 }

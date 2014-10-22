@@ -2,13 +2,11 @@ package parser;
 
 import instructions.Instruction;
 import instructions.ListInstruction;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Stack;
-
 import model.ObservableData;
 
 

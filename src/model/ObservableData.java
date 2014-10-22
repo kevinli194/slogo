@@ -2,6 +2,7 @@ package model;
 
 import java.util.HashMap;
 import java.util.Map;
+import view.TurtleView;
 
 /**
  * 
@@ -17,7 +18,7 @@ public class ObservableData {
 
 		// Add new features to this list
 		addAllToMyFeatures(new Turtle(), new History(), new InstructionList(),
-				new VariablesList());
+				new VariablesList(), new TurtleView());
 	}
 
 	private void addAllToMyFeatures(Feature... features) {

@@ -1,15 +1,12 @@
 package instructions.commands;
 
-import java.util.List;
-
-import model.CommandsList;
-import model.ObservableData;
 import instructions.Instruction;
 import instructions.ListInstruction;
 import instructions.ParameterInstruction;
-import instructions.UnaryInstruction;
 import instructions.UserDefinedCommand;
-import instructions.VariableInstruction;
+import java.util.List;
+import model.CommandsList;
+import model.ObservableData;
 
 public class MakeUserInstruction extends ParameterInstruction {
 	// MAKE CONSTANTS

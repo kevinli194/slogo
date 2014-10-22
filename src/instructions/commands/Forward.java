@@ -1,6 +1,5 @@
 package instructions.commands;
 
-import instructions.Instruction;
 import instructions.UnaryInstruction;
 import model.Feature;
 import model.ObservableData;

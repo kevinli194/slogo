@@ -1,13 +1,10 @@
 package model;
 
 import instructions.Instruction;
-
 import java.io.IOException;
 import java.util.Observable;
 import java.util.Random;
 import java.util.Stack;
-
-import javafx.application.Application;
 import parser.Parser;
 
 public class SlogoModel extends Observable {
