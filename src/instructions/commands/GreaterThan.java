@@ -3,7 +3,7 @@ package instructions.commands;
 import instructions.BinaryInstruction;
 import model.ObservableData;
 
-public class Greater extends BinaryInstruction {
+public class GreaterThan extends BinaryInstruction {
 
     @Override
     public double execute (ObservableData data) {

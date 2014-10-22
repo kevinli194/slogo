@@ -1,6 +1,7 @@
 package instructions;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ public abstract class ParameterInstruction implements Instruction {
 	protected List<Instruction> myParams;
 
 	protected ParameterInstruction() {
-		myParams = new ArrayList<Instruction>();
+		myParams = new LinkedList<Instruction>();
 	}
 
 	@Override

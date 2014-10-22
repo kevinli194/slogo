@@ -10,18 +10,19 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.BorderPane;
 import model.ObservableData;
 import model.SlogoModel;
 
 public class KeyControls {
 	SlogoModel myModel;
-	Scene myScene;
+	BorderPane myWindow;
 
 	private Map<KeyCode, Instruction> keyMap = new HashMap<KeyCode, Instruction>();
 
-	public KeyControls(SlogoModel model, Scene scene) {
+	public KeyControls(SlogoModel model, BorderPane window) {
 		myModel = model;
-		myScene = scene;
+		myWindow = window;
 		setKeyMap();
 		makeKeyCommands();
 	}
@@ -36,7 +37,7 @@ public class KeyControls {
 	}
 
 	public void makeKeyCommands() {
-		myScene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+		myWindow.setOnKeyPressed(new EventHandler<KeyEvent>() {
 
 			@Override
 			public void handle(KeyEvent arg0) {
