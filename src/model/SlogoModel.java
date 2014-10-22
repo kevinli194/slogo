@@ -10,7 +10,7 @@ import java.util.Stack;
 import parser.Parser;
 
 public class SlogoModel extends Observable {
-	private static final String HELP_URL="http://www.cs.duke.edu/courses/compsci308/current/assign/03_slogo/commands.php";
+	private static final String HELP_URL = "http://www.cs.duke.edu/courses/compsci308/current/assign/03_slogo/commands.php";
 	private ObservableData myData;
 	Parser myParser;
 
@@ -21,6 +21,7 @@ public class SlogoModel extends Observable {
 
 	public void parseAndExecute(String s) {
 		executeCommands((myParser.parse(s)));
+		showToHistoryView(s);
 	}
 
 	public void executeCommands(Stack<Instruction> commandStack) {
@@ -69,19 +70,22 @@ public class SlogoModel extends Observable {
 	}
 
 	public void accessHelpHTML() {
-		 try {
-			 Runtime.getRuntime().exec(
-					 new String[] {
-					 "/usr/bin/open", HELP_URL
-					 });
-		    } catch (IOException e) {
-		        e.printStackTrace();
-		    }
+		try {
+			Runtime.getRuntime().exec(
+					new String[] { "/usr/bin/open", HELP_URL });
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void changeInfoVis() {
 		((Turtle) myData.get("turtle")).switchInfoVis();
-		
+
+	}
+
+//Test keys
+	public void up() {
+		parseAndExecute("Right 90 Forward 20");
 	}
 
 }

@@ -54,7 +54,6 @@ public class InputView extends PaneView {
 			// give the string to the back-end parser
 			@Override
 			public void handle(ActionEvent event) {
-				myModel.showToHistoryView(myInput.getText());
 				myModel.parseAndExecute(myInput.getText());
 				myInput.clear();
 			}

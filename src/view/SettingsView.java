@@ -13,7 +13,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 
-public class SettingsView extends Pane {
+public class SettingsView extends PaneView {
 	private static final double SETTINGSVIEW_WIDTH = Screen.getPrimary()
 			.getVisualBounds().getWidth() * 3 / 4;
 	private static final double SETTINGSVIEW_HEIGHT = Screen.getPrimary()
@@ -23,9 +23,9 @@ public class SettingsView extends Pane {
 	private ToolBar mySettings;
 
 	public SettingsView(SlogoModel model, TurtleView view) {
-		setPrefWidth(SETTINGSVIEW_WIDTH);
-		setPrefHeight(SETTINGSVIEW_HEIGHT);
+		setView(SETTINGSVIEW_WIDTH, SETTINGSVIEW_HEIGHT);
 		mySettings = new ToolBar();
+		mySettings.setPrefSize(SETTINGSVIEW_WIDTH, SETTINGSVIEW_HEIGHT);
 		addButtons(model);
 		changeBackgroundColor(view);
 		this.getChildren().add(mySettings);

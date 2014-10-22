@@ -1,11 +1,9 @@
 package main;
 
 import javafx.application.Application;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import view.SlogoView;
 import model.SlogoModel;
 
@@ -20,20 +18,23 @@ public class Main extends Application {
 			.getVisualBounds().getHeight() * 4 / 5;
 	SlogoModel myModel;
 	SlogoView myView;
+	KeyControls myKeyControls;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		String language = "English";
-		// Sets the proper style
-		primaryStage.initStyle(StageStyle.UTILITY);
+
+		primaryStage.setResizable(false);
 
 		myModel = new SlogoModel();
 		myView = new SlogoView(language, myModel);
 		myModel.addObserver(myView);
 		Scene scene = new Scene(myView, SCREEN_WIDTH, SCREEN_HEIGHT);
-
+		myKeyControls = new KeyControls(myModel, scene);
+		myKeyControls.makeKeyCommands();
 		primaryStage.setScene(scene);
 		primaryStage.show();
+
 	}
 
 	public static void main(String args[]) {
