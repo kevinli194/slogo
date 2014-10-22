@@ -16,5 +16,9 @@ public class InstructionView extends SideView {
 		for (String s : instructions.get(0)) {
 			addTextBox(s);
 		}
+		for (String s:instructions.get(1)){
+			addTextBoxWithDeleteButton(s);
+		}
 	}
+
 }
