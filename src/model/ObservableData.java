@@ -12,7 +12,6 @@ import view.TurtleView;
  *
  */
 public class ObservableData {
-	private TurtleView myTurtleView;
 	private Map<String, Feature> myFeatures;
 	private Turtle myTurtle;
 	private static final double SCREEN_WIDTH = Screen.getPrimary()
@@ -23,7 +22,6 @@ public class ObservableData {
 	public ObservableData() {
 		myFeatures = new HashMap<String, Feature>();
 		myTurtle = new Turtle();
-		myTurtleView = new TurtleView(SCREEN_WIDTH, SCREEN_HEIGHT);
 
 		// Add new features to this list
 		addAllToMyFeatures(new History(), new VariablesList(),
@@ -40,10 +38,6 @@ public class ObservableData {
 
 	public Turtle getTurtle() {
 		return myTurtle;
-	}
-
-	public TurtleView getTurtleView() {
-		return myTurtleView;
 	}
 
 	// If feature needed, get feature by class name
