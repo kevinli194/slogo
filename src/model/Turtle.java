@@ -5,16 +5,11 @@ import javafx.scene.Node;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
 
 public class Turtle implements Feature {
 	private static final double DEFAULT_XCOORDINATE = 300;
 	private static final double DEFAULT_YCOORDINATE = 150;
-
 	private static final double DEFAULT_TURTLE_ANGLE = 0;
 	private static final double DEFAULT_TURTLE_SIZE = 30;
 	private static final double FULL_ROTATION_DEGREE = 360;
@@ -32,7 +27,7 @@ public class Turtle implements Feature {
 	private Image myDefault = new Image(getClass().getResourceAsStream(
 			DEFAULT_TURTLE_IMAGE));
 	private boolean isVisible;
-	private boolean infoVis = true;
+	private boolean infoVis = false;
 
 	public Turtle() {
 
@@ -40,15 +35,14 @@ public class Turtle implements Feature {
 		myTurtleInfo = new Tooltip();
 		myLines = new Group();
 		myDrawing = new Group();
-		initialize();
-		updateTurtleInfo();
+		initializeTurtle();
+		setTurtleInfo();
 		myDrawing.getChildren().addAll(myLines, myImage);
 		isVisible = true;
-		Tooltip.install(myImage, myTurtleInfo);
 
 	}
 
-	private void initialize() {
+	private void initializeTurtle() {
 		myImage = new ImageView(myDefault);
 		myImage.setFitWidth(DEFAULT_TURTLE_SIZE);
 		myImage.setFitHeight(DEFAULT_TURTLE_SIZE);
@@ -89,7 +83,7 @@ public class Turtle implements Feature {
 	public void rotate(double deltaAngle) {
 		myAngle = (myAngle + deltaAngle) % FULL_ROTATION_DEGREE;
 		myImage.setRotate(myAngle);
-		updateTurtleInfo();
+		setTurtleInfo();
 	}
 
 	public void setAngle(double angle) {
@@ -110,7 +104,7 @@ public class Turtle implements Feature {
 		myLines.getChildren().add(line);
 		setCoordinates(calculateEndCoord(distance)[0],
 				calculateEndCoord(distance)[1]);
-		updateTurtleInfo();
+		setTurtleInfo();
 	}
 
 	private double[] calculateEndCoord(double distance) {
@@ -122,10 +116,11 @@ public class Turtle implements Feature {
 		return endCoords;
 	}
 
-	private void updateTurtleInfo() {
-		myTurtleInfo.setText("Coordinates: (" + (int) getCoordinates()[0]
-				+ ", " + (int) getCoordinates()[1] + ")" + "\nAngle: "
-				+ (int) getAngle() + "°");
+	private void setTurtleInfo() {
+		myTurtleInfo.setText("Coordinates: ("
+				+ ((int) getCoordinates()[0] - DEFAULT_XCOORDINATE) + ", "
+				+ (-(int) getCoordinates()[1] + DEFAULT_YCOORDINATE) + ")"
+				+ "\nAngle: " + (int) getAngle() + "°");
 	}
 
 	public Group getDrawing() {
@@ -145,12 +140,17 @@ public class Turtle implements Feature {
 		myLines.getChildren().clear();
 		setCoordinates(DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE);
 		setAngle(DEFAULT_TURTLE_ANGLE);
-		updateTurtleInfo();
+		setTurtleInfo();
 
 	}
 
 	public void switchInfoVis() {
 		infoVis = !infoVis;
+		if (infoVis == false) {
+			Tooltip.uninstall(myImage, myTurtleInfo);
+		} else {
+			Tooltip.install(myImage, myTurtleInfo);
+		}
 
 	}
 
