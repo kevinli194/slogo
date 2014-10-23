@@ -11,7 +11,7 @@ public class Sum extends BinaryInstruction {
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
         double sum = 0;
-        for (Instruction parameter : myParams) {
+        for (Instruction parameter : super.myParams) {
             sum += parameter.execute(data);
 
         }

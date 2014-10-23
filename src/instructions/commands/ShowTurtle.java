@@ -10,12 +10,11 @@ public class ShowTurtle implements Instruction {
     @Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
-        Turtle myTurtle = (Turtle) data.get("turtle");
+        Turtle myTurtle = data.getTurtle();
         myTurtle.setVisible(true);
-        myTurtle.getDrawing().getChildren().add((myTurtle).getTurtleImg());
+        myTurtle.getDrawing().getChildren().add(myTurtle.getTurtleImg());
         return 1;
     }
-
     @Override
     public int getNumParams () {
         // TODO Auto-generated method stub

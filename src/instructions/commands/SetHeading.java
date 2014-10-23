@@ -12,10 +12,9 @@ public class SetHeading extends UnaryInstruction {
         // TODO Auto-generated method stub
         double amount = myParams.get(0).execute(data);
 
-        Turtle myTurtle = (Turtle) data.get("turtle");
+        Turtle myTurtle = data.getTurtle();
         double previousAngle = myTurtle.getAngle();
         myTurtle.setAngle(amount);
-
         return Math.abs(previousAngle - amount);
 
     }
