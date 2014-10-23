@@ -1,21 +1,24 @@
 package instructions.commands;
 
-import javafx.scene.paint.Color;
 import instructions.UnaryInstruction;
+import javafx.collections.ObservableList;
+import javafx.scene.paint.Color;
+import model.BackgroundColor;
 import model.ObservableData;
-import view.TurtleView;
-
 
 public class SetBackground extends UnaryInstruction {
-    Color[] colorList = { Color.RED, Color.BLUE, Color.GREEN };
 
-    @Override
-    public double execute (ObservableData data) {
-        // TODO Auto-generated method stub
-        TurtleView myTurtleView = data.getTurtleView();
-        double index = super.myParams.get(0).execute(data);
-        myTurtleView.changeColor(Color.BLUE);
+	@Override
+	public double execute(ObservableData data) {
+		// TODO Auto-generated method stub
+		BackgroundColor bgc = ((BackgroundColor) data.get("backgroundcolor"));
+		ObservableList<Color> customColors = bgc.getCustom();
 
-        return index;
-    }
+		double index = super.myParams.get(0).execute(data);
+		bgc.set(customColors.get((int) index));
+
+		// exception needed for when index is out of bounds.
+
+		return index;
+	}
 }

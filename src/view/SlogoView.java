@@ -1,13 +1,7 @@
 package view;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
-import javafx.scene.control.ToolBar;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
 public class SlogoView {
@@ -15,9 +9,9 @@ public class SlogoView {
 	private BorderPane myRoot;
 	private TabPane myTabs;
 
+
 	public SlogoView(String language, double width, double height) {
 		myTabs = new TabPane();
-
 		setTabView(width, height * 19 / 20);
 
 		myRoot = new BorderPane();

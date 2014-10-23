@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.BorderPane;
+import model.BackgroundColor;
 import model.CommandsList;
 import model.History;
 import model.InstructionList;
@@ -19,7 +20,7 @@ public class SlogoWindow extends BorderPane implements Observer {
 	KeyControls myControls;
 	TurtleView myTurtleView;
 	InputView myInputView;
-	InstructionView myInstructionView;
+	CommandsView myInstructionView;
 	HistoryView myHistoryView;
 	SettingsView mySettingsView;
 	SlogoModel myModel;
@@ -30,7 +31,7 @@ public class SlogoWindow extends BorderPane implements Observer {
 		myModel.addObserver(this);
 		myTurtleView = new TurtleView(width, height);
 		myInputView = new InputView(myModel, width, height);
-		myInstructionView = new InstructionView(myInputView, width, height);
+		myInstructionView = new CommandsView(myInputView, width, height);
 		myHistoryView = new HistoryView(myInputView, width, height);
 		mySettingsView = new SettingsView(myModel, myTurtleView, width, height);
 		myOD = new ObservableData();
@@ -53,9 +54,8 @@ public class SlogoWindow extends BorderPane implements Observer {
 			myOD = (ObservableData) arg;
 		}
 
-		myTurtleView.update(( ((ObservableData) arg).getTurtle())
-				.generate());
-		
+		myTurtleView.update((((ObservableData) arg).getTurtle()).generate());
+
 		// InstructionList instrList=(InstructionList)((ObservableData)
 		// arg).get("InstructionList");
 		// Node instructionBox=instrList.generateNode(myInputView);
@@ -64,6 +64,8 @@ public class SlogoWindow extends BorderPane implements Observer {
 				.get("CommandsList")).generate());
 		myHistoryView.update(((History) ((ObservableData) arg).get("history"))
 				.generate());
+		myTurtleView.changeColor(((BackgroundColor) ((ObservableData) arg)
+				.get("backgroundcolor")).generate());
 	}
 
 }

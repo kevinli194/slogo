@@ -5,9 +5,9 @@ import instructions.Instruction;
 import java.util.List;
 import java.util.Map;
 
-public class InstructionView extends SideView {
+public class CommandsView extends SideView {
 
-	public InstructionView(InputView input, double width, double height) {
+	public CommandsView(InputView input, double width, double height) {
 		super(input, width, height);
 	}
 

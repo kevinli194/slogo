@@ -7,6 +7,8 @@ import java.util.Observable;
 import java.util.Random;
 import java.util.Stack;
 
+import javafx.collections.ObservableList;
+import javafx.scene.paint.Color;
 import parser.Parser;
 
 public class SlogoModel extends Observable {
@@ -78,11 +80,6 @@ public class SlogoModel extends Observable {
 		}
 	}
 
-	public void changeInfoVis() {
-		((Turtle) myData.get("turtle")).switchInfoVis();
-
-	}
-
 	public ObservableData getMyData() {
 		return myData;
 	}
@@ -91,5 +88,10 @@ public class SlogoModel extends Observable {
 		return myParser;
 	}
 
+	public void initializeBGColor(ObservableList<Color> customColors) {
+		((BackgroundColor) myData.get("backgroundcolor"))
+				.setCustom(customColors);
+
+	}
 
 }

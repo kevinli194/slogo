@@ -27,6 +27,15 @@ public class VariablesList implements Feature {
 		myVariables.put(variableName, value);
 	}
 
+	public Instruction remove(String variableName) {
+		// TODO: Update to throwing better errors (window perhaps)
+		if (!myVariables.containsKey(variableName)) {
+			System.out.println("VARIABLE DOES NOT EXIST. CANNOT REMOVE.");
+			return null;
+		}
+		return myVariables.remove(variableName);
+	}
+	
 	public Instruction get(String variableName) {
 		// TODO: Update to throwing better errors (window perhaps)
 		// Same error as one in REMOVE method
@@ -37,14 +46,6 @@ public class VariablesList implements Feature {
 		return myVariables.get(variableName);
 	}
 
-	public Instruction remove(String variableName) {
-		// TODO: Update to throwing better errors (window perhaps)
-		if (!myVariables.containsKey(variableName)) {
-			System.out.println("VARIABLE DOES NOT EXIST. CANNOT REMOVE.");
-			return null;
-		}
-		return myVariables.remove(variableName);
-	}
 
 	/**
 	 * Clears list of variables
