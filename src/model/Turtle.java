@@ -1,10 +1,12 @@
 package model;
 
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Line;
 
 public class Turtle implements Feature {
@@ -14,7 +16,8 @@ public class Turtle implements Feature {
 	private static final double DEFAULT_TURTLE_SIZE = 30;
 	private static final double FULL_ROTATION_DEGREE = 360;
 
-	private static final String DEFAULT_TURTLE_IMAGE = "default_turtle.gif";
+	private static final String DEFAULT_ON_IMAGE = "default_on.gif";
+	private static final String DEFAULT_OFF_IMAGE = "default_off.png";
 
 	private ImageView myImage;
 
@@ -24,10 +27,13 @@ public class Turtle implements Feature {
 	private Group myDrawing;
 	private Group myLines;
 	private Tooltip myTurtleInfo;
-	private Image myDefault = new Image(getClass().getResourceAsStream(
-			DEFAULT_TURTLE_IMAGE));
+	private Image myDefaultOn = new Image(getClass().getResourceAsStream(
+			DEFAULT_ON_IMAGE));
+	private Image myDefaultOff = new Image(getClass().getResourceAsStream(
+			DEFAULT_OFF_IMAGE));
 	private boolean isVisible;
 	private boolean infoVis = false;
+	private boolean myState = true;
 
 	public Turtle() {
 
@@ -43,12 +49,29 @@ public class Turtle implements Feature {
 	}
 
 	private void initializeTurtle() {
-		myImage = new ImageView(myDefault);
+		myImage = new ImageView(myDefaultOn);
 		myImage.setFitWidth(DEFAULT_TURTLE_SIZE);
 		myImage.setFitHeight(DEFAULT_TURTLE_SIZE);
 		setCoordinates(DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE);
 		setAngle(DEFAULT_TURTLE_ANGLE);
+		myImage.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
+			@Override
+			public void handle(MouseEvent arg0) {
+				changeState();
+
+			}
+		});
+
+	}
+
+	private void changeState() {
+		myState = !myState;
+		if (myState) {
+			myImage.setImage(myDefaultOn);
+		} else {
+			myImage.setImage(myDefaultOff);
+		}
 	}
 
 	public void changeImage(ImageView image) {
@@ -72,23 +95,28 @@ public class Turtle implements Feature {
 	}
 
 	public void setCoordinates(double x, double y) {
-
-		myCoordinates[0] = x;
-		myCoordinates[1] = y;
-		myImage.setTranslateX(myCoordinates[0]);
-		myImage.setTranslateY(myCoordinates[1]);
+		if (myState) {
+			myCoordinates[0] = x;
+			myCoordinates[1] = y;
+			myImage.setTranslateX(myCoordinates[0]);
+			myImage.setTranslateY(myCoordinates[1]);
+		}
 
 	}
 
 	public void rotate(double deltaAngle) {
-		myAngle = (myAngle + deltaAngle) % FULL_ROTATION_DEGREE;
-		myImage.setRotate(myAngle);
-		setTurtleInfo();
+		if (myState) {
+			myAngle = (myAngle + deltaAngle) % FULL_ROTATION_DEGREE;
+			myImage.setRotate(myAngle);
+			setTurtleInfo();
+		}
 	}
 
 	public void setAngle(double angle) {
-		myAngle = angle % FULL_ROTATION_DEGREE;
-		myImage.setRotate(myAngle);
+		if (myState) {
+			myAngle = angle % FULL_ROTATION_DEGREE;
+			myImage.setRotate(myAngle);
+		}
 	}
 
 	public double getAngle() {
@@ -100,11 +128,14 @@ public class Turtle implements Feature {
 	}
 
 	public void moveTurtleAndDrawLine(double distance) {
-		Line line = myPen.drawLine(myCoordinates, calculateEndCoord(distance));
-		myLines.getChildren().add(line);
-		setCoordinates(calculateEndCoord(distance)[0],
-				calculateEndCoord(distance)[1]);
-		setTurtleInfo();
+		if (myState) {
+			Line line = myPen.drawLine(myCoordinates,
+					calculateEndCoord(distance));
+			myLines.getChildren().add(line);
+			setCoordinates(calculateEndCoord(distance)[0],
+					calculateEndCoord(distance)[1]);
+			setTurtleInfo();
+		}
 	}
 
 	private double[] calculateEndCoord(double distance) {
@@ -146,10 +177,10 @@ public class Turtle implements Feature {
 
 	public void switchInfoVis() {
 		infoVis = !infoVis;
-		if (infoVis == false) {
-			Tooltip.uninstall(myImage, myTurtleInfo);
-		} else {
+		if (infoVis) {
 			Tooltip.install(myImage, myTurtleInfo);
+		} else {
+			Tooltip.uninstall(myImage, myTurtleInfo);
 		}
 
 	}
