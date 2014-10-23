@@ -4,37 +4,36 @@ import model.SlogoModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ToolBar;
 
 public class SettingsView extends ToolBar {
+	ColorPicker myColorPicker;
 
 	public SettingsView(SlogoModel model, TurtleView view, double width,
 			double height) {
+		myColorPicker = new ColorPicker();
 		setView(width, height);
 		addButtons(model);
-		changeBackgroundColor(view);
+		addColorPicker(view);
 	}
-
 
 	private void setView(double width, double height) {
 		setPrefSize(width, height * 1 / 16);
 	}
 
-	private void changeBackgroundColor(TurtleView view) {
-		ObservableList<String> options = FXCollections.observableArrayList(
-				"Black", "Red", "Blue", "Green");
-		ComboBox<String> colorOptions = new ComboBox<String>(options);
-		this.getItems().add(colorOptions);
-
-		colorOptions.setOnAction((event) -> {
-			String selectedColor = colorOptions.getSelectionModel()
-					.getSelectedItem();
-			view.changeColor(selectedColor);
-
+	private void addColorPicker(TurtleView view) {
+		myColorPicker.setOnAction(new EventHandler() {
+			public void handle(Event t) {
+				view.changeColor(myColorPicker.getValue());
+			}
 		});
+		this.getItems().add(myColorPicker);
+
 	}
 
 	private void addButtons(SlogoModel model) {
