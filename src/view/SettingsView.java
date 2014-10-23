@@ -1,15 +1,12 @@
 package view;
 
-import model.SlogoModel;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.ToolBar;
+import model.SlogoModel;
 
 public class SettingsView extends ToolBar {
 	ColorPicker myColorPicker;

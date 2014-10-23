@@ -1,20 +1,20 @@
 package instructions.commands;
 
-import javafx.scene.paint.Color;
 import instructions.UnaryInstruction;
+import javafx.scene.paint.Color;
 import model.ObservableData;
-import view.TurtleView;
+import model.Turtle;
 
 
-public class SetBackground extends UnaryInstruction {
+public class SetPenColor extends UnaryInstruction {
     Color[] colorList = { Color.RED, Color.BLUE, Color.GREEN };
 
     @Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
-        TurtleView myTurtleView = data.getTurtleView();
+        Turtle myTurtle = data.getTurtle();
         double index = super.myParams.get(0).execute(data);
-        myTurtleView.changeColor(Color.BLUE);
+        myTurtle.getPen().setPenColor(colorList[(int) index]);
 
         return index;
     }
