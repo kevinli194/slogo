@@ -9,15 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Line;
 
-public class Turtle implements Feature {
-	private static final double DEFAULT_XCOORDINATE = 300;
-	private static final double DEFAULT_YCOORDINATE = 150;
-	private static final double DEFAULT_TURTLE_ANGLE = 0;
-	private static final double DEFAULT_TURTLE_SIZE = 30;
-	private static final double FULL_ROTATION_DEGREE = 360;
-
-	private static final String DEFAULT_ON_IMAGE = "default_on.gif";
-	private static final String DEFAULT_OFF_IMAGE = "default_off.png";
+public class Turtle extends TurtleAbstract implements Feature {
 
 	private ImageView myImage;
 
@@ -55,7 +47,6 @@ public class Turtle implements Feature {
 		setCoordinates(DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE);
 		setAngle(DEFAULT_TURTLE_ANGLE);
 		myImage.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
 			@Override
 			public void handle(MouseEvent arg0) {
 				changeState();
@@ -74,24 +65,9 @@ public class Turtle implements Feature {
 		}
 	}
 
-	public void changeImage(ImageView image) {
-		myImage = image;
-	}
-
 	public double[] getCoordinates() {
 
 		return myCoordinates;
-	}
-
-	public void setVisible(boolean state) {
-		isVisible = state;
-		if (!isVisible) {
-			myDrawing.getChildren().remove(myImage);
-		}
-	}
-
-	public double isVisible() {
-		return isVisible ? 1 : 0;
 	}
 
 	public void setCoordinates(double x, double y) {
@@ -102,6 +78,19 @@ public class Turtle implements Feature {
 			myImage.setTranslateY(myCoordinates[1]);
 		}
 
+	}
+
+	public void setVisible(boolean state) {
+		isVisible = state;
+		if (!isVisible) {
+			myDrawing.getChildren().remove(myImage);
+		} else {
+			myDrawing.getChildren().add(myImage);
+		}
+	}
+
+	public double isVisible() {
+		return isVisible ? 1 : 0;
 	}
 
 	public void rotate(double deltaAngle) {
