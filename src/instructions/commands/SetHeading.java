@@ -13,9 +13,9 @@ public class SetHeading extends UnaryInstruction {
         // TODO Auto-generated method stub
         double amount = myParams.get(0).execute(data);
 
-        Feature myTurtle = data.get("turtle");
-        double previousAngle = ((Turtle) myTurtle).getAngle();
-        ((Turtle) myTurtle).setAngle(amount);
+        Turtle myTurtle = (Turtle) data.get("turtle");
+        double previousAngle = myTurtle.getAngle();
+        myTurtle.setAngle(amount);
         return Math.abs(previousAngle - amount);
 
     }

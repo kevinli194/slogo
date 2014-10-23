@@ -2,7 +2,6 @@ package instructions.commands;
 
 import instructions.Instruction;
 import instructions.UnaryInstruction;
-import model.Feature;
 import model.ObservableData;
 import model.Turtle;
 
@@ -16,8 +15,8 @@ public class Backward extends UnaryInstruction {
             amount = parameter.execute(od);
         }
 
-        Feature myTurtle = od.get("turtle");
-        ((Turtle) myTurtle).moveTurtleAndDrawLine(-amount);
+        Turtle myTurtle = (Turtle) od.get("turtle");
+        myTurtle.moveTurtleAndDrawLine(-amount);
         return amount;
     }
 }

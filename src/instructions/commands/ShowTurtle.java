@@ -1,18 +1,18 @@
 package instructions.commands;
 
 import instructions.Instruction;
-import model.Feature;
 import model.ObservableData;
 import model.Turtle;
 
-public class ShowTurtle implements Instruction{
+
+public class ShowTurtle implements Instruction {
 
     @Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
-        Feature myTurtle = data.get("turtle");
-        ((Turtle) myTurtle).setVisible(true);
-        ((Turtle) myTurtle).getDrawing().getChildren().add(  ((Turtle) myTurtle).getTurtleImg());
+        Turtle myTurtle = (Turtle) data.get("turtle");
+        myTurtle.setVisible(true);
+        myTurtle.getDrawing().getChildren().add((myTurtle).getTurtleImg());
         return 1;
     }
 
@@ -25,7 +25,7 @@ public class ShowTurtle implements Instruction{
     @Override
     public void addParam (Instruction param) {
         // TODO Auto-generated method stub
-        
+
     }
 
 }

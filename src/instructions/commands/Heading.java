@@ -10,9 +10,9 @@ public class Heading implements Instruction {
     @Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
-        Feature myTurtle = data.get("turtle");
+        Turtle myTurtle = (Turtle) data.get("turtle");
         
-        return ((Turtle) myTurtle).getAngle();
+        return myTurtle.getAngle();
     }
 
     @Override
