@@ -1,7 +1,6 @@
 package instructions.commands;
 
 import instructions.BinaryInstruction;
-import model.Feature;
 import model.ObservableData;
 import model.Turtle;
 

@@ -1,7 +1,5 @@
 package instructions.commands;
 
-import instructions.BinaryInstruction;
-import instructions.Instruction;
 import instructions.UnaryInstruction;
 import model.ObservableData;
 
