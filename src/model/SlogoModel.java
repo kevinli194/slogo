@@ -50,8 +50,8 @@ public class SlogoModel extends Observable {
 	public void testThings() {
 		Random rn = new Random();
 		double x = rn.nextInt(50);
-		((Turtle) myData.get("turtle")).rotate(x);
-		((Turtle) myData.get("turtle")).moveTurtleAndDrawLine(10);
+		myData.getTurtle().rotate(x);
+		myData.getTurtle().moveTurtleAndDrawLine(10);
 		((History) myData.get("history")).add("Turtle Rotated By: " + x);
 		setChanged();
 		notifyObservers(myData);
@@ -91,6 +91,11 @@ public class SlogoModel extends Observable {
 	public void initializeBGColor(ObservableList<Color> customColors) {
 		((BackgroundColor) myData.get("backgroundcolor"))
 				.setCustom(customColors);
+
+	}
+
+	public void initializePenColor(ObservableList<Color> customColors) {
+		myData.getTurtle().setPenCustom(customColors);
 
 	}
 

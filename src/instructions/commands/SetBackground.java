@@ -15,7 +15,7 @@ public class SetBackground extends UnaryInstruction {
 		ObservableList<Color> customColors = bgc.getCustom();
 
 		double index = super.myParams.get(0).execute(data);
-		bgc.set(customColors.get((int) index));
+		bgc.set(customColors.get((int) index - 1));
 
 		// exception needed for when index is out of bounds.
 

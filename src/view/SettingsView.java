@@ -1,7 +1,6 @@
 package view;
 
 import javafx.collections.ObservableList;
-import model.BackgroundColor;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -11,10 +10,12 @@ import javafx.scene.control.Separator;
 import javafx.scene.control.ToolBar;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import model.BackgroundColor;
 import model.SlogoModel;
 
 public class SettingsView extends ToolBar {
-	ColorPicker myColorPicker;
+	ColorPicker myBGColor;
+	ColorPicker myPenColor;
 	SlogoModel myModel;
 
 	public SettingsView(SlogoModel model, TurtleView view, double width,
@@ -22,27 +23,46 @@ public class SettingsView extends ToolBar {
 		myModel = model;
 		setView(width, height);
 		addButtons(model);
-		addColorPicker(view);
+		addBGColorPicker(view);
+		addPenColorPicker();
 	}
 
 	private void setView(double width, double height) {
 		setPrefSize(width, height * 1 / 16);
 	}
 
-	private void addColorPicker(TurtleView view) {
-		myColorPicker = new ColorPicker();
-		myColorPicker.setStyle("-fx-color-label-visible: false ;");
-		myColorPicker.setOnAction(new EventHandler() {
+	private void addBGColorPicker(TurtleView view) {
+		myBGColor = new ColorPicker();
+		myBGColor.setStyle("-fx-color-label-visible: false ;");
+		myBGColor.setOnAction(new EventHandler() {
 			public void handle(Event t) {
-				view.changeColor(myColorPicker.getValue());
+				view.changeColor(myBGColor.getValue());
 				((BackgroundColor) (myModel.getMyData().get("backgroundcolor")))
-						.set(myColorPicker.getValue());
+						.set(myBGColor.getValue());
 			}
 		});
-		myModel.initializeBGColor(getCustomColors());
+		myModel.initializeBGColor(getCustomColors(myBGColor));
 		this.getItems().add(new Separator());
 		this.getItems().add(new Text("Background Color: "));
-		this.getItems().add(myColorPicker);
+		this.getItems().add(myBGColor);
+		this.getItems().add(new Separator());
+
+	}
+
+	private void addPenColorPicker() {
+		myPenColor = new ColorPicker();
+		myPenColor.setStyle("-fx-color-label-visible: false ;");
+		myPenColor.setOnAction(new EventHandler() {
+			public void handle(Event t) {
+				myModel.getMyData().getTurtle()
+						.changePenColor(myPenColor.getValue());
+
+			}
+		});
+		myModel.initializePenColor(getCustomColors(myPenColor));
+		this.getItems().add(new Separator());
+		this.getItems().add(new Text("Pen Color: "));
+		this.getItems().add(myPenColor);
 		this.getItems().add(new Separator());
 
 	}
@@ -63,8 +83,8 @@ public class SettingsView extends ToolBar {
 		return result;
 	}
 
-	public ObservableList<Color> getCustomColors() {
-		ObservableList<Color> customColors = myColorPicker.getCustomColors();
+	public ObservableList<Color> getCustomColors(ColorPicker colorpicker) {
+		ObservableList<Color> customColors = colorpicker.getCustomColors();
 		return customColors;
 	}
 

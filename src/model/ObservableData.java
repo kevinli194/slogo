@@ -2,8 +2,6 @@ package model;
 
 import java.util.HashMap;
 import java.util.Map;
-import javafx.stage.Screen;
-import view.TurtleView;
 
 /**
  * 
@@ -14,10 +12,6 @@ import view.TurtleView;
 public class ObservableData {
 	private Map<String, Feature> myFeatures;
 	private Turtle myTurtle;
-	private static final double SCREEN_WIDTH = Screen.getPrimary()
-			.getVisualBounds().getWidth() * 3 / 4;
-	private static final double SCREEN_HEIGHT = Screen.getPrimary()
-			.getVisualBounds().getHeight() * 4 / 5;
 
 	public ObservableData() {
 		myFeatures = new HashMap<String, Feature>();
@@ -54,6 +48,7 @@ public class ObservableData {
 		for (String key : myFeatures.keySet()) {
 			myFeatures.get(key).clear();
 		}
+		myTurtle.clear();
 
 	}
 }

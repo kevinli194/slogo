@@ -1,5 +1,6 @@
 package model;
 
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Node;
@@ -7,6 +8,7 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
 public class Turtle extends TurtleAbstract implements Feature {
@@ -125,6 +127,12 @@ public class Turtle extends TurtleAbstract implements Feature {
 		return myPen;
 	}
 
+	// Should get rid of getPen and change the pen from within the turtle?
+	// Example below.
+	public void changePenColor(Color color) {
+		myPen.setPenColor(color);
+	}
+
 	public void moveTurtleAndDrawLine(double distance) {
 		if (myState) {
 			Line line = myPen.drawLine(myCoordinates,
@@ -178,6 +186,11 @@ public class Turtle extends TurtleAbstract implements Feature {
 		setCoordinates(DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE);
 		setAngle(DEFAULT_TURTLE_ANGLE);
 		setTurtleInfo();
+
+	}
+
+	public void setPenCustom(ObservableList<Color> customColors) {
+		myPen.setCustom(customColors);
 
 	}
 
