@@ -2,6 +2,7 @@ package model;
 
 import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
@@ -21,40 +22,39 @@ public class Turtle implements Feature {
 	private static final String DEFAULT_TURTLE_IMAGE = "default_turtle.gif";
 
 	private ImageView myImage;
-	// private double[] myRelativeCoordinates = { 0, 0 };
+
 	private double[] myCoordinates = { DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE };
 	private double myAngle = DEFAULT_TURTLE_ANGLE;
 	private Pen myPen;
 	private Group myDrawing;
 	private Group myLines;
-	private Text myTurtleInfo;
+	private Tooltip myTurtleInfo;
 	private Image myDefault = new Image(getClass().getResourceAsStream(
 			DEFAULT_TURTLE_IMAGE));
 	private boolean isVisible;
 	private boolean infoVis = true;
 
 	public Turtle() {
-		myImage = new ImageView(myDefault);
+
 		myPen = new Pen();
-		myTurtleInfo = new Text();
+		myTurtleInfo = new Tooltip();
 		myLines = new Group();
 		myDrawing = new Group();
-		InitializeTurtle();
-		myDrawing.getChildren().addAll(myTurtleInfo, myLines, myImage);
+		initialize();
+		updateTurtleInfo();
+		myDrawing.getChildren().addAll(myLines, myImage);
 		isVisible = true;
+		Tooltip.install(myImage, myTurtleInfo);
 
 	}
 
-	private void InitializeTurtle() {
+	private void initialize() {
+		myImage = new ImageView(myDefault);
 		myImage.setFitWidth(DEFAULT_TURTLE_SIZE);
 		myImage.setFitHeight(DEFAULT_TURTLE_SIZE);
-		setTurtleInfo();
-		clear();
-	}
+		setCoordinates(DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE);
+		setAngle(DEFAULT_TURTLE_ANGLE);
 
-	private void setTurtleInfo() {
-		myTurtleInfo.setTranslateX(480);
-		myTurtleInfo.setTranslateY(20);
 	}
 
 	public void changeImage(ImageView image) {
@@ -123,10 +123,9 @@ public class Turtle implements Feature {
 	}
 
 	private void updateTurtleInfo() {
-		myTurtleInfo.setText("x:" + getCoordinates()[0] + " y:"
-				+ getCoordinates()[1] + " Â°:" + getAngle());
-		myTurtleInfo.setFill(Color.GREEN);
-		myTurtleInfo.setFont(Font.font(null, FontWeight.BOLD, 12));
+		myTurtleInfo.setText("Coordinates: (" + (int) getCoordinates()[0]
+				+ ", " + (int) getCoordinates()[1] + ")" + "\nAngle: "
+				+ (int) getAngle() + "°");
 	}
 
 	public Group getDrawing() {
@@ -152,7 +151,7 @@ public class Turtle implements Feature {
 
 	public void switchInfoVis() {
 		infoVis = !infoVis;
-		myTurtleInfo.setVisible(infoVis);
+
 	}
 
 }
