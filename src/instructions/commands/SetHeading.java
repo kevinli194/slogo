@@ -15,6 +15,7 @@ public class SetHeading extends UnaryInstruction {
         Turtle myTurtle = (Turtle) data.get("turtle");
         double previousAngle = myTurtle.getAngle();
         myTurtle.setAngle(amount);
+
         return Math.abs(previousAngle - amount);
 
     }

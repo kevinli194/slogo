@@ -1,166 +1,185 @@
 package model;
 
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Line;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
 
 
-public class Turtle implements Feature {
-    private static final double DEFAULT_XCOORDINATE = 300;
-    private static final double DEFAULT_YCOORDINATE = 150;
+public class Turtle extends TurtleAbstract implements Feature {
 
-    private static final double DEFAULT_TURTLE_ANGLE = 0;
-    private static final double DEFAULT_TURTLE_SIZE = 30;
-    private static final double FULL_ROTATION_DEGREE = 360;
+	private ImageView myImage;
 
-    private static final String DEFAULT_TURTLE_IMAGE = "default_turtle.gif";
+	private double[] myCoordinates = { DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE };
+	private double myAngle = DEFAULT_TURTLE_ANGLE;
+	private Pen myPen;
+	private Group myDrawing;
+	private Group myLines;
+	private Tooltip myTurtleInfo;
+	private Image myDefaultOn = new Image(getClass().getResourceAsStream(
+			DEFAULT_ON_IMAGE));
+	private Image myDefaultOff = new Image(getClass().getResourceAsStream(
+			DEFAULT_OFF_IMAGE));
+	private boolean isVisible;
+	private boolean infoVis = false;
+	private boolean myState = true;
 
-    private ImageView myImage;
-    // private double[] myRelativeCoordinates = { 0, 0 };
-    private double[] myCoordinates = { DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE };
-    private double myAngle = DEFAULT_TURTLE_ANGLE;
-    private Pen myPen;
-    private Group myDrawing;
-    private Group myLines;
-    private Text myTurtleInfo;
-    private Image myDefault = new Image(getClass().getResourceAsStream(
-                                                                       DEFAULT_TURTLE_IMAGE));
-    private boolean isVisible;
-    private boolean infoVis = true;
+	public Turtle() {
 
-    public Turtle () {
-        myImage = new ImageView(myDefault);
-        myPen = new Pen();
-        myTurtleInfo = new Text();
-        myLines = new Group();
-        myDrawing = new Group();
-        InitializeTurtle();
-        myDrawing.getChildren().addAll(myTurtleInfo, myLines, myImage);
-        isVisible = true;
+		myPen = new Pen();
+		myTurtleInfo = new Tooltip();
+		myLines = new Group();
+		myDrawing = new Group();
+		initializeTurtle();
+		setTurtleInfo();
+		myDrawing.getChildren().addAll(myLines, myImage);
+		isVisible = true;
 
-    }
+	}
 
-    private void InitializeTurtle () {
-        myImage.setFitWidth(DEFAULT_TURTLE_SIZE);
-        myImage.setFitHeight(DEFAULT_TURTLE_SIZE);
-        setTurtleInfo();
-        clear();
-    }
+	private void initializeTurtle() {
+		myImage = new ImageView(myDefaultOn);
+		myImage.setFitWidth(DEFAULT_TURTLE_SIZE);
+		myImage.setFitHeight(DEFAULT_TURTLE_SIZE);
+		setCoordinates(DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE);
+		setAngle(DEFAULT_TURTLE_ANGLE);
+		myImage.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent arg0) {
+				changeState();
 
-    private void setTurtleInfo () {
-        myTurtleInfo.setTranslateX(480);
-        myTurtleInfo.setTranslateY(20);
-    }
+			}
+		});
 
-    public void changeImage (ImageView image) {
-        myImage = image;
-    }
+	}
 
-    public double[] getCoordinates () {
+	private void changeState() {
+		myState = !myState;
+		if (myState) {
+			myImage.setImage(myDefaultOn);
+		} else {
+			myImage.setImage(myDefaultOff);
+		}
+	}
 
-        return myCoordinates;
-    }
+	public double[] getCoordinates() {
 
-    public void setVisible (boolean state) {
-        isVisible = state;
-        if (!isVisible) {
-            myDrawing.getChildren().remove(myImage);
-        }
-    }
+		return myCoordinates;
+	}
 
-    public double isVisible () {
-        return isVisible ? 1 : 0;
-    }
+	public void setCoordinates(double x, double y) {
+		if (myState) {
+			myCoordinates[0] = x;
+			myCoordinates[1] = y;
+			myImage.setTranslateX(myCoordinates[0]);
+			myImage.setTranslateY(myCoordinates[1]);
+		}
 
-    public void setCoordinates (double x, double y) {
+	}
 
-        myCoordinates[0] = x;
-        myCoordinates[1] = y;
-        myImage.setTranslateX(myCoordinates[0]);
-        myImage.setTranslateY(myCoordinates[1]);
+	public void setVisible(boolean state) {
+		isVisible = state;
+		if (!isVisible) {
+			myDrawing.getChildren().remove(myImage);
+		} else {
+			myDrawing.getChildren().add(myImage);
+		}
+	}
 
-    }
+	public double isVisible() {
+		return isVisible ? 1 : 0;
+	}
 
-    public void rotate (double deltaAngle) {
-        myAngle = (myAngle + deltaAngle) % FULL_ROTATION_DEGREE;
-        myImage.setRotate(myAngle);
-        updateTurtleInfo();
-    }
+	public void rotate(double deltaAngle) {
+		if (myState) {
+			myAngle = (myAngle + deltaAngle) % FULL_ROTATION_DEGREE;
+			myImage.setRotate(myAngle);
+			setTurtleInfo();
+		}
+	}
 
-    public void setAngle (double angle) {
-        myAngle = angle % FULL_ROTATION_DEGREE;
-        myImage.setRotate(myAngle);
-    }
+	public void setAngle(double angle) {
+		if (myState) {
+			myAngle = angle % FULL_ROTATION_DEGREE;
+			myImage.setRotate(myAngle);
+		}
+	}
 
-    public double getAngle () {
-        return Math.round(myAngle * 10) / 10.0;
-    }
+	public double getAngle() {
+		return Math.round(myAngle * 10) / 10.0;
+	}
 
-    public Pen getPen () {
-        return myPen;
-    }
+	public Pen getPen() {
+		return myPen;
+	}
 
-    public void moveTurtleAndDrawLine (double distance) {
-        Line line = myPen.drawLine(myCoordinates, calculateEndCoord(distance));
-        myLines.getChildren().add(line);
-        setCoordinates(calculateEndCoord(distance)[0],
-                       calculateEndCoord(distance)[1]);
-        updateTurtleInfo();
-    }
+	public void moveTurtleAndDrawLine(double distance) {
+		if (myState) {
+			Line line = myPen.drawLine(myCoordinates,
+					calculateEndCoord(distance));
+			myLines.getChildren().add(line);
+			setCoordinates(calculateEndCoord(distance)[0],
+					calculateEndCoord(distance)[1]);
+			setTurtleInfo();
+		}
+	}
 
-    private double[] calculateEndCoord (double distance) {
-        double[] endCoords = new double[2];
-        endCoords[0] = myCoordinates[0] + distance
-                       * Math.sin(Math.toRadians(myAngle));
-        endCoords[1] = myCoordinates[1] - distance
-                       * Math.cos(Math.toRadians(myAngle));
-        return endCoords;
-    }
+	private double[] calculateEndCoord(double distance) {
+		double[] endCoords = new double[2];
+		endCoords[0] = myCoordinates[0] + distance
+				* Math.sin(Math.toRadians(myAngle));
+		endCoords[1] = myCoordinates[1] - distance
+				* Math.cos(Math.toRadians(myAngle));
+		return endCoords;
+	}
 
-    public double calculateDistance (double[] startCoords, double[] finalCoords) {
-        double xDiff = finalCoords[0] - startCoords[0];
-        double yDiff = finalCoords[1] - startCoords[1];
+	 public double calculateDistance (double[] startCoords, double[] finalCoords) {
+	        double xDiff = finalCoords[0] - startCoords[0];
+	        double yDiff = finalCoords[1] - startCoords[1];
 
-        return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
-    }
+	        return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+	    }
+	 
+	private void setTurtleInfo() {
+		myTurtleInfo.setText("Coordinates: ("
+				+ ((int) getCoordinates()[0] - DEFAULT_XCOORDINATE) + ", "
+				+ (-(int) getCoordinates()[1] + DEFAULT_YCOORDINATE) + ")"
+				+ "\nAngle: " + (int) getAngle() + "�");
+	}
 
-    private void updateTurtleInfo () {
-        myTurtleInfo.setText("x:" + getCoordinates()[0] + " y:"
-                             + getCoordinates()[1] + " °:" + getAngle());
-        myTurtleInfo.setFill(Color.GREEN);
-        myTurtleInfo.setFont(Font.font(null, FontWeight.BOLD, 12));
-    }
+	public Group getDrawing() {
+		return myDrawing;
+	}
 
-    public Group getDrawing () {
-        return myDrawing;
-    }
+	public ImageView getTurtleImg() {
+		return myImage;
+	}
 
-    public ImageView getTurtleImg () {
-        return myImage;
-    }
+	public Node generate() {
+		return myDrawing;
+	}
 
-    public Node generate () {
-        return myDrawing;
-    }
+	@Override
+	public void clear() {
+		myLines.getChildren().clear();
+		setCoordinates(DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE);
+		setAngle(DEFAULT_TURTLE_ANGLE);
+		setTurtleInfo();
 
-    @Override
-    public void clear () {
-        myLines.getChildren().clear();
-        setCoordinates(DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE);
-        setAngle(DEFAULT_TURTLE_ANGLE);
-        updateTurtleInfo();
+	}
 
-    }
+	public void switchInfoVis() {
+		infoVis = !infoVis;
+		if (infoVis) {
+			Tooltip.install(myImage, myTurtleInfo);
+		} else {
+			Tooltip.uninstall(myImage, myTurtleInfo);
+		}
 
-    public void switchInfoVis () {
-        infoVis = !infoVis;
-        myTurtleInfo.setVisible(infoVis);
-    }
+	}
 
 }
