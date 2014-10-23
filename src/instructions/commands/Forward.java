@@ -18,7 +18,7 @@ public class Forward extends UnaryInstruction {
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
         double amount = super.myParams.get(0).execute(data);
-        Turtle myTurtle = (Turtle) data.get("turtle");
+        Turtle myTurtle = data.getTurtle();
         myTurtle.moveTurtleAndDrawLine(amount);
         return amount;
     }

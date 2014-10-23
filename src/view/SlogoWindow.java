@@ -53,9 +53,9 @@ public class SlogoWindow extends BorderPane implements Observer {
 			myOD = (ObservableData) arg;
 		}
 
-		myTurtleView.update(((Turtle) ((ObservableData) arg).get("turtle"))
+		myTurtleView.update(( ((ObservableData) arg).getTurtle())
 				.generate());
-
+		
 		// InstructionList instrList=(InstructionList)((ObservableData)
 		// arg).get("InstructionList");
 		// Node instructionBox=instrList.generateNode(myInputView);

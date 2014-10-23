@@ -9,9 +9,9 @@ public class ClearScreen extends ZeroParamInstruction {
 
     @Override
     public double execute (ObservableData data) {
-
-        Turtle myTurtle = (Turtle) data.get("turtle");
-
+        
+        Turtle myTurtle = data.getTurtle();
+        
         double[] prevCoords = myTurtle.getCoordinates().clone();
         myTurtle.clear();
         double[] currentCoords = myTurtle.getCoordinates().clone();

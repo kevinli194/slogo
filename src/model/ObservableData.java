@@ -11,12 +11,14 @@ import java.util.Map;
  */
 public class ObservableData {
 	private Map<String, Feature> myFeatures;
+	private Turtle myTurtle;
 
 	public ObservableData() {
 		myFeatures = new HashMap<String, Feature>();
-
+		myTurtle = new Turtle();
+		
 		// Add new features to this list
-		addAllToMyFeatures(new Turtle(), 
+		addAllToMyFeatures( 
 				new History(), 
 				new InstructionList(),
 				new VariablesList(),
@@ -29,6 +31,10 @@ public class ObservableData {
 			classKey = classKey.toLowerCase();
 			myFeatures.put(classKey, f);
 		}
+	}
+	
+	public Turtle getTurtle(){
+	    return myTurtle;
 	}
 
 	// If feature needed, get feature by class name

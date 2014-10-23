@@ -1,9 +1,9 @@
 package instructions.commands;
 
 import instructions.UnaryInstruction;
-import model.Feature;
 import model.ObservableData;
 import model.Turtle;
+
 
 public class Left extends UnaryInstruction {
 
@@ -11,9 +11,10 @@ public class Left extends UnaryInstruction {
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
         double amount = myParams.get(0).execute(data);
-     
-        Feature myTurtle = data.get("turtle");
-        ((Turtle) myTurtle).rotate(360-amount);
+
+        Turtle myTurtle = data.getTurtle();
+
+        myTurtle.rotate(360 - amount);
         return amount;
     }
 }

@@ -4,13 +4,14 @@ import instructions.Instruction;
 import model.ObservableData;
 import model.Turtle;
 
+
 public class Heading implements Instruction {
 
     @Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
-        Turtle myTurtle = (Turtle) data.get("turtle");
-        
+        Turtle myTurtle = data.getTurtle();
+
         return myTurtle.getAngle();
     }
 
@@ -27,5 +28,3 @@ public class Heading implements Instruction {
     }
 
 }
-
-
