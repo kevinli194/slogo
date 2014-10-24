@@ -44,6 +44,7 @@ public class SlogoWindow extends BorderPane implements Observer {
 		setVisible(true);
 
 		myControls = new KeyControls(myModel, this);
+		myModel.load();
 
 	}
 

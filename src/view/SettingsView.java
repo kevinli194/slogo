@@ -42,7 +42,6 @@ public class SettingsView extends ToolBar {
 			}
 		});
 		myModel.initializeBGColor(getCustomColors(myBGColor));
-		this.getItems().add(new Separator());
 		this.getItems().add(new Text("Background Color: "));
 		this.getItems().add(myBGColor);
 		this.getItems().add(new Separator());
@@ -60,7 +59,6 @@ public class SettingsView extends ToolBar {
 			}
 		});
 		myModel.initializePenColor(getCustomColors(myPenColor));
-		this.getItems().add(new Separator());
 		this.getItems().add(new Text("Pen Color: "));
 		this.getItems().add(myPenColor);
 		this.getItems().add(new Separator());
@@ -68,11 +66,12 @@ public class SettingsView extends ToolBar {
 	}
 
 	private void addButtons(SlogoModel model) {
-		Button load = makeButton("Load", handle -> model.load());
-		Button move = makeButton("Move", handle -> model.testThings());
+		Button toggleTurtle = makeButton("Show/Hide Turtle",
+				handle -> model.toggleTurtle());
 		Button clear = makeButton("Clear", handle -> model.clear());
-		Button help = makeButton("HelpPage", handle -> model.accessHelpHTML());
-		this.getItems().addAll(load, move, clear, help);
+		Button help = makeButton("Help Page", handle -> model.accessHelpHTML());
+		this.getItems().addAll(toggleTurtle, clear, help);
+		this.getItems().add(new Separator());
 
 	}
 

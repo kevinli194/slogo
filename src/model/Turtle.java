@@ -194,4 +194,9 @@ public class Turtle extends TurtleAbstract implements Feature {
 
 	}
 
+	public void toggleVisible() {
+		setVisible(!isVisible);
+
+	}
+
 }
