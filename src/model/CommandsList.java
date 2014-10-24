@@ -1,6 +1,5 @@
 package model;
 
-import instructions.Instruction;
 import instructions.UserDefinedCommand;
 
 import java.util.ArrayList;

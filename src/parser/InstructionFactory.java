@@ -26,7 +26,7 @@ import model.ObservableData;
 public class InstructionFactory {
 	private static final String CONSTANT_REGEX = "-?[0-9]+\\.?[0-9]*";
 	private static final String VARIABLE_REGEX = ":[a-zA-z]+";
-	private static final String COMMAND_REGEX = "[a-zA-z_]+(\\?)?";
+	private static final String COMMAND_REGEX = "[a-zA-Z_]+(\\?)?";
 
 	private ResourceBundle languageBundle;
 	private Map<String,String> languageMap;

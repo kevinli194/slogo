@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Stack;
 
+import error_checking.ErrorDialog;
+import error_checking.SlogoException;
 import model.ObservableData;
 
 
@@ -114,17 +116,25 @@ public class Parser {
 
 	private int findMatchingBracket (List<String> tokens, int openPos) {
 		int matchCounter = 0;
-		int closePos = openPos;
-		while (matchCounter >= 0) {
-			String token = tokens.get(++closePos);
+		int closePos = openPos+1;
+		while (matchCounter >= 0 && closePos < tokens.size()) {
+			String token = tokens.get(closePos);
 			if (isRightBracket(token)) {
 				matchCounter++;
 			}
 			else if (isLeftBracket(token)) {
 				matchCounter--;
 			}
+			closePos++;
 		}
-		return closePos;
+		
+		if (closePos < tokens.size()) {
+			return closePos;
+		} else {
+			new ErrorDialog("MISSING BRACKET.");
+			throw new SlogoException("MISSING BRACKET.");
+		}
+		
 	}
 
 	private void addParams (Instruction instr, Stack<Instruction> iStack) {
