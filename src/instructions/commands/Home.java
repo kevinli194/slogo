@@ -10,7 +10,7 @@ public class Home implements Instruction {
     @Override
     public double execute (ObservableData data) {
 
-        Turtle myTurtle = (Turtle) data.get("turtle");
+        Turtle myTurtle = data.getTurtle();
 
         double[] prevCoords = myTurtle.getCoordinates().clone();
 

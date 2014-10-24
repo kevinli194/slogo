@@ -1,21 +1,20 @@
 package instructions.commands;
 
 import instructions.UnaryInstruction;
+import javafx.scene.paint.Color;
 import model.ObservableData;
 import model.Turtle;
 
+//need to change it to return some index
 
-public class SetHeading extends UnaryInstruction {
+public class GetPenColor extends UnaryInstruction {
+    Color[] colorList = { Color.RED, Color.BLUE, Color.GREEN };
 
     @Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
-        double amount = myParams.get(0).execute(data);
-
         Turtle myTurtle = data.getTurtle();
-        double previousAngle = myTurtle.getAngle();
-        myTurtle.setAngle(amount);
-        return Math.abs(previousAngle - amount);
-
+      
+        return  0;
     }
 }

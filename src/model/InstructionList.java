@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//OUT-DATED CLASS. LOOK AT COMMANDS LIST.
 /**
  * This class generates and creates the data structure used to store the
  * instructions (basic and user-defined) for the program.

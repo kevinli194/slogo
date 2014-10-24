@@ -1,18 +1,23 @@
 package instructions.commands;
 
-import instructions.ZeroParamInstruction;
+import instructions.UnaryInstruction;
 import model.ObservableData;
 import model.Turtle;
 
-public class IsPenDown extends ZeroParamInstruction {
+
+public class SetPenSize extends UnaryInstruction {
 
     @Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
+
         Turtle myTurtle = data.getTurtle();
-        
-        return myTurtle.getPen().isPenDown();
+
+        double pixel = super.myParams.get(0).execute(data);
+
+        myTurtle.getPen().setStrokeWidth(pixel);
+
+        return pixel;
+
     }
 }
-
-

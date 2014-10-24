@@ -51,7 +51,7 @@ public class CommandsList implements Feature {
 		return map;
 	}
 
-	public void addCommand(String commandSyntax, UserDefinedCommand instr) {
+	public void add(String commandSyntax, UserDefinedCommand instr) {
 		if (PreDefinedCommands.containsKey(commandSyntax) ||
 			UserDefinedCommands.containsKey(commandSyntax)) {
 			System.out.println("COMMAND ALREADY DEFINED.");
@@ -60,7 +60,14 @@ public class CommandsList implements Feature {
 		
 	}
 	
-	public UserDefinedCommand getCommand(String commandSyntax) {
+	public void delete(String commandSyntax) {
+		if (!UserDefinedCommands.containsKey(commandSyntax)) {
+			System.out.println("USER DEFINED COMMAND NOT FOUND.");
+		}
+		UserDefinedCommands.remove(commandSyntax);
+	}
+	
+	public UserDefinedCommand get(String commandSyntax) {
 		if (!UserDefinedCommands.containsKey(commandSyntax)) {
 			System.out.println("COMMAND DOES NOT EXIST.");
 		}
@@ -71,13 +78,6 @@ public class CommandsList implements Feature {
 	public boolean contains(String commandSyntax) {
 		return (UserDefinedCommands.containsKey(commandSyntax) ||
 				PreDefinedCommands.containsKey(commandSyntax));
-	}
-
-	public void deleteCommand(String commandSyntax) {
-		if (!UserDefinedCommands.containsKey(commandSyntax)) {
-			System.out.println("USER DEFINED COMMAND NOT FOUND.");
-		}
-		UserDefinedCommands.remove(commandSyntax);
 	}
 
 	/**

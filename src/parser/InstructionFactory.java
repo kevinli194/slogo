@@ -91,7 +91,7 @@ public class InstructionFactory {
 
 				CommandsList allCommands = (CommandsList) myData.get("CommandsList");
 				if (allCommands.contains(type)) {
-					return new UserDefinedCommand(allCommands.getCommand(type));
+					return new UserDefinedCommand(allCommands.get(type));
 				} else {
 					return new UserDefinedCommand(type);
 				}

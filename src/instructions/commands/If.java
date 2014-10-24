@@ -9,8 +9,8 @@ public class If extends BinaryInstruction {
     @Override
     public double execute (ObservableData data) {
         double returnAmt = 0;
-        if (myParams.get(0).execute(data) != 0){
-            returnAmt = myParams.get(1).execute(data);
+        if (super.myParams.get(0).execute(data) != 0){
+            returnAmt = super.myParams.get(1).execute(data);
         }
 
         return returnAmt;

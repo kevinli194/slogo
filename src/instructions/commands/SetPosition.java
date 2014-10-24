@@ -10,11 +10,10 @@ public class SetPosition extends BinaryInstruction {
     @Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
-        double x = myParams.get(0).execute(data);
-        double y = myParams.get(1).execute(data);
+        double x = super.myParams.get(0).execute(data);
+        double y = super.myParams.get(1).execute(data);
 
-        Turtle myTurtle = (Turtle) data.get("turtle");
-
+        Turtle myTurtle = data.getTurtle();
         double[] prevCoords = myTurtle.getCoordinates().clone();
         myTurtle.setCoordinates(x, y);
         double[] currentCoords = myTurtle.getCoordinates().clone();

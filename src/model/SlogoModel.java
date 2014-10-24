@@ -7,6 +7,8 @@ import java.util.Observable;
 import java.util.Random;
 import java.util.Stack;
 
+import javafx.collections.ObservableList;
+import javafx.scene.paint.Color;
 import parser.Parser;
 
 public class SlogoModel extends Observable {
@@ -44,13 +46,16 @@ public class SlogoModel extends Observable {
 		setChanged();
 		notifyObservers(myData);
 	}
-
+	public void toggleTurtle() {
+		myData.getTurtle().toggleVisible();
+		setChanged();
+		notifyObservers(myData);
+	}
 	public void testThings() {
 		Random rn = new Random();
 		double x = rn.nextInt(50);
-		((Turtle) myData.get("turtle")).rotate(x);
-		((Turtle) myData.get("turtle")).moveTurtleAndDrawLine(10);
-		((History) myData.get("history")).add("Turtle Rotated By: " + x);
+		myData.getTurtle().rotate(x);
+		myData.getTurtle().moveTurtleAndDrawLine(10);
 		setChanged();
 		notifyObservers(myData);
 	}
@@ -78,11 +83,6 @@ public class SlogoModel extends Observable {
 		}
 	}
 
-	public void changeInfoVis() {
-		((Turtle) myData.get("turtle")).switchInfoVis();
-
-	}
-
 	public ObservableData getMyData() {
 		return myData;
 	}
@@ -91,5 +91,15 @@ public class SlogoModel extends Observable {
 		return myParser;
 	}
 
+	public void initializeBGColor(ObservableList<Color> customColors) {
+		((BackgroundColor) myData.get("backgroundcolor"))
+				.setCustom(customColors);
+
+	}
+
+	public void initializePenColor(ObservableList<Color> customColors) {
+		myData.getTurtle().setPenCustom(customColors);
+
+	}
 
 }

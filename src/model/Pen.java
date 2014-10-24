@@ -1,5 +1,6 @@
 package model;
 
+import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
@@ -7,11 +8,17 @@ public class Pen {
 	private Color myLineColor;
 	private boolean isPenDown;
 	private double myStrokeWidth;
+	private ObservableList<Color> myCustom;
 
 	public Pen() {
 		myLineColor = Color.WHITE;
 		isPenDown = true;
 		myStrokeWidth = 3;
+	}
+
+	// duplicated code from backgroundcolor
+	public void setCustom(ObservableList<Color> custom) {
+		myCustom = custom;
 	}
 
 	public void setStrokeWidth(double width) {
@@ -33,6 +40,10 @@ public class Pen {
 		return 0;
 	}
 
+	public Color getPenColor(Color color) {
+		return myLineColor;
+	}
+
 	public Line drawLine(double[] start, double[] end) {
 		if (isPenDown) {
 			return createLine(start, end, myLineColor);
@@ -49,6 +60,10 @@ public class Pen {
 		line.setStroke(color);
 		line.setStrokeWidth(myStrokeWidth);
 		return line;
+	}
+
+	public ObservableList<Color> getCustom() {
+		return myCustom;
 	}
 
 }

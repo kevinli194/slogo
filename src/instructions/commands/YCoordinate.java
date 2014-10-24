@@ -1,18 +1,17 @@
 package instructions.commands;
 
 import instructions.Instruction;
-import model.Feature;
 import model.ObservableData;
 import model.Turtle;
+
 
 public class YCoordinate implements Instruction {
 
     @Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
-        Feature myTurtle = data.get("turtle");
-        
-        return ((Turtle) myTurtle).getCoordinates()[1];
+        Turtle myTurtle = data.getTurtle();
+        return myTurtle.getCoordinates()[1];
     }
 
     @Override
@@ -28,5 +27,3 @@ public class YCoordinate implements Instruction {
     }
 
 }
-
-

@@ -30,7 +30,7 @@ public class MakeUserInstruction extends ParameterInstruction {
 			udcommand.defineFunction(variables, commands);
 			
 			// TODO: MAKE ADD COMMAND A BOOLEAN AND RETURN IT
-			allCommands.addCommand(udcommand.getName(), udcommand);
+			allCommands.add(udcommand.getName(), udcommand);
 			return 1;
 		}
 		// TODO: CHANGE THIS ERROR CATCHING TO SOMETHING MORE RELEVANT

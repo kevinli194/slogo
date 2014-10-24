@@ -1,5 +1,6 @@
 package model;
 
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Node;
@@ -7,8 +8,8 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
-
 
 public class Turtle extends TurtleAbstract implements Feature {
 
@@ -25,7 +26,6 @@ public class Turtle extends TurtleAbstract implements Feature {
 	private Image myDefaultOff = new Image(getClass().getResourceAsStream(
 			DEFAULT_OFF_IMAGE));
 	private boolean isVisible;
-	private boolean infoVis = false;
 	private boolean myState = true;
 
 	public Turtle() {
@@ -90,6 +90,16 @@ public class Turtle extends TurtleAbstract implements Feature {
 		}
 	}
 
+	// TODO: need to clean up code
+	public void stampImage() {
+		ImageView newImage = new ImageView(myDefaultOn);
+		myDrawing.getChildren().add(newImage);
+		newImage.setFitWidth(DEFAULT_TURTLE_SIZE);
+		newImage.setFitHeight(DEFAULT_TURTLE_SIZE);
+		newImage.setTranslateX(myCoordinates[0]);
+		newImage.setTranslateY(myCoordinates[1]);
+	}
+
 	public double isVisible() {
 		return isVisible ? 1 : 0;
 	}
@@ -117,6 +127,12 @@ public class Turtle extends TurtleAbstract implements Feature {
 		return myPen;
 	}
 
+	// Should get rid of getPen and change the pen from within the turtle?
+	// Example below.
+	public void changePenColor(Color color) {
+		myPen.setPenColor(color);
+	}
+
 	public void moveTurtleAndDrawLine(double distance) {
 		if (myState) {
 			Line line = myPen.drawLine(myCoordinates,
@@ -137,18 +153,19 @@ public class Turtle extends TurtleAbstract implements Feature {
 		return endCoords;
 	}
 
-	 public double calculateDistance (double[] startCoords, double[] finalCoords) {
-	        double xDiff = finalCoords[0] - startCoords[0];
-	        double yDiff = finalCoords[1] - startCoords[1];
+	public double calculateDistance(double[] startCoords, double[] finalCoords) {
+		double xDiff = finalCoords[0] - startCoords[0];
+		double yDiff = finalCoords[1] - startCoords[1];
 
-	        return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
-	    }
-	 
+		return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+	}
+
 	private void setTurtleInfo() {
 		myTurtleInfo.setText("Coordinates: ("
 				+ ((int) getCoordinates()[0] - DEFAULT_XCOORDINATE) + ", "
 				+ (-(int) getCoordinates()[1] + DEFAULT_YCOORDINATE) + ")"
-				+ "\nAngle: " + (int) getAngle() + "ï¿½");
+				+ "\nAngle: " + (int) getAngle() + " °");
+		Tooltip.install(myImage, myTurtleInfo);
 	}
 
 	public Group getDrawing() {
@@ -172,13 +189,13 @@ public class Turtle extends TurtleAbstract implements Feature {
 
 	}
 
-	public void switchInfoVis() {
-		infoVis = !infoVis;
-		if (infoVis) {
-			Tooltip.install(myImage, myTurtleInfo);
-		} else {
-			Tooltip.uninstall(myImage, myTurtleInfo);
-		}
+	public void setPenCustom(ObservableList<Color> customColors) {
+		myPen.setCustom(customColors);
+
+	}
+
+	public void toggleVisible() {
+		setVisible(!isVisible);
 
 	}
 
