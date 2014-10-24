@@ -2,7 +2,9 @@ package model;
 
 import instructions.Instruction;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -44,6 +46,15 @@ public class VariablesList implements Feature {
 			return null;
 		}
 		return myVariables.get(variableName);
+	}
+	
+	public String[] generate(){
+		List<String> variableList=new ArrayList<String>();
+		for (String s:myVariables.keySet()){
+			String element=s.trim().substring(1)+" : "+myVariables.get(s).execute(new ObservableData());
+			variableList.add(element);
+		}
+		return variableList.toArray(new String[variableList.size()]);
 	}
 
 

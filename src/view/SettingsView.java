@@ -34,28 +34,28 @@ public class SettingsView extends ToolBar {
 	private void addBGColorPicker(TurtleView view) {
 		myBGColor = new ColorPicker();
 		myBGColor.setStyle("-fx-color-label-visible: false ;");
-		myBGColor.setOnAction(new EventHandler() {
-			public void handle(Event t) {
+		myBGColor.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
 				view.changeColor(myBGColor.getValue());
 				((BackgroundColor) (myModel.getMyData().get("backgroundcolor")))
-						.set(myBGColor.getValue());
+						.set(myBGColor.getValue());				
 			}
 		});
 		myModel.initializeBGColor(getCustomColors(myBGColor));
 		this.getItems().add(new Text("Background Color: "));
 		this.getItems().add(myBGColor);
 		this.getItems().add(new Separator());
-
 	}
 
 	private void addPenColorPicker() {
 		myPenColor = new ColorPicker();
 		myPenColor.setStyle("-fx-color-label-visible: false ;");
-		myPenColor.setOnAction(new EventHandler() {
-			public void handle(Event t) {
+		myPenColor.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
 				myModel.getMyData().getTurtle()
-						.changePenColor(myPenColor.getValue());
-
+				.changePenColor(myPenColor.getValue());				
 			}
 		});
 		myModel.initializePenColor(getCustomColors(myPenColor));
