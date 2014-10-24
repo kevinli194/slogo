@@ -1,5 +1,6 @@
 package view;
 
+import java.io.Serializable;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -16,7 +17,11 @@ import model.ObservableData;
 import model.SlogoModel;
 import model.Turtle;
 
-public class SlogoWindow extends BorderPane implements Observer {
+public class SlogoWindow extends BorderPane implements Observer, Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	KeyControls myControls;
 	TurtleView myTurtleView;
 	InputView myInputView;

@@ -27,7 +27,8 @@ public class Main extends Application {
 
 		primaryStage.setResizable(false);
 		myModel = new SlogoModel();
-		myView = new SlogoView(language, SCREEN_WIDTH, SCREEN_HEIGHT);
+		myView = new SlogoView(primaryStage, language, SCREEN_WIDTH,
+				SCREEN_HEIGHT);
 
 		primaryStage.setScene(myView.generateScene());
 		primaryStage.show();
