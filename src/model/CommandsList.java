@@ -1,5 +1,6 @@
 package model;
 
+import instructions.Instruction;
 import instructions.UserDefinedCommand;
 
 import java.util.ArrayList;
@@ -9,6 +10,8 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
 
+import error_checking.ErrorDialog;
+//TODO: NEED TO PUT STRINGS INTO RESOURCES
 /**
  * CommandsList class.
  * Contains the list of pre-defined and user-defined commands.
@@ -18,10 +21,11 @@ import java.util.Set;
  *
  */
 public class CommandsList implements Feature {
-	public static final String DEFAULT_LANGUAGE_PACKAGE = "resources.languages/";
-	public static final String DEFAULT_LANGUAGE_BUNDLE = DEFAULT_LANGUAGE_PACKAGE + "English";
-	private ResourceBundle languageBundle;
+	public static final String DEFAULT_LANGUAGE_BASENAME = "resources.languages/";
+	public static final String DEFAULT_LANGUAGE_LOCALE = DEFAULT_LANGUAGE_BASENAME + "English";
+	public static final String PRE_DEFINED_COMMANDS_RESOURCE = "resources.parsing/PreDefinedCommands";
 	
+	private ResourceBundle languageBundle;
 	private Map<String, String> PreDefinedCommands;
 	private Map<String, UserDefinedCommand> UserDefinedCommands;
 
@@ -29,7 +33,7 @@ public class CommandsList implements Feature {
 	 * 
 	 */
 	public CommandsList() {
-		languageBundle = loadResourceBundle(DEFAULT_LANGUAGE_BUNDLE);
+		languageBundle = loadResourceBundle(DEFAULT_LANGUAGE_LOCALE);
 		PreDefinedCommands = initPreDefinedCommands(languageBundle);
 		UserDefinedCommands = new HashMap<String, UserDefinedCommand>();
 	}
@@ -39,6 +43,10 @@ public class CommandsList implements Feature {
 	}
 
 	private Map<String,String> initPreDefinedCommands(ResourceBundle bundle) {
+		
+		
+		
+		
 		Map<String,String> map = new HashMap<String,String>();
 		Set<String> languageKeys = bundle.keySet();
 		for (String key : languageKeys) {
@@ -51,17 +59,19 @@ public class CommandsList implements Feature {
 		return map;
 	}
 
-	public void add(String commandSyntax, UserDefinedCommand instr) {
+	public void add(String commandSyntax, UserDefinedCommand userDefinedCom) {
 		if (PreDefinedCommands.containsKey(commandSyntax) ||
 			UserDefinedCommands.containsKey(commandSyntax)) {
+			new ErrorDialog("Command %s already defined.", commandSyntax);
 			System.out.println("COMMAND ALREADY DEFINED.");
 		}
-		UserDefinedCommands.put(commandSyntax, instr);
+		UserDefinedCommands.put(commandSyntax, userDefinedCom);
 		
 	}
 	
 	public void delete(String commandSyntax) {
 		if (!UserDefinedCommands.containsKey(commandSyntax)) {
+			new ErrorDialog("Command %s does not exist.", commandSyntax);
 			System.out.println("USER DEFINED COMMAND NOT FOUND.");
 		}
 		UserDefinedCommands.remove(commandSyntax);
@@ -69,6 +79,7 @@ public class CommandsList implements Feature {
 	
 	public UserDefinedCommand get(String commandSyntax) {
 		if (!UserDefinedCommands.containsKey(commandSyntax)) {
+			new ErrorDialog("Command %s does not exist.", commandSyntax);
 			System.out.println("COMMAND DOES NOT EXIST.");
 		}
 		return UserDefinedCommands.get(commandSyntax);
@@ -85,7 +96,7 @@ public class CommandsList implements Feature {
 	 * @param language string of language to change to
 	 */
 	public void changeLanguage(String language) {
-		languageBundle = loadResourceBundle(DEFAULT_LANGUAGE_PACKAGE + language);
+		languageBundle = loadResourceBundle(DEFAULT_LANGUAGE_BASENAME + language);
 		PreDefinedCommands = initPreDefinedCommands(languageBundle);
 	}
 	

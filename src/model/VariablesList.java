@@ -5,6 +5,8 @@ import instructions.Instruction;
 import java.util.HashMap;
 import java.util.Map;
 
+import error_checking.ErrorDialog;
+// TODO: NEED TO PUT STRINGS INTO RESOURCES
 /**
  * VariablesList class. Maps variables to values and error checks for those
  * variables. This class is to be accessed by the commands.
@@ -30,7 +32,7 @@ public class VariablesList implements Feature {
 	public Instruction remove(String variableName) {
 		// TODO: Update to throwing better errors (window perhaps)
 		if (!myVariables.containsKey(variableName)) {
-			System.out.println("VARIABLE DOES NOT EXIST. CANNOT REMOVE.");
+			new ErrorDialog("Variable %s does not exist.", variableName);
 			return null;
 		}
 		return myVariables.remove(variableName);
@@ -40,7 +42,7 @@ public class VariablesList implements Feature {
 		// TODO: Update to throwing better errors (window perhaps)
 		// Same error as one in REMOVE method
 		if (!myVariables.containsKey(variableName)) {
-			System.out.println("VARIABLE DOES NOT EXIST. CANNOT GET.");
+			new ErrorDialog("Variable %s does not exist.", variableName);
 			return null;
 		}
 		return myVariables.get(variableName);

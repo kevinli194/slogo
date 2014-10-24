@@ -15,9 +15,6 @@ import java.util.Set;
 import model.CommandsList;
 import model.ObservableData;
 
-
-
-
 /**
  * Factory design pattern for creating 
  * instances of different instructions

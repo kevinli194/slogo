@@ -3,13 +3,10 @@ package error_checking;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
@@ -20,15 +17,12 @@ public class ErrorDialog {
 
 	public ErrorDialog(String format, Object ... args) {
 		String message = String.format(format, args);
-
-		// Create Popup
-
 		display(message);
 	}
 
 	private void display(String message) {
 		// Initialize Stage
-		final Stage dialog = new Stage();
+		Stage dialog = new Stage();
 		dialog.initModality(Modality.APPLICATION_MODAL);
 
 		// Initialize Scene
@@ -58,7 +52,6 @@ public class ErrorDialog {
 		root.getChildren().addAll(label,okBtn);
 		dialog.setScene(scene);
 		dialog.show();
-
 		popup.show(dialog);
 	}
 
