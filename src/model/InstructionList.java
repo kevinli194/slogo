@@ -75,4 +75,10 @@ public class InstructionList implements Feature {
 		instructions.add(myUserDefinedFunctions);
 		return instructions;
 	}
+
+	@Override
+	public void remove(Object n) {
+		// TODO Auto-generated method stub
+		
+	}
 }

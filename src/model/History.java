@@ -46,4 +46,9 @@ public class History implements Feature {
 	public List<String> generate() {
 		return myHistory;
 	}
+
+	@Override
+	public void remove(Object n) {
+		myHistory.remove(n);
+	}
 }

@@ -104,8 +104,17 @@ public class CommandsList implements Feature {
 		return commands;
 	}
 
+	@Override
 	public void clear() {
 		UserDefinedCommands.clear();
+	}
+
+	@Override
+	public void remove(Object commandSyntax) {
+		if (!UserDefinedCommands.containsKey(commandSyntax)) {
+			System.out.println("USER DEFINED COMMAND NOT FOUND.");
+		}
+		UserDefinedCommands.remove(commandSyntax);
 	}
 
 	public List<String[]> generate() {

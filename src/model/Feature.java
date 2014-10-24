@@ -15,4 +15,6 @@ public interface Feature extends Serializable {
 	 */
 	public void clear();
 
+	public void remove(Object n);
+
 }

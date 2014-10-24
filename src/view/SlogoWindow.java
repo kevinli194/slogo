@@ -10,6 +10,8 @@ import model.CommandsList;
 import model.History;
 import model.ObservableData;
 import model.SlogoModel;
+import model.Turtle;
+import model.VariablesList;
 
 public class SlogoWindow extends BorderPane implements Observer, Serializable {
 
@@ -20,7 +22,7 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 	KeyControls myControls;
 	TurtleView myTurtleView;
 	InputView myInputView;
-	CommandsView myInstructionView;
+	CommandsView myCommandsView;
 	HistoryView myHistoryView;
 	SettingsView mySettingsView;
 	SlogoModel myModel;
@@ -31,13 +33,13 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 		myModel.addObserver(this);
 		myTurtleView = new TurtleView(width, height);
 		myInputView = new InputView(myModel, width, height);
-		myInstructionView = new CommandsView(myInputView, width, height);
+		myCommandsView = new CommandsView(myInputView, width, height);
 		myHistoryView = new HistoryView(myInputView, width, height);
 		mySettingsView = new SettingsView(myModel, myTurtleView, width, height);
 		myOD = new ObservableData();
 
 		setCenter(myTurtleView);
-		setRight(myInstructionView);
+		setRight(myCommandsView);
 		setBottom(myInputView);
 		setLeft(myHistoryView);
 		setTop(mySettingsView);
@@ -56,21 +58,17 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 		}
 
 		myTurtleView.update((((ObservableData) arg).getTurtle()).generate());
-
-		// InstructionList instrList=(InstructionList)((ObservableData)
-		// arg).get("InstructionList");
-		// Node instructionBox=instrList.generateNode(myInputView);
-		// myInstructionView.update(instructionBox);
-		myInstructionView.update(((CommandsList) ((ObservableData) arg)
-				.get("CommandsList")).generate());
+		myCommandsView.update(
+				((CommandsList) ((ObservableData) arg).get("CommandsList")),
+				((VariablesList) ((ObservableData) arg).get("VariablesList")));
 		myHistoryView.update(((History) ((ObservableData) arg).get("history"))
 				.generate());
 		myTurtleView.changeColor(((BackgroundColor) ((ObservableData) arg)
 				.get("backgroundcolor")).generate());
 		mySettingsView.changeBGPicked(((BackgroundColor) ((ObservableData) arg)
 				.get("backgroundcolor")).generate());
-		mySettingsView.changePenPicked(((ObservableData) arg)
-				.getTurtle().getPen().getPenColor());
+		mySettingsView.changePenPicked(((ObservableData) arg).getTurtle()
+				.getPen().getPenColor());
 	}
 
 }
