@@ -67,6 +67,10 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 				.generate());
 		myTurtleView.changeColor(((BackgroundColor) ((ObservableData) arg)
 				.get("backgroundcolor")).generate());
+		mySettingsView.changeBGPicked(((BackgroundColor) ((ObservableData) arg)
+				.get("backgroundcolor")).generate());
+		mySettingsView.changePenPicked(((ObservableData) arg)
+				.getTurtle().getPen().getPenColor());
 	}
 
 }

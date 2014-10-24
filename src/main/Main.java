@@ -1,13 +1,10 @@
 package main;
 
 import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import view.KeyControls;
-import view.SlogoView;
-import view.SlogoWindow;
 import model.SlogoModel;
+import view.SlogoView;
 
 public class Main extends Application {
 

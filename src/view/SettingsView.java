@@ -93,4 +93,14 @@ public class SettingsView extends ToolBar implements Serializable {
 		return customColors;
 	}
 
+	public void changeBGPicked(Color generate) {
+		myBGColor.setValue(generate);
+
+	}
+
+	public void changePenPicked(Color generate) {
+		myPenColor.setValue(generate);
+
+	}
+
 }

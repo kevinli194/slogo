@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @author Kevin Li
  *
  */
-public interface Feature extends Serializable{
+public interface Feature extends Serializable {
 
 	/**
 	 * Shared method that clears the feature.

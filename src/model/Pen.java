@@ -46,7 +46,7 @@ public class Pen implements Serializable {
 		return 0;
 	}
 
-	public Color getPenColor(Color color) {
+	public Color getPenColor() {
 		return myLineColor;
 	}
 

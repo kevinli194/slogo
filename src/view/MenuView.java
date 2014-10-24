@@ -1,8 +1,10 @@
 package view;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 import javafx.event.ActionEvent;
@@ -20,9 +22,11 @@ public class MenuView extends MenuBar {
 	private int myTabCount;
 	private FileChooser myFileChooser;
 	private Stage myStage;
+	private String testSave;
 
 	public MenuView(Stage stage, String language, TabPane tabs, double width,
 			double height) {
+		testSave = new String("This is a test.");
 		myTabs = tabs;
 		myTabCount = 1;
 		myStage = stage;
@@ -48,7 +52,18 @@ public class MenuView extends MenuBar {
 			public void handle(ActionEvent t) {
 				File file = myFileChooser.showOpenDialog(myStage);
 				if (file != null) {
-
+					try {
+						ObjectInputStream is = new ObjectInputStream(
+								new FileInputStream(file));
+						String s = (String) is.readObject();
+						System.out.println("The contents of the file are " + s);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (ClassNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}
 		});
@@ -64,14 +79,11 @@ public class MenuView extends MenuBar {
 				File file = myFileChooser.showSaveDialog(myStage);
 				if (file != null) {
 					try {
-
 						ObjectOutputStream os = new ObjectOutputStream(
-								new FileOutputStream("saved"));
-						os.writeObject(myTabs
-								.getTabs()
-								.get(myTabs.getSelectionModel()
-										.getSelectedIndex()).getContent());
+								new FileOutputStream(file));
+						os.writeObject(testSave);
 						os.close();
+						System.out.println("Done saving file.");
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

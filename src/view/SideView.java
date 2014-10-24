@@ -46,7 +46,7 @@ public abstract class SideView extends ScrollPane implements Serializable {
 	}
 
 	private Text makeClickableText(String s) {
-		Text t = new Text(s+"\n");
+		Text t = new Text(s + "\n");
 		t.setFont(new Font(INSTRUCTION_FONT_SIZE));
 		t.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
@@ -56,30 +56,28 @@ public abstract class SideView extends ScrollPane implements Serializable {
 		});
 		return t;
 	}
-	
+
 	public void addTextBoxWithDeleteButton(String s) {
 		HBox h = new HBox();
 		Text t = makeClickableText(s);
-		Button delete=makeDeleteButton();
-		h.getChildren().addAll(t,delete);
+		Button delete = makeDeleteButton();
+		h.getChildren().addAll(t, delete);
 		myView.getChildren().add(h);
 	}
 
 	private Button makeDeleteButton() {
-		Button b=new Button();
+		Button b = new Button();
 		b.setText("delete");
 		b.setTranslateX(DELETE_BUTTON_X);
-		b.setOnMouseClicked(new EventHandler<MouseEvent>(){
+		b.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
 			@Override
 			public void handle(MouseEvent event) {
 				myView.getChildren().remove(b.getParent());
 			}
-			
+
 		});
 		return b;
 	}
-	
-	
-	
+
 }
