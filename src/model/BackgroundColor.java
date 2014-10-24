@@ -34,4 +34,9 @@ public class BackgroundColor implements Feature {
 
 	}
 
+	@Override
+	public void remove(Object o) {
+		myCustom.remove(o);
+	}
+
 }

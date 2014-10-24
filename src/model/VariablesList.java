@@ -2,7 +2,9 @@ package model;
 
 import instructions.Instruction;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import error_checking.ErrorDialog;
@@ -29,13 +31,14 @@ public class VariablesList implements Feature {
 		myVariables.put(variableName, value);
 	}
 
-	public Instruction remove(String variableName) {
+	@Override
+	public void remove(Object variableName) {
 		// TODO: Update to throwing better errors (window perhaps)
 		if (!myVariables.containsKey(variableName)) {
 			new ErrorDialog("Variable %s does not exist.", variableName);
-			return null;
+			
+			System.out.println("VARIABLE DOES NOT EXIST. CANNOT REMOVE.");
 		}
-		return myVariables.remove(variableName);
 	}
 	
 	public Instruction get(String variableName) {
@@ -46,6 +49,15 @@ public class VariablesList implements Feature {
 			return null;
 		}
 		return myVariables.get(variableName);
+	}
+	
+	public String[] generate(){
+		List<String> variableList=new ArrayList<String>();
+		for (String s:myVariables.keySet()){
+			String element=s.trim().substring(1)+" : "+myVariables.get(s).execute(new ObservableData());
+			variableList.add(element);
+		}
+		return variableList.toArray(new String[variableList.size()]);
 	}
 
 

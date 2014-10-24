@@ -46,6 +46,7 @@ public class InputView extends PaneView {
 			public void handle(ActionEvent event) {
 				myModel.parseAndExecute(myInput.getText());
 				myInput.clear();
+
 			}
 
 		});
