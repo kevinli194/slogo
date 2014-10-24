@@ -58,9 +58,9 @@ public class SlogoWindow extends BorderPane implements Observer {
 
 		myTurtleView.update((((ObservableData) arg).getTurtle()).generate());
 		myCommandsView.update(((CommandsList) ((ObservableData) arg)
-				.get("CommandsList")).generate(), 
+				.get("CommandsList")), 
 				((VariablesList) ((ObservableData) arg)
-						.get("VariablesList")).generate());
+						.get("VariablesList")));
 		myHistoryView.update(((History) ((ObservableData) arg).get("history"))
 				.generate());
 		myTurtleView.changeColor(((BackgroundColor) ((ObservableData) arg)

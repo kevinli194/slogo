@@ -59,13 +59,7 @@ public class CommandsList implements Feature {
 		UserDefinedCommands.put(commandSyntax, instr);
 		
 	}
-	
-	public void delete(String commandSyntax) {
-		if (!UserDefinedCommands.containsKey(commandSyntax)) {
-			System.out.println("USER DEFINED COMMAND NOT FOUND.");
-		}
-		UserDefinedCommands.remove(commandSyntax);
-	}
+
 	
 	public UserDefinedCommand get(String commandSyntax) {
 		if (!UserDefinedCommands.containsKey(commandSyntax)) {
@@ -96,8 +90,18 @@ public class CommandsList implements Feature {
 		return commands;
 	}
 
+	@Override
 	public void clear() {
 		UserDefinedCommands.clear();
+	}
+	
+	
+	@Override
+	public void remove(Object commandSyntax) {
+		if (!UserDefinedCommands.containsKey(commandSyntax)) {
+			System.out.println("USER DEFINED COMMAND NOT FOUND.");
+		}
+		UserDefinedCommands.remove(commandSyntax);
 	}
 	
 	public List<String[]> generate(){
@@ -106,6 +110,7 @@ public class CommandsList implements Feature {
 		instructionList.add(UserDefinedCommands.keySet().toArray(new String[UserDefinedCommands.keySet().size()]));	
 		return instructionList;
 	}
+
 
 
 }

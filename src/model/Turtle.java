@@ -164,7 +164,7 @@ public class Turtle extends TurtleAbstract implements Feature {
 		myTurtleInfo.setText("Coordinates: ("
 				+ ((int) getCoordinates()[0] - DEFAULT_XCOORDINATE) + ", "
 				+ (-(int) getCoordinates()[1] + DEFAULT_YCOORDINATE) + ")"
-				+ "\nAngle: " + (int) getAngle() + " °");
+				+ "\nAngle: " + (int) getAngle() + " ï¿½");
 		Tooltip.install(myImage, myTurtleInfo);
 	}
 
@@ -197,6 +197,12 @@ public class Turtle extends TurtleAbstract implements Feature {
 	public void toggleVisible() {
 		setVisible(!isVisible);
 
+	}
+
+	@Override
+	public void remove(Object n) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -29,13 +29,12 @@ public class VariablesList implements Feature {
 		myVariables.put(variableName, value);
 	}
 
-	public Instruction remove(String variableName) {
+	@Override
+	public void remove(Object variableName) {
 		// TODO: Update to throwing better errors (window perhaps)
 		if (!myVariables.containsKey(variableName)) {
 			System.out.println("VARIABLE DOES NOT EXIST. CANNOT REMOVE.");
-			return null;
 		}
-		return myVariables.remove(variableName);
 	}
 	
 	public Instruction get(String variableName) {
