@@ -14,6 +14,10 @@ import java.util.Map;
  */
 
 public class VariablesList implements Feature {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3790539722809452079L;
 	private Map<String, Instruction> myVariables;
 
 	public VariablesList() {

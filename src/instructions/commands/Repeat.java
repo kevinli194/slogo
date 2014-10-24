@@ -6,7 +6,12 @@ import model.ObservableData;
 public class Repeat extends BinaryInstruction{
     
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8407960592324762906L;
+
+	@Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
         double repeatTimes = super.myParams.get(0).execute(data);

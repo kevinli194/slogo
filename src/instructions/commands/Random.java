@@ -5,7 +5,11 @@ import model.ObservableData;
 
 
 public class Random extends UnaryInstruction {
-    private java.util.Random myRand;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5427849732298158737L;
+	private java.util.Random myRand;
 
     @Override
     public double execute (ObservableData data) {

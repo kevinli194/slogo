@@ -5,6 +5,11 @@ import model.VariablesList;
 
 public class VariableInstruction extends UserDefinedInstruction {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -197584065175920865L;
+
 	public VariableInstruction(String name) {
 		super(name);
 	}

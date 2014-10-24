@@ -18,6 +18,10 @@ import java.util.Set;
  *
  */
 public class CommandsList implements Feature {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4687405266966458965L;
 	public static final String DEFAULT_LANGUAGE_PACKAGE = "resources.languages/";
 	public static final String DEFAULT_LANGUAGE_BUNDLE = DEFAULT_LANGUAGE_PACKAGE + "English";
 	private ResourceBundle languageBundle;

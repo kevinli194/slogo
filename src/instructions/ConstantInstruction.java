@@ -8,6 +8,10 @@ import model.ObservableData;
  * 
  */
 public class ConstantInstruction extends ZeroParamInstruction {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6304998740133863536L;
 	private double myValue;
 
 	public ConstantInstruction(double value) {

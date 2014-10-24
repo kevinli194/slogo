@@ -5,6 +5,7 @@ import instructions.Instruction;
 import instructions.UserDefinedCommand;
 import instructions.VariableInstruction;
 
+import java.io.Serializable;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
@@ -23,7 +24,11 @@ import model.ObservableData;
  * instances of different instructions
  *
  */
-public class InstructionFactory {
+public class InstructionFactory implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2129488091762474882L;
 	private static final String CONSTANT_REGEX = "-?[0-9]+\\.?[0-9]*";
 	private static final String VARIABLE_REGEX = ":[a-zA-z]+";
 	private static final String COMMAND_REGEX = "[a-zA-z_]+(\\?)?";

@@ -1,11 +1,13 @@
 package view;
 
-import instructions.Instruction;
-
 import java.util.List;
-import java.util.Map;
 
 public class CommandsView extends SideView {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7295555317903571842L;
 
 	public CommandsView(InputView input, double width, double height) {
 		super(input, width, height);
@@ -16,7 +18,7 @@ public class CommandsView extends SideView {
 		for (String s : instructions.get(0)) {
 			addTextBox(s);
 		}
-		for (String s:instructions.get(1)){
+		for (String s : instructions.get(1)) {
 			addTextBoxWithDeleteButton(s);
 		}
 	}

@@ -1,5 +1,7 @@
 package view;
 
+import java.io.Serializable;
+
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -8,10 +10,13 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.stage.Screen;
 
-public abstract class SideView extends ScrollPane {
+public abstract class SideView extends ScrollPane implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3594461139193098537L;
 	private static final int INSTRUCTION_FONT_SIZE = 12;
 	private static final int DELETE_BUTTON_X = 100;
 	private InputView myInput;

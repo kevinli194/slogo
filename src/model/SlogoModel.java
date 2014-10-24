@@ -3,6 +3,7 @@ package model;
 import instructions.Instruction;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Observable;
 import java.util.Random;
 import java.util.Stack;
@@ -11,7 +12,11 @@ import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
 import parser.Parser;
 
-public class SlogoModel extends Observable {
+public class SlogoModel extends Observable implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7452943156645209670L;
 	private static final String HELP_URL = "http://www.cs.duke.edu/courses/compsci308/current/assign/03_slogo/commands.php";
 	private ObservableData myData;
 	Parser myParser;

@@ -4,24 +4,19 @@ import java.io.Serializable;
 import java.util.Observable;
 import java.util.Observer;
 
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Scene;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
 import javafx.scene.layout.BorderPane;
 import model.BackgroundColor;
 import model.CommandsList;
 import model.History;
-import model.InstructionList;
 import model.ObservableData;
 import model.SlogoModel;
-import model.Turtle;
 
 public class SlogoWindow extends BorderPane implements Observer, Serializable {
+
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 4532547099439124045L;
 	KeyControls myControls;
 	TurtleView myTurtleView;
 	InputView myInputView;

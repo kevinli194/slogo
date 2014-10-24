@@ -13,6 +13,11 @@ import javafx.scene.shape.Line;
 
 public class Turtle extends TurtleAbstract implements Feature {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3491015094836744017L;
+
 	private ImageView myImage;
 
 	private double[] myCoordinates = { DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE };

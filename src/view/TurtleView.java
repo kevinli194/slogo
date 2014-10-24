@@ -1,16 +1,18 @@
 package view;
 
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import javafx.stage.Screen;
 
 public class TurtleView extends PaneView {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6613430284719479884L;
 
 	public TurtleView(double width, double height) {
 		setView(width * 3 / 5, height * 11 / 16);

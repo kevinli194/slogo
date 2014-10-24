@@ -5,7 +5,12 @@ import model.ObservableData;
 
 public class Quotient extends BinaryInstruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 5307946185486757783L;
+
+	@Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
 

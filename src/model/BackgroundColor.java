@@ -4,6 +4,10 @@ import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
 
 public class BackgroundColor implements Feature {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2537548285545957011L;
 	Color myBackgroundColor;
 	ObservableList<Color> myCustom;
 

@@ -7,7 +7,12 @@ import model.Turtle;
 
 public class ClearScreen extends ZeroParamInstruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -9069621001188698639L;
+
+	@Override
     public double execute (ObservableData data) {
         
         Turtle myTurtle = data.getTurtle();

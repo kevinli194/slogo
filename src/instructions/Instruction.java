@@ -1,5 +1,7 @@
 package instructions;
 
+import java.io.Serializable;
+
 import model.ObservableData;
 
 /**
@@ -8,7 +10,7 @@ import model.ObservableData;
  * 
  */
 
-public interface Instruction {
+public interface Instruction extends Serializable{
 
 	/**
 	 * Executes the functionality of the instruction to change data in the

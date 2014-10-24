@@ -2,19 +2,23 @@ package view;
 
 import instructions.Instruction;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-import parser.Parser;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import model.ObservableData;
 import model.SlogoModel;
+import parser.Parser;
 
-public class KeyControls {
+public class KeyControls implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6381483434400107432L;
 	SlogoModel myModel;
 	BorderPane myWindow;
 

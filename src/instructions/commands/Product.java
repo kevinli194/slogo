@@ -5,7 +5,12 @@ import model.ObservableData;
 
 public class Product extends BinaryInstruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -4491278262876768177L;
+
+	@Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
 
