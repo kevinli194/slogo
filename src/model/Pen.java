@@ -1,7 +1,7 @@
 package model;
 
 import java.io.Serializable;
-
+import java.util.List;
 import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
@@ -68,7 +68,7 @@ public class Pen implements Serializable {
 		return line;
 	}
 
-	public ObservableList<Color> getCustom() {
+	public List<Color> getCustom() {
 		return myCustom;
 	}
 

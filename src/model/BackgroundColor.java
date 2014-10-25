@@ -1,5 +1,6 @@
 package model;
 
+import java.util.List;
 import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
 
@@ -27,7 +28,7 @@ public class BackgroundColor implements Feature {
 		myCustom = custom;
 	}
 
-	public ObservableList<Color> getCustom() {
+	public List<Color> getCustom() {
 		return myCustom;
 	}
 

@@ -1,5 +1,6 @@
 package instructions.commands;
 
+import java.util.List;
 import instructions.UnaryInstruction;
 import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
@@ -18,7 +19,7 @@ public class GetPenColor extends UnaryInstruction {
     public double execute (ObservableData data) {
 
         Pen myPen = data.getTurtle().getPen();
-        ObservableList<Color> colorList = myPen.getCustom();
+        List<Color> colorList = myPen.getCustom();
         int colorIndex = 0;
         for (int i = 0; i < colorList.size(); i++) {
             if (colorList.get(i).equals(myPen.getPenColor())) {
