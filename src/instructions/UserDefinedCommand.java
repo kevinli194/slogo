@@ -3,6 +3,7 @@ package instructions;
 
 import java.util.List;
 
+import error_checking.ErrorDialog;
 import model.ObservableData;
 import model.VariablesList;
 
@@ -23,7 +24,6 @@ public class UserDefinedCommand extends UserDefinedInstruction {
 		defineFunction(udcommand.myVariables, udcommand.myCommands);
 	}
 
-
 	public void defineFunction(List<Instruction> variables, Instruction commands) {
 		myVariables = variables;
 		super.numParams = myVariables.size();
@@ -34,14 +34,21 @@ public class UserDefinedCommand extends UserDefinedInstruction {
 	public double execute(ObservableData data) {
 		double returnVal;
 		VariablesList varList = (VariablesList) data.get("VariablesList");
+		// add new variable scope
+		varList.addScope();
 		setVariables(varList);
 		returnVal = myCommands.execute(data);
-		removeVariables(varList);
+		// remove added variable scope
+		varList.removeScope();
 		return returnVal;
 	}
 
 	private void setVariables(VariablesList varList) {
 		for (int i = 0; i < super.numParams; i++) {
+			// TODO: NEEDS FURTHER ERROR CHECKING
+			if (i >= myVariables.size()) {
+				new ErrorDialog("Please define %s command first.",super.myName);
+			}
 			VariableInstruction var = (VariableInstruction) myVariables.get(i);
 			Instruction value = super.myParams.get(i);
 			// error check to make sure you have enough params
@@ -49,10 +56,4 @@ public class UserDefinedCommand extends UserDefinedInstruction {
 		}
 	}
 
-	private void removeVariables(VariablesList varList) {
-		for (Instruction var : myVariables) {
-			varList.remove(((UserDefinedInstruction) var).getName());
-		}
-		
-	}
 }

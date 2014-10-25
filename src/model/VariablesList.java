@@ -6,7 +6,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Stack;
 
+import error_checking.ErrorDialog;
+// TODO: NEED TO PUT STRINGS INTO RESOURCES
 /**
  * VariablesList class. Maps variables to values and error checks for those
  * variables. This class is to be accessed by the commands.
@@ -16,6 +19,10 @@ import java.util.Map;
  */
 
 public class VariablesList implements Feature {
+
+	private Stack<Map<String, Instruction>> myScope;
+
+// what is this?
 	/**
 	 * 
 	 */
@@ -24,6 +31,7 @@ public class VariablesList implements Feature {
 
 	public VariablesList() {
 		myVariables = new HashMap<String, Instruction>();
+		myScope = new Stack<Map<String, Instruction>>();
 	}
 
 	public void add(String variableName, Instruction value) {
@@ -32,21 +40,32 @@ public class VariablesList implements Feature {
 		// the variable
 		myVariables.put(variableName, value);
 	}
+	
+	public void addScope() {
+		myScope.push(myVariables);
+		myVariables = new HashMap<String, Instruction>(myVariables);
+	}
 
 	@Override
 	public void remove(Object variableName) {
 		// TODO: Update to throwing better errors (window perhaps)
 		if (!myVariables.containsKey(variableName)) {
+			new ErrorDialog("Variable %s does not exist.", variableName);
+			
 			System.out.println("VARIABLE DOES NOT EXIST. CANNOT REMOVE.");
 		}
-		else myVariables.remove(variableName);
+		myVariables.remove(variableName);
+	}
+	
+	public void removeScope() {
+		myVariables = myScope.pop();
 	}
 	
 	public Instruction get(String variableName) {
 		// TODO: Update to throwing better errors (window perhaps)
 		// Same error as one in REMOVE method
 		if (!myVariables.containsKey(variableName)) {
-			System.out.println("VARIABLE DOES NOT EXIST. CANNOT GET.");
+			new ErrorDialog("Variable %s does not exist.", variableName);
 			return null;
 		}
 		return myVariables.get(variableName);
