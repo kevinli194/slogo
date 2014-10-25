@@ -35,6 +35,7 @@ public class VariablesList implements Feature {
 		if (!myVariables.containsKey(variableName)) {
 			System.out.println("VARIABLE DOES NOT EXIST. CANNOT REMOVE.");
 		}
+		else myVariables.remove(variableName);
 	}
 	
 	public Instruction get(String variableName) {
@@ -50,6 +51,7 @@ public class VariablesList implements Feature {
 	public String[] generate(){
 		List<String> variableList=new ArrayList<String>();
 		for (String s:myVariables.keySet()){
+			System.out.println(s);
 			String element=s.trim().substring(1)+" : "+myVariables.get(s).execute(new ObservableData());
 			variableList.add(element);
 		}
