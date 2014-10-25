@@ -27,16 +27,22 @@ public class SlogoModel extends Observable implements Serializable {
 	}
 
 	public void parseAndExecute(String s) {
-		showToHistoryView(s);
-		executeCommands((myParser.parse(s)));
+
+		if (executeCommands((myParser.parse(s)))) {
+			showToHistoryView(s);
+		}
 	}
 
-	public void executeCommands(Stack<Instruction> commandStack) {
-		while (!commandStack.isEmpty()) {
-			Instruction current = commandStack.pop();
-			double returnValue = current.execute(myData);
-			showOnView(returnValue);
-			load();
+	public boolean executeCommands(Stack<Instruction> commandStack) {
+		if (commandStack.isEmpty()) {
+			return false;
+		} else {
+			while (!commandStack.isEmpty()) {
+				Instruction current = commandStack.pop();
+				double returnValue = current.execute(myData);
+				// showOnView(returnValue);
+			}
+			return true;
 		}
 	}
 
@@ -51,11 +57,13 @@ public class SlogoModel extends Observable implements Serializable {
 		setChanged();
 		notifyObservers(myData);
 	}
+
 	public void toggleTurtle() {
 		myData.getTurtle().toggleVisible();
 		setChanged();
 		notifyObservers(myData);
 	}
+
 	public void testThings() {
 		Random rn = new Random();
 		double x = rn.nextInt(50);
@@ -104,6 +112,15 @@ public class SlogoModel extends Observable implements Serializable {
 
 	public void initializePenColor(ObservableList<Color> customColors) {
 		myData.getTurtle().setPenCustom(customColors);
+
+	}
+
+	public void rerun() {
+		for (String s : ((History) myData.get("history")).generate()) {
+			executeCommands((myParser.parse(s)));
+		}
+		setChanged();
+		notifyObservers(myData);
 
 	}
 

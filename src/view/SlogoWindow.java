@@ -10,7 +10,6 @@ import model.CommandsList;
 import model.History;
 import model.ObservableData;
 import model.SlogoModel;
-import model.Turtle;
 import model.VariablesList;
 
 public class SlogoWindow extends BorderPane implements Observer, Serializable {
@@ -44,9 +43,8 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 		setLeft(myHistoryView);
 		setTop(mySettingsView);
 		setVisible(true);
-
-		myControls = new KeyControls(myModel, this);
 		myModel.load();
+		myControls = new KeyControls(myModel, this);
 
 	}
 
@@ -69,6 +67,15 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 				.get("backgroundcolor")).generate());
 		mySettingsView.changePenPicked(((ObservableData) arg).getTurtle()
 				.getPen().getPenColor());
+	}
+
+	public SlogoModel getModel() {
+		return myModel;
+	}
+
+	public void loadFile(History history) {
+		myModel.getMyData().loadFile(history);
+		
 	}
 
 }

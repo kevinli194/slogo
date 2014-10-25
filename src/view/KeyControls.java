@@ -33,10 +33,10 @@ public class KeyControls implements Serializable {
 
 	private void setKeyMap() {
 		Parser p = myModel.getParser();
-		keyMap.put(KeyCode.UP, p.parse("forward 5").pop());
-		keyMap.put(KeyCode.DOWN, p.parse("back 5").pop());
-		keyMap.put(KeyCode.LEFT, p.parse("left 10").pop());
-		keyMap.put(KeyCode.RIGHT, p.parse("right 10").pop());
+		keyMap.put(KeyCode.W, p.parse("forward 5").pop());
+		keyMap.put(KeyCode.S, p.parse("back 5").pop());
+		keyMap.put(KeyCode.A, p.parse("left 10").pop());
+		keyMap.put(KeyCode.D, p.parse("right 10").pop());
 		// keyMap.put(KeyCode.SPACE, p.parse("seth").pop());
 	}
 

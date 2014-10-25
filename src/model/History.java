@@ -15,10 +15,11 @@ public class History implements Feature {
 	 * 
 	 */
 	private static final long serialVersionUID = 6540827775550421541L;
-	private List<String> myHistory;
+	private List<String> myDisplayedHistory;
+	private List<String> myCompleteHistory;
 
 	public History() {
-		myHistory = new LinkedList<String>();
+		myDisplayedHistory = new LinkedList<String>();
 	}
 
 	/**
@@ -29,12 +30,12 @@ public class History implements Feature {
 	 */
 
 	public void add(String element) {
-		myHistory.add(element);
+		myDisplayedHistory.add(element);
 	}
 
 	@Override
 	public void clear() {
-		myHistory.clear();
+		myDisplayedHistory.clear();
 	}
 
 	/**
@@ -44,11 +45,11 @@ public class History implements Feature {
 	 */
 
 	public List<String> generate() {
-		return myHistory;
+		return myDisplayedHistory;
 	}
 
 	@Override
 	public void remove(Object n) {
-		myHistory.remove(n);
+		myDisplayedHistory.remove(n);
 	}
 }

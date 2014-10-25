@@ -56,4 +56,8 @@ public class ObservableData implements Serializable {
 		myTurtle.clear();
 
 	}
+
+	public void loadFile(History history) {
+		myFeatures.put("history", history);
+	}
 }
