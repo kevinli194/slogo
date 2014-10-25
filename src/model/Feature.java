@@ -15,6 +15,7 @@ public interface Feature {
 	 */
 	public void clear();
 
+	
 	public void remove(Object n);
 
 }

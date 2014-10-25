@@ -1,5 +1,6 @@
 package model;
 
+import instructions.Instruction;
 import instructions.UserDefinedCommand;
 
 import java.util.ArrayList;
@@ -77,12 +78,23 @@ public class CommandsList implements Feature {
 		userDefCommands.remove(commandSyntax);
 	}
 
-	public UserDefinedCommand get(String commandSyntax) {
-		if (!userDefCommands.containsKey(commandSyntax)) {
-			new ErrorDialog("Command %s does not exist.", commandSyntax);
-			System.out.println("COMMAND DOES NOT EXIST.");
+	public Instruction get(String commandSyntax) {
+		try {
+			Class<?> commandClass = Class.forName("instructions.commands." + preDefCommandSyntaxes.get(commandSyntax));
+			return (Instruction) commandClass.newInstance();
+		} catch (Exception e) {
+			if (userDefCommands.containsKey(commandSyntax)) {
+				return new UserDefinedCommand(userDefCommands.get(commandSyntax));
+			} else {
+				return new UserDefinedCommand(commandSyntax);
+			}
 		}
-		return userDefCommands.get(commandSyntax);
+		
+//		if (!userDefCommands.containsKey(commandSyntax)) {
+//			new ErrorDialog("Command %s does not exist.", commandSyntax);
+//			System.out.println("COMMAND DOES NOT EXIST.");
+//		}
+//		return userDefCommands.get(commandSyntax);
 
 	}
 

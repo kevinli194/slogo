@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Stack;
 
 import error_checking.ErrorDialog;
 // TODO: NEED TO PUT STRINGS INTO RESOURCES
@@ -18,10 +19,12 @@ import error_checking.ErrorDialog;
  */
 
 public class VariablesList implements Feature {
+	private Stack<Map<String, Instruction>> myScope;
 	private Map<String, Instruction> myVariables;
 
 	public VariablesList() {
 		myVariables = new HashMap<String, Instruction>();
+		myScope = new Stack<Map<String, Instruction>>();
 	}
 
 	public void add(String variableName, Instruction value) {
@@ -29,6 +32,11 @@ public class VariablesList implements Feature {
 		// Could maybe update to ask user if they want to overwrite
 		// the variable
 		myVariables.put(variableName, value);
+	}
+	
+	public void addScope() {
+		myScope.push(myVariables);
+		myVariables = new HashMap<String, Instruction>(myVariables);
 	}
 
 	@Override
@@ -39,6 +47,11 @@ public class VariablesList implements Feature {
 			
 			System.out.println("VARIABLE DOES NOT EXIST. CANNOT REMOVE.");
 		}
+		myVariables.remove(variableName);
+	}
+	
+	public void removeScope() {
+		myVariables = myScope.pop();
 	}
 	
 	public Instruction get(String variableName) {

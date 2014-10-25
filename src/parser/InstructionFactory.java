@@ -2,15 +2,9 @@ package parser;
 
 import instructions.ConstantInstruction;
 import instructions.Instruction;
-import instructions.UserDefinedCommand;
 import instructions.VariableInstruction;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.ResourceBundle;
-import java.util.Set;
 
 import model.CommandsList;
 import model.ObservableData;
@@ -26,7 +20,6 @@ public class InstructionFactory {
 	private static final String COMMAND_REGEX = "[a-zA-Z_]+(\\?)?";
 
 	private ResourceBundle languageBundle;
-	private Map<String,String> languageMap;
 	// DON'T KEEP THIS IN THIS MANNER (DISORGANIZED)
 	private ObservableData myData;
 
@@ -39,26 +32,12 @@ public class InstructionFactory {
 
 	public InstructionFactory(ObservableData data) {
 		languageBundle = loadResourceBundle("resources.languages/English");
-		languageMap = createLanguageMap(languageBundle);
 		myData = data;
 
 	}
 
 	private ResourceBundle loadResourceBundle(String filepath) {
 		return ResourceBundle.getBundle(filepath);
-	}
-
-	private Map<String, String> createLanguageMap(ResourceBundle bundle) {
-		Map<String,String> map = new HashMap<String,String>();
-		Set<String> languageKeys = bundle.keySet();
-		for (String key : languageKeys) {
-			String value = bundle.getString(key);
-			String[] commands = value.split(",");
-			for (String s : commands) {
-				map.put(s,key);
-			}
-		}
-		return map;
 	}
 
 	public Instruction makeInstruction(String type) {
@@ -72,34 +51,12 @@ public class InstructionFactory {
 			return new VariableInstruction(type);
 		}
 		else if (type.matches(COMMAND_REGEX)) {
-			// TODO: LOOK UP TRY CATCHES
-			try {
-				Class<?> comClass = Class.forName("instructions.commands." + languageMap.get(type));
-				Constructor<?> comConstructor = comClass.getConstructor();
-				return (Instruction) comConstructor.newInstance();
-			}
-			catch (ClassNotFoundException |
-					NoSuchMethodException |
-					SecurityException |
-					InstantiationException |
-					IllegalAccessException |
-					IllegalArgumentException |
-					InvocationTargetException e) {
-
-				CommandsList allCommands = (CommandsList) myData.get("CommandsList");
-				if (allCommands.contains(type)) {
-					return new UserDefinedCommand(allCommands.get(type));
-				} else {
-					return new UserDefinedCommand(type);
-				}
-			}
-
-			//				System.out.println(type + " IS NOT A VALID COMMAND.");
-			// Need to add error checking
+			CommandsList allCommands = (CommandsList) myData.get("CommandsList");
+			return allCommands.get(type);
 		}
-
 		return null;
 	}
-
-
 }
+
+
+
