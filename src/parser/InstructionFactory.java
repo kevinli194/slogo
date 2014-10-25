@@ -7,6 +7,8 @@ import instructions.VariableInstruction;
 import java.io.Serializable;
 import java.util.ResourceBundle;
 
+import error_checking.ErrorDialog;
+import error_checking.SlogoException;
 import model.CommandsList;
 import model.ObservableData;
 
@@ -58,6 +60,11 @@ public class InstructionFactory implements Serializable {
 		}
 		else if (type.matches(COMMAND_REGEX)) {
 			CommandsList allCommands = (CommandsList) myData.get("CommandsList");
+			//TODO
+			if(allCommands.contains(type) == false){
+				new ErrorDialog("THERE IS NO SUCH INSTRUCTION.");
+			}
+			
 			return allCommands.get(type);
 
 		}
