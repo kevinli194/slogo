@@ -228,6 +228,7 @@ public class Turtle extends TurtleAbstract implements Feature {
 	@Override
 	public void clear() {
 		myLines.getChildren().clear();
+		myStamps.getChildren().clear();
 		setCoordinates(DEFAULT_REALATIVE_COORDINATE, DEFAULT_REALATIVE_COORDINATE);
 		setAngle(DEFAULT_TURTLE_ANGLE);
 		setTurtleInfo();
