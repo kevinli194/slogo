@@ -40,7 +40,7 @@ public class Pen {
 		return 0;
 	}
 
-	public Color getPenColor(Color color) {
+	public Color getPenColor() {
 		return myLineColor;
 	}
 

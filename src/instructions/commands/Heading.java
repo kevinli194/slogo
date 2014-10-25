@@ -1,11 +1,12 @@
 package instructions.commands;
 
 import instructions.Instruction;
+import instructions.ZeroParamInstruction;
 import model.ObservableData;
 import model.Turtle;
 
 
-public class Heading implements Instruction {
+public class Heading extends ZeroParamInstruction {
 
     @Override
     public double execute (ObservableData data) {

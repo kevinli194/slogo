@@ -6,15 +6,16 @@ import model.Turtle;
 
 
 
-public class Stamp extends ZeroParamInstruction {
+public class ClearStamps extends ZeroParamInstruction {
 
     @Override
     public double execute (ObservableData data) {
         
         Turtle myTurtle = data.getTurtle();
         
-        myTurtle.stampImage();
-        return 0;
+        myTurtle.clearStamp();
+        
+        return 1;
     }
 
 }

@@ -1,20 +1,26 @@
 package instructions.commands;
 
-import instructions.UnaryInstruction;
+import instructions.ZeroParamInstruction;
+import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
 import model.ObservableData;
-import model.Turtle;
+import model.Pen;
 
-//need to change it to return some index
 
-public class GetPenColor extends UnaryInstruction {
-    Color[] colorList = { Color.RED, Color.BLUE, Color.GREEN };
+public class GetPenColor extends ZeroParamInstruction {
 
     @Override
     public double execute (ObservableData data) {
-        // TODO Auto-generated method stub
-        Turtle myTurtle = data.getTurtle();
-      
-        return  0;
+
+        Pen myPen = data.getTurtle().getPen();
+        ObservableList<Color> colorList = myPen.getCustom();
+        int colorIndex = 0;
+        for (int i = 0; i < colorList.size(); i++) {
+            if (colorList.get(i).equals(myPen.getPenColor())) {
+                colorIndex = i;
+            }
+
+        }
+        return (double) colorIndex + 1;
     }
 }
