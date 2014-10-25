@@ -124,7 +124,7 @@ public class Parser implements Serializable {
 	private int findMatchingBracket (List<String> tokens, int openPos) {
 		int matchCounter = 0;
 		int closePos = openPos;
-		while (matchCounter >= 0 && closePos < tokens.size()) {
+		while (matchCounter >= 0 && closePos < (tokens.size() - 1)) {
 			closePos++;
 			String token = tokens.get(closePos);
 			if (isRightBracket(token)) {
@@ -135,9 +135,10 @@ public class Parser implements Serializable {
 			}
 		}
 		
-		if (closePos < tokens.size()) {
+		if (matchCounter < 0) {
 			return closePos;
 		} else {
+			//TODO: exception message
 			new ErrorDialog("MISSING BRACKET.");
 			throw new SlogoException("MISSING BRACKET.");
 		}
@@ -145,6 +146,11 @@ public class Parser implements Serializable {
 	}
 
 	private void addParams (Instruction instr, Stack<Instruction> iStack) {
+		if (instr.getNumParams() != iStack.size()){
+			new ErrorDialog("WRONG NUMBER OF PARAMETERS.");
+			return;
+//			throw new SlogoException("WRONG NUMBER OF PARAMETERS.");
+		}
 		int numParams = instr.getNumParams();
 		for (int i = 0; i < numParams; i++) {
 			// Add error exceptions HERE
