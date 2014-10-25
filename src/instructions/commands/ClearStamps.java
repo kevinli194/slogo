@@ -6,20 +6,16 @@ import model.Turtle;
 
 
 
-public class Stamp extends ZeroParamInstruction {
+public class ClearStamps extends ZeroParamInstruction {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = -3066723995999889218L;
-
-	@Override
+    @Override
     public double execute (ObservableData data) {
         
         Turtle myTurtle = data.getTurtle();
         
-        myTurtle.stampImage();
-        return 0;
+        myTurtle.clearStamp();
+        
+        return 1;
     }
 
 }

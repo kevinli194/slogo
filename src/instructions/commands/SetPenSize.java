@@ -2,7 +2,7 @@ package instructions.commands;
 
 import instructions.UnaryInstruction;
 import model.ObservableData;
-import model.Turtle;
+import model.Pen;
 
 
 public class SetPenSize extends UnaryInstruction {
@@ -16,11 +16,11 @@ public class SetPenSize extends UnaryInstruction {
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
 
-        Turtle myTurtle = data.getTurtle();
+        Pen myPen = data.getTurtle().getPen();
 
         double pixel = super.myParams.get(0).execute(data);
 
-        myTurtle.getPen().setStrokeWidth(pixel);
+        myPen.setStrokeWidth(pixel);
 
         return pixel;
 

@@ -28,7 +28,6 @@ public class CommandsList implements Feature {
 	public static final String DEFAULT_LANGUAGE_PACKAGE = "resources.languages/";
 	public static final String DEFAULT_LANGUAGE_RESOURCE = DEFAULT_LANGUAGE_PACKAGE + "English";
 	public static final String PRE_DEFINED_COMMANDS_RESOURCE = "resources.parsing/PreDefinedCommands";
-
 	private ResourceBundle languageBundle;
 	private ResourceBundle commandsBundle;
 
