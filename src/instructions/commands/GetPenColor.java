@@ -8,7 +8,11 @@ import model.Turtle;
 //need to change it to return some index
 
 public class GetPenColor extends UnaryInstruction {
-    Color[] colorList = { Color.RED, Color.BLUE, Color.GREEN };
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -2368059646482772369L;
+	Color[] colorList = { Color.RED, Color.BLUE, Color.GREEN };
 
     @Override
     public double execute (ObservableData data) {

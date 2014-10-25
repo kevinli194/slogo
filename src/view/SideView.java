@@ -40,7 +40,7 @@ public abstract class SideView extends ScrollPane {
 	}
 
 	protected Text makeClickableText(String s) {
-		Text t = new Text(s+"\n");
+		Text t = new Text(s + "\n");
 		t.setFont(new Font(INSTRUCTION_FONT_SIZE));
 		t.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
@@ -50,9 +50,5 @@ public abstract class SideView extends ScrollPane {
 		});
 		return t;
 	}
-	
 
-	
-	
-	
 }

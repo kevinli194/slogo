@@ -7,7 +7,12 @@ import model.Turtle;
 
 public class Left extends UnaryInstruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1996997469609543230L;
+
+	@Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
         double amount = myParams.get(0).execute(data);

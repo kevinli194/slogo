@@ -1,16 +1,19 @@
 package view;
 
-import model.SlogoModel;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
-import javafx.stage.Screen;
+import model.SlogoModel;
 
 public class InputView extends PaneView {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2499477403984792589L;
 	public HBox myView;
 	private TextArea myInput;
 	private Button mySubmitButton;

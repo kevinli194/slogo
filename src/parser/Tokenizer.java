@@ -1,10 +1,8 @@
 package parser;
 
+import java.io.Serializable;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
-
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 /**
  * Splits the instruction string into
@@ -12,7 +10,12 @@ import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
  * along the way.
  *
  */
-public class Tokenizer {
+public class Tokenizer implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6777223435329788868L;
 
 	/**
 	 * Splits an input string into separate string tokens

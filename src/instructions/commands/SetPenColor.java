@@ -9,6 +9,11 @@ import model.Turtle;
 
 public class SetPenColor extends UnaryInstruction {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6544906017218135628L;
+
 	@Override
 	public double execute(ObservableData data) {
 

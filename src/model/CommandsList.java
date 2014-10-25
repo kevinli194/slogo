@@ -13,14 +13,18 @@ import java.util.Set;
 import error_checking.ErrorDialog;
 //TODO: NEED TO PUT STRINGS INTO RESOURCES
 /**
- * CommandsList class.
- * Contains the list of pre-defined and user-defined commands.
- * Class is to be accessed by the commands AND by the instruction factory.
+ * CommandsList class. Contains the list of pre-defined and user-defined
+ * commands. Class is to be accessed by the commands AND by the instruction
+ * factory.
  * 
  * @author slogo_team02 a.k.a. TEAM ROCKET
  *
  */
 public class CommandsList implements Feature {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4687405266966458965L;
 	public static final String DEFAULT_LANGUAGE_PACKAGE = "resources.languages/";
 	public static final String DEFAULT_LANGUAGE_RESOURCE = DEFAULT_LANGUAGE_PACKAGE + "English";
 	public static final String PRE_DEFINED_COMMANDS_RESOURCE = "resources.parsing/PreDefinedCommands";
@@ -61,11 +65,11 @@ public class CommandsList implements Feature {
 
 
 	public void add(String commandSyntax, UserDefinedCommand userDefinedCom) {
-		if (preDefCommandSyntaxes.containsKey(commandSyntax) ||
-				userDefCommands.containsKey(commandSyntax)) {
-			new ErrorDialog("Command %s already defined.", commandSyntax);
-			System.out.println("COMMAND ALREADY DEFINED.");
-		}
+//		if (preDefCommandSyntaxes.containsKey(commandSyntax) ||
+//				userDefCommands.containsKey(commandSyntax)) {
+//			new ErrorDialog("Command %s already defined.", commandSyntax);
+//			System.out.println("COMMAND ALREADY DEFINED.");
+//		}
 		userDefCommands.put(commandSyntax, userDefinedCom);
 
 	}
@@ -89,14 +93,14 @@ public class CommandsList implements Feature {
 				return new UserDefinedCommand(commandSyntax);
 			}
 		}
-		
-//		if (!userDefCommands.containsKey(commandSyntax)) {
-//			new ErrorDialog("Command %s does not exist.", commandSyntax);
-//			System.out.println("COMMAND DOES NOT EXIST.");
-//		}
-//		return userDefCommands.get(commandSyntax);
-
 	}
+
+	//		if (!userDefCommands.containsKey(commandSyntax)) {
+	//			new ErrorDialog("Command %s does not exist.", commandSyntax);
+	//			System.out.println("COMMAND DOES NOT EXIST.");
+	//		}
+	//		return userDefCommands.get(commandSyntax);
+
 
 	public boolean contains(String commandSyntax) {
 		return (userDefCommands.containsKey(commandSyntax) ||
@@ -105,11 +109,18 @@ public class CommandsList implements Feature {
 
 	/**
 	 * Allows switching of language
-	 * @param language string of language to change to
+	 * 
+	 * @param language
+	 *            string of language to change to
 	 */
 	public void changeLanguage(String language) {
 		languageBundle = loadResourceBundle(DEFAULT_LANGUAGE_PACKAGE + language);
 		//		preDefCommandSyntaxes = initCommandsMap(commandsBundle, languageBundle);
+		//=======
+		//		ResourceBundle languageBundle = loadResourceBundle(DEFAULT_LANGUAGE_PACKAGE
+		//				+ language);
+		//		PreDefinedCommands = initPreDefinedCommands(languageBundle);
+		//>>>>>>> 95894f688e535b8c8ecb818ce1b850c9cffb6a6a
 	}
 
 	public List<String> getCommandSyntaxes() {
@@ -124,7 +135,6 @@ public class CommandsList implements Feature {
 		userDefCommands.clear();
 	}
 
-
 	@Override
 	public void remove(Object commandSyntax) {
 		if (!userDefCommands.containsKey(commandSyntax)) {
@@ -137,9 +147,15 @@ public class CommandsList implements Feature {
 		List<String[]> instructionList=new ArrayList<String[]>();
 		instructionList.add(preDefCommandSyntaxes.keySet().toArray(new String[preDefCommandSyntaxes.keySet().size()]));
 		instructionList.add(userDefCommands.keySet().toArray(new String[userDefCommands.keySet().size()]));	
+
+		//	public List<String[]> generate() {
+		//		List<String[]> instructionList = new ArrayList<String[]>();
+		//		instructionList.add(PreDefinedCommands.keySet().toArray(
+		//				new String[PreDefinedCommands.keySet().size()]));
+		//		instructionList.add(UserDefinedCommands.keySet().toArray(
+		//				new String[UserDefinedCommands.keySet().size()]));
+
 		return instructionList;
 	}
-
-
 
 }

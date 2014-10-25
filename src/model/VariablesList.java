@@ -19,7 +19,14 @@ import error_checking.ErrorDialog;
  */
 
 public class VariablesList implements Feature {
+
 	private Stack<Map<String, Instruction>> myScope;
+
+// what is this?
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3790539722809452079L;
 	private Map<String, Instruction> myVariables;
 
 	public VariablesList() {
@@ -67,6 +74,7 @@ public class VariablesList implements Feature {
 	public String[] generate(){
 		List<String> variableList=new ArrayList<String>();
 		for (String s:myVariables.keySet()){
+			System.out.println(s);
 			String element=s.trim().substring(1)+" : "+myVariables.get(s).execute(new ObservableData());
 			variableList.add(element);
 		}

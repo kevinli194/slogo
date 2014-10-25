@@ -7,7 +7,12 @@ import model.ObservableData;
 
 public class Sum extends BinaryInstruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -2910753621943189298L;
+
+	@Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
         double sum = 0;

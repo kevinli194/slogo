@@ -6,7 +6,12 @@ import model.ObservableData;
 
 public class If extends BinaryInstruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -3818430558387059565L;
+
+	@Override
     public double execute (ObservableData data) {
         double returnAmt = 0;
         if (super.myParams.get(0).execute(data) != 0){

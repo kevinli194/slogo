@@ -69,7 +69,12 @@ public class CommandsView extends SideView {
 			@Override
 			public void handle(MouseEvent event) {
 				myView.getChildren().remove(b.getParent());
-				f.remove(":"+s.split(":")[0]);
+				String key;
+				if (f.getClass().getSimpleName().equals("CommandsList"))
+					key=s;
+				else key=":"+s.split(":")[0].trim();
+				System.out.println(key);
+				f.remove(key);
 			}
 		});
 		return b;

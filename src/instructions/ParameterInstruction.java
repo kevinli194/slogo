@@ -1,6 +1,5 @@
 package instructions;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,6 +10,10 @@ import java.util.List;
  * 
  */
 public abstract class ParameterInstruction implements Instruction {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1313766908935710341L;
 	protected int numParams;
 	protected List<Instruction> myParams;
 
