@@ -116,8 +116,9 @@ public class Parser {
 
 	private int findMatchingBracket (List<String> tokens, int openPos) {
 		int matchCounter = 0;
-		int closePos = openPos+1;
+		int closePos = openPos;
 		while (matchCounter >= 0 && closePos < tokens.size()) {
+			closePos++;
 			String token = tokens.get(closePos);
 			if (isRightBracket(token)) {
 				matchCounter++;
@@ -125,7 +126,6 @@ public class Parser {
 			else if (isLeftBracket(token)) {
 				matchCounter--;
 			}
-			closePos++;
 		}
 		
 		if (closePos < tokens.size()) {
