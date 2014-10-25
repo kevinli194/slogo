@@ -9,6 +9,10 @@ import model.CommandsList;
 import model.ObservableData;
 
 public class MakeUserInstruction extends ParameterInstruction {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1938556879640825722L;
 	// MAKE CONSTANTS
 	private static final int USERDEFINEDCOMMAND_INDEX = 0;
 

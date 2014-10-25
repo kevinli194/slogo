@@ -8,6 +8,11 @@ import model.ObservableData;
 
 public class SetBackground extends UnaryInstruction {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7570832795819615234L;
+
 	@Override
 	public double execute(ObservableData data) {
 		// TODO Auto-generated method stub

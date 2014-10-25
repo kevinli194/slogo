@@ -1,6 +1,6 @@
 package model;
 
-import javafx.scene.Parent;
+import java.io.Serializable;
 
 /**
  * Feature interface that is extended by all the feature classes in model.
@@ -8,7 +8,7 @@ import javafx.scene.Parent;
  * @author Kevin Li
  *
  */
-public interface Feature {
+public interface Feature extends Serializable {
 
 	/**
 	 * Shared method that clears the feature.

@@ -8,6 +8,11 @@ import instructions.VariableInstruction;
 // NEED TO MAKE THIS CLASS
 public class MakeVariable extends BinaryInstruction {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3545647644856338247L;
+
 	@Override
 	public double execute(ObservableData data) {
 		VariablesList varList = (VariablesList) data.get("VariablesList");

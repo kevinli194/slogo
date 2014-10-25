@@ -1,10 +1,16 @@
 package model;
 
+import java.io.Serializable;
+
 import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
-public class Pen {
+public class Pen implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1512292990210270763L;
 	private Color myLineColor;
 	private boolean isPenDown;
 	private double myStrokeWidth;
@@ -40,7 +46,7 @@ public class Pen {
 		return 0;
 	}
 
-	public Color getPenColor(Color color) {
+	public Color getPenColor() {
 		return myLineColor;
 	}
 

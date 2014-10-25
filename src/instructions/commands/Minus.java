@@ -5,7 +5,12 @@ import model.ObservableData;
 
 public class Minus extends UnaryInstruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 448493569163243191L;
+
+	@Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
 

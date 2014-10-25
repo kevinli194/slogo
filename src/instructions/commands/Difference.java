@@ -5,7 +5,12 @@ import model.ObservableData;
 
 public class Difference extends BinaryInstruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 4635477676879222224L;
+
+	@Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
 

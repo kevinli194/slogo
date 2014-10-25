@@ -7,6 +7,10 @@ import model.ObservableData;
 import model.VariablesList;
 
 public class UserDefinedCommand extends UserDefinedInstruction {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 241936480193090236L;
 	private List<Instruction> myVariables;
 	private Instruction myCommands;
 	

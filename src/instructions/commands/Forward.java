@@ -14,7 +14,12 @@ import model.Turtle;
  */
 public class Forward extends UnaryInstruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5013987356729528187L;
+
+	@Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
         double amount = super.myParams.get(0).execute(data);

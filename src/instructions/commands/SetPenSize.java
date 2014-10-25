@@ -7,7 +7,12 @@ import model.Turtle;
 
 public class SetPenSize extends UnaryInstruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -4680673263835810284L;
+
+	@Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
 

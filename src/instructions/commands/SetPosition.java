@@ -7,7 +7,12 @@ import model.Turtle;
 
 public class SetPosition extends BinaryInstruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -2267513548213834685L;
+
+	@Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
         double x = super.myParams.get(0).execute(data);

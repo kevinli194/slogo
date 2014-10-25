@@ -5,7 +5,12 @@ import model.ObservableData;
 
 public class Or extends BinaryInstruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -3036273052396731164L;
+
+	@Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
         if (myParams.get(0).execute(data)!=0 ||  myParams.get(1).execute(data)!=0)

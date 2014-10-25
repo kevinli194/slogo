@@ -13,7 +13,12 @@ import model.VariablesList;
 
 public class DoTimes extends BinaryInstruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8586670318984101878L;
+
+	@Override
     public double execute (ObservableData data) {
 
         // parametor 0 = lististr of (variable, limit)
