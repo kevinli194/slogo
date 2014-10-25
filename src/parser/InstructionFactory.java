@@ -46,7 +46,7 @@ public class InstructionFactory implements Serializable {
 	 */
 
 	public InstructionFactory(ObservableData data) {
-		ResourceBundle languageBundle = loadResourceBundle("resources.languages/Chinese");
+		ResourceBundle languageBundle = loadResourceBundle("resources.languages/English");
 		languageMap = createLanguageMap(languageBundle);
 		myData = data;
 

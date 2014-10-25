@@ -21,6 +21,7 @@ public class Turtle extends TurtleAbstract implements Feature {
 	private ImageView myImage;
 
 	private double[] myCoordinates = { DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE };
+	private double[] myRelativeCoordinates= {DEFAULT_REALATIVE_COORDINATE,DEFAULT_REALATIVE_COORDINATE};
 	private double myAngle = DEFAULT_TURTLE_ANGLE;
 	private Pen myPen;
 	private Group myDrawing;
@@ -50,13 +51,12 @@ public class Turtle extends TurtleAbstract implements Feature {
 		myImage = new ImageView(myDefaultOn);
 		myImage.setFitWidth(DEFAULT_TURTLE_SIZE);
 		myImage.setFitHeight(DEFAULT_TURTLE_SIZE);
-		setCoordinates(DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE);
+		setCoordinates(DEFAULT_REALATIVE_COORDINATE, DEFAULT_REALATIVE_COORDINATE);
 		setAngle(DEFAULT_TURTLE_ANGLE);
 		myImage.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent arg0) {
 				changeState();
-
 			}
 		});
 
@@ -72,16 +72,19 @@ public class Turtle extends TurtleAbstract implements Feature {
 	}
 
 	public double[] getCoordinates() {
-
-		return myCoordinates;
+		
+		return myRelativeCoordinates;
 	}
 
 	public void setCoordinates(double x, double y) {
 		if (myState) {
-			myCoordinates[0] = x;
-			myCoordinates[1] = y;
+			myRelativeCoordinates[0]=x;
+			myRelativeCoordinates[1]=y;
+			myCoordinates[0] = x+DEFAULT_XCOORDINATE;
+			myCoordinates[1] = -y+DEFAULT_YCOORDINATE;
 			myImage.setTranslateX(myCoordinates[0]);
 			myImage.setTranslateY(myCoordinates[1]);
+			setTurtleInfo();
 		}
 
 	}
@@ -143,8 +146,8 @@ public class Turtle extends TurtleAbstract implements Feature {
 			Line line = myPen.drawLine(myCoordinates,
 					calculateEndCoord(distance));
 			myLines.getChildren().add(line);
-			setCoordinates(calculateEndCoord(distance)[0],
-					calculateEndCoord(distance)[1]);
+			setCoordinates(calculateEndCoord(distance)[0]-DEFAULT_XCOORDINATE,
+					-calculateEndCoord(distance)[1]+DEFAULT_YCOORDINATE);
 			setTurtleInfo();
 		}
 	}
@@ -167,8 +170,8 @@ public class Turtle extends TurtleAbstract implements Feature {
 
 	private void setTurtleInfo() {
 		myTurtleInfo.setText("Coordinates: ("
-				+ ((int) getCoordinates()[0] - DEFAULT_XCOORDINATE) + ", "
-				+ (-(int) getCoordinates()[1] + DEFAULT_YCOORDINATE) + ")"
+				+ (int)myRelativeCoordinates[0] + ", "
+				+ (int)myRelativeCoordinates[1] + ")"
 				+ "\nAngle: " + (int) getAngle() + " �");
 		Tooltip.install(myImage, myTurtleInfo);
 	}
@@ -188,7 +191,7 @@ public class Turtle extends TurtleAbstract implements Feature {
 	@Override
 	public void clear() {
 		myLines.getChildren().clear();
-		setCoordinates(DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE);
+		setCoordinates(DEFAULT_REALATIVE_COORDINATE, DEFAULT_REALATIVE_COORDINATE);
 		setAngle(DEFAULT_TURTLE_ANGLE);
 		setTurtleInfo();
 
