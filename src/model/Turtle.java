@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -11,7 +13,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
+
 public class Turtle extends TurtleAbstract implements Feature {
+
 
 	/**
 	 * 
@@ -26,6 +30,8 @@ public class Turtle extends TurtleAbstract implements Feature {
 	private Pen myPen;
 	private Group myDrawing;
 	private Group myLines;
+	    private Group myStamps;
+
 	private Tooltip myTurtleInfo;
 	private Image myDefaultOn = new Image(getClass().getResourceAsStream(
 			DEFAULT_ON_IMAGE));
@@ -40,9 +46,11 @@ public class Turtle extends TurtleAbstract implements Feature {
 		myTurtleInfo = new Tooltip();
 		myLines = new Group();
 		myDrawing = new Group();
+	        myStamps = new Group();
+
 		initializeTurtle();
 		setTurtleInfo();
-		myDrawing.getChildren().addAll(myLines, myImage);
+		myDrawing.getChildren().addAll(myLines, myImage, myStamps);
 		isVisible = true;
 
 	}
@@ -98,15 +106,22 @@ public class Turtle extends TurtleAbstract implements Feature {
 		}
 	}
 
-	// TODO: need to clean up code
-	public void stampImage() {
-		ImageView newImage = new ImageView(myDefaultOn);
-		myDrawing.getChildren().add(newImage);
-		newImage.setFitWidth(DEFAULT_TURTLE_SIZE);
-		newImage.setFitHeight(DEFAULT_TURTLE_SIZE);
-		newImage.setTranslateX(myCoordinates[0]);
-		newImage.setTranslateY(myCoordinates[1]);
-	}
+	    // TODO: need to fix code after being able to choose turtle images
+	    public void stampImage () {
+	        ImageView newImage = new ImageView(myDefaultOn);
+	        myDrawing.getChildren().add(newImage);
+	        newImage.setFitWidth(DEFAULT_TURTLE_SIZE);
+	        newImage.setFitHeight(DEFAULT_TURTLE_SIZE);
+	        newImage.setTranslateX(myCoordinates[0]);
+	        newImage.setTranslateY(myCoordinates[1]);        
+	        myStamps.getChildren().add(newImage);
+
+	    }
+	    
+	    public void clearStamp () {
+	        myStamps.getChildren().clear();
+
+	    }
 
 	public double isVisible() {
 		return isVisible ? 1 : 0;
@@ -126,6 +141,16 @@ public class Turtle extends TurtleAbstract implements Feature {
 			myImage.setRotate(myAngle);
 		}
 	}
+
+	    public double calculateAngle (double currentX, double currentY, double targetX, double targetY) {
+	        double angle = (double) Math.toDegrees(Math.atan2(targetY - currentY, targetX -currentX));
+
+	        if (angle < 0) {
+	            angle += 360;
+	        }
+
+	        return angle;
+	    }
 
 	public double getAngle() {
 		return Math.round(myAngle * 10) / 10.0;
@@ -168,6 +193,18 @@ public class Turtle extends TurtleAbstract implements Feature {
 		return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
 	}
 
+	    public List<double[]> getCoordList (double x, double y) {
+	        List<double[]> coords = new ArrayList<double[]>();
+
+	        double[] prevCoords = myCoordinates.clone();
+	        setCoordinates(x, y);
+	        double[] currentCoords = myCoordinates.clone();
+	        coords.add(prevCoords);
+	        coords.add(currentCoords);
+	        return coords;
+	    }
+
+	    
 	private void setTurtleInfo() {
 		myTurtleInfo.setText("Coordinates: ("
 				+ (int)myRelativeCoordinates[0] + ", "

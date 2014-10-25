@@ -1,5 +1,6 @@
 package instructions.commands;
 
+import java.util.List;
 import instructions.Instruction;
 import model.ObservableData;
 import model.Turtle;
@@ -17,12 +18,10 @@ public class Home implements Instruction {
 
         Turtle myTurtle = data.getTurtle();
 
-        double[] prevCoords = myTurtle.getCoordinates().clone();
+        // list with prevcoords, currentcoords
+        List<double[]> coords = myTurtle.getCoordList(0, 0);
 
-        myTurtle.setCoordinates(0, 0);
-        double[] currentCoords = myTurtle.getCoordinates().clone();
-
-        return myTurtle.calculateDistance(prevCoords, currentCoords);
+        return myTurtle.calculateDistance(coords.get(0), coords.get(1));
     }
 
     @Override
