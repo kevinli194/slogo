@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Stack;
 
+import error_checking.ErrorDialog;
+import error_checking.SlogoException;
 import model.ObservableData;
 
 
@@ -122,8 +124,9 @@ public class Parser implements Serializable {
 	private int findMatchingBracket (List<String> tokens, int openPos) {
 		int matchCounter = 0;
 		int closePos = openPos;
-		while (matchCounter >= 0) {
-			String token = tokens.get(++closePos);
+		while (matchCounter >= 0 && closePos < (tokens.size() - 1)) {
+			closePos++;
+			String token = tokens.get(closePos);
 			if (isRightBracket(token)) {
 				matchCounter++;
 			}
@@ -131,10 +134,23 @@ public class Parser implements Serializable {
 				matchCounter--;
 			}
 		}
-		return closePos;
+		
+		if (matchCounter < 0) {
+			return closePos;
+		} else {
+			//TODO: exception message
+			new ErrorDialog("MISSING BRACKET.");
+			throw new SlogoException("MISSING BRACKET.");
+		}
+		
 	}
 
 	private void addParams (Instruction instr, Stack<Instruction> iStack) {
+		if (instr.getNumParams() != iStack.size()){
+			new ErrorDialog("WRONG NUMBER OF PARAMETERS.");
+			return;
+//			throw new SlogoException("WRONG NUMBER OF PARAMETERS.");
+		}
 		int numParams = instr.getNumParams();
 		for (int i = 0; i < numParams; i++) {
 			// Add error exceptions HERE

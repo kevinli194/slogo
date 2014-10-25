@@ -1,9 +1,6 @@
 package view;
 
-import instructions.Instruction;
-
 import java.util.List;
-import java.util.Map;
 
 import model.CommandsList;
 import model.Feature;
