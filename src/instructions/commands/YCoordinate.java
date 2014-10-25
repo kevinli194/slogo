@@ -7,7 +7,12 @@ import model.Turtle;
 
 public class YCoordinate implements Instruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 4503480543426574044L;
+
+	@Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
         Turtle myTurtle = data.getTurtle();

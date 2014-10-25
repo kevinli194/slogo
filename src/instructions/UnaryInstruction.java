@@ -7,6 +7,10 @@ package instructions;
 public abstract class UnaryInstruction extends ParameterInstruction {
 	/**
 	 * 
+	 */
+	private static final long serialVersionUID = -6285500985853679738L;
+	/**
+	 * 
 	 * @param parameter
 	 *            of the unary instruction.
 	 */

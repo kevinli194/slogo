@@ -6,6 +6,10 @@ import java.util.List;
 import model.ObservableData;
 
 public class ListInstruction extends ZeroParamInstruction {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8768754397704316762L;
 	private List<Instruction> myInstructionList = new ArrayList<Instruction>();
 
 	public ListInstruction(List<Instruction> lst) {

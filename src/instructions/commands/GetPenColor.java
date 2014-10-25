@@ -1,13 +1,18 @@
 package instructions.commands;
 
-import instructions.ZeroParamInstruction;
+import instructions.UnaryInstruction;
 import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
 import model.ObservableData;
 import model.Pen;
 
 
-public class GetPenColor extends ZeroParamInstruction {
+
+public class GetPenColor extends UnaryInstruction {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -2368059646482772369L;
 
     @Override
     public double execute (ObservableData data) {

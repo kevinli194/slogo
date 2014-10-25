@@ -1,5 +1,7 @@
 package view;
 
+import java.io.Serializable;
+
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -13,7 +15,11 @@ import javafx.scene.text.Text;
 import model.BackgroundColor;
 import model.SlogoModel;
 
-public class SettingsView extends ToolBar {
+public class SettingsView extends ToolBar implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 660774956006597491L;
 	ColorPicker myBGColor;
 	ColorPicker myPenColor;
 	SlogoModel myModel;
@@ -85,6 +91,16 @@ public class SettingsView extends ToolBar {
 	public ObservableList<Color> getCustomColors(ColorPicker colorpicker) {
 		ObservableList<Color> customColors = colorpicker.getCustomColors();
 		return customColors;
+	}
+
+	public void changeBGPicked(Color generate) {
+		myBGColor.setValue(generate);
+
+	}
+
+	public void changePenPicked(Color generate) {
+		myPenColor.setValue(generate);
+
 	}
 
 }

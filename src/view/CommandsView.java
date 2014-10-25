@@ -5,6 +5,9 @@ import instructions.Instruction;
 import java.util.List;
 import java.util.Map;
 
+import model.CommandsList;
+import model.Feature;
+import model.VariablesList;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
@@ -22,7 +25,10 @@ public class CommandsView extends SideView {
 		super(input, width, height);
 	}
 
-	public void update(List<String[]> instructions,String[] variables) {
+	public void update(CommandsList commandsList, VariablesList variablesList) {
+		List<String[]> instructions= commandsList.generate();
+		String[] variables=variablesList.generate();
+		
 		myView.getChildren().clear();
 		addLable("Default Commands:");
 		for (String s : instructions.get(0)) {
@@ -30,11 +36,11 @@ public class CommandsView extends SideView {
 		}
 		addLable("User Defined Commands:");
 		for (String s:instructions.get(1)){
-			addTextBoxWithDeleteButton(s);
+			addTextBoxWithDeleteButton(s,commandsList);
 		}
 		addLable("Variables:");
 		for (String s:variables){
-			addTextBoxWithDeleteButton(s);
+			addTextBoxWithDeleteButton(s,variablesList);
 		}
 		
 		
@@ -49,15 +55,15 @@ public class CommandsView extends SideView {
 		myView.getChildren().add(h);
 	}
 	
-	public void addTextBoxWithDeleteButton(String s) {
+	public void addTextBoxWithDeleteButton(String s, Feature f) {
 		HBox h = new HBox();
 		Text t = super.makeClickableText(s);
-		Button delete=makeDeleteButton();
+		Button delete=makeDeleteButton(s,f);
 		h.getChildren().addAll(t,delete);
 		myView.getChildren().add(h);
 	}
 
-	private Button makeDeleteButton() {
+	private Button makeDeleteButton(String s, Feature f) {
 		Button b=new Button();
 		b.setText("delete");
 		b.setTranslateX(DELETE_BUTTON_X);
@@ -66,6 +72,12 @@ public class CommandsView extends SideView {
 			@Override
 			public void handle(MouseEvent event) {
 				myView.getChildren().remove(b.getParent());
+				String key;
+				if (f.getClass().getSimpleName().equals("CommandsList"))
+					key=s;
+				else key=":"+s.split(":")[0].trim();
+				System.out.println(key);
+				f.remove(key);
 			}
 		});
 		return b;

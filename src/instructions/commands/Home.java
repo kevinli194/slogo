@@ -8,7 +8,12 @@ import model.Turtle;
 
 public class Home implements Instruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -1297315586197568684L;
+
+	@Override
     public double execute (ObservableData data) {
 
         Turtle myTurtle = data.getTurtle();

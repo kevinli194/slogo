@@ -17,6 +17,10 @@ import java.util.Map;
  *
  */
 public class InstructionList implements Feature {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6885485349507274301L;
 	private Map<String, Instruction> myBasicInstructions;
 	private Map<String, Instruction> myUserDefinedFunctions;
 
@@ -70,5 +74,11 @@ public class InstructionList implements Feature {
 		instructions.add(myBasicInstructions);
 		instructions.add(myUserDefinedFunctions);
 		return instructions;
+	}
+
+	@Override
+	public void remove(Object n) {
+		// TODO Auto-generated method stub
+		
 	}
 }

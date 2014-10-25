@@ -3,6 +3,7 @@ package parser;
 import instructions.Instruction;
 import instructions.ListInstruction;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -35,7 +36,11 @@ import model.ObservableData;
  * 
  * - Error checks syntax throughout parsing
  */
-public class Parser {
+public class Parser implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7476618255022085064L;
 	private ResourceBundle languageBundle;
 	private Tokenizer tokenizer;
 	private InstructionFactory iFactory;
@@ -92,6 +97,8 @@ public class Parser {
 				iter = bracketInd;
 			}
 			else {
+//				System.out.println(token);
+
 				instr = iFactory.makeInstruction(token);
 				// add parameters
 				addParams(instr, builderStack);

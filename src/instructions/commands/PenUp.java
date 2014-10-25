@@ -7,7 +7,12 @@ import model.Turtle;
 
 public class PenUp extends ZeroParamInstruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -533547100049501069L;
+
+	@Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
         Turtle myTurtle = data.getTurtle();

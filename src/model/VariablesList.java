@@ -16,6 +16,10 @@ import java.util.Map;
  */
 
 public class VariablesList implements Feature {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3790539722809452079L;
 	private Map<String, Instruction> myVariables;
 
 	public VariablesList() {
@@ -29,13 +33,13 @@ public class VariablesList implements Feature {
 		myVariables.put(variableName, value);
 	}
 
-	public Instruction remove(String variableName) {
+	@Override
+	public void remove(Object variableName) {
 		// TODO: Update to throwing better errors (window perhaps)
 		if (!myVariables.containsKey(variableName)) {
 			System.out.println("VARIABLE DOES NOT EXIST. CANNOT REMOVE.");
-			return null;
 		}
-		return myVariables.remove(variableName);
+		else myVariables.remove(variableName);
 	}
 	
 	public Instruction get(String variableName) {
@@ -51,6 +55,7 @@ public class VariablesList implements Feature {
 	public String[] generate(){
 		List<String> variableList=new ArrayList<String>();
 		for (String s:myVariables.keySet()){
+			System.out.println(s);
 			String element=s.trim().substring(1)+" : "+myVariables.get(s).execute(new ObservableData());
 			variableList.add(element);
 		}

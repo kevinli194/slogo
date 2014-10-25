@@ -11,6 +11,10 @@ import java.util.List;
  */
 public class History implements Feature {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6540827775550421541L;
 	private List<String> myHistory;
 
 	public History() {
@@ -41,5 +45,10 @@ public class History implements Feature {
 
 	public List<String> generate() {
 		return myHistory;
+	}
+
+	@Override
+	public void remove(Object n) {
+		myHistory.remove(n);
 	}
 }

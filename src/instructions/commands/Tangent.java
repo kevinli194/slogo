@@ -5,7 +5,12 @@ import model.ObservableData;
 
 public class Tangent extends UnaryInstruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -8289404842696391974L;
+
+	@Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
         double radians = Math.toRadians(super.myParams.get(0).execute(data));

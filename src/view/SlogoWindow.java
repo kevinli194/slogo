@@ -1,23 +1,24 @@
 package view;
 
+import java.io.Serializable;
 import java.util.Observable;
 import java.util.Observer;
 
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Scene;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
 import javafx.scene.layout.BorderPane;
 import model.BackgroundColor;
 import model.CommandsList;
 import model.History;
-import model.InstructionList;
 import model.ObservableData;
 import model.SlogoModel;
 import model.Turtle;
 import model.VariablesList;
 
-public class SlogoWindow extends BorderPane implements Observer {
+public class SlogoWindow extends BorderPane implements Observer, Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4532547099439124045L;
 	KeyControls myControls;
 	TurtleView myTurtleView;
 	InputView myInputView;
@@ -57,14 +58,17 @@ public class SlogoWindow extends BorderPane implements Observer {
 		}
 
 		myTurtleView.update((((ObservableData) arg).getTurtle()).generate());
-		myCommandsView.update(((CommandsList) ((ObservableData) arg)
-				.get("CommandsList")).generate(), 
-				((VariablesList) ((ObservableData) arg)
-						.get("VariablesList")).generate());
+		myCommandsView.update(
+				((CommandsList) ((ObservableData) arg).get("CommandsList")),
+				((VariablesList) ((ObservableData) arg).get("VariablesList")));
 		myHistoryView.update(((History) ((ObservableData) arg).get("history"))
 				.generate());
 		myTurtleView.changeColor(((BackgroundColor) ((ObservableData) arg)
 				.get("backgroundcolor")).generate());
+		mySettingsView.changeBGPicked(((BackgroundColor) ((ObservableData) arg)
+				.get("backgroundcolor")).generate());
+		mySettingsView.changePenPicked(((ObservableData) arg).getTurtle()
+				.getPen().getPenColor());
 	}
 
 }

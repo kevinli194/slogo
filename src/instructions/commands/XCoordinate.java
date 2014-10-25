@@ -7,7 +7,12 @@ import model.Turtle;
 
 public class XCoordinate implements Instruction {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5266057220075691467L;
+
+	@Override
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
         Turtle myTurtle = data.getTurtle();

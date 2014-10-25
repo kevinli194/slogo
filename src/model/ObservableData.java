@@ -1,5 +1,6 @@
 package model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,7 +10,11 @@ import java.util.Map;
  * @author Kevin Li
  *
  */
-public class ObservableData {
+public class ObservableData implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8636982923572910062L;
 	private Map<String, Feature> myFeatures;
 	private Turtle myTurtle;
 
