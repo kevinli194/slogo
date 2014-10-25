@@ -97,6 +97,8 @@ public class Parser implements Serializable {
 				iter = bracketInd;
 			}
 			else {
+//				System.out.println(token);
+
 				instr = iFactory.makeInstruction(token);
 				// add parameters
 				addParams(instr, builderStack);

@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 import model.CommandsList;
 import model.ObservableData;
@@ -28,6 +29,7 @@ public class InstructionFactory implements Serializable {
 	private static final String CONSTANT_REGEX = "-?[0-9]+\\.?[0-9]*";
 	private static final String VARIABLE_REGEX = ":[a-zA-z]+";
 	private static final String COMMAND_REGEX = "[a-zA-z_]+(\\?)?";
+	public static final String CHINESE_REGEX ="[\u4e00-\u9fa5]+(\\?)?";
 
 	// private ResourceBundle languageBundle;
 	private Map<String, String> languageMap;
@@ -44,7 +46,7 @@ public class InstructionFactory implements Serializable {
 	 */
 
 	public InstructionFactory(ObservableData data) {
-		ResourceBundle languageBundle = loadResourceBundle("resources.languages/English");
+		ResourceBundle languageBundle = loadResourceBundle("resources.languages/Chinese");
 		languageMap = createLanguageMap(languageBundle);
 		myData = data;
 
@@ -75,18 +77,20 @@ public class InstructionFactory implements Serializable {
 			return new ConstantInstruction(value);
 		} else if (type.matches(VARIABLE_REGEX)) {
 			return new VariableInstruction(type);
-		} else if (type.matches(COMMAND_REGEX)) {
+		} else if (type.matches(COMMAND_REGEX) || type.matches(CHINESE_REGEX)) {
 			// TODO: LOOK UP TRY CATCHES
 			try {
 				Class<?> comClass = Class.forName("instructions.commands."
 						+ languageMap.get(type));
+//				System.out.println(type);
+//				System.out.println(languageMap.get(type));
 				Constructor<?> comConstructor = comClass.getConstructor();
 				return (Instruction) comConstructor.newInstance();
 			} catch (ClassNotFoundException | NoSuchMethodException
 					| SecurityException | InstantiationException
 					| IllegalAccessException | IllegalArgumentException
 					| InvocationTargetException e) {
-
+				System.out.println("d");
 				CommandsList allCommands = (CommandsList) myData
 						.get("CommandsList");
 				if (allCommands.contains(type)) {
