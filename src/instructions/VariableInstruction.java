@@ -20,7 +20,7 @@ public class VariableInstruction extends UserDefinedInstruction {
 	@Override
 	public double execute(ObservableData data) {
 		VariablesList varList = (VariablesList) data.get("VariablesList");
-		return varList.get(super.myName).execute(data);
+		return varList.get(super.myName);
 	}
 
 }

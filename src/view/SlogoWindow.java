@@ -11,7 +11,6 @@ import model.CommandsList;
 import model.History;
 import model.ObservableData;
 import model.SlogoModel;
-import model.Turtle;
 import model.VariablesList;
 
 public class SlogoWindow extends BorderPane implements Observer, Serializable {
@@ -23,8 +22,8 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 	KeyControls myControls;
 	TurtleView myTurtleView;
 	InputView myInputView;
-	CommandsView myCommandsView;
-	HistoryView myHistoryView;
+	DataView myDataView;
+	HistoryResultsView myHistoryResultsView;
 	SettingsView mySettingsView;
 	SlogoModel myModel;
 
@@ -33,19 +32,23 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 		myModel.addObserver(this);
 		myTurtleView = new TurtleView(width, height);
 		myInputView = new InputView(myModel, width, height);
-		myCommandsView = new CommandsView(myInputView, width, height);
-		myHistoryView = new HistoryView(myInputView, width, height);
+		myDataView = new DataView(myInputView, width, height);
+		myHistoryResultsView = new HistoryResultsView(myInputView, width,
+				height);
 		mySettingsView = new SettingsView(myModel, myTurtleView, width, height);
 
 		setCenter(myTurtleView);
-		setRight(myCommandsView);
+		setRight(myDataView);
 		setBottom(myInputView);
-		setLeft(myHistoryView);
+		setLeft(myHistoryResultsView);
 		setTop(mySettingsView);
 		setVisible(true);
 
-//		myControls = new KeyControls(myModel, this);
+
+		myControls = new KeyControls(myModel, this);
+
 		myModel.load();
+		myControls = new KeyControls(myModel, this);
 
 	}
 
@@ -53,17 +56,27 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 	public void update(Observable o, Object arg) {
 
 		myTurtleView.update((((ObservableData) arg).getTurtle()).generate());
-		myCommandsView.update(
+		myDataView.update(
 				((CommandsList) ((ObservableData) arg).get("CommandsList")),
 				((VariablesList) ((ObservableData) arg).get("VariablesList")));
-		myHistoryView.update(((History) ((ObservableData) arg).get("history"))
-				.generate());
+		myHistoryResultsView.update(
+				((History) ((ObservableData) arg).get("history")).generate(),
+				((ObservableData) arg).getReturn());
 		myTurtleView.changeColor(((BackgroundColor) ((ObservableData) arg)
 				.get("backgroundcolor")).generate());
 		mySettingsView.changeBGPicked(((BackgroundColor) ((ObservableData) arg)
 				.get("backgroundcolor")).generate());
 		mySettingsView.changePenPicked(((ObservableData) arg).getTurtle()
 				.getPen().getPenColor());
+	}
+
+	public SlogoModel getModel() {
+		return myModel;
+	}
+
+	public void loadFile(History history) {
+		myModel.getMyData().loadFile(history);
+
 	}
 
 }

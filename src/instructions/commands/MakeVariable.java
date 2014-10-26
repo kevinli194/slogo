@@ -24,8 +24,9 @@ public class MakeVariable extends BinaryInstruction {
 		
 		VariableInstruction var = (VariableInstruction) super.myParams.get(0);
 		Instruction value = super.myParams.get(1);
-		varList.add(var.getName(), value);
-		return value.execute(data);
+		double doubleValue = value.execute(data);
+		varList.add(var.getName(), doubleValue);
+		return doubleValue;
 	}
 
 }

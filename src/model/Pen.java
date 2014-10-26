@@ -1,8 +1,8 @@
 package model;
 
 import java.io.Serializable;
+import java.util.List;
 
-import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
@@ -14,7 +14,7 @@ public class Pen implements Serializable {
 	private Color myLineColor;
 	private boolean isPenDown;
 	private double myStrokeWidth;
-	private ObservableList<Color> myCustom;
+	private List<Color> myCustom;
 
 	public Pen() {
 		myLineColor = Color.WHITE;
@@ -23,7 +23,7 @@ public class Pen implements Serializable {
 	}
 
 	// duplicated code from backgroundcolor
-	public void setCustom(ObservableList<Color> custom) {
+	public void setCustom(List<Color> custom) {
 		myCustom = custom;
 	}
 
@@ -68,8 +68,13 @@ public class Pen implements Serializable {
 		return line;
 	}
 
-	public ObservableList<Color> getCustom() {
+	public List<Color> getCustom() {
 		return myCustom;
+	}
+	
+	public void clear(){
+	    setPenColor(Color.WHITE);
+	    myCustom.clear();
 	}
 
 }

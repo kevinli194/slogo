@@ -18,12 +18,19 @@ public class ObservableData implements Serializable {
 	private static final long serialVersionUID = -8636982923572910062L;
 	private Map<String, Feature> myFeatures;
 	private Turtle myTurtle;
+
 	private Locale myLocale;
+
+	private double myReturn;
+	private TurtlesList myTurtles;
 
 	public ObservableData(Locale locale) {
 		myFeatures = new HashMap<String, Feature>();
 		myTurtle = new Turtle();
 		myLocale=locale;
+
+		myReturn = new Double(0);
+		myTurtles = new TurtlesList();
 
 		// Add new features to this list
 		addAllToMyFeatures(new History(), new VariablesList(),
@@ -42,6 +49,15 @@ public class ObservableData implements Serializable {
 		return myTurtle;
 	}
 
+	/**
+	 * Gets the TurtlesList for all turtles in the current program
+	 * 
+	 * @return TurtlesList for the current program
+	 */
+	public TurtlesList getTurtles() {
+		return myTurtles;
+	}
+
 	// If feature needed, get feature by class name
 	public Feature get(String classKey) {
 		classKey = classKey.toLowerCase();
@@ -58,5 +74,18 @@ public class ObservableData implements Serializable {
 		}
 		myTurtle.clear();
 
+	}
+
+	public void loadFile(History history) {
+		myFeatures.put("history", history);
+	}
+
+	public void changeReturn(double returnValue) {
+		myReturn = returnValue;
+
+	}
+
+	public double getReturn() {
+		return myReturn;
 	}
 }
