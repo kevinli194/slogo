@@ -6,16 +6,18 @@ import model.ObservableData;
 import model.Turtle;
 
 
+/**
+ * Implements SetHeading command
+ * sets the turtles heading to the given param angle
+ * @author Sandy Lee
+ *
+ */
 public class SetHeading extends UnaryInstruction {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = -3070260495499522235L;
+    private static final long serialVersionUID = -3070260495499522235L;
 
-	@Override
+    @Override
     public double execute (ObservableData data) throws InvalidArgumentsException {
-        // TODO Auto-generated method stub
         double amount = myParams.get(0).execute(data);
 
         Turtle myTurtle = data.getTurtle();

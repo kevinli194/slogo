@@ -6,18 +6,21 @@ import model.ObservableData;
 import model.Turtle;
 
 
+/**
+ * Clears the screen and moves the turtles back to the center
+ * 
+ * @author Sandy Lee
+ *
+ */
 public class ClearScreen extends ZeroParamInstruction {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = -9069621001188698639L;
+    private static final long serialVersionUID = -9069621001188698639L;
 
-	@Override
-    public double execute (ObservableData data) throws InvalidArgumentsException{
-        
+    @Override
+    public double execute (ObservableData data) throws InvalidArgumentsException {
+
         Turtle myTurtle = data.getTurtle();
-        
+
         double[] prevCoords = myTurtle.getCoordinates().clone();
         myTurtle.clear();
         double[] currentCoords = myTurtle.getCoordinates().clone();

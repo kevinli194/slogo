@@ -4,16 +4,20 @@ import instructions.ZeroParamInstruction;
 import model.ObservableData;
 import model.Turtle;
 
-public class PenDown extends ZeroParamInstruction{
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = -119324447053840263L;
+/**
+ * Returns 1 if pen is down
+ * 0 otherwiser
+ * 
+ * @author Sandy Lee
+ *
+ */
+public class PenDown extends ZeroParamInstruction {
 
-	@Override
+    private static final long serialVersionUID = -119324447053840263L;
+
+    @Override
     public double execute (ObservableData data) {
-        // TODO Auto-generated method stub
         Turtle myTurtle = data.getTurtle();
         myTurtle.getPen().setPenDown(true);
         return 1;
