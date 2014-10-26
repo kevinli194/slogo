@@ -2,11 +2,16 @@ package view;
 
 import java.util.List;
 
-public class HistoryView extends ScrollView {
+/**
+ * Scrollable history that contains runnable commands that have been run
+ * previously.
+ * 
+ * @author Kevin Li
+ * @author Meng'en Huang
+ *
+ */
 
-	/**
-	 * 
-	 */
+public class HistoryView extends ScrollView {
 
 	public HistoryView(InputView input, double width, double height) {
 		super(input, width, height);

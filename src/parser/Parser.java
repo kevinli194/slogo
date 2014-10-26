@@ -2,17 +2,17 @@ package parser;
 
 import instructions.Instruction;
 import instructions.ListInstruction;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Stack;
-
-import error_checking.ErrorDialog;
-import error_checking.SlogoException;
 import model.ObservableData;
+import error_checking.ErrorDialog;
+import error_checking.InvalidArgumentsException;
+import error_checking.InstructionDefineException;
+
 
 /**
  * Parser for converting strings of instructions into stacks of executable
@@ -34,123 +34,125 @@ import model.ObservableData;
  */
 public class Parser implements Serializable {
 
-	/**
+    /**
 	 * 
 	 */
-	private static final long serialVersionUID = 7476618255022085064L;
-	private ResourceBundle languageBundle;
-	private Tokenizer tokenizer;
-	private InstructionFactory iFactory;
+    private static final long serialVersionUID = 7476618255022085064L;
+    private ResourceBundle languageBundle;
+    private Tokenizer tokenizer;
+    private InstructionFactory iFactory;
+    private static final String PARAMETER_ERROR =
+            "NOT ENOUGH PARAMETERS.";
 
-	/**
-	 * Constructor for a Parser. Creates a new instance of the Tokenizer.
-	 */
-	public Parser(ObservableData data) {
-		tokenizer = new Tokenizer();
-		iFactory = new InstructionFactory(data);
-	}
+    /**
+     * Constructor for a Parser. Creates a new instance of the Tokenizer.
+     */
+    public Parser (ObservableData data) {
+        tokenizer = new Tokenizer();
+        iFactory = new InstructionFactory(data);
+    }
 
-	public void setLanguage(ResourceBundle bundle) {
-		languageBundle = bundle;
-	}
+    public void setLanguage (ResourceBundle bundle) {
+        languageBundle = bundle;
+    }
 
-	public Stack<Instruction> parse(String input) {
-		// get tokens
-		List<String> tokens = tokenizer.tokenize(input);
-		// reverse list of tokens
-		Collections.reverse(tokens);
-		// parse tokens
-		return parseTokens(tokens);
-	}
+    public Stack<Instruction> parse (String input) throws InvalidArgumentsException {
+        // get tokens
+        List<String> tokens = tokenizer.tokenize(input);
+        // reverse list of tokens
+        Collections.reverse(tokens);
+        // parse tokens
+        return parseTokens(tokens);
+    }
 
-	private Stack<Instruction> parseTokens(List<String> tokens) {
-		// stack for parsing
-		Stack<Instruction> builderStack = new Stack<Instruction>();
-		Instruction instr;
-		int iter = 0;
-		while (iter < tokens.size()) {
-			String token = tokens.get(iter);
-			if (isRightBracket(token)) {
-				// if right bracket found, find matching left bracket in subList
+    private Stack<Instruction> parseTokens (List<String> tokens) throws InvalidArgumentsException {
+        // stack for parsing
+        Stack<Instruction> builderStack = new Stack<Instruction>();
+        Instruction instr;
+        int iter = 0;
+        while (iter < tokens.size()) {
+            String token = tokens.get(iter);
+            if (isRightBracket(token)) {
+                // if right bracket found, find matching left bracket in subList
 
-				int bracketInd = findMatchingBracket(tokens, iter);
+                int bracketInd = findMatchingBracket(tokens, iter);
 
-				// Parse tokens contained in brackets
-				Stack<Instruction> listStack = parseTokens(tokens.subList(
-						iter + 1, bracketInd));
+                // Parse tokens contained in brackets
+                Stack<Instruction> listStack = parseTokens(tokens.subList(
+                                                                          iter + 1, bracketInd));
 
-				// for repeat..
-				List<Instruction> lst = new ArrayList<Instruction>();
+                // for repeat..
+                List<Instruction> lst = new ArrayList<Instruction>();
 
-				while (!listStack.isEmpty()) {
-					Instruction current = listStack.pop();
-					lst.add(current);
-				}
+                while (!listStack.isEmpty()) {
+                    Instruction current = listStack.pop();
+                    lst.add(current);
+                }
 
-				// Add listStack to new instance of a ListInstruction class
-				instr = new ListInstruction(lst);
+                // Add listStack to new instance of a ListInstruction class
+                instr = new ListInstruction(lst);
 
-				// update iterator
-				iter = bracketInd;
-			} else {
-				// System.out.println(token);
+                // update iterator
+                iter = bracketInd;
+            }
+            else {
+                // System.out.println(token);
 
-				instr = iFactory.makeInstruction(token);
-				// add parameters
-				addParams(instr, builderStack);
-			}
-			// add to both the builder stack and result stack
+                instr = iFactory.makeInstruction(token);
+                // add parameters
+                addParams(instr, builderStack);
+            }
+            // add to both the builder stack and result stack
 
-			builderStack.push(instr);
-			iter++;
-		}
-		return builderStack;
-	}
+            builderStack.push(instr);
+            iter++;
+        }
+        return builderStack;
+    }
 
-	private boolean isRightBracket(String token) {
-		return token.equals("]");
-	}
+    private boolean isRightBracket (String token) {
+        return token.equals("]");
+    }
 
-	private boolean isLeftBracket(String token) {
-		return token.equals("[");
-	}
+    private boolean isLeftBracket (String token) {
+        return token.equals("[");
+    }
 
-	private int findMatchingBracket(List<String> tokens, int openPos) {
-		int matchCounter = 0;
-		int closePos = openPos;
-		while (matchCounter >= 0 && closePos < (tokens.size() - 1)) {
-			closePos++;
-			String token = tokens.get(closePos);
-			if (isRightBracket(token)) {
-				matchCounter++;
-			} else if (isLeftBracket(token)) {
-				matchCounter--;
-			}
-		}
+    private int findMatchingBracket (List<String> tokens, int openPos) {
+        int matchCounter = 0;
+        int closePos = openPos;
+        while (matchCounter >= 0 && closePos < (tokens.size() - 1)) {
+            closePos++;
+            String token = tokens.get(closePos);
+            if (isRightBracket(token)) {
+                matchCounter++;
+            }
+            else if (isLeftBracket(token)) {
+                matchCounter--;
+            }
+        }
 
-		if (matchCounter < 0) {
-			return closePos;
-		} else {
-			// TODO: exception message
-			new ErrorDialog("MISSING BRACKET.");
-			throw new SlogoException("MISSING BRACKET.");
-		}
+        if (matchCounter < 0) {
+            return closePos;
+        }
+        else {
+            new ErrorDialog("MISSING BRACKET.");
+            throw new InstructionDefineException("MISSING BRACKET.");
+        }
 
-	}
+    }
 
-
-	private void addParams(Instruction instr, Stack<Instruction> iStack) {
-		if (instr.getNumParams() > iStack.size()) {
-			new ErrorDialog("NOT ENOUGH PARAMETERS.");
-
-			return;
-			// throw new SlogoException("WRONG NUMBER OF PARAMETERS.");
-		}
-		int numParams = instr.getNumParams();
-		for (int i = 0; i < numParams; i++) {
-			// Add error exceptions HERE
-			instr.addParam(iStack.pop());
-		}
-	}
+    private void addParams (Instruction instr, Stack<Instruction> iStack)
+                                                                         throws InvalidArgumentsException {
+        if (instr.getNumParams() > iStack.size()) {
+            new ErrorDialog(PARAMETER_ERROR);
+            throw new InvalidArgumentsException(PARAMETER_ERROR, this.getClass()
+                    .getCanonicalName());
+        }
+        int numParams = instr.getNumParams();
+        for (int i = 0; i < numParams; i++) {
+            instr.addParam(iStack.pop());
+        }
+    }
 
 }

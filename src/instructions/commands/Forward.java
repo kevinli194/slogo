@@ -1,5 +1,6 @@
 package instructions.commands;
 
+import error_checking.InvalidArgumentsException;
 import instructions.UnaryInstruction;
 import model.ObservableData;
 import model.Turtle;
@@ -20,7 +21,7 @@ public class Forward extends UnaryInstruction {
 	private static final long serialVersionUID = -5013987356729528187L;
 
 	@Override
-    public double execute (ObservableData data) {
+    public double execute (ObservableData data) throws InvalidArgumentsException {
         // TODO Auto-generated method stub
         double amount = super.myParams.get(0).execute(data);
         Turtle myTurtle = data.getTurtle();

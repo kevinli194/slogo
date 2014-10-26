@@ -1,11 +1,11 @@
 package instructions.commands;
 
-import java.util.List;
 import instructions.UnaryInstruction;
-import javafx.collections.ObservableList;
+import java.util.List;
 import javafx.scene.paint.Color;
 import model.BackgroundColor;
 import model.ObservableData;
+import error_checking.InvalidArgumentsException;
 
 public class SetBackground extends UnaryInstruction {
 
@@ -15,7 +15,7 @@ public class SetBackground extends UnaryInstruction {
 	private static final long serialVersionUID = -7570832795819615234L;
 
 	@Override
-	public double execute(ObservableData data) {
+	public double execute(ObservableData data) throws InvalidArgumentsException {
 		// TODO Auto-generated method stub
 		BackgroundColor bgc = ((BackgroundColor) data.get("backgroundcolor"));
 		List<Color> customColors = bgc.getCustom();

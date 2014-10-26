@@ -1,9 +1,7 @@
 package instructions.commands;
 
-import java.util.List;
-
-import instructions.Instruction;
 import instructions.ZeroParamInstruction;
+import java.util.List;
 import model.ObservableData;
 import model.Turtle;
 

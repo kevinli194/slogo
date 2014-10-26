@@ -2,7 +2,7 @@ package instructions;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import error_checking.InvalidArgumentsException;
 import model.ObservableData;
 
 public class ListInstruction extends ZeroParamInstruction {
@@ -22,7 +22,7 @@ public class ListInstruction extends ZeroParamInstruction {
 	}
 	
 	@Override
-	public double execute(ObservableData od) {
+	public double execute(ObservableData od) throws InvalidArgumentsException {
 		double returnAmt = 0;
 		for (Instruction instr : myInstructionList) {
 			returnAmt = instr.execute(od);

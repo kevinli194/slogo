@@ -10,8 +10,6 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
-
-import model.History;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Menu;
@@ -21,6 +19,8 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import model.History;
+import error_checking.InvalidArgumentsException;
 
 /**
  * The over-arching menu bar which enables the user to create new file, open saved
@@ -176,6 +176,10 @@ public class MenuView extends MenuBar {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+                    catch (InvalidArgumentsException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
 				}
 			}
 		});
@@ -233,11 +237,18 @@ public class MenuView extends MenuBar {
 
 				Tab tab = new Tab(languageBundle.getString("Program")
 						+ myTabCount++);
-				SlogoWindow additionalWindow = new SlogoWindow(locale, width,
-						height * 9 / 10);
-				tab.setContent(additionalWindow);
-				myTabs.getTabs().add(tab);
-				myTabs.getSelectionModel().select(tab);
+				SlogoWindow additionalWindow;
+                try {
+                    additionalWindow = new SlogoWindow(locale, width,
+                    		height * 9 / 10);
+                    tab.setContent(additionalWindow);
+                    myTabs.getTabs().add(tab);
+                    myTabs.getSelectionModel().select(tab);
+                }
+                catch (InvalidArgumentsException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
 			}
 		});
 

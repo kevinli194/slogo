@@ -70,6 +70,7 @@ public class Pen implements Serializable {
 		line.setStroke(color);
 		line.setStrokeWidth(myStrokeWidth);
 		line.getStrokeDashArray().addAll(myLineProperty[0], myLineProperty[1]);
+		line.setStrokeDashOffset(50);
 		return line;
 	}
 
@@ -82,9 +83,20 @@ public class Pen implements Serializable {
 		myCustom.clear();
 	}
 
-	public void changeLineProperty(double property1, double property2) {
-		myLineProperty[0] = property1;
-		myLineProperty[1] = property2;
+	public void changeLineProperty(String properties) {
+		setPenDown(true);
+		if (properties == "dotted") {
+			myLineProperty[0] = myStrokeWidth * .2;
+			myLineProperty[1] = myStrokeWidth * 3;
+		}
+		if (properties == "solid") {
+			myLineProperty[0] = .1;
+			myLineProperty[1] = .1;
+		}
+		if (properties == "dashed") {
+			myLineProperty[0] = myStrokeWidth * 5;
+			myLineProperty[1] = myStrokeWidth * 5;
+		}
 	}
 
 }

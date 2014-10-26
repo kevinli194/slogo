@@ -1,5 +1,6 @@
 package instructions.commands;
 
+import error_checking.InvalidArgumentsException;
 import instructions.UnaryInstruction;
 import model.ObservableData;
 
@@ -12,7 +13,7 @@ public class Random extends UnaryInstruction {
 	private java.util.Random myRand;
 
     @Override
-    public double execute (ObservableData data) {
+    public double execute (ObservableData data) throws InvalidArgumentsException {
         // TODO Auto-generated method stub
         myRand = new java.util.Random();
 

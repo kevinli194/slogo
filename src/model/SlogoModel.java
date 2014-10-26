@@ -1,14 +1,13 @@
 package model;
 
 import instructions.Instruction;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Locale;
 import java.util.Observable;
 import java.util.Random;
 import java.util.Stack;
-
+import error_checking.InvalidArgumentsException;
 import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
 import parser.Parser;
@@ -29,14 +28,14 @@ public class SlogoModel extends Observable implements Serializable {
 		myParser = new Parser(myData);
 	}
 
-	public void parseAndExecute(String s) {
+	public void parseAndExecute(String s) throws InvalidArgumentsException {
 
 		if (executeCommands((myParser.parse(s)))) {
 			showToHistoryView(s);
 		}
 	}
 
-	public boolean executeCommands(Stack<Instruction> commandStack) {
+	public boolean executeCommands(Stack<Instruction> commandStack) throws InvalidArgumentsException {
 		if (commandStack.isEmpty()) {
 			return false;
 		} else {
@@ -119,7 +118,7 @@ public class SlogoModel extends Observable implements Serializable {
 
 	}
 
-	public void rerun() {
+	public void rerun() throws InvalidArgumentsException {
 		for (Instruction s : ((History) myData.get("history")).getSavedData()) {
 			s.execute(myData);
 		}

@@ -3,12 +3,11 @@ package view;
 import instructions.ConstantInstruction;
 import instructions.Instruction;
 import instructions.UserDefinedCommand;
-
 import java.io.Serializable;
 import java.util.Locale;
 import java.util.Observable;
 import java.util.Observer;
-
+import error_checking.InvalidArgumentsException;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -20,8 +19,9 @@ import model.ObservableData;
 import model.SlogoModel;
 import model.VariablesList;
 
+
 /**
- * The Slogo window where all the view elements are instantiated. Bridge the 
+ * The Slogo window where all the view elements are instantiated. Bridge the
  * front-end GUI and back-end model as the Observer.
  * 
  * @author Mengen Huang
@@ -29,6 +29,7 @@ import model.VariablesList;
  *
  */
 public class SlogoWindow extends BorderPane implements Observer {
+
 
 	private static final long serialVersionUID = 4532547099439124045L;
 	KeyControls myControls;
@@ -48,7 +49,7 @@ public class SlogoWindow extends BorderPane implements Observer {
 	 * @param width width of View
 	 * @param height height of View
 	 */
-	public SlogoWindow(Locale locale, double width, double height) {
+    public SlogoWindow (Locale locale, double width, double height) throws InvalidArgumentsException {
 		myModel = new SlogoModel(locale);
 		myModel.addObserver(this);
 		myTurtleView = new TurtleView(width, height);
@@ -131,9 +132,18 @@ public class SlogoWindow extends BorderPane implements Observer {
 									.get("onclick");
 							double[] coords = handleClickInstr(mouseEvent,
 									current);
-							myModel.parseAndExecute("onclick "
-									+ Double.toString(coords[0]) + " "
-									+ Double.toString(coords[1]));
+							  try {
+                                  myModel.parseAndExecute("onclick "
+                                                          +
+                                                          Double.toString(coords[0]) +
+                                                          " "
+                                                          +
+                                                          Double.toString(coords[1]));
+                              }
+                              catch (InvalidArgumentsException e) {
+                                  // TODO Auto-generated catch block
+                                  e.printStackTrace();
+                              }
 
 						}
 
@@ -151,9 +161,18 @@ public class SlogoWindow extends BorderPane implements Observer {
 									.get("onmove");
 							double[] coords = handleClickInstr(mouseEvent,
 									current);
-							myModel.parseAndExecute("onmove "
-									+ Double.toString(coords[0]) + " "
-									+ Double.toString(coords[1]));
+							  try {
+                                  myModel.parseAndExecute("onclick "
+                                                          +
+                                                          Double.toString(coords[0]) +
+                                                          " "
+                                                          +
+                                                          Double.toString(coords[1]));
+                              }
+                              catch (InvalidArgumentsException e) {
+                                  // TODO Auto-generated catch block
+                                  e.printStackTrace();
+                              }
 
 						}
 
@@ -176,5 +195,6 @@ public class SlogoWindow extends BorderPane implements Observer {
 		current.addParam(new ConstantInstruction(coords[1]));
 		return coords;
 	}
+
 
 }
