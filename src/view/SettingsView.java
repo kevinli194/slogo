@@ -6,15 +6,23 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ColorPicker;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.control.Separator;
 import javafx.scene.control.Slider;
 import javafx.scene.control.ToolBar;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.util.Callback;
 import model.BackgroundColor;
 import model.SlogoModel;
 
@@ -26,7 +34,10 @@ public class SettingsView extends ToolBar implements Serializable {
 	ColorPicker myBGColor;
 	ColorPicker myPenColor;
 	Slider myPenSize;
+	ComboBox<Image> myTurtleChoices;
 	SlogoModel myModel;
+	protected static final String IMAGE_1 = "image_1.gif";
+	protected static final String IMAGE_2 = "image_2.gif";
 
 	public SettingsView(SlogoModel model, TurtleView view, double width,
 			double height) {
@@ -36,6 +47,8 @@ public class SettingsView extends ToolBar implements Serializable {
 		addBGColorPicker(view);
 		addPenColorPicker();
 		addPenSlider();
+		addTurtleChoices();
+
 	}
 
 	private void setView(double width, double height) {
@@ -99,6 +112,53 @@ public class SettingsView extends ToolBar implements Serializable {
 		this.getItems().add(new Text("Stroke Width: "));
 		this.getItems().add(myPenSize);
 		this.getItems().add(new Separator());
+	}
+
+	private void addTurtleChoices() {
+		myTurtleChoices = new ComboBox<Image>();
+		Image myDefaultOn = new Image(getClass().getResourceAsStream(IMAGE_1));
+		Image Image2 = new Image(getClass().getResourceAsStream(IMAGE_2));
+		myTurtleChoices.getItems().addAll(myDefaultOn, Image2);
+		this.getItems().add(myTurtleChoices);
+		myTurtleChoices
+				.setCellFactory(new Callback<ListView<Image>, ListCell<Image>>() {
+					@Override
+					public ListCell<Image> call(ListView<Image> p) {
+						return new ListCell<Image>() {
+							private final ImageView display;
+							{
+								setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+								display = new ImageView();
+								display.setFitWidth(30);
+								display.setFitHeight(30);
+							}
+
+							@Override
+							protected void updateItem(Image item, boolean empty) {
+								super.updateItem(item, empty);
+
+								if (item == null || empty) {
+									setGraphic(null);
+								} else {
+									display.setImage(item);
+									setGraphic(display);
+								}
+							}
+						};
+					}
+				});
+		myTurtleChoices.getSelectionModel().selectedItemProperty()
+				.addListener(new ChangeListener<Image>() {
+
+					@Override
+					public void changed(ObservableValue<? extends Image> ov,
+							Image t, Image t1) {
+						myModel.getMyData().getTurtle().setShape(t1);
+					}
+				});
+		myTurtleChoices.setButtonCell(new ListCell<Image>());
+		myModel.getMyData().getTurtle()
+				.initListofTurtles(myTurtleChoices.getItems());
 	}
 
 	private void addButtons(SlogoModel model, TurtleView view) {

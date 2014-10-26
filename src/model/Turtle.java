@@ -18,7 +18,7 @@ public class Turtle extends TurtleAbstract implements Feature {
 	private static final long serialVersionUID = 3491015094836744017L;
 
 	private ImageView myImage;
-	private List<ImageView> myTurtleShapes;
+	private ObservableList<Image> myTurtleShapes;
 	private double[] myCoordinates = { DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE };
 	private double[] myRelativeCoordinates = { DEFAULT_REALATIVE_COORDINATE,
 			DEFAULT_REALATIVE_COORDINATE };
@@ -43,7 +43,6 @@ public class Turtle extends TurtleAbstract implements Feature {
 		myLines = new Group();
 		myDrawing = new Group();
 		myStamps = new Group();
-		myTurtleShapes = new ArrayList<ImageView>();
 		initializeTurtle();
 		setTurtleInfo();
 		myDrawing.getChildren().addAll(myLines, myImage, myStamps);
@@ -58,7 +57,6 @@ public class Turtle extends TurtleAbstract implements Feature {
 		setCoordinates(DEFAULT_REALATIVE_COORDINATE,
 				DEFAULT_REALATIVE_COORDINATE);
 		setAngle(DEFAULT_TURTLE_ANGLE);
-		addShape(myImage);
 		myImage.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent arg0) {
@@ -68,16 +66,16 @@ public class Turtle extends TurtleAbstract implements Feature {
 
 	}
 
-	private void addShape(ImageView newImg) {
-		myTurtleShapes.add(newImg);
+	public void ListofTurtles(ObservableList<Image> shapes) {
+		myTurtleShapes = shapes;
 	}
 
-	public List<ImageView> getShapeList() {
+	public List<Image> getShapeList() {
 		return myTurtleShapes;
 	}
 
-	public void setShape(ImageView image) {
-		myImage = image;
+	public void setShape(Image image) {
+		myImage.setImage(image);
 	}
 
 	private void changeState() {
@@ -260,6 +258,11 @@ public class Turtle extends TurtleAbstract implements Feature {
 	@Override
 	public void remove(Object n) {
 		// TODO Auto-generated method stub
+
+	}
+
+	public void initListofTurtles(ObservableList<Image> items) {
+		myTurtleShapes = items;
 
 	}
 
