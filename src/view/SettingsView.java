@@ -28,7 +28,7 @@ public class SettingsView extends ToolBar implements Serializable {
 			double height) {
 		myModel = model;
 		setView(width, height);
-		addButtons(model);
+		addButtons(model, view);
 		addBGColorPicker(view);
 		addPenColorPicker();
 	}
@@ -45,7 +45,7 @@ public class SettingsView extends ToolBar implements Serializable {
 			public void handle(ActionEvent event) {
 				view.changeColor(myBGColor.getValue());
 				((BackgroundColor) (myModel.getMyData().get("backgroundcolor")))
-						.set(myBGColor.getValue());				
+						.set(myBGColor.getValue());
 			}
 		});
 		myModel.initializeBGColor(getCustomColors(myBGColor));
@@ -61,7 +61,7 @@ public class SettingsView extends ToolBar implements Serializable {
 			@Override
 			public void handle(ActionEvent event) {
 				myModel.getMyData().getTurtle()
-				.changePenColor(myPenColor.getValue());				
+						.changePenColor(myPenColor.getValue());
 			}
 		});
 		myModel.initializePenColor(getCustomColors(myPenColor));
@@ -71,12 +71,14 @@ public class SettingsView extends ToolBar implements Serializable {
 
 	}
 
-	private void addButtons(SlogoModel model) {
+	private void addButtons(SlogoModel model, TurtleView view) {
 		Button toggleTurtle = makeButton("Show/Hide Turtle",
 				handle -> model.toggleTurtle());
+		Button toggleGrid = makeButton("Show/Hide Grid",
+				handle -> view.toggleGrid());
 		Button clear = makeButton("Clear", handle -> model.clear());
 		Button help = makeButton("Help Page", handle -> model.accessHelpHTML());
-		this.getItems().addAll(toggleTurtle, clear, help);
+		this.getItems().addAll(toggleTurtle, toggleGrid, clear, help);
 		this.getItems().add(new Separator());
 
 	}

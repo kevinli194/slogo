@@ -22,8 +22,8 @@ public class ResultsView extends TilePane {
 
 	}
 
-	public void update(double result) {
-		myResults.setText("" + result);
+	public void update(String result) {
+		myResults.setText(result);
 
 	}
 

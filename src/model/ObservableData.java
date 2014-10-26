@@ -17,13 +17,13 @@ public class ObservableData implements Serializable {
 	private static final long serialVersionUID = -8636982923572910062L;
 	private Map<String, Feature> myFeatures;
 	private Turtle myTurtle;
-	private double myReturn;
+	private String myReturn;
 	private TurtlesList myTurtles;
 
 	public ObservableData() {
 		myFeatures = new HashMap<String, Feature>();
 		myTurtle = new Turtle();
-		myReturn = new Double(0);
+		myReturn = new String("");
 		myTurtles = new TurtlesList();
 
 		// Add new features to this list
@@ -67,6 +67,7 @@ public class ObservableData implements Serializable {
 			myFeatures.get(key).clear();
 		}
 		myTurtle.clear();
+		myReturn = new String("");
 
 	}
 
@@ -75,11 +76,11 @@ public class ObservableData implements Serializable {
 	}
 
 	public void changeReturn(double returnValue) {
-		myReturn = returnValue;
+		myReturn = new String("" + returnValue);
 
 	}
 
-	public double getReturn() {
+	public String getReturn() {
 		return myReturn;
 	}
 }
