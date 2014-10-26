@@ -2,6 +2,8 @@ package view;
 
 import java.io.Serializable;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -9,6 +11,7 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Separator;
+import javafx.scene.control.Slider;
 import javafx.scene.control.ToolBar;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -22,6 +25,7 @@ public class SettingsView extends ToolBar implements Serializable {
 	private static final long serialVersionUID = 660774956006597491L;
 	ColorPicker myBGColor;
 	ColorPicker myPenColor;
+	Slider myPenSize;
 	SlogoModel myModel;
 
 	public SettingsView(SlogoModel model, TurtleView view, double width,
@@ -31,6 +35,7 @@ public class SettingsView extends ToolBar implements Serializable {
 		addButtons(model, view);
 		addBGColorPicker(view);
 		addPenColorPicker();
+		addPenSlider();
 	}
 
 	private void setView(double width, double height) {
@@ -69,6 +74,31 @@ public class SettingsView extends ToolBar implements Serializable {
 		this.getItems().add(myPenColor);
 		this.getItems().add(new Separator());
 
+	}
+
+	private void addPenSlider() {
+		myPenSize = new Slider();
+		myPenSize.setMin(0);
+		myPenSize.setMax(10);
+		myPenSize.setShowTickLabels(true);
+		myPenSize.setShowTickMarks(true);
+		myPenSize.setMajorTickUnit(2);
+		myPenSize.setMinorTickCount(1);
+		myPenSize.setBlockIncrement(2);
+		myPenSize.setValue(3);
+		myPenSize.valueProperty().addListener(new ChangeListener<Number>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Number> arg0,
+					Number arg1, Number arg2) {
+				myModel.setPenSize(arg2.doubleValue());
+
+			}
+
+		});
+		this.getItems().add(new Text("Stroke Width: "));
+		this.getItems().add(myPenSize);
+		this.getItems().add(new Separator());
 	}
 
 	private void addButtons(SlogoModel model, TurtleView view) {

@@ -31,12 +31,12 @@ public class TurtleView extends PaneView {
 		Group grid = new Group();
 		for (double i = 0; i < width; i = i + 20) {
 			Line line = new Line(i, 0, i, height);
-			line.setStroke(Color.GRAY);
+			line.setStroke(Color.LIGHTGRAY);
 			grid.getChildren().add(line);
 		}
 		for (double i = 0; i < height; i = i + 20) {
 			Line line = new Line(0, i, width, i);
-			line.setStroke(Color.GRAY);
+			line.setStroke(Color.LIGHTGRAY);
 			grid.getChildren().add(line);
 		}
 		return grid;
