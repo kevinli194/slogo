@@ -1,5 +1,10 @@
 package instructions;
 
+/**
+ * Super class for all user defined commands.
+ * @author Sandy Lee
+ *
+ */
 public abstract class UserDefinedInstruction extends ParameterInstruction {
 	/**
 	 * 

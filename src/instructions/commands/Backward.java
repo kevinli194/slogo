@@ -6,16 +6,21 @@ import instructions.UnaryInstruction;
 import model.ObservableData;
 import model.Turtle;
 
+
+/**
+ * Implements the backward command.
+ * Moves turtle backward an amount specified by the first argument.
+ * 
+ * @author Sandy Lee
+ * 
+ */
 public class Backward extends UnaryInstruction {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = -4282136336006076328L;
 
-	@Override
+    private static final long serialVersionUID = -4282136336006076328L;
+
+    @Override
     public double execute (ObservableData od) throws InvalidArgumentsException {
-        // TODO Auto-generated method stub
         double amount = 0;
         for (Instruction parameter : super.myParams) {
             amount = parameter.execute(od);

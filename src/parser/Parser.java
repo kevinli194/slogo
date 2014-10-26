@@ -1,5 +1,8 @@
 package parser;
 
+import error_checking.ErrorDialog;
+import error_checking.InstructionDefineException;
+import error_checking.InvalidArgumentsException;
 import instructions.Instruction;
 import instructions.ListInstruction;
 import java.io.Serializable;
@@ -9,9 +12,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Stack;
 import model.ObservableData;
-import error_checking.ErrorDialog;
-import error_checking.InvalidArgumentsException;
-import error_checking.InstructionDefineException;
 
 
 /**
@@ -22,66 +22,65 @@ import error_checking.InstructionDefineException;
  * from instruction returns while parsing the string and one to return all
  * instructions to the model
  * 
- * - Takes a string input into the parse method - Tokenizes the string using the
- * Tokenizer class - Iterates through string tokens in reverse order to create
- * Instruction classes with the InstructionFactory - For each instruction,
- * checks to see how many inputs are needed for the instruction - Pops from
- * double value stack if inputs are needed - Evaluates instruction for double
- * value - Pushes evaluated value back to double value stack - Adds the
- * instruction to a stack of instructions to be exectuted in the Model class
  * 
- * - Error checks syntax throughout parsing
+ * @author Jennie Ju, Sandy Lee
  */
 public class Parser implements Serializable {
-
-    /**
-	 * 
-	 */
     private static final long serialVersionUID = 7476618255022085064L;
-    private ResourceBundle languageBundle;
-    private Tokenizer tokenizer;
-    private InstructionFactory iFactory;
-    private static final String PARAMETER_ERROR =
-            "NOT ENOUGH PARAMETERS.";
+    private static final String PARAMETER_ERROR = "NOT ENOUGH PARAMETERS.";
+    private ResourceBundle myLanguageBundle;
+    private Tokenizer myTokenizer;
+    private InstructionFactory myIFactory;
 
     /**
      * Constructor for a Parser. Creates a new instance of the Tokenizer.
+     *@param data of observables
      */
     public Parser (ObservableData data) {
-        tokenizer = new Tokenizer();
-        iFactory = new InstructionFactory(data);
+        myTokenizer = new Tokenizer();
+        myIFactory = new InstructionFactory(data);
     }
 
+    /**
+     * sets language bundle
+     * @param bundle of resource
+     */
     public void setLanguage (ResourceBundle bundle) {
-        languageBundle = bundle;
+        myLanguageBundle = bundle;
     }
 
+    /**
+     * Iterates through string tokens in reverse order to create
+     * Instruction classes with the InstructionFactory
+     * 
+     * @param input string input to be parsed
+     * @return a stack of instructions to be executed in the Model class
+     * @throws InvalidArgumentsException throws when there is invalid parameter
+     */
     public Stack<Instruction> parse (String input) throws InvalidArgumentsException {
-        // get tokens
-        List<String> tokens = tokenizer.tokenize(input);
-        // reverse list of tokens
+        List<String> tokens = myTokenizer.tokenize(input);
         Collections.reverse(tokens);
-        // parse tokens
         return parseTokens(tokens);
     }
 
+    /**
+     * Parses token and creates Instruction classes with the InstructionFactory
+     * 
+     * @param tokens to be parsed and created into instructions
+     * @return stack of instructions
+     * @throws InvalidArgumentsException throws when invalid parameters
+     */
     private Stack<Instruction> parseTokens (List<String> tokens) throws InvalidArgumentsException {
-        // stack for parsing
         Stack<Instruction> builderStack = new Stack<Instruction>();
         Instruction instr;
         int iter = 0;
         while (iter < tokens.size()) {
             String token = tokens.get(iter);
             if (isRightBracket(token)) {
-                // if right bracket found, find matching left bracket in subList
-
                 int bracketInd = findMatchingBracket(tokens, iter);
-
-                // Parse tokens contained in brackets
                 Stack<Instruction> listStack = parseTokens(tokens.subList(
                                                                           iter + 1, bracketInd));
 
-                // for repeat..
                 List<Instruction> lst = new ArrayList<Instruction>();
 
                 while (!listStack.isEmpty()) {
@@ -89,20 +88,15 @@ public class Parser implements Serializable {
                     lst.add(current);
                 }
 
-                // Add listStack to new instance of a ListInstruction class
                 instr = new ListInstruction(lst);
 
-                // update iterator
                 iter = bracketInd;
             }
             else {
-                // System.out.println(token);
 
-                instr = iFactory.makeInstruction(token);
-                // add parameters
+                instr = myIFactory.makeInstruction(token);
                 addParams(instr, builderStack);
             }
-            // add to both the builder stack and result stack
 
             builderStack.push(instr);
             iter++;
@@ -110,14 +104,27 @@ public class Parser implements Serializable {
         return builderStack;
     }
 
+    /**
+     * @param token string
+     * @return 1 if it is a right bracket, 0 otherwise
+     */
     private boolean isRightBracket (String token) {
         return token.equals("]");
     }
 
+    /**
+     * @param token string
+     * @return 1 if it is a left bracket, 0 otherwise
+     */
     private boolean isLeftBracket (String token) {
         return token.equals("[");
     }
 
+    /**
+     * @param tokens of strings
+     * @param openPos position of right bracket
+     * @return position of matching left bracket
+     */
     private int findMatchingBracket (List<String> tokens, int openPos) {
         int matchCounter = 0;
         int closePos = openPos;
@@ -136,18 +143,26 @@ public class Parser implements Serializable {
             return closePos;
         }
         else {
-            new ErrorDialog("MISSING BRACKET.");
+            new ErrorDialog("MISSING BRACKET");
             throw new InstructionDefineException("MISSING BRACKET.");
         }
 
     }
 
-    private void addParams (Instruction instr, Stack<Instruction> iStack)
-                                                                         throws InvalidArgumentsException {
+    /**
+     * For each instruction, checks to see how many inputs are needed for the instruction - Pops
+     * from
+     * double value stack if inputs are needed -
+     * 
+     * @param instr instruction to add parameters to
+     * @param iStack of parameters
+     * @throws InvalidArgumentsException throws when there is not enough parameters
+     */
+    private void addParams (Instruction instr, Stack<Instruction> iStack) 
+            throws InvalidArgumentsException {
         if (instr.getNumParams() > iStack.size()) {
             new ErrorDialog(PARAMETER_ERROR);
-            throw new InvalidArgumentsException(PARAMETER_ERROR, this.getClass()
-                    .getCanonicalName());
+            throw new InvalidArgumentsException(PARAMETER_ERROR, this.getClass().getCanonicalName());
         }
         int numParams = instr.getNumParams();
         for (int i = 0; i < numParams; i++) {

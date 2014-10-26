@@ -3,15 +3,20 @@ package instructions.commands;
 import instructions.UnaryInstruction;
 import java.util.List;
 import javafx.scene.image.Image;
+import error_checking.InvalidArgumentsException;
 import model.ObservableData;
 import model.Turtle;
-import error_checking.InvalidArgumentsException;
 
 
+/**
+ * Implements the Shape function.
+ * Returns the index of the shape in the image list
+ * 
+ * @author Sandy Lee
+ * 
+ */
 public class GetShape extends UnaryInstruction {
-    /**
-     * 
-     */
+
     private static final long serialVersionUID = -2368059646482772369L;
 
     @Override

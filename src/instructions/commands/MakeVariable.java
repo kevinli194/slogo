@@ -9,12 +9,15 @@ import instructions.Instruction;
 import instructions.VariableInstruction;
 
 
-// NEED TO MAKE THIS CLASS
+/**
+ * Class for set command.
+ * Sets the parameter as the value of the variable.
+ * @author seungwonlee
+ *
+ */
 public class MakeVariable extends BinaryInstruction {
 
-    /**
-	 * 
-	 */
+
     private static final long serialVersionUID = -3545647644856338247L;
     private static final String PARAMETER_TYPE =
             "PARAMETER NOT A VARIABLE";
