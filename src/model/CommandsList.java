@@ -145,10 +145,25 @@ public class CommandsList implements Feature {
 
 	public List<String[]> generate(){
 		List<String[]> instructionList=new ArrayList<String[]>();
-		instructionList.add(preDefCommandSyntaxes.keySet().toArray(new String[preDefCommandSyntaxes.keySet().size()]));
+		List<String> commandsList=makeCommandsList();
+		instructionList.add(commandsList.toArray(new String[commandsList.size()]));
 		instructionList.add(userDefCommands.keySet().toArray(new String[userDefCommands.keySet().size()]));	
 
 		return instructionList;
+	}
+
+	private List<String> makeCommandsList() {
+		List<String> l=new ArrayList<String>();
+		for (String s:commandsBundle.keySet()){
+			String[] oneTypeCommands=commandsBundle.getString(s).split(",");
+			for (String k:oneTypeCommands){
+				String[] c=languageBundle.getString(k).split(",");
+				for (String cc:c){
+					l.add(cc);
+				}
+			}
+		}
+		return l;
 	}
 
 }
