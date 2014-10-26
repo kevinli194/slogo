@@ -18,11 +18,13 @@ public class ObservableData implements Serializable {
 	private Map<String, Feature> myFeatures;
 	private Turtle myTurtle;
 	private double myReturn;
+	private TurtlesList myTurtles;
 
 	public ObservableData() {
 		myFeatures = new HashMap<String, Feature>();
 		myTurtle = new Turtle();
 		myReturn = new Double(0);
+		myTurtles = new TurtlesList();
 
 		// Add new features to this list
 		addAllToMyFeatures(new History(), new VariablesList(),
@@ -39,6 +41,15 @@ public class ObservableData implements Serializable {
 
 	public Turtle getTurtle() {
 		return myTurtle;
+	}
+
+	/**
+	 * Gets the TurtlesList for all turtles in the current program
+	 * 
+	 * @return TurtlesList for the current program
+	 */
+	public TurtlesList getTurtles() {
+		return myTurtles;
 	}
 
 	// If feature needed, get feature by class name
