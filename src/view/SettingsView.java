@@ -33,6 +33,7 @@ import javafx.util.Callback;
 import javax.imageio.ImageIO;
 
 import model.BackgroundColor;
+import model.Pen;
 import model.SlogoModel;
 
 public class SettingsView extends ToolBar implements Serializable {
@@ -123,27 +124,18 @@ public class SettingsView extends ToolBar implements Serializable {
 					@Override
 					public void changed(ObservableValue<? extends String> arg0,
 							String arg1, String arg2) {
+						Pen pen = myModel.getMyData().getTurtle().getPen();
 						if (arg2 == languageBundle.getString("Dashed")) {
-							myModel.getMyData().getTurtle().getPen()
-									.setPenDown(true);
-							myModel.getMyData().getTurtle().getPen()
-									.changeLineProperty(10, 10);
+							pen.changeLineProperty("dashed");
 						}
 						if (arg2 == languageBundle.getString("Dotted")) {
-							myModel.getMyData().getTurtle().getPen()
-									.setPenDown(true);
-							myModel.getMyData().getTurtle().getPen()
-									.changeLineProperty(3, 3);
+							pen.changeLineProperty("dotted");
 						}
 						if (arg2 == languageBundle.getString("Solid")) {
-							myModel.getMyData().getTurtle().getPen()
-									.setPenDown(true);
-							myModel.getMyData().getTurtle().getPen()
-									.changeLineProperty(1, 1);
+							pen.changeLineProperty("solid");
 						}
 						if (arg2 == languageBundle.getString("None")) {
-							myModel.getMyData().getTurtle().getPen()
-									.setPenDown(false);
+							pen.setPenDown(false);
 						}
 
 					}

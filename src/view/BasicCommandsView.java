@@ -13,7 +13,6 @@ public class BasicCommandsView extends DataViewComponents {
 
 	public BasicCommandsView(InputView input, double width, double height) {
 		super(input, width, height);
-		// TODO Auto-generated constructor stub
 	}
 
 	public void update(CommandsList commandsList) {
