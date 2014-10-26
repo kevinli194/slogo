@@ -21,8 +21,8 @@ import model.VariablesList;
 public class SlogoWindow extends BorderPane implements Observer, Serializable {
 
     /**
-	 * 
-	 */
+         * 
+         */
     private static final long serialVersionUID = 4532547099439124045L;
     KeyControls myControls;
     TurtleView myTurtleView;
@@ -36,14 +36,14 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
     private static final double DEFAULT_YCOORDINATE = 150;
 
     public SlogoWindow (Locale locale, double width, double height) {
-    	myModel = new SlogoModel(locale);
-		myModel.addObserver(this);
-		myTurtleView = new TurtleView(width, height);
-		myInputView = new InputView(myModel, width, height,locale);
-		myDataView = new DataView(myInputView, width, height,locale);
-		myHistoryResultsView = new HistoryResultsView(myInputView, width,
-				height,locale);
-		mySettingsView = new SettingsView(myModel, myTurtleView, width, height,locale);
+        myModel = new SlogoModel(locale);
+                myModel.addObserver(this);
+                myTurtleView = new TurtleView(width, height);
+                myInputView = new InputView(myModel, width, height,locale);
+                myDataView = new DataView(myInputView, width, height,locale);
+                myHistoryResultsView = new HistoryResultsView(myInputView, width,
+                                height,locale);
+                mySettingsView = new SettingsView(myModel, myTurtleView, width, height,locale);
 
         setCenter(myTurtleView);
         setRight(myDataView);

@@ -21,10 +21,9 @@ public class Home extends ZeroParamInstruction {
         Turtle myTurtle = data.getTurtle();
 
         // list with prevcoords, currentcoords
-        List<double[]> coords = myTurtle.getCoordList(0, 0);
 
-        return myTurtle.calculateDistance(coords.get(0), coords.get(1));
-    }
+        return myTurtle.setHome();
+	}
 
 
 
