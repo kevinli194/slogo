@@ -21,24 +21,22 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 	KeyControls myControls;
 	TurtleView myTurtleView;
 	InputView myInputView;
-	CommandsView myCommandsView;
+	DataView myDataView;
 	HistoryView myHistoryView;
 	SettingsView mySettingsView;
 	SlogoModel myModel;
-	ObservableData myOD;
 
 	public SlogoWindow(String language, double width, double height) {
 		myModel = new SlogoModel();
 		myModel.addObserver(this);
 		myTurtleView = new TurtleView(width, height);
 		myInputView = new InputView(myModel, width, height);
-		myCommandsView = new CommandsView(myInputView, width, height);
+		myDataView = new DataView(myInputView, width, height);
 		myHistoryView = new HistoryView(myInputView, width, height);
 		mySettingsView = new SettingsView(myModel, myTurtleView, width, height);
-		myOD = new ObservableData();
 
 		setCenter(myTurtleView);
-		setRight(myCommandsView);
+		setRight(myDataView);
 		setBottom(myInputView);
 		setLeft(myHistoryView);
 		setTop(mySettingsView);
@@ -51,12 +49,8 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 	@Override
 	public void update(Observable o, Object arg) {
 
-		if (!arg.equals(myOD)) {
-			myOD = (ObservableData) arg;
-		}
-
 		myTurtleView.update((((ObservableData) arg).getTurtle()).generate());
-		myCommandsView.update(
+		myDataView.update(
 				((CommandsList) ((ObservableData) arg).get("CommandsList")),
 				((VariablesList) ((ObservableData) arg).get("VariablesList")));
 		myHistoryView.update(((History) ((ObservableData) arg).get("history"))
@@ -75,7 +69,7 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 
 	public void loadFile(History history) {
 		myModel.getMyData().loadFile(history);
-		
+
 	}
 
 }

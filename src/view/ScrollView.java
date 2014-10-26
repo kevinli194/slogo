@@ -1,25 +1,23 @@
 package view;
 
 import javafx.event.EventHandler;
-import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.stage.Screen;
 
-public abstract class SideView extends ScrollPane {
+public abstract class ScrollView extends ScrollPane {
 
 	private static final int INSTRUCTION_FONT_SIZE = 12;
 	private InputView myInput;
 	protected VBox myView;
 
-	public SideView() {
+	public ScrollView() {
 	}
 
-	public SideView(InputView input, double width, double height) {
+	public ScrollView(InputView input, double width, double height) {
 		myInput = input;
 		myView = new VBox();
 		setView(width * 1 / 5, height * 11 / 16);

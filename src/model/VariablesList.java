@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Stack;
 
 import error_checking.ErrorDialog;
+
 // TODO: NEED TO PUT STRINGS INTO RESOURCES
 /**
  * VariablesList class. Maps variables to values and error checks for those
@@ -20,7 +21,7 @@ public class VariablesList implements Feature {
 	private Map<String, Double> myVariables;
 	private Stack<Map<String, Double>> myScope;
 
-// what is this?
+	// what is this?
 	/**
 	 * 
 	 */
@@ -38,7 +39,7 @@ public class VariablesList implements Feature {
 		// the variable
 		myVariables.put(variableName, value);
 	}
-	
+
 	public void addScope() {
 		myScope.push(myVariables);
 		myVariables = new HashMap<String, Double>(myVariables);
@@ -49,16 +50,16 @@ public class VariablesList implements Feature {
 		// TODO: Update to throwing better errors (window perhaps)
 		if (!myVariables.containsKey(variableName)) {
 			new ErrorDialog("Variable %s does not exist.", variableName);
-			
+
 			System.out.println("VARIABLE DOES NOT EXIST. CANNOT REMOVE.");
 		}
 		myVariables.remove(variableName);
 	}
-	
+
 	public void removeScope() {
 		myVariables = myScope.pop();
 	}
-	
+
 	public double get(String variableName) {
 		// TODO: Update to throwing better errors (window perhaps)
 		// Same error as one in REMOVE method
@@ -68,17 +69,16 @@ public class VariablesList implements Feature {
 		}
 		return myVariables.get(variableName);
 	}
-	
-	public String[] generate(){
-		List<String> variableList=new ArrayList<String>();
-		for (String s:myVariables.keySet()){
+
+	public List<String> generate() {
+		List<String> variableList = new ArrayList<String>();
+		for (String s : myVariables.keySet()) {
 			System.out.println(s);
 			String element=s.trim().substring(1)+" : "+myVariables.get(s);
 			variableList.add(element);
 		}
-		return variableList.toArray(new String[variableList.size()]);
+		return variableList;
 	}
-
 
 	/**
 	 * Clears list of variables
