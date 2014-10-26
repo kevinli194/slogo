@@ -18,7 +18,7 @@ public class SlogoView {
 
 		myRoot = new BorderPane();
 		myRoot.setCenter(myTabs);
-		myRoot.setTop(new MenuView(stage, locale, myTabs, width, height));
+		myRoot.setTop(new MenuView(locale, myTabs, width, height));
 		myScene = new Scene(myRoot, width, height);
 	}
 

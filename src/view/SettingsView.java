@@ -1,12 +1,21 @@
 package view;
 
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+import javax.imageio.ImageIO;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -15,15 +24,20 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.Separator;
 import javafx.scene.control.Slider;
+import javafx.scene.control.Tab;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import model.BackgroundColor;
+import model.History;
 import model.SlogoModel;
 
 public class SettingsView extends ToolBar implements Serializable {
@@ -57,6 +71,7 @@ public class SettingsView extends ToolBar implements Serializable {
 
 		addPenSlider();
 		addTurtleChoices();
+		addTurtleUpload();
 
 	}
 
@@ -169,6 +184,31 @@ public class SettingsView extends ToolBar implements Serializable {
 		myTurtleChoices.setButtonCell(new ListCell<Image>());
 		myModel.getMyData().getTurtle()
 				.initListofTurtles(myTurtleChoices.getItems());
+	}
+
+	private void addTurtleUpload() {
+		FileChooser fc = new FileChooser();
+		Button upload = new Button(languageBundle.getString("Upload"));
+		upload.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent t) {
+				File file = fc.showOpenDialog(new Stage());
+				if (file != null) {
+					BufferedImage bufferedImage;
+					try {
+						bufferedImage = ImageIO.read(file);
+						Image image = SwingFXUtils.toFXImage(bufferedImage,
+								null);
+						myTurtleChoices.getItems().add(image);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+
+				}
+			}
+		});
+		this.getItems().add(upload);
+
 	}
 
 	private void addButtons(SlogoModel model, TurtleView view) {

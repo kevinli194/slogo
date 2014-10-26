@@ -23,13 +23,12 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class MenuView extends MenuBar {
-	
+
 	public static final String DEFAULT_MENU_RESOURCE = "resources.languages/Menu";
-	
+
 	TabPane myTabs;
 	private int myTabCount;
 	private FileChooser myFileChooser;
-	private Stage myStage;
 
 	private Locale myLocale;
 	private Map<String, Locale> localeMap = new HashMap<String, Locale>();
@@ -38,14 +37,13 @@ public class MenuView extends MenuBar {
 	private double myHeight;
 	private ResourceBundle languageBundle;
 
-	public MenuView(Stage stage, Locale locale, TabPane tabs, double width,
+	public MenuView(Locale locale, TabPane tabs, double width,
 			double height) {
 
 		myLocale = locale;
 
 		myTabs = tabs;
 		myTabCount = 1;
-		myStage = stage;
 
 		myWidth = width;
 		myHeight = height;
@@ -60,11 +58,12 @@ public class MenuView extends MenuBar {
 	private void setMap() {
 		localeMap.put("English", new Locale("en", "US"));
 		localeMap.put("中文", new Locale("cn", "CN"));
-		localeMap.put("Français", new Locale ("fr","FR"));
+		localeMap.put("Français", new Locale("fr", "FR"));
 	}
 
 	public void createFileMenu(Locale locale, double width, double height) {
-		languageBundle= ResourceBundle.getBundle(DEFAULT_MENU_RESOURCE, myLocale);
+		languageBundle = ResourceBundle.getBundle(DEFAULT_MENU_RESOURCE,
+				myLocale);
 		Menu menuFile = new Menu(languageBundle.getString("File"));
 		Menu menuLanguage = new Menu(languageBundle.getString("Language"));
 		getLocale(menuLanguage);
@@ -77,7 +76,7 @@ public class MenuView extends MenuBar {
 		MenuItem langChinese = makeLanguageItem("中文");
 		MenuItem langFrench = makeLanguageItem("Français");
 
-		menuLanguage.getItems().addAll(langEnglish, langChinese,langFrench);
+		menuLanguage.getItems().addAll(langEnglish, langChinese, langFrench);
 	}
 
 	private MenuItem makeLanguageItem(String language) {
@@ -107,7 +106,7 @@ public class MenuView extends MenuBar {
 		MenuItem openFile = new MenuItem(languageBundle.getString("Open"));
 		openFile.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t) {
-				File file = myFileChooser.showOpenDialog(myStage);
+				File file = myFileChooser.showOpenDialog(new Stage());
 				if (file != null) {
 					try {
 						ObjectInputStream is = new ObjectInputStream(
@@ -141,7 +140,7 @@ public class MenuView extends MenuBar {
 		MenuItem saveFile = new MenuItem(languageBundle.getString("SaveAs"));
 		saveFile.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t) {
-				File file = myFileChooser.showSaveDialog(myStage);
+				File file = myFileChooser.showSaveDialog(new Stage());
 				if (file != null) {
 					try {
 						ObjectOutputStream os = new ObjectOutputStream(
@@ -170,7 +169,8 @@ public class MenuView extends MenuBar {
 		newFile.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t) {
 
-				Tab tab = new Tab(languageBundle.getString("Program") + myTabCount++);
+				Tab tab = new Tab(languageBundle.getString("Program")
+						+ myTabCount++);
 				SlogoWindow additionalWindow = new SlogoWindow(locale, width,
 						height * 9 / 10);
 				tab.setContent(additionalWindow);
