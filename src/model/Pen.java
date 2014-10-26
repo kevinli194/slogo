@@ -71,5 +71,10 @@ public class Pen implements Serializable {
 	public List<Color> getCustom() {
 		return myCustom;
 	}
+	
+	public void clear(){
+	    setPenColor(Color.WHITE);
+	    myCustom.clear();
+	}
 
 }
