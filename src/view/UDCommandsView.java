@@ -13,7 +13,6 @@ public class UDCommandsView extends DataViewComponents {
 
 	public void update(CommandsList commandsList) {
 		myView.getChildren().clear();
-		addLable("User Defined Commands:");
 		List<String[]> instructions = commandsList.generate();
 		for (String s : instructions.get(1)) {
 			addTextBoxWithDeleteButton(s, commandsList);

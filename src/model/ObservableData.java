@@ -17,10 +17,12 @@ public class ObservableData implements Serializable {
 	private static final long serialVersionUID = -8636982923572910062L;
 	private Map<String, Feature> myFeatures;
 	private Turtle myTurtle;
+	private double myReturn;
 
 	public ObservableData() {
 		myFeatures = new HashMap<String, Feature>();
 		myTurtle = new Turtle();
+		myReturn = new Double(0);
 
 		// Add new features to this list
 		addAllToMyFeatures(new History(), new VariablesList(),
@@ -59,5 +61,14 @@ public class ObservableData implements Serializable {
 
 	public void loadFile(History history) {
 		myFeatures.put("history", history);
+	}
+
+	public void changeReturn(double returnValue) {
+		myReturn = returnValue;
+
+	}
+
+	public double getReturn() {
+		return myReturn;
 	}
 }

@@ -7,7 +7,6 @@ public class HistoryView extends ScrollView {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 6005213237474653251L;
 
 	public HistoryView(InputView input, double width, double height) {
 		super(input, width, height);

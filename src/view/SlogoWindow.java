@@ -22,7 +22,7 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 	TurtleView myTurtleView;
 	InputView myInputView;
 	DataView myDataView;
-	HistoryView myHistoryView;
+	HistoryResultsView myHistoryResultsView;
 	SettingsView mySettingsView;
 	SlogoModel myModel;
 
@@ -32,13 +32,14 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 		myTurtleView = new TurtleView(width, height);
 		myInputView = new InputView(myModel, width, height);
 		myDataView = new DataView(myInputView, width, height);
-		myHistoryView = new HistoryView(myInputView, width, height);
+		myHistoryResultsView = new HistoryResultsView(myInputView, width,
+				height);
 		mySettingsView = new SettingsView(myModel, myTurtleView, width, height);
 
 		setCenter(myTurtleView);
 		setRight(myDataView);
 		setBottom(myInputView);
-		setLeft(myHistoryView);
+		setLeft(myHistoryResultsView);
 		setTop(mySettingsView);
 		setVisible(true);
 		myModel.load();
@@ -53,8 +54,9 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 		myDataView.update(
 				((CommandsList) ((ObservableData) arg).get("CommandsList")),
 				((VariablesList) ((ObservableData) arg).get("VariablesList")));
-		myHistoryView.update(((History) ((ObservableData) arg).get("history"))
-				.generate());
+		myHistoryResultsView.update(
+				((History) ((ObservableData) arg).get("history")).generate(),
+				((ObservableData) arg).getReturn());
 		myTurtleView.changeColor(((BackgroundColor) ((ObservableData) arg)
 				.get("backgroundcolor")).generate());
 		mySettingsView.changeBGPicked(((BackgroundColor) ((ObservableData) arg)

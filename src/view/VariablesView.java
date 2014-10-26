@@ -13,7 +13,6 @@ public class VariablesView extends DataViewComponents {
 
 	public void update(VariablesList variablesList) {
 		myView.getChildren().clear();
-		addLable("Variables:");
 		List<String> variables = variablesList.generate();
 		for (String s : variables) {
 			addTextBoxWithDeleteButton(s, variablesList);

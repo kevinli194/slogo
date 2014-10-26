@@ -41,15 +41,14 @@ public class SlogoModel extends Observable implements Serializable {
 				Instruction current = commandStack.pop();
 				((History) myData.get("history")).addSaved(current);
 				double returnValue = current.execute(myData);
-				// showOnView(returnValue);
+				showOnView(returnValue);
 			}
 			return true;
 		}
 	}
 
 	private void showOnView(double returnValue) {
-		((History) myData.get("history")).add("Final Return: " + returnValue
-				+ "\n");
+		myData.changeReturn(returnValue);
 		setChanged();
 		notifyObservers(myData);
 	}

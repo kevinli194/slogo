@@ -4,9 +4,6 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import model.Feature;
 
@@ -15,15 +12,6 @@ public abstract class DataViewComponents extends ScrollView {
 
 	public DataViewComponents(InputView input, double width, double height) {
 		super(input, width, height);
-	}
-
-	protected void addLable(String s) {
-		HBox h = new HBox();
-		Text t = new Text(s + "\n");
-		t.setFont(Font.font("Verdana", FontWeight.BOLD, 14));
-		t.setFill(Color.BLUE);
-		h.getChildren().add(t);
-		myView.getChildren().add(h);
 	}
 
 	protected void addTextBoxWithDeleteButton(String s, Feature f) {

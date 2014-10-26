@@ -14,7 +14,6 @@ public class BasicCommandsView extends DataViewComponents {
 	public void update(CommandsList commandsList) {
 		myView.getChildren().clear();
 		List<String[]> instructions = commandsList.generate();
-		addLable("Default Commands:");
 		for (String s : instructions.get(0)) {
 			addTextBox(s);
 		}

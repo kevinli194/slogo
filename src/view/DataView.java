@@ -1,25 +1,35 @@
 package view;
 
+import javafx.scene.control.Accordion;
+import javafx.scene.control.TitledPane;
 import model.CommandsList;
 import model.VariablesList;
-import javafx.scene.layout.VBox;
 
 public class DataView extends PaneView {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6355318324699961137L;
+	/**
+	 * 
+	 */
 	BasicCommandsView myBasicCommands;
 	UDCommandsView myUDCommands;
 	VariablesView myVariablesView;
-	VBox myView;
+	Accordion myView;
 
 	public DataView(InputView input, double width, double height) {
-		myView = new VBox();
+		myView = new Accordion();
 		myView.setPrefSize(width * 1 / 5, height * 11 / 16);
 		setView(width * 1 / 5, height * 11 / 16);
-
-		myBasicCommands = new BasicCommandsView(input, width, height / 3);
-		myUDCommands = new UDCommandsView(input, width, height / 3);
-		myVariablesView = new VariablesView(input, width, height / 3);
-		myView.getChildren().addAll(myBasicCommands, myUDCommands,
+		myBasicCommands = new BasicCommandsView(input, width, height);
+		myUDCommands = new UDCommandsView(input, width, height);
+		myVariablesView = new VariablesView(input, width, height);
+		TitledPane t1 = new TitledPane("Basic Commands", myBasicCommands);
+		TitledPane t2 = new TitledPane("User-Defined Commands", myUDCommands);
+		TitledPane t3 = new TitledPane("User-Defined Variables",
 				myVariablesView);
+		myView.getPanes().addAll(t1, t2, t3);
 		this.getChildren().add(myView);
 
 	}
