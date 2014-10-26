@@ -60,6 +60,7 @@ public class MenuView extends MenuBar {
 	private void setMap() {
 		localeMap.put("English", new Locale("en", "US"));
 		localeMap.put("中文", new Locale("cn", "CN"));
+		localeMap.put("Français", new Locale ("fr","FR"));
 	}
 
 	public void createFileMenu(Locale locale, double width, double height) {
@@ -74,8 +75,9 @@ public class MenuView extends MenuBar {
 	private void getLocale(Menu menuLanguage) {
 		MenuItem langEnglish = makeLanguageItem("English");
 		MenuItem langChinese = makeLanguageItem("中文");
+		MenuItem langFrench = makeLanguageItem("Français");
 
-		menuLanguage.getItems().addAll(langEnglish, langChinese);
+		menuLanguage.getItems().addAll(langEnglish, langChinese,langFrench);
 	}
 
 	private MenuItem makeLanguageItem(String language) {
