@@ -1,5 +1,8 @@
 package view;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -14,14 +17,18 @@ public class InputView extends PaneView {
 	 * 
 	 */
 	private static final long serialVersionUID = -2499477403984792589L;
+	public static final String DEFAULT_DISPLAY_RESOURCE = "resources.languages/Display";
+
 	public HBox myView;
 	private TextArea myInput;
 	private Button mySubmitButton;
 	private SlogoModel myModel;
 	private String myText = "";
+	private Locale myLocale;
 
-	public InputView(SlogoModel model, double width, double height) {
+	public InputView(SlogoModel model, double width, double height, Locale locale) {
 		myModel = model;
+		myLocale=locale;
 		myView = new HBox();
 		myView.setPrefSize(width, height * 1 / 4);
 		setView(width, height * 1 / 4);
@@ -39,7 +46,8 @@ public class InputView extends PaneView {
 
 	private void initSubmitButton(double width, double height) {
 		mySubmitButton = new Button();
-		mySubmitButton.setText("Submit");
+		ResourceBundle languageBundle = ResourceBundle.getBundle(DEFAULT_DISPLAY_RESOURCE, myLocale);
+		mySubmitButton.setText(languageBundle.getString("Submit"));
 		mySubmitButton.setPrefSize(width * 1 / 8, height * 1 / 4);
 		mySubmitButton.setMaxSize(width * 1 / 8, height * 1 / 4);
 		mySubmitButton.setMinSize(width * 1 / 8, height * 1 / 4);

@@ -1,6 +1,8 @@
 package view;
 
 import java.io.Serializable;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -8,7 +10,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ContentDisplay;
@@ -20,7 +21,6 @@ import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 import model.BackgroundColor;
@@ -30,7 +30,9 @@ public class SettingsView extends ToolBar implements Serializable {
 	/**
 	 * 
 	 */
+
 	private static final long serialVersionUID = 660774956006597491L;
+	public static final String DEFAULT_DISPLAY_RESOURCE = "resources.languages/Display";
 	ColorPicker myBGColor;
 	ColorPicker myPenColor;
 	Slider myPenSize;
@@ -39,13 +41,20 @@ public class SettingsView extends ToolBar implements Serializable {
 	protected static final String IMAGE_1 = "image_1.gif";
 	protected static final String IMAGE_2 = "image_2.gif";
 
+	Locale myLocale;
+	ResourceBundle languageBundle;
+
 	public SettingsView(SlogoModel model, TurtleView view, double width,
-			double height) {
+			double height, Locale locale) {
 		myModel = model;
+		myLocale = locale;
+		languageBundle = ResourceBundle.getBundle(DEFAULT_DISPLAY_RESOURCE,
+				myLocale);
 		setView(width, height);
 		addButtons(model, view);
 		addBGColorPicker(view);
 		addPenColorPicker();
+
 		addPenSlider();
 		addTurtleChoices();
 
@@ -67,7 +76,8 @@ public class SettingsView extends ToolBar implements Serializable {
 			}
 		});
 		myModel.initializeBGColor(getCustomColors(myBGColor));
-		this.getItems().add(new Text("Background Color: "));
+		this.getItems().add(
+				new Text(languageBundle.getString("BackgroundColor")));
 		this.getItems().add(myBGColor);
 		this.getItems().add(new Separator());
 	}
@@ -83,7 +93,7 @@ public class SettingsView extends ToolBar implements Serializable {
 			}
 		});
 		myModel.initializePenColor(getCustomColors(myPenColor));
-		this.getItems().add(new Text("Pen Color: "));
+		this.getItems().add(new Text(languageBundle.getString("PenColor")));
 		this.getItems().add(myPenColor);
 		this.getItems().add(new Separator());
 
@@ -109,7 +119,7 @@ public class SettingsView extends ToolBar implements Serializable {
 			}
 
 		});
-		this.getItems().add(new Text("Stroke Width: "));
+		this.getItems().add(new Text(languageBundle.getString("StrokeWidth")));
 		this.getItems().add(myPenSize);
 		this.getItems().add(new Separator());
 	}
@@ -162,12 +172,16 @@ public class SettingsView extends ToolBar implements Serializable {
 	}
 
 	private void addButtons(SlogoModel model, TurtleView view) {
-		Button toggleTurtle = makeButton("Show/Hide Turtle",
+		Button toggleTurtle = makeButton(
+				languageBundle.getString("ShowHideTurtle"),
 				handle -> model.toggleTurtle());
-		Button toggleGrid = makeButton("Show/Hide Grid",
+		Button toggleGrid = makeButton(
+				languageBundle.getString("ShowHideGrid"),
 				handle -> view.toggleGrid());
-		Button clear = makeButton("Clear", handle -> model.clear());
-		Button help = makeButton("Help Page", handle -> model.accessHelpHTML());
+		Button clear = makeButton(languageBundle.getString("Clear"),
+				handle -> model.clear());
+		Button help = makeButton(languageBundle.getString("HelpPage"),
+				handle -> model.accessHelpHTML());
 		this.getItems().addAll(toggleTurtle, toggleGrid, clear, help);
 		this.getItems().add(new Separator());
 

@@ -138,6 +138,7 @@ public class Parser implements Serializable {
 
 	}
 
+
 	private void addParams(Instruction instr, Stack<Instruction> iStack) {
 		if (instr.getNumParams() > iStack.size()) {
 			new ErrorDialog("NOT ENOUGH PARAMETERS.");
