@@ -15,11 +15,15 @@ public class Pen implements Serializable {
 	private boolean isPenDown;
 	private double myStrokeWidth;
 	private List<Color> myCustom;
+	private double[] myLineProperty;
 
 	public Pen() {
 		myLineColor = Color.WHITE;
 		isPenDown = true;
 		myStrokeWidth = 3;
+		myLineProperty = new double[2];
+		myLineProperty[0] = 1;
+		myLineProperty[1] = 1;
 	}
 
 	// duplicated code from backgroundcolor
@@ -65,16 +69,22 @@ public class Pen implements Serializable {
 		Line line = new Line(start[0], start[1], end[0], end[1]);
 		line.setStroke(color);
 		line.setStrokeWidth(myStrokeWidth);
+		line.getStrokeDashArray().addAll(myLineProperty[0], myLineProperty[1]);
 		return line;
 	}
 
 	public List<Color> getCustom() {
 		return myCustom;
 	}
-	
-	public void clear(){
-	    setPenColor(Color.WHITE);
-	    myCustom.clear();
+
+	public void clear() {
+		setPenColor(Color.WHITE);
+		myCustom.clear();
+	}
+
+	public void changeLineProperty(double property1, double property2) {
+		myLineProperty[0] = property1;
+		myLineProperty[1] = property2;
 	}
 
 }

@@ -1,16 +1,11 @@
 package view;
 
-import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Locale;
 import java.util.ResourceBundle;
-
-import javax.imageio.ImageIO;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -24,10 +19,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.Separator;
 import javafx.scene.control.Slider;
-import javafx.scene.control.Tab;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -36,8 +29,10 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+
+import javax.imageio.ImageIO;
+
 import model.BackgroundColor;
-import model.History;
 import model.SlogoModel;
 
 public class SettingsView extends ToolBar implements Serializable {
@@ -50,6 +45,7 @@ public class SettingsView extends ToolBar implements Serializable {
 	ColorPicker myBGColor;
 	ColorPicker myPenColor;
 	Slider myPenSize;
+	ComboBox<String> myLineProperties;
 	ComboBox<Image> myTurtleChoices;
 	SlogoModel myModel;
 	protected static final String IMAGE_1 = "image_1.gif";
@@ -68,8 +64,8 @@ public class SettingsView extends ToolBar implements Serializable {
 		addButtons(model, view);
 		addBGColorPicker(view);
 		addPenColorPicker();
-
 		addPenSlider();
+		addLineProperty();
 		addTurtleChoices();
 		addTurtleUpload();
 
@@ -114,6 +110,49 @@ public class SettingsView extends ToolBar implements Serializable {
 
 	}
 
+	private void addLineProperty() {
+		myLineProperties = new ComboBox<String>();
+		myLineProperties.getItems().addAll(languageBundle.getString("Solid"),
+				languageBundle.getString("Dashed"),
+				languageBundle.getString("Dotted"),
+				languageBundle.getString("None"));
+
+		myLineProperties.getSelectionModel().selectedItemProperty()
+				.addListener(new ChangeListener<String>() {
+
+					@Override
+					public void changed(ObservableValue<? extends String> arg0,
+							String arg1, String arg2) {
+						if (arg2 == languageBundle.getString("Dashed")) {
+							myModel.getMyData().getTurtle().getPen()
+									.setPenDown(true);
+							myModel.getMyData().getTurtle().getPen()
+									.changeLineProperty(10, 10);
+						}
+						if (arg2 == languageBundle.getString("Dotted")) {
+							myModel.getMyData().getTurtle().getPen()
+									.setPenDown(true);
+							myModel.getMyData().getTurtle().getPen()
+									.changeLineProperty(3, 3);
+						}
+						if (arg2 == languageBundle.getString("Solid")) {
+							myModel.getMyData().getTurtle().getPen()
+									.setPenDown(true);
+							myModel.getMyData().getTurtle().getPen()
+									.changeLineProperty(1, 1);
+						}
+						if (arg2 == languageBundle.getString("None")) {
+							myModel.getMyData().getTurtle().getPen()
+									.setPenDown(false);
+						}
+
+					}
+
+				});
+		this.getItems().add(myLineProperties);
+		this.getItems().add(new Separator());
+	}
+
 	private void addPenSlider() {
 		myPenSize = new Slider();
 		myPenSize.setMin(0);
@@ -134,9 +173,9 @@ public class SettingsView extends ToolBar implements Serializable {
 			}
 
 		});
-		this.getItems().add(new Text(languageBundle.getString("StrokeWidth")));
+		this.getItems().add(
+				new Text(languageBundle.getString("LineProperties")));
 		this.getItems().add(myPenSize);
-		this.getItems().add(new Separator());
 	}
 
 	private void addTurtleChoices() {

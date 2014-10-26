@@ -1,9 +1,14 @@
 package view;
 
 import java.util.List;
-
 import model.CommandsList;
 
+/**
+ * 
+ * @author Kevin Li
+ * @author Meng'en Huang
+ * 
+ */
 public class BasicCommandsView extends DataViewComponents {
 
 	public BasicCommandsView(InputView input, double width, double height) {
