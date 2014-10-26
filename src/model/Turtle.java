@@ -23,8 +23,8 @@ public class Turtle extends TurtleAbstract implements Feature {
 	private ImageView myImage;
 
 	private double[] myCoordinates = { DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE };
-	private double[] myRelativeCoordinates = { DEFAULT_REALATIVE_COORDINATE,
-			DEFAULT_REALATIVE_COORDINATE };
+	private double[] myRelativeCoordinates = { DEFAULT_RELATIVE_COORDINATE,
+			DEFAULT_RELATIVE_COORDINATE };
 	private double myAngle = DEFAULT_TURTLE_ANGLE;
 	private Pen myPen;
 	private Group myDrawing;
@@ -58,8 +58,7 @@ public class Turtle extends TurtleAbstract implements Feature {
 		myImage = new ImageView(myDefaultOn);
 		myImage.setFitWidth(DEFAULT_TURTLE_SIZE);
 		myImage.setFitHeight(DEFAULT_TURTLE_SIZE);
-		setCoordinates(DEFAULT_REALATIVE_COORDINATE,
-				DEFAULT_REALATIVE_COORDINATE);
+		setCoordinates(DEFAULT_RELATIVE_COORDINATE, DEFAULT_RELATIVE_COORDINATE);
 		setAngle(DEFAULT_TURTLE_ANGLE);
 		myImage.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
@@ -229,8 +228,8 @@ public class Turtle extends TurtleAbstract implements Feature {
 	@Override
 	public void clear() {
 		myLines.getChildren().clear();
-		setCoordinates(DEFAULT_REALATIVE_COORDINATE,
-				DEFAULT_REALATIVE_COORDINATE);
+		myStamps.getChildren().clear();
+		setCoordinates(DEFAULT_RELATIVE_COORDINATE, DEFAULT_RELATIVE_COORDINATE);
 		setAngle(DEFAULT_TURTLE_ANGLE);
 		setTurtleInfo();
 

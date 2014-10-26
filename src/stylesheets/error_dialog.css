@@ -1,0 +1,13 @@
+.root {
+	-fx-background-color: gray;
+}
+
+.label {
+    -fx-padding: 10;
+    -fx-font-size: 15;
+    -fx-text-align: center;
+}
+
+.button{
+    -fx-border-radius: 10;
+}

@@ -1,5 +1,6 @@
 package instructions.commands;
 
+import java.util.List;
 import instructions.UnaryInstruction;
 import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
@@ -17,7 +18,7 @@ public class SetBackground extends UnaryInstruction {
 	public double execute(ObservableData data) {
 		// TODO Auto-generated method stub
 		BackgroundColor bgc = ((BackgroundColor) data.get("backgroundcolor"));
-		ObservableList<Color> customColors = bgc.getCustom();
+		List<Color> customColors = bgc.getCustom();
 
 		double index = super.myParams.get(0).execute(data);
 		bgc.set(customColors.get((int) index - 1));

@@ -39,6 +39,7 @@ public class SlogoModel extends Observable implements Serializable {
 		} else {
 			while (!commandStack.isEmpty()) {
 				Instruction current = commandStack.pop();
+				((History) myData.get("history")).addSaved(current);
 				double returnValue = current.execute(myData);
 				// showOnView(returnValue);
 			}
@@ -116,8 +117,8 @@ public class SlogoModel extends Observable implements Serializable {
 	}
 
 	public void rerun() {
-		for (String s : ((History) myData.get("history")).generate()) {
-			executeCommands((myParser.parse(s)));
+		for (Instruction s : ((History) myData.get("history")).getSavedData()) {
+			s.execute(myData);
 		}
 		setChanged();
 		notifyObservers(myData);
