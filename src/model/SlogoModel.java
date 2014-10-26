@@ -103,6 +103,10 @@ public class SlogoModel extends Observable implements Serializable {
 	public Parser getParser() {
 		return myParser;
 	}
+	
+	public Locale getLocale(){
+		return myLocale;
+	}
 
 	public void initializeBGColor(ObservableList<Color> customColors) {
 		((BackgroundColor) myData.get("backgroundcolor"))
