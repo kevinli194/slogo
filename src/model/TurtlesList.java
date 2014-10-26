@@ -20,6 +20,10 @@ public class TurtlesList implements Feature {
 		addTurtle();
 	}
 	
+	public double getNumTurtles() {
+		return (double) allTurtles.size();
+	}
+	
 	public void addTurtle() {
 		allTurtles.add(new Turtle());
 		activeIDs.add(allTurtles.size());
