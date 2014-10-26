@@ -1,11 +1,15 @@
 package instructions.commands;
 
+import java.util.function.Consumer;
+
 import instructions.UnaryInstruction;
 import model.ObservableData;
 import model.Turtle;
+import model.TurtlesList;
 
 
 public class Left extends UnaryInstruction {
+	private static final int TOTAL_CIRCLE_DEGREES = 360;
 
     /**
 	 * 
@@ -16,10 +20,11 @@ public class Left extends UnaryInstruction {
     public double execute (ObservableData data) {
         // TODO Auto-generated method stub
         double amount = myParams.get(0).execute(data);
-
-        Turtle myTurtle = data.getTurtle();
-
-        myTurtle.rotate(360 - amount);
+		TurtlesList turtles = data.getTurtles();
+		Consumer<Turtle> lambda = (Turtle turtle) -> {
+			turtle.rotate(TOTAL_CIRCLE_DEGREES - amount);
+		};
+		turtles.runTurtleMethod(lambda);
         return amount;
     }
 }

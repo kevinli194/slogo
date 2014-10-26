@@ -1,9 +1,9 @@
 package instructions.commands;
 
-import java.util.List;
+import instructions.UnaryInstruction;
+
 import java.util.function.Consumer;
 
-import instructions.UnaryInstruction;
 import model.ObservableData;
 import model.Pen;
 import model.Turtle;

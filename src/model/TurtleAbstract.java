@@ -20,5 +20,5 @@ public abstract class TurtleAbstract implements Serializable, Feature {
 
 	public abstract Node generate();
 
-	
+	public abstract void toggleVisible();
 }

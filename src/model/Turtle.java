@@ -253,7 +253,6 @@ public class Turtle extends TurtleAbstract {
 	
 	public void setPenCustom(List<Color> customColors) {
 		myPen.setCustom(customColors);
-
 	}
 
 	public void toggleVisible() {

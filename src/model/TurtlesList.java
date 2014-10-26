@@ -11,7 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 
-public class TurtlesList implements Feature {
+public class TurtlesList extends TurtleAbstract {
 	/**
 	 * 
 	 */
@@ -42,11 +42,11 @@ public class TurtlesList implements Feature {
 	public void addTurtle() {
 		allTurtles.add(new Turtle());
 		activeIDs.add(allTurtles.size()-1);
+		
 	}
-
+	
 	public void addScope(List<Integer> active) {
 		turtleScope.push(activeIDs);
-
 		setActive(active);
 	}
 
@@ -90,6 +90,7 @@ public class TurtlesList implements Feature {
 		return allTurtles.get(currID).getTurtleImg();
 	}
 
+	@Override
 	public Node generate() {
 		Group root = new Group();
 		for (int i = 0; i < allTurtles.size(); i++) {
@@ -103,4 +104,24 @@ public class TurtlesList implements Feature {
 		return root;
 	}
 
+	@Override
+	public void toggleVisible() {
+		activeIDs.forEach((id) -> allTurtles.get(id).toggleVisible());
+	}
+
+	public void clearPens() {
+		activeIDs.forEach((id) -> allTurtles.get(id).getPen().clear());
+	}
+
+	public Color getPenColor() {
+		int currID = activeIDs.get(activeIDs.size()-1);
+		return allTurtles.get(currID).getPen().getPenColor();
+	}
+
+	public void changePenColor(Color value) {
+		activeIDs.forEach((id) -> allTurtles.get(id).changePenColor(value));
+	}
+	
+
+	
 }

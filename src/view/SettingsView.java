@@ -60,7 +60,7 @@ public class SettingsView extends ToolBar implements Serializable {
 		myPenColor.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				myModel.getMyData().getTurtle()
+				myModel.getMyData().getTurtles()
 				.changePenColor(myPenColor.getValue());				
 			}
 		});

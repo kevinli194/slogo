@@ -1,8 +1,9 @@
 package instructions.commands;
 
-import java.util.List;
 import instructions.UnaryInstruction;
-import javafx.collections.ObservableList;
+
+import java.util.List;
+
 import javafx.scene.paint.Color;
 import model.BackgroundColor;
 import model.ObservableData;

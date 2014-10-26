@@ -21,7 +21,7 @@ public class ObservableData implements Serializable {
 
 	public ObservableData() {
 		myFeatures = new HashMap<String, Feature>();
-		myTurtle = new Turtle();
+//		myTurtle = new Turtle();
 		myTurtles = new TurtlesList();
 
 		// Add new features to this list
@@ -36,10 +36,10 @@ public class ObservableData implements Serializable {
 			myFeatures.put(classKey, f);
 		}
 	}
-
-	public Turtle getTurtle() {
-		return myTurtle;
-	}
+//
+//	public Turtle getTurtle() {
+//		return myTurtle;
+//	}
 
 	/**
 	 * Gets the TurtlesList for all turtles in the current program

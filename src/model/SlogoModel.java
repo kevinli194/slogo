@@ -60,23 +60,16 @@ public class SlogoModel extends Observable implements Serializable {
 	}
 
 	public void toggleTurtle() {
-		myData.getTurtle().toggleVisible();
+		myData.getTurtles().toggleVisible();
 		setChanged();
 		notifyObservers(myData);
 	}
 
-	public void testThings() {
-		Random rn = new Random();
-		double x = rn.nextInt(50);
-		myData.getTurtle().rotate(x);
-		myData.getTurtle().moveTurtleAndDrawLine(10);
-		setChanged();
-		notifyObservers(myData);
-	}
 
 	public void clear() {
 		myData.clear();
-		myData.getTurtle().getPen().clear();
+		// FIX THIS
+		myData.getTurtles().clearPens();
 		setChanged();
 		notifyObservers(myData);
 	}
@@ -113,8 +106,8 @@ public class SlogoModel extends Observable implements Serializable {
 	}
 
 	public void initializePenColor(ObservableList<Color> customColors) {
-		myData.getTurtle().setPenCustom(customColors);
-
+		myData.getTurtles().runTurtleMethod((Turtle turtle) ->
+		turtle.setPenCustom(customColors));
 	}
 
 	public void rerun() {

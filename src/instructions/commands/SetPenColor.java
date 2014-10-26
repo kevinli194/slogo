@@ -1,11 +1,15 @@
 package instructions.commands;
 
-import java.util.List;
 import instructions.UnaryInstruction;
-import javafx.collections.ObservableList;
+
+import java.util.List;
+import java.util.function.Consumer;
+
 import javafx.scene.paint.Color;
 import model.ObservableData;
 import model.Pen;
+import model.Turtle;
+import model.TurtlesList;
 
 public class SetPenColor extends UnaryInstruction {
 
@@ -16,11 +20,16 @@ public class SetPenColor extends UnaryInstruction {
 
 	@Override
 	public double execute(ObservableData data) {
-
-		Pen myPen = data.getTurtle().getPen();
-		List<Color> colorList = myPen.getCustom();
 		double index = super.myParams.get(0).execute(data);
-		myPen.setPenColor(colorList.get((int) index - 1));
+		
+		TurtlesList turtles = data.getTurtles();
+		Consumer<Turtle> lambda = (Turtle turtle) -> {
+			Pen myPen = turtle.getPen();
+			List<Color> colorList = myPen.getCustom();
+			myPen.setPenColor(colorList.get((int) index - 1));
+		};
+		turtles.runTurtleMethod(lambda);
+
 
 		return index;
 	}
