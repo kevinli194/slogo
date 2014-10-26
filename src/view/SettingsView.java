@@ -247,6 +247,7 @@ public class SettingsView extends ToolBar implements Serializable {
 			}
 		});
 		this.getItems().add(upload);
+		this.getItems().add(new Separator());
 
 	}
 
