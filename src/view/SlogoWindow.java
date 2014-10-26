@@ -31,11 +31,11 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 		myModel = new SlogoModel(locale);
 		myModel.addObserver(this);
 		myTurtleView = new TurtleView(width, height);
-		myInputView = new InputView(myModel, width, height);
-		myDataView = new DataView(myInputView, width, height);
+		myInputView = new InputView(myModel, width, height,locale);
+		myDataView = new DataView(myInputView, width, height,locale);
 		myHistoryResultsView = new HistoryResultsView(myInputView, width,
-				height);
-		mySettingsView = new SettingsView(myModel, myTurtleView, width, height);
+				height,locale);
+		mySettingsView = new SettingsView(myModel, myTurtleView, width, height,locale);
 
 		setCenter(myTurtleView);
 		setRight(myDataView);
@@ -43,9 +43,6 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 		setLeft(myHistoryResultsView);
 		setTop(mySettingsView);
 		setVisible(true);
-
-
-		myControls = new KeyControls(myModel, this);
 
 		myModel.load();
 		myControls = new KeyControls(myModel, this);

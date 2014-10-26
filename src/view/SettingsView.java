@@ -1,6 +1,8 @@
 package view;
 
 import java.io.Serializable;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,17 +22,23 @@ public class SettingsView extends ToolBar implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 660774956006597491L;
+	public static final String DEFAULT_DISPLAY_RESOURCE = "resources.languages/Display";
 	ColorPicker myBGColor;
 	ColorPicker myPenColor;
 	SlogoModel myModel;
+	Locale myLocale;
+	ResourceBundle languageBundle;
 
 	public SettingsView(SlogoModel model, TurtleView view, double width,
-			double height) {
+			double height, Locale locale) {
 		myModel = model;
+		myLocale=locale;
+		languageBundle= ResourceBundle.getBundle(DEFAULT_DISPLAY_RESOURCE, myLocale);
 		setView(width, height);
 		addButtons(model);
 		addBGColorPicker(view);
 		addPenColorPicker();
+
 	}
 
 	private void setView(double width, double height) {
@@ -49,7 +57,7 @@ public class SettingsView extends ToolBar implements Serializable {
 			}
 		});
 		myModel.initializeBGColor(getCustomColors(myBGColor));
-		this.getItems().add(new Text("Background Color: "));
+		this.getItems().add(new Text(languageBundle.getString("BackgroundColor")));
 		this.getItems().add(myBGColor);
 		this.getItems().add(new Separator());
 	}
@@ -65,17 +73,17 @@ public class SettingsView extends ToolBar implements Serializable {
 			}
 		});
 		myModel.initializePenColor(getCustomColors(myPenColor));
-		this.getItems().add(new Text("Pen Color: "));
+		this.getItems().add(new Text(languageBundle.getString("PenColor")));
 		this.getItems().add(myPenColor);
 		this.getItems().add(new Separator());
 
 	}
 
 	private void addButtons(SlogoModel model) {
-		Button toggleTurtle = makeButton("Show/Hide Turtle",
+		Button toggleTurtle = makeButton(languageBundle.getString("ShowHideTurtle"),
 				handle -> model.toggleTurtle());
-		Button clear = makeButton("Clear", handle -> model.clear());
-		Button help = makeButton("Help Page", handle -> model.accessHelpHTML());
+		Button clear = makeButton(languageBundle.getString("Clear"), handle -> model.clear());
+		Button help = makeButton(languageBundle.getString("HelpPage"), handle -> model.accessHelpHTML());
 		this.getItems().addAll(toggleTurtle, clear, help);
 		this.getItems().add(new Separator());
 
