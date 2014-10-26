@@ -30,9 +30,8 @@ public class DoTimes extends BinaryInstruction {
         VariablesList varList = (VariablesList) data.get("VariablesList");
 
         for (int i = 1; i < limit + 1; i++) {
-            Instruction constant = new ConstantInstruction(i);
             // parameter 1 = listinstr of commands
-            varList.add(variable.getName(), constant);
+            varList.add(variable.getName(), i);
             super.myParams.get(1).execute(data);
 
         }
