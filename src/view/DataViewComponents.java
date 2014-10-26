@@ -1,7 +1,5 @@
 package view;
 
-import java.util.List;
-
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
@@ -10,38 +8,16 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import model.CommandsList;
 import model.Feature;
-import model.VariablesList;
 
-public class CommandsView extends SideView {
+public abstract class DataViewComponents extends ScrollView {
 	private static final int DELETE_BUTTON_X = 50;
 
-	public CommandsView(InputView input, double width, double height) {
+	public DataViewComponents(InputView input, double width, double height) {
 		super(input, width, height);
 	}
 
-	public void update(CommandsList commandsList, VariablesList variablesList) {
-		List<String[]> instructions = commandsList.generate();
-		String[] variables = variablesList.generate();
-
-		myView.getChildren().clear();
-		addLable("Default Commands:");
-		for (String s : instructions.get(0)) {
-			addTextBox(s);
-		}
-		addLable("User Defined Commands:");
-		for (String s : instructions.get(1)) {
-			addTextBoxWithDeleteButton(s, commandsList);
-		}
-		addLable("Variables:");
-		for (String s : variables) {
-			addTextBoxWithDeleteButton(s, variablesList);
-		}
-
-	}
-
-	private void addLable(String s) {
+	protected void addLable(String s) {
 		HBox h = new HBox();
 		Text t = new Text(s + "\n");
 		t.setFont(Font.font("Verdana", FontWeight.BOLD, 14));
@@ -50,7 +26,7 @@ public class CommandsView extends SideView {
 		myView.getChildren().add(h);
 	}
 
-	public void addTextBoxWithDeleteButton(String s, Feature f) {
+	protected void addTextBoxWithDeleteButton(String s, Feature f) {
 		HBox h = new HBox();
 		Text t = super.makeClickableText(s);
 		Button delete = makeDeleteButton(s, f);

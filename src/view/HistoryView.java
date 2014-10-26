@@ -2,7 +2,7 @@ package view;
 
 import java.util.List;
 
-public class HistoryView extends SideView {
+public class HistoryView extends ScrollView {
 
 	/**
 	 * 
