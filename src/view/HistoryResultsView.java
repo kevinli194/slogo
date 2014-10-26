@@ -41,7 +41,7 @@ public class HistoryResultsView extends PaneView {
 		this.getChildren().add(myView);
 	}
 
-	public void update(List<String> history, double result) {
+	public void update(List<String> history, String result) {
 		myHistory.update(history);
 		myResults.update(result);
 

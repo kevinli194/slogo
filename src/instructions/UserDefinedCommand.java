@@ -8,21 +8,22 @@ import model.ObservableData;
 import model.VariablesList;
 
 public class UserDefinedCommand extends UserDefinedInstruction {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 241936480193090236L;
-	private List<Instruction> myVariables;
-	private Instruction myCommands;
-	
-	public UserDefinedCommand(String name) {
-		super(name);
-	}
-	
-	public UserDefinedCommand(UserDefinedCommand udcommand) {
-		super(udcommand.myName);
-		defineFunction(udcommand.myVariables, udcommand.myCommands);
-	}
+        /**
+         * 
+         */
+        private static final long serialVersionUID = 241936480193090236L;
+        private List<Instruction> myVariables;
+        private Instruction myCommands;
+        
+        public UserDefinedCommand(String name) {
+                super(name);
+        }
+        
+        public UserDefinedCommand(UserDefinedCommand udcommand) {
+                super(udcommand.myName);
+                defineFunction(udcommand.myVariables, udcommand.myCommands);
+        }
+
 
 	public void defineFunction(List<Instruction> variables, Instruction commands) {
 		myVariables = variables;

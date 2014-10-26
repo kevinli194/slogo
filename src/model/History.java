@@ -38,6 +38,7 @@ public class History implements Feature {
 
 	public void addSaved(Instruction element) {
 		mySavedHistory.add(element);
+		System.out.println("Saved Correct Element");
 	}
 
 	@Override

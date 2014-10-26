@@ -21,15 +21,18 @@ public class ObservableData implements Serializable {
 
 	private Locale myLocale;
 
-	private double myReturn;
+	private String myReturn;
+
 	private TurtlesList myTurtles;
 
 	public ObservableData(Locale locale) {
 		myFeatures = new HashMap<String, Feature>();
 		myTurtle = new Turtle();
-		myLocale=locale;
 
-		myReturn = new Double(0);
+		myLocale = locale;
+
+		myReturn = new String("");
+
 		myTurtles = new TurtlesList();
 
 		// Add new features to this list
@@ -73,6 +76,7 @@ public class ObservableData implements Serializable {
 			myFeatures.get(key).clear();
 		}
 		myTurtle.clear();
+		myReturn = new String("");
 
 	}
 
@@ -81,11 +85,11 @@ public class ObservableData implements Serializable {
 	}
 
 	public void changeReturn(double returnValue) {
-		myReturn = returnValue;
+		myReturn = new String("" + returnValue);
 
 	}
 
-	public double getReturn() {
+	public String getReturn() {
 		return myReturn;
 	}
 }

@@ -39,7 +39,6 @@ public class DataView extends PaneView {
 				myVariablesView);
 		myView.getPanes().addAll(t1, t2, t3);
 		this.getChildren().add(myView);
-
 	}
 
 	public void update(CommandsList commandsList, VariablesList variablesList) {
