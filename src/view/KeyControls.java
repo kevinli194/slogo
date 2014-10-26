@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
+import error_checking.InvalidArgumentsException;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -35,7 +36,7 @@ public class KeyControls implements Serializable {
 
     private Map<KeyCode, Instruction> keyMap = new HashMap<KeyCode, Instruction>();
 
-    public KeyControls (SlogoModel model, BorderPane window) {
+    public KeyControls (SlogoModel model, BorderPane window) throws InvalidArgumentsException {
         myModel = model;
         myWindow = window;
         myLocale = model.getLocale();
@@ -55,7 +56,7 @@ public class KeyControls implements Serializable {
 
     }
 
-    private void setKeyMap () {
+    private void setKeyMap () throws InvalidArgumentsException {
         Parser p = myModel.getParser();
         keyMap.put(KeyCode.W, p.parse(keyCommands.get(0) + " 5").pop());
         keyMap.put(KeyCode.S, p.parse(keyCommands.get(1) + " 5").pop());
@@ -73,7 +74,13 @@ public class KeyControls implements Serializable {
             public void handle (KeyEvent arg0) {
                 ObservableData data = myModel.getMyData();
                 if (keyMap.keySet().contains(arg0.getCode())) {
-                    keyMap.get(arg0.getCode()).execute(data);
+                    try {
+                        keyMap.get(arg0.getCode()).execute(data);
+                    }
+                    catch (InvalidArgumentsException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
                 }
 
                 // TODO: make sure only one parameter is put into the onkey command
@@ -83,7 +90,13 @@ public class KeyControls implements Serializable {
                     @SuppressWarnings("deprecation")
                     double value = arg0.getCode().impl_getCode();
                     current.addParam(new ConstantInstruction(value));
-                    myModel.parseAndExecute("onkey " + Double.toString(value));
+                    try {
+                        myModel.parseAndExecute("onkey " + Double.toString(value));
+                    }
+                    catch (InvalidArgumentsException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
 
                 }
             }

@@ -1,5 +1,6 @@
 package view;
 
+import error_checking.InvalidArgumentsException;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
@@ -37,7 +38,13 @@ public abstract class DataViewComponents extends ScrollView {
 				else
 					key = ":" + s.split(":")[0].trim();
 				System.out.println(key);
-				f.remove(key);
+				try {
+                    f.remove(key);
+                }
+                catch (InvalidArgumentsException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
 			}
 		});
 		return b;

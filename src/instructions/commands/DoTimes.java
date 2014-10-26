@@ -1,25 +1,26 @@
 package instructions.commands;
 
-import java.util.List;
 import instructions.BinaryInstruction;
-import instructions.ConstantInstruction;
 import instructions.Instruction;
 import instructions.ListInstruction;
 import instructions.VariableInstruction;
+import java.util.List;
 import model.ObservableData;
 import model.VariablesList;
+import error_checking.InvalidArgumentsException;
 
-//need to clean up code
+
+// need to clean up code
 
 public class DoTimes extends BinaryInstruction {
 
     /**
 	 * 
 	 */
-	private static final long serialVersionUID = 8586670318984101878L;
+    private static final long serialVersionUID = 8586670318984101878L;
 
-	@Override
-    public double execute (ObservableData data) {
+    @Override
+    public double execute (ObservableData data) throws InvalidArgumentsException {
 
         // parametor 0 = lististr of (variable, limit)
         ListInstruction listInstr = (ListInstruction) super.myParams.get(0);

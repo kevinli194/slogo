@@ -2,8 +2,8 @@ package instructions;
 
 
 import java.util.List;
-
 import error_checking.ErrorDialog;
+import error_checking.InvalidArgumentsException;
 import model.ObservableData;
 import model.VariablesList;
 
@@ -32,7 +32,7 @@ public class UserDefinedCommand extends UserDefinedInstruction {
 	}
 	
 	@Override
-	public double execute(ObservableData data) {
+	public double execute(ObservableData data) throws InvalidArgumentsException {
 		double returnVal;
 		VariablesList varList = (VariablesList) data.get("VariablesList");
 		// add new variable scope
@@ -44,7 +44,7 @@ public class UserDefinedCommand extends UserDefinedInstruction {
 		return returnVal;
 	}
 
-	private void setVariables(VariablesList varList, ObservableData data) {
+	private void setVariables(VariablesList varList, ObservableData data) throws InvalidArgumentsException {
 		for (int i = 0; i < super.numParams; i++) {
 			// TODO: NEEDS FURTHER ERROR CHECKING
 			if (i >= myVariables.size()) {

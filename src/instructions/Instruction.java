@@ -1,7 +1,7 @@
 package instructions;
 
 import java.io.Serializable;
-
+import error_checking.InvalidArgumentsException;
 import model.ObservableData;
 
 /**
@@ -17,8 +17,9 @@ public interface Instruction extends Serializable{
 	 * program, such as lists of history and scene nodes during drawing.
 	 * 
 	 * @return Double value of the expression
+	 * @throws InvalidArgumentsException 
 	 */
-	public double execute(ObservableData data);
+	public double execute(ObservableData data) throws InvalidArgumentsException;
 
 	/**
 	 * Gets the number of parameters used in the instruction, Used in the parser

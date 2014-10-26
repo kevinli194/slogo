@@ -1,5 +1,6 @@
 package instructions.commands;
 
+import error_checking.InvalidArgumentsException;
 import model.ObservableData;
 import instructions.ParameterInstruction;
 
@@ -16,7 +17,7 @@ public class IfElse extends ParameterInstruction {
 	}
 
 	@Override
-	public double execute(ObservableData data) {
+	public double execute(ObservableData data)throws InvalidArgumentsException {
 		double returnAmt = 0;
 		if (super.myParams.get(0).execute(data) != 0) {
 			returnAmt = super.myParams.get(1).execute(data);

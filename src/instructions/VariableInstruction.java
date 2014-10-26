@@ -1,5 +1,6 @@
 package instructions;
 
+import error_checking.InvalidArgumentsException;
 import model.ObservableData;
 import model.VariablesList;
 
@@ -16,9 +17,10 @@ public class VariableInstruction extends UserDefinedInstruction {
 	
 	/**
 	 * Gets value of variable from VariablesList
+	 * @throws InvalidArgumentsException 
 	 */
 	@Override
-	public double execute(ObservableData data) {
+	public double execute(ObservableData data) throws InvalidArgumentsException {
 		VariablesList varList = (VariablesList) data.get("VariablesList");
 		return varList.get(super.myName);
 	}

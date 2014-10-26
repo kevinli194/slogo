@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.util.Locale;
 import java.util.Observable;
 import java.util.Observer;
+import error_checking.InvalidArgumentsException;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -35,7 +36,7 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
     private static final double DEFAULT_XCOORDINATE = 300;
     private static final double DEFAULT_YCOORDINATE = 150;
 
-    public SlogoWindow (Locale locale, double width, double height) {
+    public SlogoWindow (Locale locale, double width, double height) throws InvalidArgumentsException {
         myModel = new SlogoModel(locale);
                 myModel.addObserver(this);
                 myTurtleView = new TurtleView(width, height);
@@ -100,8 +101,14 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
                 {
                     UserDefinedCommand current = (UserDefinedCommand) commandsList.get("onclick");
                     double[] coords = handleClickInstr(mouseEvent, current);
-                    myModel.parseAndExecute("onclick " + Double.toString(coords[0]) + " " +
-                                            Double.toString(coords[1]));
+                    try {
+                        myModel.parseAndExecute("onclick " + Double.toString(coords[0]) + " " +
+                                                Double.toString(coords[1]));
+                    }
+                    catch (InvalidArgumentsException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
 
                 }
 
@@ -117,8 +124,14 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
                 {
                     UserDefinedCommand current = (UserDefinedCommand) commandsList.get("onmove");
                     double[] coords = handleClickInstr(mouseEvent, current);
-                    myModel.parseAndExecute("onmove " + Double.toString(coords[0]) + " " +
-                                            Double.toString(coords[1]));
+                    try {
+                        myModel.parseAndExecute("onmove " + Double.toString(coords[0]) + " " +
+                                                Double.toString(coords[1]));
+                    }
+                    catch (InvalidArgumentsException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
 
                 }
 

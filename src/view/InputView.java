@@ -2,7 +2,7 @@ package view;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
-
+import error_checking.InvalidArgumentsException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -55,7 +55,13 @@ public class InputView extends PaneView {
 			// give the string to the back-end parser
 			@Override
 			public void handle(ActionEvent event) {
-				myModel.parseAndExecute(myInput.getText());
+                try {
+                    myModel.parseAndExecute(myInput.getText());
+                }
+                catch (InvalidArgumentsException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
 				myInput.clear();
 
 			}

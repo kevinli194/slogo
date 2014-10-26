@@ -1,11 +1,11 @@
 package instructions.commands;
 
-import java.util.List;
 import instructions.UnaryInstruction;
-import javafx.collections.ObservableList;
+import java.util.List;
 import javafx.scene.paint.Color;
 import model.ObservableData;
 import model.Pen;
+import error_checking.InvalidArgumentsException;
 
 public class SetPenColor extends UnaryInstruction {
 
@@ -15,7 +15,7 @@ public class SetPenColor extends UnaryInstruction {
 	private static final long serialVersionUID = -6544906017218135628L;
 
 	@Override
-	public double execute(ObservableData data) {
+	public double execute(ObservableData data) throws InvalidArgumentsException{
 
 		Pen myPen = data.getTurtle().getPen();
 		List<Color> colorList = myPen.getCustom();

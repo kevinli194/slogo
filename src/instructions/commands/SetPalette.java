@@ -1,16 +1,20 @@
 package instructions.commands;
 
+import instructions.ParameterInstruction;
 import java.util.ArrayList;
 import java.util.List;
-import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
-import instructions.ParameterInstruction;
 import model.BackgroundColor;
 import model.ObservableData;
 import model.Pen;
+import error_checking.InvalidArgumentsException;
 
 
 public class SetPalette extends ParameterInstruction {
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 7949829353535801393L;
     private static final int COLOR_INDEX = 0;
     private static final int R_VALUE = 1;
     private static final int G_VALUE = 2;
@@ -21,7 +25,7 @@ public class SetPalette extends ParameterInstruction {
     }
 
     @Override
-    public double execute (ObservableData data) {
+    public double execute (ObservableData data) throws InvalidArgumentsException {
 
         double index = (int) super.myParams.get(COLOR_INDEX).execute(data) - 1;
         int r = (int) super.myParams.get(R_VALUE).execute(data);
