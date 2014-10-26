@@ -61,13 +61,13 @@ public class SettingsView extends ToolBar implements Serializable {
 		languageBundle = ResourceBundle.getBundle(DEFAULT_DISPLAY_RESOURCE,
 				myLocale);
 		setView(width, height);
-		addButtons(model, view);
 		addBGColorPicker(view);
 		addPenColorPicker();
 		addPenSlider();
 		addLineProperty();
 		addTurtleChoices();
 		addTurtleUpload();
+		addButtons(model, view);
 
 	}
 
