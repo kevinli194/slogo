@@ -22,6 +22,13 @@ import javafx.scene.control.TabPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+/**
+ * The over-arching menu bar which enables the user to create new file, open saved
+ * file, save file, and choose among the language
+ * @author Kevin Li
+ * @author Mengen Huang
+ *
+ */
 public class MenuView extends MenuBar {
 
 	public static final String DEFAULT_MENU_RESOURCE = "resources.languages/Menu";
@@ -37,6 +44,13 @@ public class MenuView extends MenuBar {
 	private double myHeight;
 	private ResourceBundle languageBundle;
 
+	/**
+	 * Create the MenuView , set up menuItems and set up the localeMap
+	 * @param locale
+	 * @param tabs
+	 * @param width
+	 * @param height
+	 */
 	public MenuView(Locale locale, TabPane tabs, double width,
 			double height) {
 
@@ -55,13 +69,22 @@ public class MenuView extends MenuBar {
 
 	}
 
+	/**
+	 * Set up the localeMap
+	 */
 	private void setMap() {
 		localeMap.put("English", new Locale("en", "US"));
 		localeMap.put("中文", new Locale("cn", "CN"));
 		localeMap.put("Français", new Locale("fr", "FR"));
 	}
 
-	public void createFileMenu(Locale locale, double width, double height) {
+	/**
+	 * create the Menu 
+	 * @param locale languaeg and locale applied
+	 * @param width width of the view
+	 * @param height height of the view
+	 */
+	private void createFileMenu(Locale locale, double width, double height) {
 		languageBundle = ResourceBundle.getBundle(DEFAULT_MENU_RESOURCE,
 				myLocale);
 		Menu menuFile = new Menu(languageBundle.getString("File"));
@@ -71,6 +94,11 @@ public class MenuView extends MenuBar {
 		this.getMenus().addAll(menuFile, menuLanguage);
 	}
 
+	/**
+	 * Add in MenuItems to enable the user to choose from the language and
+	 * change the locale 
+	 * @param menuLanguage Menu to choose language
+	 */
 	private void getLocale(Menu menuLanguage) {
 		MenuItem langEnglish = makeLanguageItem("English");
 		MenuItem langChinese = makeLanguageItem("中文");
@@ -79,6 +107,12 @@ public class MenuView extends MenuBar {
 		menuLanguage.getItems().addAll(langEnglish, langChinese, langFrench);
 	}
 
+	/**
+	 * Method to change the menu and pass in the new locale after user changes
+	 * the language option
+	 * @param language String that represents the language name
+	 * @return the MenuItem shown on the menu
+	 */
 	private MenuItem makeLanguageItem(String language) {
 		MenuItem languageItem = new MenuItem(language);
 		languageItem.setOnAction(new EventHandler<ActionEvent>() {
@@ -94,6 +128,13 @@ public class MenuView extends MenuBar {
 		return languageItem;
 	}
 
+	/**
+	 * Set all the MenuItems in the File Menu
+	 * @param locale current language and locale 
+	 * @param width width of the veiw
+	 * @param height height of the view
+	 * @param menuFile the File Menu all the Menu Item are listed
+	 */
 	private void setFile(Locale locale, double width, double height,
 			Menu menuFile) {
 		newFile(locale, width, height, menuFile);
@@ -101,6 +142,13 @@ public class MenuView extends MenuBar {
 		saveFile(locale, width, height, menuFile);
 	}
 
+	/**
+	 * Open the new file and loaded in the saved state of the Slogo window
+	 * @param locale current language and locale 
+	 * @param width width of the view
+	 * @param height height of the view
+	 * @param menuFile the File Menu where the Menu Item is listed
+	 */
 	private void openFile(Locale locale, double width, double height,
 			Menu menuFile) {
 		MenuItem openFile = new MenuItem(languageBundle.getString("Open"));
@@ -135,6 +183,13 @@ public class MenuView extends MenuBar {
 
 	}
 
+	/**
+	 *Save state of the Slogo window
+	 * @param locale current language and locale
+	 * @param width width of the view
+	 * @param height height of the view
+	 * @param menuFile the File Menu where the Menu Item is listed
+	 */
 	private void saveFile(Locale locale, double width, double height,
 			Menu menuFile) {
 		MenuItem saveFile = new MenuItem(languageBundle.getString("SaveAs"));
@@ -163,6 +218,13 @@ public class MenuView extends MenuBar {
 
 	}
 
+	/**
+	 * Create a new tab and load in a new Slogo Window with view and model
+	 * @param locale current language and locale
+	 * @param width width of the view
+	 * @param height height of the view
+	 * @param menuFile the File Menu where the Menu Item is listed
+	 */
 	private void newFile(Locale locale, double width, double height,
 			Menu menuFile) {
 		MenuItem newFile = new MenuItem(languageBundle.getString("New"));
@@ -182,11 +244,19 @@ public class MenuView extends MenuBar {
 		menuFile.getItems().add(newFile);
 	}
 
+	/**
+	 * Set up the size of the view
+	 * @param width width of the view
+	 * @param height height of the view
+	 */
 	private void setView(double width, double height) {
 		setPrefSize(width, height * 1 / 16);
 
 	}
 
+	/**
+	 * Clear the Menu
+	 */
 	private void clear() {
 		this.getMenus().clear();
 	}

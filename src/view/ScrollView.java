@@ -8,6 +8,13 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
+/**
+ * The abstract class which is the super class of HistoryResults View and 
+ * DataView class.
+ * @author Mengen Huang
+ * @author Kevin Li
+ *
+ */
 public abstract class ScrollView extends ScrollPane {
 
 	private static final int INSTRUCTION_FONT_SIZE = 12;
@@ -17,6 +24,12 @@ public abstract class ScrollView extends ScrollPane {
 	public ScrollView() {
 	}
 
+	/**
+	 * Set up the ScrollView
+	 * @param input InputView
+	 * @param width width of the view
+	 * @param height height of the view
+	 */
 	public ScrollView(InputView input, double width, double height) {
 		myInput = input;
 		myView = new VBox();
@@ -24,12 +37,21 @@ public abstract class ScrollView extends ScrollPane {
 		this.setContent(myView);
 	}
 
+	/**
+	 * Set up the size of the view
+	 * @param width width of the view
+	 * @param height height of the view
+	 */
 	public void setView(double width, double height) {
 		setPrefSize(width, height);
 		setMinSize(width, height);
 		setMaxSize(width, height);
 	}
 
+	/**
+	 * Take in a string and add the String as a HBox
+	 * @param s String displayed
+	 */
 	public void addTextBox(String s) {
 		HBox h = new HBox();
 		Text t = makeClickableText(s);
@@ -37,6 +59,11 @@ public abstract class ScrollView extends ScrollPane {
 		myView.getChildren().add(h);
 	}
 
+	/**
+	 * Take in a string and make it into a clickable Text
+	 * @param s String displayed
+	 * @return the clickable text
+	 */
 	protected Text makeClickableText(String s) {
 		Text t = new Text(s + "\n");
 		t.setFont(new Font(INSTRUCTION_FONT_SIZE));

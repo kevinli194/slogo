@@ -34,11 +34,14 @@ import javax.imageio.ImageIO;
 
 import model.BackgroundColor;
 import model.SlogoModel;
+/**
+ * The settings view at the top of the window
+ * @author Kevin Li
+ * @author Mengen Huang
+ *
+ */
 
-public class SettingsView extends ToolBar implements Serializable {
-	/**
-	 * 
-	 */
+public class SettingsView extends ToolBar {
 
 	private static final long serialVersionUID = 660774956006597491L;
 	public static final String DEFAULT_DISPLAY_RESOURCE = "resources.languages/Display";
@@ -54,6 +57,14 @@ public class SettingsView extends ToolBar implements Serializable {
 	Locale myLocale;
 	ResourceBundle languageBundle;
 
+	/**
+	 * Create the SettingsView
+	 * @param model model used in the window
+	 * @param view turtle View passed in
+	 * @param width width of the view
+	 * @param height height of the view
+	 * @param locale current language and locale applied 
+	 */
 	public SettingsView(SlogoModel model, TurtleView view, double width,
 			double height, Locale locale) {
 		myModel = model;
@@ -71,10 +82,19 @@ public class SettingsView extends ToolBar implements Serializable {
 
 	}
 
+	/**
+	 * set the size of the view
+	 * @param width width of the view
+	 * @param height height of the view
+	 */
 	private void setView(double width, double height) {
 		setPrefSize(width, height * 1 / 16);
 	}
 
+	/**
+	 * Add new color of TurtleView background color
+	 * @param view turtleView
+	 */
 	private void addBGColorPicker(TurtleView view) {
 		myBGColor = new ColorPicker();
 		myBGColor.setStyle("-fx-color-label-visible: false ;");
@@ -93,6 +113,9 @@ public class SettingsView extends ToolBar implements Serializable {
 		this.getItems().add(new Separator());
 	}
 
+	/**
+	 * Enable the user to pick the pen color
+	 */
 	private void addPenColorPicker() {
 		myPenColor = new ColorPicker();
 		myPenColor.setStyle("-fx-color-label-visible: false ;");
@@ -110,6 +133,9 @@ public class SettingsView extends ToolBar implements Serializable {
 
 	}
 
+	/**
+	 * Enable the user to specify the properties of the line
+	 */
 	private void addLineProperty() {
 		myLineProperties = new ComboBox<String>();
 		myLineProperties.getItems().addAll(languageBundle.getString("Solid"),
@@ -153,6 +179,9 @@ public class SettingsView extends ToolBar implements Serializable {
 		this.getItems().add(new Separator());
 	}
 
+	/**
+	 * add slider to specify the pen properties
+	 */
 	private void addPenSlider() {
 		myPenSize = new Slider();
 		myPenSize.setMin(0);
@@ -178,6 +207,9 @@ public class SettingsView extends ToolBar implements Serializable {
 		this.getItems().add(myPenSize);
 	}
 
+	/**
+	 * More choices of turtle image
+	 */
 	private void addTurtleChoices() {
 		myTurtleChoices = new ComboBox<Image>();
 		Image myDefaultOn = new Image(getClass().getResourceAsStream(IMAGE_1));
@@ -225,6 +257,9 @@ public class SettingsView extends ToolBar implements Serializable {
 				.initListofTurtles(myTurtleChoices.getItems());
 	}
 
+	/**
+	 * Enable the user to upload self-defined turtle image
+	 */
 	private void addTurtleUpload() {
 		FileChooser fc = new FileChooser();
 		Button upload = new Button(languageBundle.getString("Upload"));
@@ -250,6 +285,11 @@ public class SettingsView extends ToolBar implements Serializable {
 
 	}
 
+	/**
+	 * method to add buttons
+	 * @param model SlogoModel
+	 * @param view  TurtleView
+	 */
 	private void addButtons(SlogoModel model, TurtleView view) {
 		Button toggleTurtle = makeButton(
 				languageBundle.getString("ShowHideTurtle"),
@@ -265,7 +305,13 @@ public class SettingsView extends ToolBar implements Serializable {
 		this.getItems().add(new Separator());
 
 	}
-
+	
+	/**
+	 * Method to make buttons
+	 * @param property String to show on the button
+	 * @param handler the EventHandler which executed after the ActionEvent is triggered
+	 * @return the button made
+	 */
 	private Button makeButton(String property, EventHandler<ActionEvent> handler) {
 		Button result = new Button();
 		result.setText(property);
@@ -273,16 +319,29 @@ public class SettingsView extends ToolBar implements Serializable {
 		return result;
 	}
 
-	public ObservableList<Color> getCustomColors(ColorPicker colorpicker) {
+	/**
+	 * get the Color the user picks
+	 * @param colorpicker ColorPicker 
+	 * @returna list of Color
+	 */
+	private ObservableList<Color> getCustomColors(ColorPicker colorpicker) {
 		ObservableList<Color> customColors = colorpicker.getCustomColors();
 		return customColors;
 	}
 
+	/**
+	 * change the background color of turtle view after user picks
+	 * @param generate Color the user picks
+	 */
 	public void changeBGPicked(Color generate) {
 		myBGColor.setValue(generate);
 
 	}
 
+	/**
+	 * change the pen color after user picks
+	 * @param generate Color the user picks
+	 */
 	public void changePenPicked(Color generate) {
 		myPenColor.setValue(generate);
 

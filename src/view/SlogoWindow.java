@@ -28,7 +28,7 @@ import model.VariablesList;
  * @author Kevin Li
  *
  */
-public class SlogoWindow extends BorderPane implements Observer, Serializable {
+public class SlogoWindow extends BorderPane implements Observer {
 
 	private static final long serialVersionUID = 4532547099439124045L;
 	KeyControls myControls;
@@ -45,8 +45,8 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 	/**
 	 * 
 	 * @param locale the language and locale used in the window
-	 * @param width width of 
-	 * @param height
+	 * @param width width of View
+	 * @param height height of View
 	 */
 	public SlogoWindow(Locale locale, double width, double height) {
 		myModel = new SlogoModel(locale);
@@ -75,6 +75,10 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 
 	}
 
+	/**
+	 * Overrided method by Observer Pattern. Update all view when Observable data
+	 * change and notify the observers.
+	 */
 	@Override
 	public void update(Observable o, Object arg) {
 
@@ -93,16 +97,26 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 				.getPen().getPenColor());
 	}
 
+	/**
+	 * get the model of the window
+	 * @return the model corresponding to the window
+	 */
 	public SlogoModel getModel() {
 		return myModel;
 	}
 
+	/**
+	 * load the file which stores the history commands
+	 * @param history The history commands recorded 
+	 */
 	public void loadFile(History history) {
 		myModel.getMyData().loadFile(history);
 
 	}
 
-	// TODO:error checking to only take two variables
+	/**
+	 * Click on or move the turtle to change the state(image) if the command is listed
+	 */
 	private void onClickCommand() {
 		CommandsList commandsList = (CommandsList) myModel.getMyData().get(
 				"CommandsList");
@@ -148,7 +162,13 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 
 	}
 
-	public double[] handleClickInstr(MouseEvent mouseEvent, Instruction current) {
+	/**
+	 * Help function of onClickCommand to handle Click Instruction
+	 * @param mouseEvent
+	 * @param current current Instruction
+	 * @return the coordinates where the mouseEvent takes place
+	 */
+	private double[] handleClickInstr(MouseEvent mouseEvent, Instruction current) {
 		double[] coords = new double[2];
 		coords[0] = mouseEvent.getX() - DEFAULT_XCOORDINATE;
 		coords[1] = -mouseEvent.getY() + DEFAULT_YCOORDINATE;

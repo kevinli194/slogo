@@ -19,11 +19,14 @@ import model.ObservableData;
 import model.SlogoModel;
 import parser.Parser;
 
+/**
+ * Take in key W,S,A,D,X as the key to move the turtle forward, backward, left,
+ * right and set the turtle's head straight upward.
+ * @author Mengen Huang
+ * @author Kevin Li
+ */
+public class KeyControls {
 
-public class KeyControls implements Serializable {
-    /**
-	 * 
-	 */
 
     private static final long serialVersionUID = -6381483434400107432L;
     public static final String DEFAULT_LANGUAGE_PACKAGE = "resources.languages/";
@@ -35,6 +38,11 @@ public class KeyControls implements Serializable {
 
     private Map<KeyCode, Instruction> keyMap = new HashMap<KeyCode, Instruction>();
 
+    /**
+     * create the KeyControl 
+     * @param model model run in the window
+     * @param window window shown on the screen
+     */
     public KeyControls (SlogoModel model, BorderPane window) {
         myModel = model;
         myWindow = window;
@@ -44,6 +52,10 @@ public class KeyControls implements Serializable {
         makeKeyCommands();
     }
 
+    /**
+     * get the commands in different language to move forward, backward, left,
+     * right and setheading.
+     */
     private void setCommandsList () {
         ResourceBundle languageBundle =
                 ResourceBundle.getBundle(DEFAULT_LANGUAGE_PACKAGE + "Commands", myLocale);
@@ -55,6 +67,9 @@ public class KeyControls implements Serializable {
 
     }
 
+    /**
+     * Set up the keyMap. Match the Keycode with the specific commands.
+     */
     private void setKeyMap () {
         Parser p = myModel.getParser();
         keyMap.put(KeyCode.W, p.parse(keyCommands.get(0) + " 5").pop());
@@ -64,6 +79,10 @@ public class KeyControls implements Serializable {
         keyMap.put(KeyCode.X, p.parse(keyCommands.get(4) + " 0").pop());
     }
 
+    /**
+     * Once a key is pushed, the corresponding event is triggered so that the 
+     * turtle will move according to the keys pressed.
+     */
     public void makeKeyCommands () {
         CommandsList commandsList = (CommandsList) myModel.getMyData().get("CommandsList");
 
