@@ -9,8 +9,7 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-import error_checking.InvalidArgumentsException;
-import model.History;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Menu;
@@ -20,161 +19,166 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
+import model.History;
+import error_checking.InvalidArgumentsException;
 
 public class MenuView extends MenuBar {
-    TabPane myTabs;
-    private int myTabCount;
-    private FileChooser myFileChooser;
-    private Stage myStage;
 
-    private Locale myLocale;
-    private Map<String, Locale> localeMap = new HashMap<String, Locale>();
+	public static final String DEFAULT_MENU_RESOURCE = "resources.languages/Menu";
 
-    private double myWidth;
-    private double myHeight;
+	TabPane myTabs;
+	private int myTabCount;
+	private FileChooser myFileChooser;
 
-    public MenuView (Stage stage, Locale locale, TabPane tabs, double width,
-                     double height) {
+	private Locale myLocale;
+	private Map<String, Locale> localeMap = new HashMap<String, Locale>();
 
-        myLocale = locale;
+	private double myWidth;
+	private double myHeight;
+	private ResourceBundle languageBundle;
 
-        myTabs = tabs;
-        myTabCount = 1;
-        myStage = stage;
+	public MenuView(Locale locale, TabPane tabs, double width,
+			double height) {
 
-        myWidth = width;
-        myHeight = height;
+		myLocale = locale;
 
-        myFileChooser = new FileChooser();
-        setMap();
-        setView(width, height);
-        createFileMenu(locale, width, height);
+		myTabs = tabs;
+		myTabCount = 1;
 
-    }
+		myWidth = width;
+		myHeight = height;
 
-    private void setMap () {
-        localeMap.put("English", new Locale("en", "US"));
-        localeMap.put("中文", new Locale("cn", "CN"));
-    }
+		myFileChooser = new FileChooser();
+		setMap();
+		setView(width, height);
+		createFileMenu(locale, width, height);
 
-    public void createFileMenu (Locale locale, double width, double height) {
-        Menu menuFile = new Menu("File");
-        Menu menuLanguage = new Menu("Language");
-        getLocale(menuLanguage);
-        setFile(myLocale, width, height, menuFile);
-        this.getMenus().addAll(menuFile, menuLanguage);
-    }
+	}
 
-    private void getLocale (Menu menuLanguage) {
-        MenuItem langEnglish = makeLanguageItem("English");
-        MenuItem langChinese = makeLanguageItem("中文");
+	private void setMap() {
+		localeMap.put("English", new Locale("en", "US"));
+		localeMap.put("中文", new Locale("cn", "CN"));
+		localeMap.put("Français", new Locale("fr", "FR"));
+	}
 
-        menuLanguage.getItems().addAll(langEnglish, langChinese);
-    }
+	public void createFileMenu(Locale locale, double width, double height) {
+		languageBundle = ResourceBundle.getBundle(DEFAULT_MENU_RESOURCE,
+				myLocale);
+		Menu menuFile = new Menu(languageBundle.getString("File"));
+		Menu menuLanguage = new Menu(languageBundle.getString("Language"));
+		getLocale(menuLanguage);
+		setFile(myLocale, width, height, menuFile);
+		this.getMenus().addAll(menuFile, menuLanguage);
+	}
 
-    private MenuItem makeLanguageItem (String language) {
-        MenuItem languageItem = new MenuItem(language);
-        languageItem.setOnAction(new EventHandler<ActionEvent>() {
+	private void getLocale(Menu menuLanguage) {
+		MenuItem langEnglish = makeLanguageItem("English");
+		MenuItem langChinese = makeLanguageItem("中文");
+		MenuItem langFrench = makeLanguageItem("Français");
 
-            @Override
-            public void handle (ActionEvent event) {
-                myLocale = localeMap.get(language);
-                clear();
-                createFileMenu(myLocale, myWidth, myHeight);
-            }
+		menuLanguage.getItems().addAll(langEnglish, langChinese, langFrench);
+	}
 
-        });
-        return languageItem;
-    }
+	private MenuItem makeLanguageItem(String language) {
+		MenuItem languageItem = new MenuItem(language);
+		languageItem.setOnAction(new EventHandler<ActionEvent>() {
 
-    private void setFile (Locale locale, double width, double height,
-                          Menu menuFile) {
-        newFile(locale, width, height, menuFile);
-        openFile(locale, width, height, menuFile);
-        saveFile(locale, width, height, menuFile);
-    }
+			@Override
+			public void handle(ActionEvent event) {
+				myLocale = localeMap.get(language);
+				clear();
+				createFileMenu(myLocale, myWidth, myHeight);
+			}
 
-    private void openFile (Locale locale, double width, double height,
-                           Menu menuFile) {
-        MenuItem openFile = new MenuItem("Open...");
-        openFile.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle (ActionEvent t) {
-                File file = myFileChooser.showOpenDialog(myStage);
-                if (file != null) {
-                    try {
-                        ObjectInputStream is = new ObjectInputStream(
-                                                                     new FileInputStream(file));
-                        History h = (History) is.readObject();
-                        Tab tab = new Tab(file.getName());
-                        SlogoWindow additionalWindow = new SlogoWindow(locale,
-                                                                       width, height * 9 / 10);
-                        additionalWindow.loadFile(h);
-                        additionalWindow.getModel().rerun();
-                        tab.setContent(additionalWindow);
-                        myTabs.getTabs().add(tab);
-                        myTabs.getSelectionModel().select(tab);
+		});
+		return languageItem;
+	}
 
-                    }
-                    catch (IOException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
-                    catch (ClassNotFoundException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
+	private void setFile(Locale locale, double width, double height,
+			Menu menuFile) {
+		newFile(locale, width, height, menuFile);
+		openFile(locale, width, height, menuFile);
+		saveFile(locale, width, height, menuFile);
+	}
+
+	private void openFile(Locale locale, double width, double height,
+			Menu menuFile) {
+		MenuItem openFile = new MenuItem(languageBundle.getString("Open"));
+		openFile.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent t) {
+				File file = myFileChooser.showOpenDialog(new Stage());
+				if (file != null) {
+					try {
+						ObjectInputStream is = new ObjectInputStream(
+								new FileInputStream(file));
+						History h = (History) is.readObject();
+						Tab tab = new Tab(file.getName());
+						SlogoWindow additionalWindow = new SlogoWindow(locale,
+								width, height * 9 / 10);
+						additionalWindow.loadFile(h);
+						additionalWindow.getModel().rerun();
+						tab.setContent(additionalWindow);
+						myTabs.getTabs().add(tab);
+						myTabs.getSelectionModel().select(tab);
+
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (ClassNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
                     catch (InvalidArgumentsException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
-                }
-            }
-        });
-        menuFile.getItems().add(openFile);
+				}
+			}
+		});
+		menuFile.getItems().add(openFile);
 
-    }
+	}
 
-    private void saveFile (Locale locale, double width, double height,
-                           Menu menuFile) {
-        MenuItem saveFile = new MenuItem("Save As...");
-        saveFile.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle (ActionEvent t) {
-                File file = myFileChooser.showSaveDialog(myStage);
-                if (file != null) {
-                    try {
-                        ObjectOutputStream os = new ObjectOutputStream(
-                                                                       new FileOutputStream(file));
-                        int currentTab = myTabs.getSelectionModel()
-                                .getSelectedIndex();
-                        os.writeObject(((SlogoWindow) myTabs.getTabs()
-                                .get(currentTab).getContent()).getModel()
-                                .getMyData().get("History"));
-                        os.close();
-                    }
-                    catch (IOException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
+	private void saveFile(Locale locale, double width, double height,
+			Menu menuFile) {
+		MenuItem saveFile = new MenuItem(languageBundle.getString("SaveAs"));
+		saveFile.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent t) {
+				File file = myFileChooser.showSaveDialog(new Stage());
+				if (file != null) {
+					try {
+						ObjectOutputStream os = new ObjectOutputStream(
+								new FileOutputStream(file));
+						int currentTab = myTabs.getSelectionModel()
+								.getSelectedIndex();
+						os.writeObject(((SlogoWindow) myTabs.getTabs()
+								.get(currentTab).getContent()).getModel()
+								.getMyData().get("History"));
+						os.close();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 
-                }
-            }
-        });
-        menuFile.getItems().add(saveFile);
+				}
+			}
+		});
+		menuFile.getItems().add(saveFile);
 
-    }
+	}
 
-    private void newFile (Locale locale, double width, double height,
-                          Menu menuFile) {
-        MenuItem newFile = new MenuItem("New...");
-        newFile.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle (ActionEvent t) {
+	private void newFile(Locale locale, double width, double height,
+			Menu menuFile) {
+		MenuItem newFile = new MenuItem(languageBundle.getString("New"));
+		newFile.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent t) {
 
-                Tab tab = new Tab("Program " + myTabCount++);
-                SlogoWindow additionalWindow;
+				Tab tab = new Tab(languageBundle.getString("Program")
+						+ myTabCount++);
+				SlogoWindow additionalWindow;
                 try {
                     additionalWindow = new SlogoWindow(locale, width,
-                                                       height * 9 / 10);
+                    		height * 9 / 10);
                     tab.setContent(additionalWindow);
                     myTabs.getTabs().add(tab);
                     myTabs.getSelectionModel().select(tab);
@@ -183,20 +187,19 @@ public class MenuView extends MenuBar {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
+			}
+		});
 
-            }
-        });
+		menuFile.getItems().add(newFile);
+	}
 
-        menuFile.getItems().add(newFile);
-    }
+	private void setView(double width, double height) {
+		setPrefSize(width, height * 1 / 16);
 
-    private void setView (double width, double height) {
-        setPrefSize(width, height * 1 / 16);
+	}
 
-    }
-
-    private void clear () {
-        this.getMenus().clear();
-    }
+	private void clear() {
+		this.getMenus().clear();
+	}
 
 }
