@@ -13,9 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
-
 public class Turtle extends TurtleAbstract implements Feature {
-
 
 	private static final long serialVersionUID = 3491015094836744017L;
 
