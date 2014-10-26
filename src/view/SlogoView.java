@@ -1,5 +1,7 @@
 package view;
 
+import java.util.Locale;
+
 import javafx.scene.Scene;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.BorderPane;
@@ -10,13 +12,13 @@ public class SlogoView {
 	private BorderPane myRoot;
 	private TabPane myTabs;
 
-	public SlogoView(Stage stage, String language, double width, double height) {
+	public SlogoView(Stage stage, Locale locale, double width, double height) {
 		myTabs = new TabPane();
 		setTabView(width, height * 19 / 20);
 
 		myRoot = new BorderPane();
 		myRoot.setCenter(myTabs);
-		myRoot.setTop(new MenuView(stage, language, myTabs, width, height));
+		myRoot.setTop(new MenuView(stage, locale, myTabs, width, height));
 		myScene = new Scene(myRoot, width, height);
 	}
 

@@ -32,10 +32,9 @@ public class For extends BinaryInstruction {
 		VariablesList varList = (VariablesList) data.get("VariablesList");
 
 		for (double i = start; i < end + 1; i = i + increment) {
-			Instruction constant = new ConstantInstruction(i);
 
 			// parameter 1 = listinstr of commands
-			varList.add(variable.getName(), constant);
+			varList.add(variable.getName(), i);
 			super.myParams.get(1).execute(data);
 
 		}

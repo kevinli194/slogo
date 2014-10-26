@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Locale;
+
 import javafx.application.Application;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -20,11 +22,11 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		String language = "English";
+		Locale locale = new Locale("en","US");
 
 		primaryStage.setResizable(false);
-		myModel = new SlogoModel();
-		myView = new SlogoView(primaryStage, language, SCREEN_WIDTH,
+		myModel = new SlogoModel(locale);
+		myView = new SlogoView(primaryStage, locale, SCREEN_WIDTH,
 				SCREEN_HEIGHT);
 
 		primaryStage.setScene(myView.generateScene());

@@ -23,6 +23,7 @@ public class SettingsView extends ToolBar implements Serializable {
     /**
 	 * 
 	 */
+
     private static final long serialVersionUID = 660774956006597491L;
     ColorPicker myBGColor;
     ColorPicker myPenColor;
@@ -32,7 +33,7 @@ public class SettingsView extends ToolBar implements Serializable {
                          double height) {
         myModel = model;
         setView(width, height);
-        addButtons(model);
+        addButtons(model, view);
         addBGColorPicker(view);
         addPenColorPicker();
     }
@@ -75,12 +76,14 @@ public class SettingsView extends ToolBar implements Serializable {
 
     }
 
-    private void addButtons (SlogoModel model) {
+    private void addButtons (SlogoModel model, TurtleView view) {
         Button toggleTurtle = makeButton("Show/Hide Turtle",
                                          handle -> model.toggleTurtle());
+        Button toggleGrid = makeButton("Show/Hide Grid",
+                                       handle -> view.toggleGrid());
         Button clear = makeButton("Clear", handle -> model.clear());
         Button help = makeButton("Help Page", handle -> model.accessHelpHTML());
-        this.getItems().addAll(toggleTurtle, clear, help);
+        this.getItems().addAll(toggleTurtle, toggleGrid, clear, help);
         this.getItems().add(new Separator());
 
     }

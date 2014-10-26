@@ -58,7 +58,7 @@ public class InstructionFactory implements Serializable {
 		} else if (type.matches(VARIABLE_REGEX)) {
 			return new VariableInstruction(type);
 		}
-		else if (type.matches(COMMAND_REGEX)) {
+		else if (type.matches(COMMAND_REGEX) || type.matches(CHINESE_REGEX)) {
 			CommandsList allCommands = (CommandsList) myData.get("CommandsList");
 //			//TODO
 //			if(allCommands.contains(type) == false){
@@ -66,7 +66,6 @@ public class InstructionFactory implements Serializable {
 //			}
 //			
 			return allCommands.get(type);
-
 		}
 		return null;
 	}

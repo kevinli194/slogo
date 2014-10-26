@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class TurtlesList implements Feature {
 	/**
@@ -9,35 +10,50 @@ public class TurtlesList implements Feature {
 	 */
 	private static final long serialVersionUID = 7316151669215320429L;
 	private List<Turtle> allTurtles;
-	private List<Integer> activeTurtles;
+	private List<Integer> activeIDs;
+	private Stack<List<Integer>> turtleScope;
 	
 	public TurtlesList() {
 		allTurtles = new ArrayList<Turtle>();
-		activeTurtles = new ArrayList<Integer>();
+		activeIDs = new ArrayList<Integer>();
+		turtleScope = new Stack<List<Integer>>();
 		addTurtle();
+	}
+	
+	public double getNumTurtles() {
+		return (double) allTurtles.size();
 	}
 	
 	public void addTurtle() {
 		allTurtles.add(new Turtle());
-		activeTurtles.add(allTurtles.size());
+		activeIDs.add(allTurtles.size());
+	}
+	
+	public void addScope(List<Integer> active) {
+		turtleScope.push(activeIDs);
+		setActive(active);
+	}
+	
+	public void removeScope() {
+		activeIDs = turtleScope.pop();
 	}
 	
 	public void setActive(List<Integer> active) {
-		activeTurtles = active;
+		activeIDs = active;
 	}
 	
 	public void setInactive(List<Integer> inactive) {
-		activeTurtles.removeAll(inactive);
+		activeIDs.removeAll(inactive);
 	}
-	
-	public List<Integer> getActiveIDs() {
-		return new ArrayList<Integer>(activeTurtles);
+
+	public double getActiveID() {
+		return (double) activeIDs.get(activeIDs.size()-1);
 	}
 	
 	@Override
 	public void clear() {
 		allTurtles.clear();
-		activeTurtles.clear();
+		activeIDs.clear();
 		addTurtle();
 	}
 

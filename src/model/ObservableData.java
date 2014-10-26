@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -18,13 +19,25 @@ public class ObservableData implements Serializable {
 	private Map<String, Feature> myFeatures;
 	private Turtle myTurtle;
 
-	public ObservableData() {
+	private Locale myLocale;
+
+	private String myReturn;
+
+	private TurtlesList myTurtles;
+
+	public ObservableData(Locale locale) {
 		myFeatures = new HashMap<String, Feature>();
 		myTurtle = new Turtle();
 
+		myLocale = locale;
+
+		myReturn = new String("");
+
+		myTurtles = new TurtlesList();
+
 		// Add new features to this list
 		addAllToMyFeatures(new History(), new VariablesList(),
-				new CommandsList(), new BackgroundColor());
+				new CommandsList(myLocale), new BackgroundColor());
 	}
 
 	private void addAllToMyFeatures(Feature... features) {
@@ -37,6 +50,15 @@ public class ObservableData implements Serializable {
 
 	public Turtle getTurtle() {
 		return myTurtle;
+	}
+
+	/**
+	 * Gets the TurtlesList for all turtles in the current program
+	 * 
+	 * @return TurtlesList for the current program
+	 */
+	public TurtlesList getTurtles() {
+		return myTurtles;
 	}
 
 	// If feature needed, get feature by class name
@@ -54,10 +76,20 @@ public class ObservableData implements Serializable {
 			myFeatures.get(key).clear();
 		}
 		myTurtle.clear();
+		myReturn = new String("");
 
 	}
 
 	public void loadFile(History history) {
 		myFeatures.put("history", history);
+	}
+
+	public void changeReturn(double returnValue) {
+		myReturn = new String("" + returnValue);
+
+	}
+
+	public String getReturn() {
+		return myReturn;
 	}
 }
