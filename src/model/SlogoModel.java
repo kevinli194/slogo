@@ -24,7 +24,7 @@ public class SlogoModel extends Observable implements Serializable {
 	Parser myParser;
 
 	public SlogoModel(Locale locale) {
-		myLocale=locale;
+		myLocale = locale;
 		myData = new ObservableData(myLocale);
 		myParser = new Parser(myData);
 	}
@@ -103,8 +103,8 @@ public class SlogoModel extends Observable implements Serializable {
 	public Parser getParser() {
 		return myParser;
 	}
-	
-	public Locale getLocale(){
+
+	public Locale getLocale() {
 		return myLocale;
 	}
 
@@ -125,6 +125,11 @@ public class SlogoModel extends Observable implements Serializable {
 		}
 		setChanged();
 		notifyObservers(myData);
+
+	}
+
+	public void setPenSize(double width) {
+		myData.getTurtle().getPen().setStrokeWidth(width);
 
 	}
 
