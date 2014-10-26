@@ -11,7 +11,7 @@ import java.util.Stack;
 import model.ObservableData;
 import error_checking.ErrorDialog;
 import error_checking.InvalidArgumentsException;
-import error_checking.SlogoException;
+import error_checking.InstructionDefineException;
 
 
 /**
@@ -136,9 +136,8 @@ public class Parser implements Serializable {
             return closePos;
         }
         else {
-            // TODO: exception message
             new ErrorDialog("MISSING BRACKET.");
-            throw new SlogoException("MISSING BRACKET.");
+            throw new InstructionDefineException("MISSING BRACKET.");
         }
 
     }
@@ -152,7 +151,6 @@ public class Parser implements Serializable {
         }
         int numParams = instr.getNumParams();
         for (int i = 0; i < numParams; i++) {
-            // Add error exceptions HERE
             instr.addParam(iStack.pop());
         }
     }
