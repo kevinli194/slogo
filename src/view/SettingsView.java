@@ -1,5 +1,6 @@
 package view;
 
+import instructions.Instruction;
 import java.io.Serializable;
 
 import javafx.beans.value.ChangeListener;
@@ -13,15 +14,20 @@ import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Separator;
 import javafx.scene.control.Slider;
 import javafx.scene.control.ToolBar;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import model.BackgroundColor;
+import model.CommandsList;
+import model.History;
 import model.SlogoModel;
 
+
 public class SettingsView extends ToolBar implements Serializable {
-	/**
+    /**
 	 * 
 	 */
+
 	private static final long serialVersionUID = 660774956006597491L;
 	ColorPicker myBGColor;
 	ColorPicker myPenColor;
