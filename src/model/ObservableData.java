@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -17,18 +18,26 @@ public class ObservableData implements Serializable {
 	private static final long serialVersionUID = -8636982923572910062L;
 	private Map<String, Feature> myFeatures;
 	private Turtle myTurtle;
+
+	private Locale myLocale;
+
 	private String myReturn;
+
 	private TurtlesList myTurtles;
 
-	public ObservableData() {
+	public ObservableData(Locale locale) {
 		myFeatures = new HashMap<String, Feature>();
 		myTurtle = new Turtle();
+
+		myLocale = locale;
+
 		myReturn = new String("");
+
 		myTurtles = new TurtlesList();
 
 		// Add new features to this list
 		addAllToMyFeatures(new History(), new VariablesList(),
-				new CommandsList(), new BackgroundColor());
+				new CommandsList(myLocale), new BackgroundColor());
 	}
 
 	private void addAllToMyFeatures(Feature... features) {

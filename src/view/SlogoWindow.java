@@ -1,6 +1,7 @@
 package view;
 
 import java.io.Serializable;
+import java.util.Locale;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -26,8 +27,8 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 	SettingsView mySettingsView;
 	SlogoModel myModel;
 
-	public SlogoWindow(String language, double width, double height) {
-		myModel = new SlogoModel();
+	public SlogoWindow(Locale locale, double width, double height) {
+		myModel = new SlogoModel(locale);
 		myModel.addObserver(this);
 		myTurtleView = new TurtleView(width, height);
 		myInputView = new InputView(myModel, width, height);
@@ -42,6 +43,10 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 		setLeft(myHistoryResultsView);
 		setTop(mySettingsView);
 		setVisible(true);
+
+
+		myControls = new KeyControls(myModel, this);
+
 		myModel.load();
 		myControls = new KeyControls(myModel, this);
 

@@ -1,12 +1,14 @@
 package instructions.commands;
 
 import java.util.List;
+
 import instructions.Instruction;
+import instructions.ZeroParamInstruction;
 import model.ObservableData;
 import model.Turtle;
 
 
-public class Home implements Instruction {
+public class Home extends ZeroParamInstruction {
 
     /**
 	 * 
@@ -24,16 +26,6 @@ public class Home implements Instruction {
         return myTurtle.calculateDistance(coords.get(0), coords.get(1));
     }
 
-    @Override
-    public int getNumParams () {
-        // TODO Auto-generated method stub
-        return 0;
-    }
 
-    @Override
-    public void addParam (Instruction param) {
-        // TODO Auto-generated method stub
-
-    }
 
 }

@@ -4,6 +4,7 @@ import instructions.Instruction;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.Locale;
 import java.util.Observable;
 import java.util.Random;
 import java.util.Stack;
@@ -19,10 +20,12 @@ public class SlogoModel extends Observable implements Serializable {
 	private static final long serialVersionUID = -7452943156645209670L;
 	private static final String HELP_URL = "http://www.cs.duke.edu/courses/compsci308/current/assign/03_slogo/commands.php";
 	private ObservableData myData;
+	private Locale myLocale;
 	Parser myParser;
 
-	public SlogoModel() {
-		myData = new ObservableData();
+	public SlogoModel(Locale locale) {
+		myLocale=locale;
+		myData = new ObservableData(myLocale);
 		myParser = new Parser(myData);
 	}
 
@@ -48,9 +51,9 @@ public class SlogoModel extends Observable implements Serializable {
 	}
 
 	private void showOnView(double returnValue) {
+
 		myData.changeReturn(returnValue);
-		setChanged();
-		notifyObservers(myData);
+		load();
 	}
 
 	public void load() {
@@ -60,8 +63,7 @@ public class SlogoModel extends Observable implements Serializable {
 
 	public void toggleTurtle() {
 		myData.getTurtle().toggleVisible();
-		setChanged();
-		notifyObservers(myData);
+		load();
 	}
 
 	public void testThings() {
@@ -69,21 +71,18 @@ public class SlogoModel extends Observable implements Serializable {
 		double x = rn.nextInt(50);
 		myData.getTurtle().rotate(x);
 		myData.getTurtle().moveTurtleAndDrawLine(10);
-		setChanged();
-		notifyObservers(myData);
+		load();
 	}
 
 	public void clear() {
 		myData.clear();
 		myData.getTurtle().getPen().clear();
-		setChanged();
-		notifyObservers(myData);
+		load();
 	}
 
 	public void showToHistoryView(String text) {
 		((History) myData.get("history")).add(text);
-		setChanged();
-		notifyObservers(myData);
+		load();
 
 	}
 
@@ -103,6 +102,10 @@ public class SlogoModel extends Observable implements Serializable {
 
 	public Parser getParser() {
 		return myParser;
+	}
+	
+	public Locale getLocale(){
+		return myLocale;
 	}
 
 	public void initializeBGColor(ObservableList<Color> customColors) {

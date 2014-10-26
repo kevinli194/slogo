@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Stack;
 
@@ -69,6 +70,7 @@ public class VariablesList implements Feature {
 		}
 		return myVariables.get(variableName);
 	}
+
 
 	public List<String> generate() {
 		List<String> variableList = new ArrayList<String>();
