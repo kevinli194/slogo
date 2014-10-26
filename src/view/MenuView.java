@@ -6,7 +6,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.List;
 
+import model.History;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Menu;
@@ -22,11 +24,10 @@ public class MenuView extends MenuBar {
 	private int myTabCount;
 	private FileChooser myFileChooser;
 	private Stage myStage;
-	private String testSave;
 
 	public MenuView(Stage stage, String language, TabPane tabs, double width,
 			double height) {
-		testSave = new String("This is a test.");
+
 		myTabs = tabs;
 		myTabCount = 1;
 		myStage = stage;
@@ -55,8 +56,16 @@ public class MenuView extends MenuBar {
 					try {
 						ObjectInputStream is = new ObjectInputStream(
 								new FileInputStream(file));
-						String s = (String) is.readObject();
-						System.out.println("The contents of the file are " + s);
+						History h = (History) is.readObject();
+						Tab tab = new Tab(file.getName());
+						SlogoWindow additionalWindow = new SlogoWindow(
+								language, width, height * 9 / 10);
+						additionalWindow.loadFile(h);
+						additionalWindow.getModel().rerun();
+						tab.setContent(additionalWindow);
+						myTabs.getTabs().add(tab);
+						myTabs.getSelectionModel().select(tab);
+
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -81,7 +90,11 @@ public class MenuView extends MenuBar {
 					try {
 						ObjectOutputStream os = new ObjectOutputStream(
 								new FileOutputStream(file));
-						os.writeObject(testSave);
+						int currentTab = myTabs.getSelectionModel()
+								.getSelectedIndex();
+						os.writeObject(((SlogoWindow) myTabs.getTabs()
+								.get(currentTab).getContent()).getModel()
+								.getMyData().get("History"));
 						os.close();
 						System.out.println("Done saving file.");
 					} catch (IOException e) {

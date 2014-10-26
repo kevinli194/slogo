@@ -1,5 +1,7 @@
 package model;
 
+import instructions.Instruction;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,10 +17,12 @@ public class History implements Feature {
 	 * 
 	 */
 	private static final long serialVersionUID = 6540827775550421541L;
-	private List<String> myHistory;
+	private List<String> myDisplayedHistory;
+	private List<Instruction> mySavedHistory;
 
 	public History() {
-		myHistory = new LinkedList<String>();
+		myDisplayedHistory = new LinkedList<String>();
+		mySavedHistory = new LinkedList<Instruction>();
 	}
 
 	/**
@@ -29,26 +33,35 @@ public class History implements Feature {
 	 */
 
 	public void add(String element) {
-		myHistory.add(element);
+		myDisplayedHistory.add(element);
+	}
+
+	public void addSaved(Instruction element) {
+		mySavedHistory.add(element);
 	}
 
 	@Override
 	public void clear() {
-		myHistory.clear();
+		myDisplayedHistory.clear();
+		mySavedHistory.clear();
 	}
 
 	/**
-	 * Returns the data structure containing the history.
+	 * Returns the data structure containing the history to be displayed.
 	 * 
-	 * @return myHistory - a list of strings containing the history.
+	 * @return myHistory - a list of strings containing the displayed history.
 	 */
 
 	public List<String> generate() {
-		return myHistory;
+		return myDisplayedHistory;
+	}
+
+	public List<Instruction> getSavedData() {
+		return mySavedHistory;
 	}
 
 	@Override
 	public void remove(Object n) {
-		myHistory.remove(n);
+		myDisplayedHistory.remove(n);
 	}
 }
