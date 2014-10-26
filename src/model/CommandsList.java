@@ -6,6 +6,7 @@ import instructions.UserDefinedCommand;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
@@ -38,8 +39,8 @@ public class CommandsList implements Feature {
 	/**
 	 * 
 	 */
-	public CommandsList() {
-		languageBundle = loadResourceBundle(DEFAULT_LANGUAGE_RESOURCE);
+	public CommandsList(Locale locale) {
+		languageBundle = ResourceBundle.getBundle(DEFAULT_LANGUAGE_PACKAGE+"Commands", locale);
 		commandsBundle = loadResourceBundle(PRE_DEFINED_COMMANDS_RESOURCE);
 		preDefCommandTypes = initCommandsMap(commandsBundle.keySet(), commandsBundle);
 		preDefCommandSyntaxes = initCommandsMap(preDefCommandTypes.keySet(), languageBundle);
@@ -146,13 +147,6 @@ public class CommandsList implements Feature {
 		List<String[]> instructionList=new ArrayList<String[]>();
 		instructionList.add(preDefCommandSyntaxes.keySet().toArray(new String[preDefCommandSyntaxes.keySet().size()]));
 		instructionList.add(userDefCommands.keySet().toArray(new String[userDefCommands.keySet().size()]));	
-
-		//	public List<String[]> generate() {
-		//		List<String[]> instructionList = new ArrayList<String[]>();
-		//		instructionList.add(PreDefinedCommands.keySet().toArray(
-		//				new String[PreDefinedCommands.keySet().size()]));
-		//		instructionList.add(UserDefinedCommands.keySet().toArray(
-		//				new String[UserDefinedCommands.keySet().size()]));
 
 		return instructionList;
 	}

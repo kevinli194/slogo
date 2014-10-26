@@ -5,6 +5,7 @@ import instructions.Instruction;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Stack;
 
@@ -74,8 +75,9 @@ public class VariablesList implements Feature {
 	public String[] generate(){
 		List<String> variableList=new ArrayList<String>();
 		for (String s:myVariables.keySet()){
-			System.out.println(s);
-			String element=s.trim().substring(1)+" : "+myVariables.get(s).execute(new ObservableData());
+//			System.out.println(s);
+			//Need modification here
+			String element=s.trim().substring(1)+" : "+myVariables.get(s).execute(new ObservableData(new Locale("en","US")));
 			variableList.add(element);
 		}
 		return variableList.toArray(new String[variableList.size()]);
