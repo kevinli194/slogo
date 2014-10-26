@@ -19,11 +19,14 @@ public class Ask extends Tell {
 	@Override
 	public double execute(ObservableData data) {
 		List<Integer> askedIdInts = super.getAskedIDs(data,0);
+		return askTurtles(askedIdInts, 1, data);
+	}
+	
+	protected double askTurtles(List<Integer> askedIDs, int commandInd, ObservableData data) {
 		TurtlesList turtles = data.getTurtles();
-		turtles.addScope(askedIdInts);
+		turtles.addScope(askedIDs);
 		double retVal = super.myParams.get(1).execute(data);
 		turtles.removeScope();
-
 		return retVal;
 	}
 

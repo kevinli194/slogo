@@ -1,34 +1,29 @@
 package instructions.commands;
 
+import java.util.List;
+
 import instructions.Instruction;
+import instructions.ZeroParamInstruction;
 import model.ObservableData;
 import model.Turtle;
 
 
-public class YCoordinate implements Instruction {
+public class YCoordinate extends ZeroParamInstruction {
 
-    /**
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 4503480543426574044L;
 
 	@Override
-    public double execute (ObservableData data) {
-        // TODO Auto-generated method stub
-        Turtle myTurtle = data.getTurtle();
-        return myTurtle.getCoordinates()[1];
-    }
+	public double execute (ObservableData data) {
+		double retVal = 0;
+		List<Turtle> active = data.getTurtles().getActiveTurtles();
+		for (Turtle turtle : active) {
+			retVal = turtle.getCoordinates()[1];
+		}
+		return retVal;
+	}
 
-    @Override
-    public int getNumParams () {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public void addParam (Instruction param) {
-        // TODO Auto-generated method stub
-
-    }
 
 }

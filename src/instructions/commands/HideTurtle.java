@@ -1,8 +1,11 @@
 package instructions.commands;
 
+import java.util.function.Consumer;
+
 import instructions.ZeroParamInstruction;
 import model.ObservableData;
 import model.Turtle;
+import model.TurtlesList;
 
 
 public class HideTurtle extends ZeroParamInstruction {
@@ -14,10 +17,11 @@ public class HideTurtle extends ZeroParamInstruction {
 
 	@Override
     public double execute (ObservableData data) {
-        // TODO Auto-generated method stub
-        Turtle myTurtle = data.getTurtle();
-        myTurtle.setVisible(false);
-
+		TurtlesList turtles = data.getTurtles();
+		Consumer<Turtle> lambda = (Turtle turtle) -> {
+			turtle.setVisible(false);
+		};
+		turtles.runTurtleMethod(lambda);
         return 0;
     }
 }

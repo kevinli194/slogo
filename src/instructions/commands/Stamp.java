@@ -1,8 +1,11 @@
 package instructions.commands;
 
+import java.util.function.Consumer;
+
 import instructions.ZeroParamInstruction;
 import model.ObservableData;
 import model.Turtle;
+import model.TurtlesList;
 
 
 
@@ -15,10 +18,12 @@ public class Stamp extends ZeroParamInstruction {
 
 	@Override
     public double execute (ObservableData data) {
-        
-        Turtle myTurtle = data.getTurtle();
-        
-        myTurtle.stampImage();
+		TurtlesList turtles = data.getTurtles();
+		Consumer<Turtle> lambda = (Turtle turtle) -> {
+	        turtle.stampImage();
+		};
+		turtles.runTurtleMethod(lambda);
+		//TODO:change return value
         return 0;
     }
 

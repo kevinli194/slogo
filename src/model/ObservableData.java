@@ -64,6 +64,7 @@ public class ObservableData implements Serializable {
 			myFeatures.get(key).clear();
 		}
 		myTurtle.clear();
+		myTurtles.clear();
 
 	}
 

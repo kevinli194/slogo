@@ -1,8 +1,12 @@
 package instructions.commands;
 
 import instructions.UnaryInstruction;
+
+import java.util.function.Consumer;
+
 import model.ObservableData;
 import model.Turtle;
+import model.TurtlesList;
 
 
 /**
@@ -14,17 +18,21 @@ import model.Turtle;
  */
 public class Forward extends UnaryInstruction {
 
-    /**
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -5013987356729528187L;
 
 	@Override
-    public double execute (ObservableData data) {
-        // TODO Auto-generated method stub
-        double amount = super.myParams.get(0).execute(data);
-        Turtle myTurtle = data.getTurtle();
-        myTurtle.moveTurtleAndDrawLine(amount);
-        return amount;
-    }
+	public double execute (ObservableData data) {
+		// TODO get rid of duplicated code w/ backward
+		double amount = super.myParams.get(0).execute(data);
+		TurtlesList turtles = data.getTurtles();
+		
+		Consumer<Turtle> lambda = (Turtle turtle) -> {
+			turtle.moveTurtleAndDrawLine(amount);
+		};
+		turtles.runTurtleMethod(lambda);
+		return amount;
+	}
 }

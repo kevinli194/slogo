@@ -1,8 +1,11 @@
 package instructions.commands;
 
+import java.util.function.Consumer;
+
 import instructions.ZeroParamInstruction;
 import model.ObservableData;
 import model.Turtle;
+import model.TurtlesList;
 
 
 public class PenUp extends ZeroParamInstruction {
@@ -14,9 +17,12 @@ public class PenUp extends ZeroParamInstruction {
 
 	@Override
     public double execute (ObservableData data) {
-        // TODO Auto-generated method stub
-        Turtle myTurtle = data.getTurtle();
-        myTurtle.getPen().setPenDown(false);
+		TurtlesList turtles = data.getTurtles();
+		
+		Consumer<Turtle> lambda = (Turtle turtle) -> {
+			turtle.getPen().setPenDown(false);
+		};
+		turtles.runTurtleMethod(lambda);
         return 0;
     }
 

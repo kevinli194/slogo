@@ -49,7 +49,7 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 	@Override
 	public void update(Observable o, Object arg) {
 
-		myTurtleView.update((((ObservableData) arg).getTurtle()).generate());
+		myTurtleView.update((((ObservableData) arg).getTurtles()).generate());
 		myDataView.update(
 				((CommandsList) ((ObservableData) arg).get("CommandsList")),
 				((VariablesList) ((ObservableData) arg).get("VariablesList")));

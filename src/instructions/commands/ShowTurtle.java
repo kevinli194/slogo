@@ -1,11 +1,15 @@
 package instructions.commands;
 
-import instructions.Instruction;
+import instructions.ZeroParamInstruction;
+
+import java.util.function.Consumer;
+
 import model.ObservableData;
 import model.Turtle;
+import model.TurtlesList;
 
 
-public class ShowTurtle implements Instruction {
+public class ShowTurtle extends ZeroParamInstruction {
 
     /**
 	 * 
@@ -13,23 +17,12 @@ public class ShowTurtle implements Instruction {
 	private static final long serialVersionUID = 7056907549306719588L;
 
 	@Override
-    public double execute (ObservableData data) {
-        // TODO Auto-generated method stub
-        Turtle myTurtle = data.getTurtle();
-        myTurtle.setVisible(true);
-        myTurtle.getDrawing().getChildren().add(myTurtle.getTurtleImg());
+    public double execute (ObservableData data) { 
+		TurtlesList turtles = data.getTurtles();
+		Consumer<Turtle> lambda = (Turtle turtle) -> {
+	        turtle.setVisible(true);
+		};
+		turtles.runTurtleMethod(lambda);
         return 1;
     }
-    @Override
-    public int getNumParams () {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public void addParam (Instruction param) {
-        // TODO Auto-generated method stub
-
-    }
-
 }

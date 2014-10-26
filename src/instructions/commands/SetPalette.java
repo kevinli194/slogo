@@ -28,6 +28,8 @@ public class SetPalette extends ParameterInstruction {
         int g = (int) super.myParams.get(G_VALUE).execute(data);
         int b = (int) super.myParams.get(B_VALUE).execute(data);
             
+        
+        
         List<List<Color>> colorLists = new ArrayList<List<Color>>();
         BackgroundColor bgc = ((BackgroundColor) data.get("backgroundcolor"));
         colorLists.add(bgc.getCustom());

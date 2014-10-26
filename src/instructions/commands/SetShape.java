@@ -9,6 +9,11 @@ import model.Turtle;
 public class SetShape extends UnaryInstruction {
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = -8409776343446639835L;
+
+	/**
      * 
      */
     //TODO: serialize

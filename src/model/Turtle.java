@@ -13,15 +13,15 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
-public class Turtle extends TurtleAbstract implements Feature {
+public class Turtle extends TurtleAbstract {
 
 	private static final long serialVersionUID = 3491015094836744017L;
 
 	private ImageView myImage;
 	private List<ImageView> myTurtleShapes;
 	private double[] myCoordinates = { DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE };
-	private double[] myRelativeCoordinates = { DEFAULT_REALATIVE_COORDINATE,
-			DEFAULT_REALATIVE_COORDINATE };
+	private double[] myRelativeCoordinates = { DEFAULT_RELATIVE_COORDINATE,
+			DEFAULT_RELATIVE_COORDINATE };
 	private double myAngle = DEFAULT_TURTLE_ANGLE;
 	private Pen myPen;
 	private Group myDrawing;
@@ -55,14 +55,14 @@ public class Turtle extends TurtleAbstract implements Feature {
 		myImage = new ImageView(myDefaultOn);
 		myImage.setFitWidth(DEFAULT_TURTLE_SIZE);
 		myImage.setFitHeight(DEFAULT_TURTLE_SIZE);
-		setCoordinates(DEFAULT_REALATIVE_COORDINATE,
-				DEFAULT_REALATIVE_COORDINATE);
+		setCoordinates(DEFAULT_RELATIVE_COORDINATE,
+				DEFAULT_RELATIVE_COORDINATE);
 		setAngle(DEFAULT_TURTLE_ANGLE);
 		addShape(myImage);
 		myImage.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent arg0) {
-				changeState();
+				changeState(!myState);
 			}
 		});
 
@@ -80,9 +80,13 @@ public class Turtle extends TurtleAbstract implements Feature {
 		myImage = image;
 	}
 
-	private void changeState() {
-		myState = !myState;
-		if (myState) {
+	public void setState(boolean isActive) {
+		myState = isActive;
+		changeState(myState);
+	}
+	
+	private void changeState(boolean state) {
+		if (state) {
 			myImage.setImage(myDefaultOn);
 		} else {
 			myImage.setImage(myDefaultOff);
@@ -128,7 +132,7 @@ public class Turtle extends TurtleAbstract implements Feature {
 
 	}
 
-	public void clearStamp() {
+	public void clearStamps() {
 		myStamps.getChildren().clear();
 
 	}
@@ -240,21 +244,20 @@ public class Turtle extends TurtleAbstract implements Feature {
 	public void clear() {
 		myLines.getChildren().clear();
 		myStamps.getChildren().clear();
-		setCoordinates(DEFAULT_REALATIVE_COORDINATE,
-				DEFAULT_REALATIVE_COORDINATE);
+		setCoordinates(DEFAULT_RELATIVE_COORDINATE,
+				DEFAULT_RELATIVE_COORDINATE);
 		setAngle(DEFAULT_TURTLE_ANGLE);
 		setTurtleInfo();
 
 	}
-
-	public void setPenCustom(ObservableList<Color> customColors) {
+	
+	public void setPenCustom(List<Color> customColors) {
 		myPen.setCustom(customColors);
 
 	}
 
 	public void toggleVisible() {
 		setVisible(!isVisible);
-
 	}
 
 	@Override
@@ -262,5 +265,4 @@ public class Turtle extends TurtleAbstract implements Feature {
 		// TODO Auto-generated method stub
 
 	}
-
 }

@@ -12,11 +12,16 @@ import model.TurtlesList;
 
 public class Tell extends ParameterInstruction {
 
+	private static final int TELL_NUM_PARAMS = 1;
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -7176362370712108327L;
 
+	public Tell() {
+		super.numParams = TELL_NUM_PARAMS;
+	}
+	
 	@Override
 	public double execute(ObservableData data) {
 		List<Integer> askedIdInts = getAskedIDs(data,0);
