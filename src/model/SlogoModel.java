@@ -76,6 +76,7 @@ public class SlogoModel extends Observable implements Serializable {
 
 	public void clear() {
 		myData.clear();
+		myData.getTurtle().getPen().clear();
 		setChanged();
 		notifyObservers(myData);
 	}

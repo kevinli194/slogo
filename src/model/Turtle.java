@@ -15,16 +15,13 @@ import javafx.scene.shape.Line;
 
 public class Turtle extends TurtleAbstract implements Feature {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 3491015094836744017L;
 
 	private ImageView myImage;
-
+	private List<ImageView> myTurtleShapes;
 	private double[] myCoordinates = { DEFAULT_XCOORDINATE, DEFAULT_YCOORDINATE };
-	private double[] myRelativeCoordinates = { DEFAULT_RELATIVE_COORDINATE,
-			DEFAULT_RELATIVE_COORDINATE };
+	private double[] myRelativeCoordinates = { DEFAULT_REALATIVE_COORDINATE,
+			DEFAULT_REALATIVE_COORDINATE };
 	private double myAngle = DEFAULT_TURTLE_ANGLE;
 	private Pen myPen;
 	private Group myDrawing;
@@ -46,7 +43,7 @@ public class Turtle extends TurtleAbstract implements Feature {
 		myLines = new Group();
 		myDrawing = new Group();
 		myStamps = new Group();
-
+		myTurtleShapes = new ArrayList<ImageView>();
 		initializeTurtle();
 		setTurtleInfo();
 		myDrawing.getChildren().addAll(myLines, myImage, myStamps);
@@ -58,8 +55,10 @@ public class Turtle extends TurtleAbstract implements Feature {
 		myImage = new ImageView(myDefaultOn);
 		myImage.setFitWidth(DEFAULT_TURTLE_SIZE);
 		myImage.setFitHeight(DEFAULT_TURTLE_SIZE);
-		setCoordinates(DEFAULT_RELATIVE_COORDINATE, DEFAULT_RELATIVE_COORDINATE);
+		setCoordinates(DEFAULT_REALATIVE_COORDINATE,
+				DEFAULT_REALATIVE_COORDINATE);
 		setAngle(DEFAULT_TURTLE_ANGLE);
+		addShape(myImage);
 		myImage.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent arg0) {
@@ -67,6 +66,18 @@ public class Turtle extends TurtleAbstract implements Feature {
 			}
 		});
 
+	}
+
+	private void addShape(ImageView newImg) {
+		myTurtleShapes.add(newImg);
+	}
+
+	public List<ImageView> getShapeList() {
+		return myTurtleShapes;
+	}
+
+	public void setShape(ImageView image) {
+		myImage = image;
 	}
 
 	private void changeState() {
@@ -229,7 +240,8 @@ public class Turtle extends TurtleAbstract implements Feature {
 	public void clear() {
 		myLines.getChildren().clear();
 		myStamps.getChildren().clear();
-		setCoordinates(DEFAULT_RELATIVE_COORDINATE, DEFAULT_RELATIVE_COORDINATE);
+		setCoordinates(DEFAULT_REALATIVE_COORDINATE,
+				DEFAULT_REALATIVE_COORDINATE);
 		setAngle(DEFAULT_TURTLE_ANGLE);
 		setTurtleInfo();
 

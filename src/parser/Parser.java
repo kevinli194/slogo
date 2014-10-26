@@ -33,6 +33,7 @@ import model.ObservableData;
  * - Error checks syntax throughout parsing
  */
 public class Parser implements Serializable {
+
 	/**
 	 * 
 	 */
@@ -139,7 +140,8 @@ public class Parser implements Serializable {
 
 	private void addParams(Instruction instr, Stack<Instruction> iStack) {
 		if (instr.getNumParams() > iStack.size()) {
-			new ErrorDialog("NOT ENOUGH OF PARAMETERS.");
+			new ErrorDialog("NOT ENOUGH PARAMETERS.");
+
 			return;
 			// throw new SlogoException("WRONG NUMBER OF PARAMETERS.");
 		}
