@@ -20,11 +20,16 @@ import model.ObservableData;
 import model.SlogoModel;
 import model.VariablesList;
 
+/**
+ * The Slogo window where all the view elements are instantiated. Bridge the 
+ * front-end GUI and back-end model as the Observer.
+ * 
+ * @author Mengen Huang
+ * @author Kevin Li
+ *
+ */
 public class SlogoWindow extends BorderPane implements Observer, Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4532547099439124045L;
 	KeyControls myControls;
 	TurtleView myTurtleView;
@@ -37,6 +42,12 @@ public class SlogoWindow extends BorderPane implements Observer, Serializable {
 	private static final double DEFAULT_XCOORDINATE = 300;
 	private static final double DEFAULT_YCOORDINATE = 150;
 
+	/**
+	 * 
+	 * @param locale the language and locale used in the window
+	 * @param width width of 
+	 * @param height
+	 */
 	public SlogoWindow(Locale locale, double width, double height) {
 		myModel = new SlogoModel(locale);
 		myModel.addObserver(this);
