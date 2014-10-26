@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import error_checking.InvalidArgumentsException;
 
 /**
  * Feature interface that is extended by all the feature classes in model.
@@ -16,6 +17,6 @@ public interface Feature extends Serializable {
 	public void clear();
 
 	
-	public void remove(Object n);
+	public void remove(Object n) throws InvalidArgumentsException;
 
 }

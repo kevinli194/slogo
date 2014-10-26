@@ -1,7 +1,7 @@
 package instructions.commands;
 
 import java.util.List;
-
+import error_checking.InvalidArgumentsException;
 import model.ObservableData;
 import model.TurtlesList;
 
@@ -17,7 +17,7 @@ public class Ask extends Tell {
 	}
 
 	@Override
-	public double execute(ObservableData data) {
+	public double execute(ObservableData data) throws InvalidArgumentsException {
 		List<Integer> askedIdInts = super.getAskedIDs(data,0);
 		TurtlesList turtles = data.getTurtles();
 		turtles.addScope(askedIdInts);

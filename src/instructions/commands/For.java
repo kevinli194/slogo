@@ -1,13 +1,13 @@
 package instructions.commands;
 
 import instructions.BinaryInstruction;
-import instructions.ConstantInstruction;
 import instructions.Instruction;
 import instructions.ListInstruction;
 import instructions.VariableInstruction;
 import java.util.List;
 import model.ObservableData;
 import model.VariablesList;
+import error_checking.InvalidArgumentsException;
 
 public class For extends BinaryInstruction {
 
@@ -17,7 +17,7 @@ public class For extends BinaryInstruction {
 	private static final long serialVersionUID = 3794762190480724020L;
 
 	@Override
-	public double execute(ObservableData data) {
+	public double execute(ObservableData data) throws InvalidArgumentsException{
 
 		// parametor 0 = lististr of (variable, start, end, increment)
 

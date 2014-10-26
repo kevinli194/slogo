@@ -5,6 +5,7 @@ import instructions.ListInstruction;
 import instructions.ParameterInstruction;
 import instructions.UserDefinedCommand;
 import java.util.List;
+import error_checking.InvalidArgumentsException;
 import model.CommandsList;
 import model.ObservableData;
 
@@ -21,7 +22,7 @@ public class MakeUserInstruction extends ParameterInstruction {
 	}
 
 	@Override
-	public double execute(ObservableData data) {
+	public double execute(ObservableData data) throws InvalidArgumentsException{
 		CommandsList allCommands = (CommandsList) data.get("CommandsList");
 		try {
 			// TODO: Check if UserDefinedCommand (error)

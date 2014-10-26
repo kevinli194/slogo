@@ -14,7 +14,7 @@ public class Heading extends ZeroParamInstruction {
 	private static final long serialVersionUID = -7360594989540018283L;
 
 	@Override
-    public double execute (ObservableData data) {
+    public double execute (ObservableData data){
         // TODO Auto-generated method stub
         Turtle myTurtle = data.getTurtle();
 
