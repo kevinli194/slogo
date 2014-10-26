@@ -39,6 +39,7 @@ import model.ObservableData;
  * - Error checks syntax throughout parsing
  */
 public class Parser implements Serializable {
+
 	/**
 	 * 
 	 */
