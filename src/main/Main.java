@@ -10,9 +10,6 @@ import view.SlogoView;
 
 public class Main extends Application {
 
-	// Removed hard coding of the application. Should scale with screen
-	// dimensions.
-
 	private static final double SCREEN_WIDTH = Screen.getPrimary()
 			.getVisualBounds().getWidth() * 3 / 4;
 	private static final double SCREEN_HEIGHT = Screen.getPrimary()
