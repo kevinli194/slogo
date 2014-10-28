@@ -11,7 +11,6 @@ import javafx.scene.text.Text;
  *
  */
 public class ResultsView extends TilePane {
-	
 	private static final long serialVersionUID = -5066855452604866278L;
 	private static final int FONT_SIZE = 16;
 	private static final double VIEW_HEIGHT_RATIO = 0.6875;
