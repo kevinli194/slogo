@@ -10,7 +10,6 @@ import model.Feature;
 
 /**
  * Abstract class used construct the dataview subcomponents.
- * 
  * @author Kevin Li
  *
  */
@@ -23,11 +22,8 @@ public abstract class DataViewComponents extends ScrollView {
 
 	/**
 	 * Creates a text box with delete buttons to be added to the view.
-	 * 
-	 * @param s
-	 *            The string to be displayed in the textbox.
-	 * @param f
-	 *            The feature that things are to be deleted from in the model.
+	 * @param s The string to be displayed in the textbox.
+	 * @param f The feature that things are to be deleted from in the model.
 	 */
 	protected void addTextBoxWithDeleteButton(String s, Feature f) {
 		HBox h = new HBox();
@@ -39,11 +35,8 @@ public abstract class DataViewComponents extends ScrollView {
 
 	/**
 	 * Makes a delete button.
-	 * 
-	 * @param s
-	 *            The string representation of the variable or command.
-	 * @param f
-	 *            The feature to delete data from.
+	 * @param s The string representation of the variable or command.
+	 * @param f The feature to delete data from.
 	 * @return Delete button
 	 */
 	private Button makeDeleteButton(String s, Feature f) {
@@ -56,18 +49,18 @@ public abstract class DataViewComponents extends ScrollView {
 			public void handle(MouseEvent event) {
 				myView.getChildren().remove(b.getParent());
 				String key;
-				if (f.getClass().getSimpleName().equals("CommandsList"))
+				if (f.getClass().getSimpleName().equals("CommandsList")) {
 					key = s;
-				else
+				} else {
 					key = ":" + s.split(":")[0].trim();
-				System.out.println(key);
+				}
 				try {
 					f.remove(key);
 				} catch (InvalidArgumentsException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
+			
 		});
 		return b;
 	}

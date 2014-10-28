@@ -23,13 +23,17 @@ import model.History;
 import error_checking.InvalidArgumentsException;
 
 /**
- * The over-arching menu bar which enables the user to create new file, open saved
- * file, save file, and choose among the language
+ * The over-arching menu bar which enables the user to create new file, 
+ * open saved file, save file, and choose among the language.
  * @author Kevin Li
  * @author Mengen Huang
  *
  */
 public class MenuView extends MenuBar {
+
+	private static final double HEIGHT_RATIO = 0.0625;
+
+	private static final double ADDITIONAL_WINDOW_HEIGHT_RATIO = 0.9;
 
 	public static final String DEFAULT_MENU_RESOURCE = "resources.languages/Menu";
 
@@ -45,7 +49,7 @@ public class MenuView extends MenuBar {
 	private ResourceBundle languageBundle;
 
 	/**
-	 * Create the MenuView , set up menuItems and set up the localeMap
+	 * Create the MenuView , set up menuItems and set up the localeMap.
 	 * @param locale
 	 * @param tabs
 	 * @param width
@@ -70,7 +74,7 @@ public class MenuView extends MenuBar {
 	}
 
 	/**
-	 * Set up the localeMap
+	 * Set up the localeMap.
 	 */
 	private void setMap() {
 		localeMap.put("English", new Locale("en", "US"));
@@ -79,7 +83,7 @@ public class MenuView extends MenuBar {
 	}
 
 	/**
-	 * create the Menu 
+	 * Create the Menu.
 	 * @param locale languaeg and locale applied
 	 * @param width width of the view
 	 * @param height height of the view
@@ -96,19 +100,18 @@ public class MenuView extends MenuBar {
 
 	/**
 	 * Add in MenuItems to enable the user to choose from the language and
-	 * change the locale 
+	 * change the locale.
 	 * @param menuLanguage Menu to choose language
 	 */
 	private void getLocale(Menu menuLanguage) {
 		MenuItem langEnglish = makeLanguageItem("English");
 		MenuItem langChinese = makeLanguageItem("中文");
 		MenuItem langFrench = makeLanguageItem("Français");
-
 		menuLanguage.getItems().addAll(langEnglish, langChinese, langFrench);
 	}
 
 	/**
-	 * Method to change the menu and pass in the new locale after user changes
+	 * Method to change the menu and pass in the new locale after user changes.
 	 * the language option
 	 * @param language String that represents the language name
 	 * @return the MenuItem shown on the menu
@@ -129,8 +132,8 @@ public class MenuView extends MenuBar {
 	}
 
 	/**
-	 * Set all the MenuItems in the File Menu
-	 * @param locale current language and locale 
+	 * Set all the MenuItems in the File Menu.
+	 * @param locale current language and locale
 	 * @param width width of the veiw
 	 * @param height height of the view
 	 * @param menuFile the File Menu all the Menu Item are listed
@@ -143,8 +146,8 @@ public class MenuView extends MenuBar {
 	}
 
 	/**
-	 * Open the new file and loaded in the saved state of the Slogo window
-	 * @param locale current language and locale 
+	 * Open the new file and loaded in the saved state of the Slogo window.
+	 * @param locale current language and locale
 	 * @param width width of the view
 	 * @param height height of the view
 	 * @param menuFile the File Menu where the Menu Item is listed
@@ -170,14 +173,10 @@ public class MenuView extends MenuBar {
 						myTabs.getSelectionModel().select(tab);
 
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (ClassNotFoundException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
-					}
-                    catch (InvalidArgumentsException e) {
-                        // TODO Auto-generated catch block
+					} catch (InvalidArgumentsException e) {
                         e.printStackTrace();
                     }
 				}
@@ -188,7 +187,7 @@ public class MenuView extends MenuBar {
 	}
 
 	/**
-	 *Save state of the Slogo window
+	 *Save state of the Slogo window.
 	 * @param locale current language and locale
 	 * @param width width of the view
 	 * @param height height of the view
@@ -211,7 +210,6 @@ public class MenuView extends MenuBar {
 								.getMyData().get("History"));
 						os.close();
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 
@@ -223,7 +221,7 @@ public class MenuView extends MenuBar {
 	}
 
 	/**
-	 * Create a new tab and load in a new Slogo Window with view and model
+	 * Create a new tab and load in a new Slogo Window with view and model.
 	 * @param locale current language and locale
 	 * @param width width of the view
 	 * @param height height of the view
@@ -240,13 +238,11 @@ public class MenuView extends MenuBar {
 				SlogoWindow additionalWindow;
                 try {
                     additionalWindow = new SlogoWindow(locale, width,
-                    		height * 9 / 10);
+                    		height * ADDITIONAL_WINDOW_HEIGHT_RATIO);
                     tab.setContent(additionalWindow);
                     myTabs.getTabs().add(tab);
                     myTabs.getSelectionModel().select(tab);
-                }
-                catch (InvalidArgumentsException e) {
-                    // TODO Auto-generated catch block
+                } catch (InvalidArgumentsException e) {
                     e.printStackTrace();
                 }
 			}
@@ -256,17 +252,17 @@ public class MenuView extends MenuBar {
 	}
 
 	/**
-	 * Set up the size of the view
+	 * Set up the size of the view.
 	 * @param width width of the view
 	 * @param height height of the view
 	 */
 	private void setView(double width, double height) {
-		setPrefSize(width, height * 1 / 16);
+		setPrefSize(width, height * HEIGHT_RATIO);
 
 	}
 
 	/**
-	 * Clear the Menu
+	 * Clear the Menu.
 	 */
 	private void clear() {
 		this.getMenus().clear();

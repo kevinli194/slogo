@@ -23,7 +23,6 @@ import model.VariablesList;
 /**
  * The Slogo window where all the view elements are instantiated. Bridge the
  * front-end GUI and back-end model as the Observer.
- * 
  * @author Mengen Huang
  * @author Kevin Li
  *
@@ -44,21 +43,22 @@ public class SlogoWindow extends BorderPane implements Observer {
 	private static final double DEFAULT_YCOORDINATE = 150;
 
 	/**
-	 * 
+	 * Instantiate the SlogoWindow.
 	 * @param locale the language and locale used in the window
 	 * @param width width of View
 	 * @param height height of View
 	 */
-    public SlogoWindow (Locale locale, double width, double height) throws InvalidArgumentsException {
+    public SlogoWindow (Locale locale, double width, double height)
+    								throws InvalidArgumentsException {
 		myModel = new SlogoModel(locale);
 		myModel.addObserver(this);
 		myTurtleView = new TurtleView(width, height);
 		myInputView = new InputView(myModel, width, height, locale);
 		myDataView = new DataView(myInputView, width, height, locale);
-		myHistoryResultsView = new HistoryResultsView(myInputView, width,
+		myHistoryResultsView = new HistoryResultsView(myInputView, 
+				width,height, locale);
+		mySettingsView = new SettingsView(myModel, myTurtleView, width,
 				height, locale);
-		mySettingsView = new SettingsView(myModel, myTurtleView, width, height,
-				locale);
 
 		setCenter(myTurtleView);
 		setRight(myDataView);
@@ -77,8 +77,8 @@ public class SlogoWindow extends BorderPane implements Observer {
 	}
 
 	/**
-	 * Overrided method by Observer Pattern. Update all view when Observable data
-	 * change and notify the observers.
+	 * Override method by Observer Pattern. Update all view 
+	 * when Observable data change and notify the observers.
 	 */
 	@Override
 	public void update(Observable o, Object arg) {
@@ -99,7 +99,7 @@ public class SlogoWindow extends BorderPane implements Observer {
 	}
 
 	/**
-	 * get the model of the window
+	 * Get the model of the window.
 	 * @return the model corresponding to the window
 	 */
 	public SlogoModel getModel() {
@@ -107,8 +107,8 @@ public class SlogoWindow extends BorderPane implements Observer {
 	}
 
 	/**
-	 * load the file which stores the history commands
-	 * @param history The history commands recorded 
+	 * Load the file which stores the history commands.
+	 * @param history The history commands recorded
 	 */
 	public void loadFile(History history) {
 		myModel.getMyData().loadFile(history);
@@ -116,7 +116,8 @@ public class SlogoWindow extends BorderPane implements Observer {
 	}
 
 	/**
-	 * Click on or move the turtle to change the state(image) if the command is listed
+	 * Click on or move the turtle to change the state(image)
+	 * if the command is listed.
 	 */
 	private void onClickCommand() {
 		CommandsList commandsList = (CommandsList) myModel.getMyData().get(
@@ -126,12 +127,12 @@ public class SlogoWindow extends BorderPane implements Observer {
 
 					@Override
 					public void handle(MouseEvent mouseEvent) {
-						// TODO Auto-generated method stub
 						if (commandsList.contains("onclick")) {
-							UserDefinedCommand current = (UserDefinedCommand) commandsList
-									.get("onclick");
-							double[] coords = handleClickInstr(mouseEvent,
-									current);
+							UserDefinedCommand current = 
+									(UserDefinedCommand) commandsList
+														.get("onclick");
+							double[] coords = handleClickInstr(
+													mouseEvent,current);
 							  try {
                                   myModel.parseAndExecute("onclick "
                                                           +
@@ -139,9 +140,7 @@ public class SlogoWindow extends BorderPane implements Observer {
                                                           " "
                                                           +
                                                           Double.toString(coords[1]));
-                              }
-                              catch (InvalidArgumentsException e) {
-                                  // TODO Auto-generated catch block
+                              } catch (InvalidArgumentsException e) {
                                   e.printStackTrace();
                               }
 
@@ -155,12 +154,12 @@ public class SlogoWindow extends BorderPane implements Observer {
 
 					@Override
 					public void handle(MouseEvent mouseEvent) {
-						// TODO Auto-generated method stub
 						if (commandsList.contains("onmove")) {
-							UserDefinedCommand current = (UserDefinedCommand) commandsList
-									.get("onmove");
-							double[] coords = handleClickInstr(mouseEvent,
-									current);
+							UserDefinedCommand current = 
+									(UserDefinedCommand) commandsList
+															.get("onmove");
+							double[] coords = handleClickInstr(
+													  mouseEvent, current);
 							  try {
                                   myModel.parseAndExecute("onclick "
                                                           +
@@ -168,9 +167,7 @@ public class SlogoWindow extends BorderPane implements Observer {
                                                           " "
                                                           +
                                                           Double.toString(coords[1]));
-                              }
-                              catch (InvalidArgumentsException e) {
-                                  // TODO Auto-generated catch block
+                              } catch (InvalidArgumentsException e) {
                                   e.printStackTrace();
                               }
 
@@ -182,7 +179,7 @@ public class SlogoWindow extends BorderPane implements Observer {
 	}
 
 	/**
-	 * Help function of onClickCommand to handle Click Instruction
+	 * Help function of onClickCommand to handle Click Instruction.
 	 * @param mouseEvent
 	 * @param current current Instruction
 	 * @return the coordinates where the mouseEvent takes place

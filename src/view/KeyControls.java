@@ -30,22 +30,22 @@ public class KeyControls {
 
 
     private static final long serialVersionUID = -6381483434400107432L;
-    public static final String DEFAULT_LANGUAGE_PACKAGE = "resources.languages/";
+    private static final String DEFAULT_LANGUAGE_PACKAGE = "resources.languages/";
 
     private List<String> keyCommands = new ArrayList<String>();
-    SlogoModel myModel;
-    BorderPane myWindow;
-    Locale myLocale;
-
+    private SlogoModel myModel;
+    private BorderPane myWindow;
+    private Locale myLocale;
     private Map<KeyCode, Instruction> keyMap = new HashMap<KeyCode, Instruction>();
 
     /**
-     * create the KeyControl 
+     * Create the KeyControl.
      * @param model model run in the window
      * @param window window shown on the screen
      */
 
-    public KeyControls (SlogoModel model, BorderPane window) throws InvalidArgumentsException {
+    public KeyControls(SlogoModel model, BorderPane window) 
+    						throws InvalidArgumentsException {
         myModel = model;
         myWindow = window;
         myLocale = model.getLocale();
@@ -58,9 +58,10 @@ public class KeyControls {
      * get the commands in different language to move forward, backward, left,
      * right and setheading.
      */
-    private void setCommandsList () {
+    private void setCommandsList() {
         ResourceBundle languageBundle =
-                ResourceBundle.getBundle(DEFAULT_LANGUAGE_PACKAGE + "Commands", myLocale);
+                ResourceBundle.getBundle(DEFAULT_LANGUAGE_PACKAGE + "Commands",
+                							myLocale);
         keyCommands.add(languageBundle.getString("Forward").split(",")[0]);
         keyCommands.add(languageBundle.getString("Backward").split(",")[0]);
         keyCommands.add(languageBundle.getString("Left").split(",")[0]);
@@ -73,7 +74,7 @@ public class KeyControls {
      * Set up the keyMap. Match the Keycode with the specific commands.
      */
 
-    private void setKeyMap () throws InvalidArgumentsException {
+    private void setKeyMap() throws InvalidArgumentsException {
         Parser p = myModel.getParser();
         keyMap.put(KeyCode.W, p.parse(keyCommands.get(0) + " 5").pop());
         keyMap.put(KeyCode.S, p.parse(keyCommands.get(1) + " 5").pop());
@@ -83,31 +84,29 @@ public class KeyControls {
     }
 
     /**
-     * Once a key is pushed, the corresponding event is triggered so that the 
+     * Once a key is pushed, the corresponding event is triggered so that the
      * turtle will move according to the keys pressed.
      */
-    public void makeKeyCommands () {
-        CommandsList commandsList = (CommandsList) myModel.getMyData().get("CommandsList");
+    public void makeKeyCommands() {
+        CommandsList commandsList = (CommandsList) myModel.getMyData().get(
+        													"CommandsList");
 
         myWindow.setOnKeyPressed(new EventHandler<KeyEvent>() {
-
             @Override
-            public void handle (KeyEvent arg0) {
+            public void handle(KeyEvent arg0) {
                 ObservableData data = myModel.getMyData();
                 if (keyMap.keySet().contains(arg0.getCode())) {
                     try {
                         keyMap.get(arg0.getCode()).execute(data);
-                    }
-                    catch (InvalidArgumentsException e) {
+                    } catch (InvalidArgumentsException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
                 }
 
-                // TODO: make sure only one parameter is put into the onkey command
-                if (commandsList.contains("onkey"))
-                {
-                    UserDefinedCommand current = (UserDefinedCommand) commandsList.get("onkey");
+                if (commandsList.contains("onkey")){
+                    UserDefinedCommand current = 
+                    		(UserDefinedCommand) commandsList.get("onkey");
                     @SuppressWarnings("deprecation")
                     double value = arg0.getCode().impl_getCode();
                     current.addParam(new ConstantInstruction(value));
@@ -115,7 +114,6 @@ public class KeyControls {
                         myModel.parseAndExecute("onkey " + Double.toString(value));
                     }
                     catch (InvalidArgumentsException e) {
-                        // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
 

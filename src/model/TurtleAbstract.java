@@ -1,11 +1,11 @@
 package model;
 
-import java.io.Serializable;
-
-public abstract class TurtleAbstract implements Serializable {
-	/**
-	 * 
-	 */
+/**
+ * Abstract class the Turtle class extends. Set up the Turtle info.
+ * @author Kevin Li
+ *
+ */
+public abstract class TurtleAbstract {
 	private static final long serialVersionUID = -1474829514092271376L;
 	protected static final double DEFAULT_XCOORDINATE = 300;
 	protected static final double DEFAULT_YCOORDINATE = 150;
@@ -19,5 +19,4 @@ public abstract class TurtleAbstract implements Serializable {
 	public TurtleAbstract() {
 
 	}
-	
 }

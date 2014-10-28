@@ -64,7 +64,7 @@ public class SettingsView extends ToolBar {
 	 * @param view turtle View passed in
 	 * @param width width of the view
 	 * @param height height of the view
-	 * @param locale current language and locale applied 
+	 * @param locale current language and locale applied
 	 */
 	public SettingsView(SlogoModel model, TurtleView view, double width,
 			double height, Locale locale) {
@@ -284,21 +284,18 @@ public class SettingsView extends ToolBar {
 	 * @param view  TurtleView
 	 */
 	private void addButtons(SlogoModel model, TurtleView view) {
-		Button toggleTurtle = makeButton(
-				languageBundle.getString("ShowHideTurtle"),
+		Button toggleTurtle = makeButton(languageBundle.getString("ShowHideTurtle"),
 				handle -> model.toggleTurtle());
-		Button toggleGrid = makeButton(
-				languageBundle.getString("ShowHideGrid"),
+		Button toggleGrid = makeButton(languageBundle.getString("ShowHideGrid"),
 				handle -> view.toggleGrid());
 		Button clear = makeButton(languageBundle.getString("Clear"),
 				handle -> model.clear());
 		Button help = makeButton(languageBundle.getString("HelpPage"),
 				handle -> model.accessHelpHTML());
-		this.getItems().addAll(toggleTurtle, toggleGrid, clear, help);
+		this.getItems().addAll(toggleTurtle, toggleGrid, clear,help);
 		this.getItems().add(new Separator());
-
 	}
-	
+
 	/**
 	 * Method to make buttons
 	 * @param property String to show on the button
@@ -314,7 +311,7 @@ public class SettingsView extends ToolBar {
 
 	/**
 	 * get the Color the user picks
-	 * @param colorpicker ColorPicker 
+	 * @param colorpicker ColorPicker
 	 * @returna list of Color
 	 */
 	private ObservableList<Color> getCustomColors(ColorPicker colorpicker) {

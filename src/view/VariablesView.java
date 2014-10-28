@@ -12,7 +12,6 @@ import model.VariablesList;
  */
 public class VariablesView extends DataViewComponents {
 /**
- * 
  * @param input InputView
  * @param width width of super class ScrollView
  * @param height height of super class ScrollView
