@@ -7,18 +7,19 @@ import javafx.scene.control.TabPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 /**
- * The over-arching view contains menuView and multiple SlogoWindows
+ * The over-arching view contains menuView and multiple SlogoWindows.
  * @author Mengen Huang
  * @author Kevin Li
  *
  */
 public class SlogoView {
+	private static final double HEIGHT_RATIO = 0.95;
 	private Scene myScene;
 	private BorderPane myRoot;
 	private TabPane myTabs;
 
 	/**
-	 * Create the SlogoView
+	 * Create the SlogoView.
 	 * @param stage
 	 * @param locale language and locale used in SlogoView
 	 * @param width width of View
@@ -26,7 +27,7 @@ public class SlogoView {
 	 */
 	public SlogoView(Stage stage, Locale locale, double width, double height) {
 		myTabs = new TabPane();
-		setTabView(width, height * 19 / 20);
+		setTabView(width, height * HEIGHT_RATIO);
 
 		myRoot = new BorderPane();
 		myRoot.setCenter(myTabs);

@@ -23,7 +23,11 @@ import error_checking.InvalidArgumentsException;
 /**
  * The Slogo window where all the view elements are instantiated. Bridge the
  * front-end GUI and back-end model as the Observer.
+ * <<<<<<< HEAD
  *
+ * =======
+ * >>>>>>> 260909623dbcc2b7d44a4dc4b89d0acfdbea18fd
+ * 
  * @author Mengen Huang
  * @author Kevin Li
  * @author Sandy Lee
@@ -150,11 +154,12 @@ public class SlogoWindow extends BorderPane implements Observer {
             coords[1] =
                     -mouseEvent.getY() + DEFAULT_YCOORDINATE;
             try {
-                myModel.parseAndExecute(command + " " + coords[0] +  " "  + coords[1]);
+                myModel.parseAndExecute(command + " " + coords[0] + " " + coords[1]);
             }
             catch (InvalidArgumentsException e) {
                 new ErrorDialog(PARAMETER_ERROR);
             }
         }
     }
+
 }

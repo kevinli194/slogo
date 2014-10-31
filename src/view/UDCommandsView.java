@@ -4,7 +4,7 @@ import java.util.List;
 
 import model.CommandsList;
 /**
- * Part of DataView which shows User-Defined Commands
+ * Part of DataView which shows User-Defined Commands.
  * @author Mengen Huang
  * @author Kevin Li
  *
@@ -12,7 +12,7 @@ import model.CommandsList;
 public class UDCommandsView extends DataViewComponents {
 
 	/**
-	 * 
+	 * Create the user-defined commands view.
 	 * @param input inputView
 	 * @param width width of super class ScrollView
 	 * @param height height of super class ScrollView

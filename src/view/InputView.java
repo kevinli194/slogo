@@ -13,7 +13,6 @@ import error_checking.InvalidArgumentsException;
 
 /**
  * Area to inputCommands.
- * 
  * @author Kevin Li
  * @author Meng'en Huang
  *
@@ -21,6 +20,11 @@ import error_checking.InvalidArgumentsException;
 public class InputView extends PaneView {
 
 	public static final String DEFAULT_DISPLAY_RESOURCE = "resources.languages/Display";
+	private static final double HEIGHT_RATIO=0.25;
+	private static final double INPUTAREA_WIDTH_RATIO=0.875;
+	private static final double BUTTON_WIDTH_RATIO=0.125;
+
+
 
 	public HBox myView;
 	private TextArea myInput;
@@ -34,8 +38,8 @@ public class InputView extends PaneView {
 		myModel = model;
 		myLocale = locale;
 		myView = new HBox();
-		myView.setPrefSize(width, height * 1 / 4);
-		setView(width, height * 1 / 4);
+		myView.setPrefSize(width, height * HEIGHT_RATIO);
+		setView(width, height * HEIGHT_RATIO);
 		initInputArea(width, height);
 		initSubmitButton(width, height);
 		myView.getChildren().addAll(myInput, mySubmitButton);
@@ -44,7 +48,6 @@ public class InputView extends PaneView {
 
 	/**
 	 * Initializes the dimensions of the input area.
-	 * 
 	 * @param width
 	 *            width of the entire program
 	 * @param height
@@ -53,13 +56,12 @@ public class InputView extends PaneView {
 
 	private void initInputArea(double width, double height) {
 		myInput = new TextArea();
-		myInput.setPrefSize(width * 7 / 8, height * 1 / 4);
-		myInput.setMaxSize(width * 7 / 8, height * 1 / 4);
+		myInput.setPrefSize(width * INPUTAREA_WIDTH_RATIO, height * HEIGHT_RATIO);
+		myInput.setMaxSize(width * INPUTAREA_WIDTH_RATIO, height * HEIGHT_RATIO);
 	}
 
 	/**
-	 * Creates the submit button and sets it to be the correct size
-	 * 
+	 * Creates the submit button and sets it to be the correct size.
 	 * @param width
 	 *            Width of the program.
 	 * @param height
@@ -70,9 +72,9 @@ public class InputView extends PaneView {
 		ResourceBundle languageBundle = ResourceBundle.getBundle(
 				DEFAULT_DISPLAY_RESOURCE, myLocale);
 		mySubmitButton.setText(languageBundle.getString("Submit"));
-		mySubmitButton.setPrefSize(width * 1 / 8, height * 1 / 4);
-		mySubmitButton.setMaxSize(width * 1 / 8, height * 1 / 4);
-		mySubmitButton.setMinSize(width * 1 / 8, height * 1 / 4);
+		mySubmitButton.setPrefSize(width * BUTTON_WIDTH_RATIO, height * HEIGHT_RATIO);
+		mySubmitButton.setMaxSize(width * BUTTON_WIDTH_RATIO, height * HEIGHT_RATIO);
+		mySubmitButton.setMinSize(width * BUTTON_WIDTH_RATIO, height * HEIGHT_RATIO);
 		mySubmitButton.setOnAction(new EventHandler<ActionEvent>() {
 			// give the string to the back-end parser
 			@Override
@@ -80,7 +82,6 @@ public class InputView extends PaneView {
 				try {
 					myModel.parseAndExecute(myInput.getText());
 				} catch (InvalidArgumentsException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				myInput.clear();
@@ -91,17 +92,17 @@ public class InputView extends PaneView {
 	}
 
 	/**
-	 * Shows text onto the input view
-	 * 
+	 * Shows text onto the input view.
 	 * @param text
 	 */
 
 	public void addAndShowText(String text) {
 		myText = myInput.getText();
-		if (!myText.trim().equals(""))
+		if (!myText.trim().equals("")) {
 			myText += "\n" + text.trim();
-		else
+		} else {
 			myText += text.trim();
+		}
 
 		myInput.clear();
 		myInput.setText(myText);
