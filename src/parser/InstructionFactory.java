@@ -1,14 +1,18 @@
+// This entire file is part of my masterpiece.
+// Jennie Ju (jsj18)
+
 package parser;
 
-import error_checking.ErrorDialog;
-import error_checking.InstructionDefineException;
 import instructions.ConstantInstruction;
 import instructions.Instruction;
 import instructions.VariableInstruction;
+
 import java.io.Serializable;
 import java.util.ResourceBundle;
+
 import model.CommandsList;
 import model.ObservableData;
+import error_checking.InvalidArgumentsException;
 
 
 /**
@@ -18,53 +22,52 @@ import model.ObservableData;
  */
 public class InstructionFactory implements Serializable {
     private static final long serialVersionUID = -2129488091762474882L;
-    private static final String CONSTANT_REGEX = "-?[0-9]+\\.?[0-9]*";
-    private static final String VARIABLE_REGEX = ":[a-zA-z]+";
-    private static final String COMMAND_REGEX = "[a-zA-Z_]+(\\?)?";
-    public static final String CHINESE_REGEX = "[\u4e00-\u9fa5]+(\\?)?";
+    
+    private static final String UNKNOWN_INSTR_KEY = "UnknownInstr";
+    
+    private static final String CONSTANT_KEY = "Constant";
+    private static final String VARIABLE_KEY = "Variable";
+    private static final String COMMAND_KEY = "Command";
+
     private ResourceBundle myLanguageBundle;
-    // DON'T KEEP THIS IN THIS MANNER (DISORGANIZED)
+    private ResourceBundle myDisplayBundle;
     private ObservableData myData;
 
-    /**
-     * @param data of observables
-     */
-    public InstructionFactory (ObservableData data) {
-        myLanguageBundle = loadResourceBundle("resources.languages/English");
+   /**
+    * InstructionFactory constructor
+    * @param data - ObservableData passed from Parser
+    * @param locale - Sets current language for determining instruction regexes in resources for
+    */
+    public InstructionFactory (ObservableData data, 
+    		ResourceBundle languageBundle, ResourceBundle displayBundle) {
+        myLanguageBundle = languageBundle;
+        myDisplayBundle = displayBundle;
         myData = data;
-
-    }
-
-    /**
-     * @param filepath for the resource bundle
-     * @return resource bundle
-     */
-    private ResourceBundle loadResourceBundle (String filepath) {
-        return ResourceBundle.getBundle(filepath);
     }
 
     /**
      * Takes a string type of instruction and instantiates the class based on
-     * the type
+     * the type (constant, variable, or command)
      * 
-     * @param type String name of type of instruction
+     * @param type - String name indicating type of instruction based on regexes
      * @return Instruction class of that type
      */
-    public Instruction makeInstruction (String type) {
+    public Instruction makeInstruction (String type) throws InvalidArgumentsException {
         type = type.toLowerCase();
 
-        if (type.matches(CONSTANT_REGEX)) {
+        if (type.matches(myLanguageBundle.getString(CONSTANT_KEY))) {
             double value = Double.parseDouble(type);
             return new ConstantInstruction(value);
         }
-        else if (type.matches(VARIABLE_REGEX)) {
+        else if (type.matches(myLanguageBundle.getString(VARIABLE_KEY))) {
             return new VariableInstruction(type);
         }
-        else if (type.matches(COMMAND_REGEX) || type.matches(CHINESE_REGEX)) {
+        else if (type.matches(myLanguageBundle.getString(COMMAND_KEY))) {
             CommandsList allCommands = (CommandsList) myData.get("CommandsList");
             return allCommands.get(type);
         }
-        new ErrorDialog("THERE IS NO SUCH INSTRUCTION");
-        throw new InstructionDefineException("THERE IS NO SUCH INSTRUCTION.");
+        else {
+            throw new InvalidArgumentsException(myDisplayBundle.getString(UNKNOWN_INSTR_KEY),type);
+        }
     }
 }

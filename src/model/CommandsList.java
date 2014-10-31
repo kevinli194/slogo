@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import java.util.Set;
 
 import error_checking.ErrorDialog;
+import error_checking.InvalidArgumentsException;
 
 /**
  * CommandsList class. Contains the list of pre-defined and user-defined
@@ -98,11 +99,11 @@ public class CommandsList implements Feature {
 	/**
 	 * Delete the user-defined command from the user-defiend commands map.
 	 * @param commandSyntax the name of the user-defined command to be deleted
+	 * @throws InvalidArgumentsException 
 	 */
-	public void delete(String commandSyntax) {
+	public void delete(String commandSyntax) throws InvalidArgumentsException {
 		if (!userDefCommands.containsKey(commandSyntax)) {
-			new ErrorDialog("Command %s does not exist.", commandSyntax);
-			System.out.println("USER DEFINED COMMAND NOT FOUND.");
+			throw new InvalidArgumentsException("%s command not found.", commandSyntax);
 		}
 		userDefCommands.remove(commandSyntax);
 	}
@@ -170,9 +171,9 @@ public class CommandsList implements Feature {
 	 * required command name is not found in the map.
 	 */
 	@Override
-	public void remove(Object commandSyntax) {
+	public void remove(Object commandSyntax) throws InvalidArgumentsException {
 		if (!userDefCommands.containsKey(commandSyntax)) {
-			System.out.println("USER DEFINED COMMAND NOT FOUND.");
+			throw new InvalidArgumentsException("User Defined Command not found.");
 		}
 		userDefCommands.remove(commandSyntax);
 	}

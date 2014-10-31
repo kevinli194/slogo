@@ -19,99 +19,93 @@ import error_checking.InvalidArgumentsException;
  */
 
 public class VariablesList implements Feature {
-    private Map<String, Double> myVariables;
-    private Stack<Map<String, Double>> myScope;
-    
-    private static final long serialVersionUID = 3790539722809452079L;
+	private Map<String, Double> myVariables;
+	private Stack<Map<String, Double>> myScope;
 
-    /**
-     * Instantiate the variable list.
-     */
-    public VariablesList() {
-        myVariables = new HashMap<String, Double>();
-        myScope = new Stack<Map<String, Double>>();
-    }
+	private static final long serialVersionUID = 3790539722809452079L;
 
-    /**
-     * Add variable name and value into variable list.
-     * @param variableName name of the variable
-     * @param value value of the variable
-     */
-    public void add(String variableName, double value) {
-        myVariables.put(variableName, value);
-    }
+	/**
+	 * Instantiate the variable list.
+	 */
+	public VariablesList() {
+		myVariables = new HashMap<String, Double>();
+		myScope = new Stack<Map<String, Double>>();
+	}
 
-    /**
-     * Add in scope.
-     */
-    public void addScope() {
-        myScope.push(myVariables);
-        myVariables = new HashMap<String, Double>(myVariables);
-    }
+	/**
+	 * Add variable name and value into variable list.
+	 * @param variableName name of the variable
+	 * @param value value of the variable
+	 */
+	public void add(String variableName, double value) {
+		myVariables.put(variableName, value);
+	}
 
-    /**
-     * Remove the variable from the list.
-     */
-    @Override
-    public void remove(Object variableName) throws InvalidArgumentsException {
-    	try {
-    		if (!myVariables.containsKey(variableName)) {
-    			new ErrorDialog("Variable %s does not exist.", variableName);
-    			throw new InvalidArgumentsException(
-    					"Variable %s does not exist.", variableName.toString());
+	/**
+	 * Add in scope.
+	 */
+	public void addScope() {
+		myScope.push(myVariables);
+		myVariables = new HashMap<String, Double>(myVariables);
+	}
 
-    		}
-    	} catch (Exception e) {
-    		e.printStackTrace();
-    	}
-    	myVariables.remove(variableName);
-    }
+	/**
+	 * Remove the variable from the list.
+	 */
+	@Override
+	public void remove(Object variableName) throws InvalidArgumentsException {
+		if (!myVariables.containsKey(variableName)) {
+			throw new InvalidArgumentsException(
+					"Variable %s does not exist.", variableName.toString());
+		}
 
-    /**
-     * Remove the variable from the scope.
-     */
-    public void removeScope() {
-        myVariables = myScope.pop();
-    }
+		myVariables.remove(variableName);
+	}
 
-    /**
-     * Get the variable according to the name of the variable.
-     * @param variableName the name of the variable
-     * @return Return the value of the variable
-     * @throws InvalidArgumentsException throw the exception when the variable name
-     * does not exist
-     */
-    public double get(String variableName) throws InvalidArgumentsException {
-        if (!myVariables.containsKey(variableName)) {
-            new ErrorDialog("Variable %s does not exist.", variableName);
-            throw new InvalidArgumentsException(
-            		"Variable %s does not exist.", variableName);
-        }
-        return myVariables.get(variableName);
-    }
+	/**
+	 * Remove the variable from the scope.
+	 */
+	public void removeScope() {
+		myVariables = myScope.pop();
+	}
 
-    /**
-     * Generate the list of the variable name and value.
-     * to pass to the front-end view package.
-     * @return list of the string representing variable name and value
-     */
-    public List<String> generate() {
-        List<String> variableList = new ArrayList<String>();
-        for (String s : myVariables.keySet()) {
-            System.out.println(s);
-            String element = s.trim().substring(1) + " : " + myVariables.get(s);
-            variableList.add(element);
-        }
-        return variableList;
-    }
+	/**
+	 * Get the variable according to the name of the variable.
+	 * @param variableName the name of the variable
+	 * @return Return the value of the variable
+	 * @throws InvalidArgumentsException throw the exception when the variable name
+	 * does not exist
+	 */
+	public double get(String variableName) throws InvalidArgumentsException {
+		if (!myVariables.containsKey(variableName)) {
+			throw new InvalidArgumentsException(
+					"Variable %s does not exist.", variableName);
+		}
+		return myVariables.get(variableName);
+	}
 
-    /**
-     * Clears list of variables.
-     */
+	/**
+	 * Generate the list of the variable name and value.
+	 * to pass to the front-end view package.
+	 * @return list of the string representing variable name and value
+	 */
+	public List<String> generate() {
+		List<String> variableList = new ArrayList<String>();
+		for (String s : myVariables.keySet()) {
+			System.out.println(s);
+			String element = s.trim().substring(1) + " : " + myVariables.get(s);
+			variableList.add(element);
+		}
+		return variableList;
+	}
 
-    @Override
-    public void clear() {
-        myVariables.clear();
-    }
+	/**
+	 * Clears list of variables.
+	 */
+
+	@Override
+	public void clear() {
+		myVariables.clear();
+	}
 
 }

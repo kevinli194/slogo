@@ -15,7 +15,7 @@ public class InstructionDefineException extends RuntimeException {
      * 
      * @param message for error
      */
-    public InstructionDefineException (String message) {
-        super(String.format(message));
+    public InstructionDefineException (String error, Object ... cause) {
+        super(String.format(error, cause));
     }
 }

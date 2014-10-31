@@ -1,12 +1,16 @@
 package model;
 
 import instructions.Instruction;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Locale;
 import java.util.Observable;
 import java.util.Random;
 import java.util.Stack;
+
+import error_checking.ErrorDialog;
+import error_checking.InstructionDefineException;
 import error_checking.InvalidArgumentsException;
 import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
@@ -34,7 +38,7 @@ public class SlogoModel extends Observable{
 	public SlogoModel(Locale locale) {
 		myLocale = locale;
 		myData = new ObservableData(myLocale);
-		myParser = new Parser(myData);
+		myParser = new Parser(myData, myLocale);
 	}
 
 	/**
@@ -45,7 +49,7 @@ public class SlogoModel extends Observable{
 	 */
 	public void parseAndExecute(String s) throws InvalidArgumentsException {
 
-		if (executeCommands((myParser.parse(s)))) {
+		if (executeCommands(myParser.parse(s))) {
 			showToHistoryView(s);
 		}
 	}
@@ -57,18 +61,22 @@ public class SlogoModel extends Observable{
 	 * @throws InvalidArgumentsException throw the exception
 	 * when the command in invalid
 	 */
-	public boolean executeCommands(Stack<Instruction> commandStack)
-									throws InvalidArgumentsException {
+	public boolean executeCommands(Stack<Instruction> commandStack) {
 		if (commandStack.isEmpty()) {
 			return false;
 		} else {
-			while (!commandStack.isEmpty()) {
-				Instruction current = commandStack.pop();
-				double returnValue = current.execute(myData);
-				showOnView(returnValue);
-				((History) myData.get("history")).addSaved(current);
+			try {
+				while (!commandStack.isEmpty()) {
+					Instruction current = commandStack.pop();
+					double returnValue = current.execute(myData);
+					showOnView(returnValue);
+					((History) myData.get("history")).addSaved(current);
+				}
+				return true;
+			} catch (InvalidArgumentsException | InstructionDefineException e) {
+				new ErrorDialog(e.getMessage());
+				return false;
 			}
-			return true;
 		}
 	}
 
@@ -123,7 +131,7 @@ public class SlogoModel extends Observable{
 	public void accessHelpHTML() {
 		try {
 			Runtime.getRuntime().exec(
-			  new String[] {"/usr/bin/open", HELP_URL });
+					new String[] {"/usr/bin/open", HELP_URL });
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -160,7 +168,7 @@ public class SlogoModel extends Observable{
 	 */
 	public void initializeBGColor(ObservableList<Color> customColors) {
 		((BackgroundColor) myData.get("backgroundcolor"))
-				.setCustom(customColors);
+		.setCustom(customColors);
 
 	}
 

@@ -16,7 +16,8 @@ public class InvalidArgumentsException extends Exception {
      * @param error message
      * @param cause of the error
      */
-    public InvalidArgumentsException (String error, String cause) {
+    public InvalidArgumentsException (String error, Object ... cause) {
         super(String.format(error, cause));
     }
+    
 }
