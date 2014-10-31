@@ -1,21 +1,23 @@
+// This entire file is part of my masterpiece.
+// MENGEN HUANG
 package view;
 
-import instructions.ConstantInstruction;
 import instructions.Instruction;
-import instructions.UserDefinedCommand;
-import java.io.Serializable;
+
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
+
+import error_checking.ErrorDialog;
 import error_checking.InvalidArgumentsException;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
-import model.CommandsList;
 import model.ObservableData;
 import model.SlogoModel;
 import parser.Parser;
@@ -24,27 +26,35 @@ import parser.Parser;
  * Take in key W,S,A,D,X as the key to move the turtle forward, backward, left,
  * right and set the turtle's head straight upward.
  * @author Mengen Huang
- * @author Kevin Li
  */
 public class KeyControls {
 
-
-    private static final long serialVersionUID = -6381483434400107432L;
-    private static final String DEFAULT_LANGUAGE_PACKAGE = "resources.languages/";
-
-    private List<String> keyCommands = new ArrayList<String>();
+    private static final String PARAMETERS = "Values";
+	private static final String KEY_CODE = "KeyCode";
+	private static final String COMMANDS_NAME = "Instructions";
+	private static final int SHORTCUT_KEY_NUMBER = 5;
+	private static final String LANGUAGE_RESOURCE =
+    								"resources.languages/Commands";
+	private static final String DEFAULT_KEYCODE = 
+								"resources.parsing/DefaultKeyCode";
+	private String[] keyCommandsSyntax;
+    private String[] keyCodeString;
+    private String[] parameters;
+    private ArrayList<KeyCode> keyCode=new ArrayList<KeyCode>();;
+  
     private SlogoModel myModel;
     private BorderPane myWindow;
     private Locale myLocale;
-    private Map<KeyCode, Instruction> keyMap = new HashMap<KeyCode, Instruction>();
+    private List<String> keyCommands = new ArrayList<String>();
+    private Map<KeyCode, Instruction> keyMap =
+    		new HashMap<KeyCode, Instruction>();
 
     /**
      * Create the KeyControl.
      * @param model model run in the window
      * @param window window shown on the screen
      */
-
-    public KeyControls(SlogoModel model, BorderPane window) 
+    public KeyControls(SlogoModel model, BorderPane window)
     						throws InvalidArgumentsException {
         myModel = model;
         myWindow = window;
@@ -52,35 +62,56 @@ public class KeyControls {
         setCommandsList();
         setKeyMap();
         makeKeyCommands();
+
     }
 
     /**
-     * get the commands in different language to move forward, backward, left,
-     * right and setheading.
+     * Get the commands in different language to move forward, backward, left,
+     * right and set heading.
      */
     private void setCommandsList() {
-        ResourceBundle languageBundle =
-                ResourceBundle.getBundle(DEFAULT_LANGUAGE_PACKAGE + "Commands",
-                							myLocale);
-        keyCommands.add(languageBundle.getString("Forward").split(",")[0]);
-        keyCommands.add(languageBundle.getString("Backward").split(",")[0]);
-        keyCommands.add(languageBundle.getString("Left").split(",")[0]);
-        keyCommands.add(languageBundle.getString("Right").split(",")[0]);
-        keyCommands.add(languageBundle.getString("SetHeading").split(",")[0]);
-
+    	ResourceBundle languageBundle =
+    			ResourceBundle.getBundle(LANGUAGE_RESOURCE,
+    					myLocale);
+    	readInKeycode();
+    	for (String s:keyCommandsSyntax) {
+    		keyCommands.add(languageBundle.getString(s).split(",")[0]);
+    	}
     }
 
     /**
-     * Set up the keyMap. Match the Keycode with the specific commands.
+     * Read in information and data for shortcut key from properties file.
      */
+	private void readInKeycode() {
+		keyCommandsSyntax=getValue(COMMANDS_NAME);
+    	keyCodeString=getValue(KEY_CODE);
+    	parameters = getValue(PARAMETERS);
+    	for (String s:keyCodeString) {
+    		keyCode.add(KeyCode.getKeyCode(s));
+    	}      
+	}
 
+	/**
+	 * Help function reading in values of properties file.
+	 * @param name key word stored in properties file
+	 * @return value of corresponding key
+	 */
+	private String[] getValue(String name) {
+		ResourceBundle keyCodeBundle =
+    			ResourceBundle.getBundle(DEFAULT_KEYCODE);
+		return (String[]) keyCodeBundle.getString(name).split(",");
+	}
+
+	/**
+     * Set up the keyMap. Match the Keycode with the specific commands.
+     * @throws throw the InvalidArgumentsException for parser
+     */
     private void setKeyMap() throws InvalidArgumentsException {
         Parser p = myModel.getParser();
-        keyMap.put(KeyCode.W, p.parse(keyCommands.get(0) + " 5").pop());
-        keyMap.put(KeyCode.S, p.parse(keyCommands.get(1) + " 5").pop());
-        keyMap.put(KeyCode.A, p.parse(keyCommands.get(2) + " 10").pop());
-        keyMap.put(KeyCode.D, p.parse(keyCommands.get(3) + " 10").pop());
-        keyMap.put(KeyCode.X, p.parse(keyCommands.get(4) + " 0").pop());
+        for (int i = 0; i< SHORTCUT_KEY_NUMBER; i++) {
+            keyMap.put(keyCode.get(i),
+            		p.parse(keyCommands.get(i) + parameters[i]).pop());
+        }
     }
 
     /**
@@ -88,35 +119,16 @@ public class KeyControls {
      * turtle will move according to the keys pressed.
      */
     public void makeKeyCommands() {
-        CommandsList commandsList = (CommandsList) myModel.getMyData().get(
-        													"CommandsList");
-
         myWindow.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent arg0) {
                 ObservableData data = myModel.getMyData();
                 if (keyMap.keySet().contains(arg0.getCode())) {
-                    try {
-                        keyMap.get(arg0.getCode()).execute(data);
-                    } catch (InvalidArgumentsException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
-                }
-
-                if (commandsList.contains("onkey")){
-                    UserDefinedCommand current = 
-                    		(UserDefinedCommand) commandsList.get("onkey");
-                    @SuppressWarnings("deprecation")
-                    double value = arg0.getCode().impl_getCode();
-                    current.addParam(new ConstantInstruction(value));
-                    try {
-                        myModel.parseAndExecute("onkey " + Double.toString(value));
-                    }
-                    catch (InvalidArgumentsException e) {
-                        e.printStackTrace();
-                    }
-
+                        try {
+							keyMap.get(arg0.getCode()).execute(data);
+						} catch (InvalidArgumentsException e) {
+								new ErrorDialog(e.toString());
+						}
                 }
             }
         });

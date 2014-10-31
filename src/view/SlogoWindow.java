@@ -66,9 +66,7 @@ public class SlogoWindow extends BorderPane implements Observer {
 		setLeft(myHistoryResultsView);
 		setTop(mySettingsView);
 		setVisible(true);
-
-		myControls = new KeyControls(myModel, this);
-
+		
 		myModel.load();
 		myControls = new KeyControls(myModel, this);
 

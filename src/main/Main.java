@@ -14,7 +14,6 @@ public class Main extends Application {
 			.getVisualBounds().getWidth() * 3 / 4;
 	private static final double SCREEN_HEIGHT = Screen.getPrimary()
 			.getVisualBounds().getHeight() * 4 / 5;
-	SlogoModel myModel;
 	SlogoView myView;
 
 	@Override
@@ -22,7 +21,6 @@ public class Main extends Application {
 		Locale locale = new Locale("en","US");
 
 		primaryStage.setResizable(false);
-		myModel = new SlogoModel(locale);
 		myView = new SlogoView(primaryStage, locale, SCREEN_WIDTH,
 				SCREEN_HEIGHT);
 

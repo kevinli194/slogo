@@ -84,7 +84,7 @@ public class MenuView extends MenuBar {
 
 	/**
 	 * Create the Menu.
-	 * @param locale languaeg and locale applied
+	 * @param locale language and locale applied
 	 * @param width width of the view
 	 * @param height height of the view
 	 */
@@ -183,7 +183,6 @@ public class MenuView extends MenuBar {
 			}
 		});
 		menuFile.getItems().add(openFile);
-
 	}
 
 	/**
@@ -266,6 +265,10 @@ public class MenuView extends MenuBar {
 	 */
 	private void clear() {
 		this.getMenus().clear();
+	}
+	
+	public Map<String, Locale> getLocaleMap(){
+		return localeMap;
 	}
 
 }

@@ -108,9 +108,9 @@ public class CommandsList implements Feature {
 	}
 
 	/**
-	 * Get the instruction which matches the name of the user-defined command.
-	 * @param commandSyntax name of the user-defined command
-	 * @return instruction which matches the name of the user-defined command
+	 * Get the instruction which matches the name of the command.
+	 * @param commandSyntax name of the command
+	 * @return instruction which matches the name of command
 	 */
 	public Instruction get(String commandSyntax) {
 		try {

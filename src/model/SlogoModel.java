@@ -155,6 +155,14 @@ public class SlogoModel extends Observable{
 	}
 
 	/**
+	 * Set the locale.
+	 * @param locale new locale to be implemented.
+	 */
+	public void setLocale(Locale locale){
+		myLocale=locale;
+	}
+	
+	/**
 	 * Initialize the background color.
 	 * @param customColors The list of custom colors
 	 */
