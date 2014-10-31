@@ -1,3 +1,6 @@
+// This entire file is part of my masterpiece.
+// SANDY
+
 package parser;
 
 import error_checking.ErrorDialog;
@@ -34,7 +37,8 @@ public class Parser implements Serializable {
 
     /**
      * Constructor for a Parser. Creates a new instance of the Tokenizer.
-     *@param data of observables
+     *
+     * @param data of observables
      */
     public Parser (ObservableData data) {
         myTokenizer = new Tokenizer();
@@ -43,6 +47,7 @@ public class Parser implements Serializable {
 
     /**
      * sets language bundle
+     * 
      * @param bundle of resource
      */
     public void setLanguage (ResourceBundle bundle) {
@@ -158,8 +163,8 @@ public class Parser implements Serializable {
      * @param iStack of parameters
      * @throws InvalidArgumentsException throws when there is not enough parameters
      */
-    private void addParams (Instruction instr, Stack<Instruction> iStack) 
-            throws InvalidArgumentsException {
+    private void addParams (Instruction instr, Stack<Instruction> iStack)
+                                                                         throws InvalidArgumentsException {
         if (instr.getNumParams() > iStack.size()) {
             new ErrorDialog(PARAMETER_ERROR);
             throw new InvalidArgumentsException(PARAMETER_ERROR, this.getClass().getCanonicalName());
