@@ -1,3 +1,6 @@
+// This entire file is part of my masterpiece.
+// Kevin Li
+
 package view;
 
 import javafx.event.EventHandler;
@@ -44,7 +47,7 @@ public abstract class ScrollView extends ScrollPane {
 	 * @param width width of the view
 	 * @param height height of the view
 	 */
-	public void setView(double width, double height) {
+	protected void setView(double width, double height) {
 		setPrefSize(width, height);
 		setMinSize(width, height);
 		setMaxSize(width, height);
@@ -54,7 +57,7 @@ public abstract class ScrollView extends ScrollPane {
 	 * Take in a string and add the String as a HBox.
 	 * @param s String displayed
 	 */
-	public void addTextBox(String s) {
+	protected void addTextBox(String s) {
 		HBox h = new HBox();
 		Text t = makeClickableText(s);
 		h.getChildren().add(t);

@@ -1,3 +1,5 @@
+
+
 package view;
 
 import java.util.List;
@@ -10,7 +12,7 @@ import model.VariablesList;
  * @author Kevin Li
  *
  */
-public class VariablesView extends DataViewComponents {
+public class VariablesView extends DataComponents {
 /**
  * @param input InputView
  * @param width width of super class ScrollView

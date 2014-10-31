@@ -7,12 +7,12 @@ import javafx.scene.shape.Line;
 
 /**
  * Set the properties of Pen.
+ * 
  * @author Kevin Li
  *
  */
 public class Pen {
-	private static final long serialVersionUID = -1512292990210270763L;
-
+	private static final Color DEFAULT_COLOR = Color.WHITE;
 	private static final int DASHED_STROKE_WIDTH = 5;
 	private static final double SOLID_STROKE_WIDTH_1 = .1;
 	private static final double SOLID_STROKE_WIDTH_0 = .1;
@@ -20,28 +20,29 @@ public class Pen {
 	private static final double DOTTED_STROKE_WIDTH_0 = .2;
 	private static final int DEFAULT_LINE_PROPERTY = 1;
 	private static final int STROKE_DASH_OFFSET_VALUE = 50;
-	private static final double DEFAULT_STROKE_WIDTH=3;
+	private static final double DEFAULT_STROKE_WIDTH = 3;
 	private Color myLineColor;
 	private boolean isPenDown;
 	private double myStrokeWidth;
 	private List<Color> myCustom;
-	private double[] myLineProperty;
+	private double[] myLineProperty = new double[2];
 
 	/**
 	 * Set the default property of the pen.
 	 */
 	public Pen() {
-		myLineColor = Color.WHITE;
+		myLineColor = DEFAULT_COLOR;
 		isPenDown = true;
 		myStrokeWidth = DEFAULT_STROKE_WIDTH;
-		myLineProperty = new double[2];
 		myLineProperty[0] = DEFAULT_LINE_PROPERTY;
 		myLineProperty[1] = DEFAULT_LINE_PROPERTY;
 	}
 
 	/**
 	 * Set the Customized color list.
-	 * @param custom customized color list
+	 * 
+	 * @param custom
+	 *            customized color list
 	 */
 	public void setCustom(List<Color> custom) {
 		myCustom = custom;
@@ -49,7 +50,9 @@ public class Pen {
 
 	/**
 	 * Set the stroke width of the pen.
-	 * @param width width of the stroke
+	 * 
+	 * @param width
+	 *            width of the stroke
 	 */
 	public void setStrokeWidth(double width) {
 		myStrokeWidth = width;
@@ -57,7 +60,9 @@ public class Pen {
 
 	/**
 	 * Set the pen color.
-	 * @param color color of the pen
+	 * 
+	 * @param color
+	 *            color of the pen
 	 */
 	public void setPenColor(Color color) {
 		myLineColor = color;
@@ -65,7 +70,9 @@ public class Pen {
 
 	/**
 	 * Set the pen down.
-	 * @param state state to represent if the pen is up or down
+	 * 
+	 * @param state
+	 *            state to represent if the pen is up or down
 	 */
 	public void setPenDown(boolean state) {
 		isPenDown = state;
@@ -73,6 +80,7 @@ public class Pen {
 
 	/**
 	 * Return if the pen is down. Return 0 when up, 1 when down.
+	 * 
 	 * @return
 	 */
 	public double isPenDown() {
@@ -84,6 +92,7 @@ public class Pen {
 
 	/**
 	 * Get the pen color.
+	 * 
 	 * @return the color of the pen
 	 */
 	public Color getPenColor() {
@@ -92,8 +101,11 @@ public class Pen {
 
 	/**
 	 * Get the starting and ending point and draw the line.
-	 * @param start starting point of the line
-	 * @param end ending point of the line
+	 * 
+	 * @param start
+	 *            starting point of the line
+	 * @param end
+	 *            ending point of the line
 	 * @return the line
 	 */
 	public Line drawLine(double[] start, double[] end) {
@@ -101,16 +113,19 @@ public class Pen {
 			return createLine(start, end, myLineColor);
 		}
 
-
 		return createLine(start, end, null);
 
 	}
 
 	/**
 	 * Help method of drawLine.
-	 * @param start starting point of the line
-	 * @param end ending point of the line
-	 * @param color color of the line
+	 * 
+	 * @param start
+	 *            starting point of the line
+	 * @param end
+	 *            ending point of the line
+	 * @param color
+	 *            color of the line
 	 * @return the line
 	 */
 	public Line createLine(double[] start, double[] end, Color color) {
@@ -124,6 +139,7 @@ public class Pen {
 
 	/**
 	 * Get the list of customized color.
+	 * 
 	 * @return customized color list
 	 */
 	public List<Color> getCustom() {
@@ -140,7 +156,9 @@ public class Pen {
 
 	/**
 	 * Change the properties of the line.
-	 * @param properties name of the properties of the line
+	 * 
+	 * @param properties
+	 *            name of the properties of the line
 	 */
 	public void changeLineProperty(String properties) {
 		setPenDown(true);

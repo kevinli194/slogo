@@ -36,6 +36,11 @@ public class DataView extends PaneView {
 		myVariablesView = new VariablesView(input, width, height);
 		ResourceBundle languageBundle = ResourceBundle.getBundle(
 				DEFAULT_DISPLAY_RESOURCE, myLocale);
+		createTitledPanes(languageBundle);
+		this.getChildren().add(myView);
+	}
+
+	private void createTitledPanes(ResourceBundle languageBundle) {
 		TitledPane t1 = new TitledPane(
 				languageBundle.getString("BasicCommands"),
 				myBasicCommands);
@@ -46,7 +51,6 @@ public class DataView extends PaneView {
 				languageBundle.getString("UserDefinedVariables"),
 				myVariablesView);
 		myView.getPanes().addAll(t1, t2, t3);
-		this.getChildren().add(myView);
 	}
 
 	/**

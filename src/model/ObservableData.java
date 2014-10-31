@@ -11,7 +11,6 @@ import java.util.Map;
  *
  */
 public class ObservableData {
-	private static final long serialVersionUID = -8636982923572910062L;
 	private Map<String, Feature> myFeatures;
 	private Turtle myTurtle;
 

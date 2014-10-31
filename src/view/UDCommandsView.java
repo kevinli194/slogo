@@ -1,3 +1,6 @@
+// This entire file is part of my masterpiece.
+// Kevin Li
+
 package view;
 
 import java.util.List;
@@ -9,7 +12,7 @@ import model.CommandsList;
  * @author Kevin Li
  *
  */
-public class UDCommandsView extends DataViewComponents {
+public class UDCommandsView extends DataComponents {
 
 	/**
 	 * Create the user-defined commands view.

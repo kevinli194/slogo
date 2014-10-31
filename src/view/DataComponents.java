@@ -1,3 +1,6 @@
+// This entire file is part of my masterpiece.
+// Kevin Li
+
 package view;
 
 import error_checking.InvalidArgumentsException;
@@ -13,10 +16,10 @@ import model.Feature;
  * @author Kevin Li
  *
  */
-public abstract class DataViewComponents extends ScrollView {
+public abstract class DataComponents extends ScrollView {
 	private static final int DELETE_BUTTON_X = 50;
 
-	public DataViewComponents(InputView input, double width, double height) {
+	public DataComponents(InputView input, double width, double height) {
 		super(input, width, height);
 	}
 
