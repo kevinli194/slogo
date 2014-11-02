@@ -1,5 +1,4 @@
 // My code starts from line 120 
-// This entire file is part of my masterpiece.
 // SANDY
 
 package view;
