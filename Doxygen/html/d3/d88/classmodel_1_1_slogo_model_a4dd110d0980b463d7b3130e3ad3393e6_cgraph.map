@@ -1,0 +1,6 @@
+<map id="model.SlogoModel.toggleTurtle" name="model.SlogoModel.toggleTurtle">
+<area shape="rect" id="node2" href="$d8/d36/classmodel_1_1_observable_data.html#aa585e00721a74cba9ab459079945e15b" title="model.ObservableData.get\lTurtle" alt="" coords="272,5,467,46"/>
+<area shape="rect" id="node3" href="$d3/d88/classmodel_1_1_slogo_model.html#a5a328c6f896a5c150e95b49db71dea8f" title="model.SlogoModel.load" alt="" coords="284,71,455,97"/>
+<area shape="rect" id="node4" href="$d6/d34/classmodel_1_1_turtle.html#a0550d3e5a9d973a1774ae8f6f5d571df" title="model.Turtle.toggleVisible" alt="" coords="277,121,462,148"/>
+<area shape="rect" id="node5" href="$d6/d34/classmodel_1_1_turtle.html#a772aad8bba7b5bc7bd3e95408478324f" title="model.Turtle.setVisible" alt="" coords="515,121,680,148"/>
+</map>

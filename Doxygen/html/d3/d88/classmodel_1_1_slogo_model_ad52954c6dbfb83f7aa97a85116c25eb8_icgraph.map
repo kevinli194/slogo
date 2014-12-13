@@ -1,0 +1,8 @@
+<map id="model.SlogoModel.showOnView" name="model.SlogoModel.showOnView">
+<area shape="rect" id="node2" href="$d3/d88/classmodel_1_1_slogo_model.html#a54085c9bf13d8dcfd7deed3623be36f1" title="model.SlogoModel.execute\lCommands" alt="" coords="277,38,472,79"/>
+<area shape="rect" id="node3" href="$d3/d88/classmodel_1_1_slogo_model.html#ad096dbf0a253635d346a622540f472bd" title="model.SlogoModel.parseAnd\lExecute" alt="" coords="520,38,725,79"/>
+<area shape="rect" id="node4" href="$d6/d0a/classview_1_1_input_view.html#a948930c9b825f34ef8f5def96910471b" title="view.InputView.initSubmit\lButton" alt="" coords="777,5,959,46"/>
+<area shape="rect" id="node6" href="$d4/d90/classview_1_1_key_controls.html#a0c3663cb62e91e8919b0296aad899a8f" title="view.KeyControls.makeKey\lCommands" alt="" coords="773,70,963,111"/>
+<area shape="rect" id="node5" href="$d6/d0a/classview_1_1_input_view.html#ac75e6562ed83ace6cb0a0ac886780054" title="view.InputView.InputView" alt="" coords="1026,12,1203,39"/>
+<area shape="rect" id="node7" href="$d4/d90/classview_1_1_key_controls.html#a4b73546f8ba8feee9e878b3cf743fb61" title="view.KeyControls.KeyControls" alt="" coords="1011,77,1218,104"/>
+</map>

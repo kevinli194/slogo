@@ -1,0 +1,6 @@
+<map id="view.SettingsView.addTurtleChoices" name="view.SettingsView.addTurtleChoices">
+<area shape="rect" id="node2" href="$d3/d88/classmodel_1_1_slogo_model.html#a356fe9ced691a6dba1992d41db95d5f7" title="model.SlogoModel.getMyData" alt="" coords="249,5,463,32"/>
+<area shape="rect" id="node3" href="$d8/d36/classmodel_1_1_observable_data.html#aa585e00721a74cba9ab459079945e15b" title="model.ObservableData.get\lTurtle" alt="" coords="259,57,453,98"/>
+<area shape="rect" id="node4" href="$d6/d34/classmodel_1_1_turtle.html#a7262b3f5790af08bcc64462f8674b4e4" title="model.Turtle.initListofTurtles" alt="" coords="257,123,455,149"/>
+<area shape="rect" id="node5" href="$d6/d34/classmodel_1_1_turtle.html#a9b238ef75e28c6c81ea8ad6ee41a7ff1" title="model.Turtle.setShape" alt="" coords="273,173,439,200"/>
+</map>

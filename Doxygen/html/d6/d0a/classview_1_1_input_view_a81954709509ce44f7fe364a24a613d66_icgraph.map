@@ -1,0 +1,9 @@
+<map id="view.InputView.addAndShowText" name="view.InputView.addAndShowText">
+<area shape="rect" id="node2" href="$db/d98/classview_1_1_scroll_view.html#af8a9a83dc920350c521d6d78016cafce" title="view.ScrollView.makeClickableText" alt="" coords="278,31,514,57"/>
+<area shape="rect" id="node3" href="$db/d98/classview_1_1_scroll_view.html#af810ea194b6bcd9c7c8da1f84ebd5ac2" title="view.ScrollView.addTextBox" alt="" coords="563,31,755,57"/>
+<area shape="rect" id="node4" href="$d9/d93/classview_1_1_basic_commands_view.html#a787c3d60d71cc35031fcc939758c25dc" title="view.BasicCommandsView.update" alt="" coords="803,5,1040,32"/>
+<area shape="rect" id="node7" href="$d1/d0e/classview_1_1_history_view.html#abfcd825b67237a6c1a803a1314b223f3" title="view.HistoryView.update" alt="" coords="834,56,1009,83"/>
+<area shape="rect" id="node5" href="$de/d2f/classview_1_1_data_view.html#ab1acc31f3125a6a1d52e21b05bae379b" title="view.DataView.update" alt="" coords="1117,5,1277,32"/>
+<area shape="rect" id="node6" href="$d0/dfc/classview_1_1_slogo_window.html#a1605d0405c7961727ef7c3d96e41b743" title="view.SlogoWindow.update" alt="" coords="1355,31,1538,57"/>
+<area shape="rect" id="node8" href="$dc/da8/classview_1_1_history_results_view.html#a6a4386f2ddde878a8c42ca401a79aee5" title="view.HistoryResultsView.update" alt="" coords="1088,56,1307,83"/>
+</map>

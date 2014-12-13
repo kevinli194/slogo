@@ -1,0 +1,5 @@
+<map id="instructions.commands.PenUp.execute" name="instructions.commands.PenUp.execute">
+<area shape="rect" id="node2" href="$d6/d34/classmodel_1_1_turtle.html#a3feaf892f3049394737e61453a1c320d" title="model.Turtle.getPen" alt="" coords="276,5,425,32"/>
+<area shape="rect" id="node3" href="$d8/d36/classmodel_1_1_observable_data.html#aa585e00721a74cba9ab459079945e15b" title="model.ObservableData.get\lTurtle" alt="" coords="253,57,448,98"/>
+<area shape="rect" id="node4" href="$de/ded/classmodel_1_1_pen.html#ad799d84679d9e8332c9cd2b428ea7384" title="model.Pen.setPenDown" alt="" coords="264,123,437,149"/>
+</map>

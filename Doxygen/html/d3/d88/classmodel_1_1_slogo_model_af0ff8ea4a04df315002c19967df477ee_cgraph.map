@@ -1,0 +1,5 @@
+<map id="model.SlogoModel.initializePenColor" name="model.SlogoModel.initializePenColor">
+<area shape="rect" id="node2" href="$d8/d36/classmodel_1_1_observable_data.html#aa585e00721a74cba9ab459079945e15b" title="model.ObservableData.get\lTurtle" alt="" coords="251,5,445,46"/>
+<area shape="rect" id="node3" href="$d6/d34/classmodel_1_1_turtle.html#ad38145f0d661fccdc638b4e3b814620d" title="model.Turtle.setPenCustom" alt="" coords="249,71,447,97"/>
+<area shape="rect" id="node4" href="$de/ded/classmodel_1_1_pen.html#a81b3b2c7a645a33687ca88624c0944d3" title="model.Pen.setCustom" alt="" coords="497,71,661,97"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="view.InputView.initSubmitButton" name="view.InputView.initSubmitButton">
+<area shape="rect" id="node2" href="$d3/d88/classmodel_1_1_slogo_model.html#ad096dbf0a253635d346a622540f472bd" title="model.SlogoModel.parseAnd\lExecute" alt="" coords="235,191,440,233"/>
+<area shape="rect" id="node3" href="$d3/d88/classmodel_1_1_slogo_model.html#a54085c9bf13d8dcfd7deed3623be36f1" title="model.SlogoModel.execute\lCommands" alt="" coords="488,78,683,119"/>
+<area shape="rect" id="node9" href="$d6/d95/classparser_1_1_parser.html#aec8f2721f51a8a257b572c73d80d5d98" title="parser.Parser.parse" alt="" coords="513,260,658,287"/>
+<area shape="rect" id="node18" href="$d3/d88/classmodel_1_1_slogo_model.html#a396654689e37ebdc837f5623a25d08d3" title="model.SlogoModel.showToHistoryView" alt="" coords="731,199,994,225"/>
+<area shape="rect" id="node4" href="$d2/d93/interfaceinstructions_1_1_instruction.html#ab47846ec32fac6e514e5ab7fe4db0254" title="instructions.Instruction.execute" alt="" coords="751,5,974,32"/>
+<area shape="rect" id="node5" href="$d8/d36/classmodel_1_1_observable_data.html#aa526df8e1adab74d19f2d89071560dcb" title="model.ObservableData.get" alt="" coords="1315,224,1509,251"/>
+<area shape="rect" id="node6" href="$d3/d88/classmodel_1_1_slogo_model.html#ad52954c6dbfb83f7aa97a85116c25eb8" title="model.SlogoModel.showOnView" alt="" coords="751,115,974,141"/>
+<area shape="rect" id="node7" href="$d8/d36/classmodel_1_1_observable_data.html#a575297a6d90ca0223478c397de4a8296" title="model.ObservableData.change\lReturn" alt="" coords="1043,107,1263,149"/>
+<area shape="rect" id="node8" href="$d3/d88/classmodel_1_1_slogo_model.html#a5a328c6f896a5c150e95b49db71dea8f" title="model.SlogoModel.load" alt="" coords="1068,173,1239,200"/>
+<area shape="rect" id="node10" href="$d6/d95/classparser_1_1_parser.html#a0b953b563fd9171ad113c168900ba0ad" title="parser.Parser.parseTokens" alt="" coords="769,348,957,375"/>
+<area shape="rect" id="node17" href="$de/d6b/classparser_1_1_tokenizer.html#ab347b4e57c1c6a0e09467b548025c2e8" title="parser.Tokenizer.tokenize" alt="" coords="771,260,954,287"/>
+<area shape="rect" id="node11" href="$d6/d95/classparser_1_1_parser.html#a45262e7dc7f355abdb9df8fa3630c86f" title="parser.Parser.addParams" alt="" coords="1063,407,1244,433"/>
+<area shape="rect" id="node12" href="$d6/d95/classparser_1_1_parser.html#a4f0036d9216912f383261d0482cbb1b1" title="parser.Parser.findMatching\lBracket" alt="" coords="1058,341,1249,382"/>
+<area shape="rect" id="node14" href="$d6/d95/classparser_1_1_parser.html#ac2278cd512ecf95e7dbe39f1e381cef7" title="parser.Parser.isRightBracket" alt="" coords="1312,428,1512,455"/>
+<area shape="rect" id="node15" href="$d3/d96/classparser_1_1_instruction_factory.html#a4b06d4f5f8e173824966dd0ec1e00255" title="parser.InstructionFactory.make\lInstruction" alt="" coords="1045,275,1262,317"/>
+<area shape="rect" id="node13" href="$d6/d95/classparser_1_1_parser.html#abe383fbf6f2944c67226ac2432c548b2" title="parser.Parser.isLeftBracket" alt="" coords="1316,348,1508,375"/>
+<area shape="rect" id="node16" href="$d6/df7/classmodel_1_1_commands_list.html#a3a5d7af953dff13e1e5138d6191c69cf" title="model.CommandsList.get" alt="" coords="1319,283,1505,309"/>
+</map>

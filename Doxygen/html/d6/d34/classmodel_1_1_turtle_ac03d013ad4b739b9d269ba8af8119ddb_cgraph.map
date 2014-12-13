@@ -1,0 +1,8 @@
+<map id="model.Turtle.moveTurtleAndDrawLine" name="model.Turtle.moveTurtleAndDrawLine">
+<area shape="rect" id="node2" href="$d6/d34/classmodel_1_1_turtle.html#a1f264343c6daebe6a1b07db29b7cbb30" title="model.Turtle.calculateEnd\lCoord" alt="" coords="262,5,447,46"/>
+<area shape="rect" id="node3" href="$de/ded/classmodel_1_1_pen.html#ac3ec9470d841cd296e05db47a03596f9" title="model.Pen.drawLine" alt="" coords="279,71,430,97"/>
+<area shape="rect" id="node5" href="$d6/d34/classmodel_1_1_turtle.html#abf987ba62d49c24804d43b464f9b7410" title="model.Turtle.setCoordinates" alt="" coords="254,121,455,148"/>
+<area shape="rect" id="node6" href="$d6/d34/classmodel_1_1_turtle.html#a138e6be2a3c83aea4ef698bf9e499bcf" title="model.Turtle.setTurtleInfo" alt="" coords="504,147,685,173"/>
+<area shape="rect" id="node4" href="$de/ded/classmodel_1_1_pen.html#ad9374c4c077137d9af9d671f600858ec" title="model.Pen.createLine" alt="" coords="514,71,675,97"/>
+<area shape="rect" id="node7" href="$d6/d34/classmodel_1_1_turtle.html#a61d79b71c878b0c64adeab038483da7a" title="model.Turtle.getAngle" alt="" coords="734,147,895,173"/>
+</map>

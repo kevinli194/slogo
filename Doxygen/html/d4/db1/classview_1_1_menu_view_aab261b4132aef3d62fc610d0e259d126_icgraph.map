@@ -1,0 +1,5 @@
+<map id="view.MenuView.createFileMenu" name="view.MenuView.createFileMenu">
+<area shape="rect" id="node2" href="$d4/db1/classview_1_1_menu_view.html#aed39c72c611c501f766867823a4ae8b5" title="view.MenuView.makeLanguageItem" alt="" coords="270,5,517,32"/>
+<area shape="rect" id="node4" href="$d4/db1/classview_1_1_menu_view.html#a14aaba9bd102863ec179fb03aef984b8" title="view.MenuView.MenuView" alt="" coords="302,56,485,83"/>
+<area shape="rect" id="node3" href="$d4/db1/classview_1_1_menu_view.html#ae9198689f86964211100210cb784c14e" title="view.MenuView.getLocale" alt="" coords="565,56,747,83"/>
+</map>

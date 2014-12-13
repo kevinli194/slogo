@@ -1,0 +1,11 @@
+<map id="model.SlogoModel" name="model.SlogoModel">
+<area shape="rect" id="node8" href="$d8/d36/classmodel_1_1_observable_data.html" title="model.ObservableData" alt="" coords="953,279,1122,305"/>
+<area shape="rect" id="node4" href="$d6/d95/classparser_1_1_parser.html" title="parser.Parser" alt="" coords="1605,184,1712,211"/>
+<area shape="rect" id="node7" href="$d3/d96/classparser_1_1_instruction_factory.html" title="parser.InstructionFactory" alt="" coords="1304,151,1483,177"/>
+<area shape="rect" id="node10" href="$d1/d69/interfacemodel_1_1_feature.html" title="model.Feature" alt="" coords="281,391,396,417"/>
+<area shape="rect" id="node25" href="$de/d6b/classparser_1_1_tokenizer.html" title="parser.Tokenizer" alt="" coords="456,47,581,73"/>
+<area shape="rect" id="node9" href="$df/db7/classmodel_1_1_turtles_list.html" title="model.TurtlesList" alt="" coords="650,244,779,271"/>
+<area shape="rect" id="node14" href="$d6/d34/classmodel_1_1_turtle.html" title="model.Turtle" alt="" coords="665,579,765,605"/>
+<area shape="rect" id="node15" href="$d5/dad/classmodel_1_1_turtle_abstract.html" title="model.TurtleAbstract" alt="" coords="261,675,416,701"/>
+<area shape="rect" id="node18" href="$de/ded/classmodel_1_1_pen.html" title="model.Pen" alt="" coords="293,776,384,803"/>
+</map>

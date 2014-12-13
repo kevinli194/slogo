@@ -1,0 +1,6 @@
+<map id="view.SlogoWindow.SlogoWindow" name="view.SlogoWindow.SlogoWindow">
+<area shape="rect" id="node2" href="$d3/d88/classmodel_1_1_slogo_model.html#a5a328c6f896a5c150e95b49db71dea8f" title="model.SlogoModel.load" alt="" coords="281,5,452,32"/>
+<area shape="rect" id="node3" href="$d0/dfc/classview_1_1_slogo_window.html#ac299c416ca174b4ebe51eaf7d2700af3" title="view.SlogoWindow.onClick\lCommand" alt="" coords="275,57,458,98"/>
+<area shape="rect" id="node4" href="$d3/d88/classmodel_1_1_slogo_model.html#a356fe9ced691a6dba1992d41db95d5f7" title="model.SlogoModel.getMyData" alt="" coords="507,39,722,65"/>
+<area shape="rect" id="node5" href="$d8/d36/classmodel_1_1_observable_data.html#aa526df8e1adab74d19f2d89071560dcb" title="model.ObservableData.get" alt="" coords="517,89,712,116"/>
+</map>

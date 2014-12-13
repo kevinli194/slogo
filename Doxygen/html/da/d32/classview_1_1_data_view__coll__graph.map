@@ -1,0 +1,19 @@
+<map id="view.DataView" name="view.DataView">
+<area shape="rect" id="node2" href="$dc/dc4/classview_1_1_pane_view.html" title="view.PaneView" alt="" coords="1841,221,1953,248"/>
+<area shape="rect" id="node9" href="$d6/d0a/classview_1_1_input_view.html" title="view.InputView" alt="" coords="2131,363,2245,389"/>
+<area shape="rect" id="node4" href="$d9/d93/classview_1_1_basic_commands_view.html" title="view.BasicCommandsView" alt="" coords="2765,464,2955,491"/>
+<area shape="rect" id="node5" href="$d4/d36/classview_1_1_data_view_components.html" title="view.DataViewComponents" alt="" coords="2520,363,2715,389"/>
+<area shape="rect" id="node39" href="$d8/d0c/classview_1_1_u_d_commands_view.html" title="view.UDCommandsView" alt="" coords="2773,312,2947,339"/>
+<area shape="rect" id="node40" href="$d9/dd3/classview_1_1_variables_view.html" title="view.VariablesView" alt="" coords="2791,363,2929,389"/>
+<area shape="rect" id="node6" href="$db/d98/classview_1_1_scroll_view.html" title="view.ScrollView" alt="" coords="2353,363,2469,389"/>
+<area shape="rect" id="node10" href="$d3/d88/classmodel_1_1_slogo_model.html" title="model.SlogoModel" alt="" coords="1827,388,1967,415"/>
+<area shape="rect" id="node17" href="$d8/d36/classmodel_1_1_observable_data.html" title="model.ObservableData" alt="" coords="953,268,1122,295"/>
+<area shape="rect" id="node13" href="$d6/d95/classparser_1_1_parser.html" title="parser.Parser" alt="" coords="1605,144,1712,171"/>
+<area shape="rect" id="node16" href="$d3/d96/classparser_1_1_instruction_factory.html" title="parser.InstructionFactory" alt="" coords="1304,189,1483,216"/>
+<area shape="rect" id="node19" href="$d1/d69/interfacemodel_1_1_feature.html" title="model.Feature" alt="" coords="281,321,396,348"/>
+<area shape="rect" id="node34" href="$de/d6b/classparser_1_1_tokenizer.html" title="parser.Tokenizer" alt="" coords="456,9,581,36"/>
+<area shape="rect" id="node18" href="$df/db7/classmodel_1_1_turtles_list.html" title="model.TurtlesList" alt="" coords="650,235,779,261"/>
+<area shape="rect" id="node23" href="$d6/d34/classmodel_1_1_turtle.html" title="model.Turtle" alt="" coords="665,423,765,449"/>
+<area shape="rect" id="node24" href="$d5/dad/classmodel_1_1_turtle_abstract.html" title="model.TurtleAbstract" alt="" coords="261,701,416,728"/>
+<area shape="rect" id="node27" href="$de/ded/classmodel_1_1_pen.html" title="model.Pen" alt="" coords="293,473,384,500"/>
+</map>

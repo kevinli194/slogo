@@ -1,0 +1,12 @@
+<map id="instructions.Instruction.execute" name="instructions.Instruction.execute">
+<area shape="rect" id="node2" href="$d4/d62/classinstructions_1_1commands_1_1_sum.html#a5319774b5ed5a80b604347c40b1f1236" title="instructions.commands.Sum.execute" alt="" coords="293,5,555,32"/>
+<area shape="rect" id="node3" href="$d9/da9/classinstructions_1_1commands_1_1_backward.html#a8f3dbbeb56ad5c4b7a64cabcc2d63daa" title="instructions.commands.Backward.execute" alt="" coords="278,56,570,83"/>
+<area shape="rect" id="node4" href="$df/d40/classinstructions_1_1commands_1_1_make_variable.html#ab41d20d8160cb52fc4e0d7656236795c" title="instructions.commands.Make\lVariable.execute" alt="" coords="319,107,529,149"/>
+<area shape="rect" id="node5" href="$d2/d36/classinstructions_1_1_user_defined_command.html#afe96555346246fb88ab982a75b5189ef" title="instructions.UserDefined\lCommand.execute" alt="" coords="335,173,513,214"/>
+<area shape="rect" id="node6" href="$d3/d88/classmodel_1_1_slogo_model.html#a54085c9bf13d8dcfd7deed3623be36f1" title="model.SlogoModel.execute\lCommands" alt="" coords="327,238,521,279"/>
+<area shape="rect" id="node7" href="$d3/d88/classmodel_1_1_slogo_model.html#ad096dbf0a253635d346a622540f472bd" title="model.SlogoModel.parseAnd\lExecute" alt="" coords="619,238,824,279"/>
+<area shape="rect" id="node8" href="$d6/d0a/classview_1_1_input_view.html#a948930c9b825f34ef8f5def96910471b" title="view.InputView.initSubmit\lButton" alt="" coords="876,205,1057,246"/>
+<area shape="rect" id="node10" href="$d4/d90/classview_1_1_key_controls.html#a0c3663cb62e91e8919b0296aad899a8f" title="view.KeyControls.makeKey\lCommands" alt="" coords="872,270,1061,311"/>
+<area shape="rect" id="node9" href="$d6/d0a/classview_1_1_input_view.html#ac75e6562ed83ace6cb0a0ac886780054" title="view.InputView.InputView" alt="" coords="1125,212,1302,239"/>
+<area shape="rect" id="node11" href="$d4/d90/classview_1_1_key_controls.html#a4b73546f8ba8feee9e878b3cf743fb61" title="view.KeyControls.KeyControls" alt="" coords="1110,277,1317,304"/>
+</map>

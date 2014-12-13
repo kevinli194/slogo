@@ -1,0 +1,7 @@
+<map id="view.SettingsView.addBGColorPicker" name="view.SettingsView.addBGColorPicker">
+<area shape="rect" id="node2" href="$d8/df7/classview_1_1_turtle_view.html#a1c3a12923246ff8b10715ee6568e11a1" title="view.TurtleView.changeColor" alt="" coords="275,5,474,32"/>
+<area shape="rect" id="node3" href="$d8/d36/classmodel_1_1_observable_data.html#aa526df8e1adab74d19f2d89071560dcb" title="model.ObservableData.get" alt="" coords="531,144,725,171"/>
+<area shape="rect" id="node4" href="$dd/dc5/classview_1_1_settings_view.html#a2006562a7c50b7df6ddaa49b173fbe5f" title="view.SettingsView.getCustom\lColors" alt="" coords="271,107,479,149"/>
+<area shape="rect" id="node5" href="$d3/d88/classmodel_1_1_slogo_model.html#a356fe9ced691a6dba1992d41db95d5f7" title="model.SlogoModel.getMyData" alt="" coords="267,173,482,200"/>
+<area shape="rect" id="node6" href="$d3/d88/classmodel_1_1_slogo_model.html#a80d95a95345028893cb013833fd32165" title="model.SlogoModel.initialize\lBGColor" alt="" coords="277,225,472,266"/>
+</map>

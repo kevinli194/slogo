@@ -1,0 +1,5 @@
+<map id="instructions.commands.Remainder" name="instructions.commands.Remainder">
+<area shape="rect" id="node2" href="$d6/d3f/classinstructions_1_1_binary_instruction.html" title="instructions.BinaryInstruction" alt="" coords="23,229,229,256"/>
+<area shape="rect" id="node3" href="$d9/d85/classinstructions_1_1_parameter_instruction.html" title="instructions.ParameterInstruction" alt="" coords="9,155,243,181"/>
+<area shape="rect" id="node4" href="$d2/d93/interfaceinstructions_1_1_instruction.html" title="instructions.Instruction" alt="" coords="43,80,209,107"/>
+</map>

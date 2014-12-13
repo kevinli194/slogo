@@ -1,0 +1,5 @@
+<map id="model.Pen.getCustom" name="model.Pen.getCustom">
+<area shape="rect" id="node2" href="$df/d09/classinstructions_1_1commands_1_1_get_pen_color.html#ad9f94dfe9b9366da3b40f79e13302959" title="instructions.commands.Get\lPenColor.execute" alt="" coords="219,5,418,46"/>
+<area shape="rect" id="node3" href="$dd/df0/classinstructions_1_1commands_1_1_set_pen_color.html#a2326a0264733fd837335ad87d31ef961" title="instructions.commands.Set\lPenColor.execute" alt="" coords="219,70,418,111"/>
+<area shape="rect" id="node4" href="$df/dca/classinstructions_1_1commands_1_1_set_palette.html#a863f29c53f1bf59564ff2fc62f45526f" title="instructions.commands.Set\lPalette.execute" alt="" coords="219,135,418,177"/>
+</map>

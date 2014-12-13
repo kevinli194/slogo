@@ -1,0 +1,5 @@
+<map id="model.Turtle.calculateDistance" name="model.Turtle.calculateDistance">
+<area shape="rect" id="node2" href="$dd/d40/classinstructions_1_1commands_1_1_clear_screen.html#aafb8d43e9ee4c464de84de2f8ee2294d" title="instructions.commands.Clear\lScreen.execute" alt="" coords="303,5,513,46"/>
+<area shape="rect" id="node3" href="$d3/d16/classinstructions_1_1commands_1_1_home.html#a1f8a8a072657d0c9b6816e90d785308c" title="instructions.commands.Home.execute" alt="" coords="273,71,543,97"/>
+<area shape="rect" id="node4" href="$da/d22/classinstructions_1_1commands_1_1_set_position.html#a6a0f48e1a66d7fc7574ff5ad60ee9c33" title="instructions.commands.Set\lPosition.execute" alt="" coords="309,122,507,163"/>
+</map>

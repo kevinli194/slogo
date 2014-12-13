@@ -1,0 +1,4 @@
+<map id="instructions.commands.Stamp.execute" name="instructions.commands.Stamp.execute">
+<area shape="rect" id="node2" href="$d8/d36/classmodel_1_1_observable_data.html#aa585e00721a74cba9ab459079945e15b" title="model.ObservableData.get\lTurtle" alt="" coords="328,5,523,46"/>
+<area shape="rect" id="node3" href="$d6/d34/classmodel_1_1_turtle.html#a61045246649a7f2fb67b0cd695e25e12" title="model.Turtle.stampImage" alt="" coords="333,71,518,97"/>
+</map>

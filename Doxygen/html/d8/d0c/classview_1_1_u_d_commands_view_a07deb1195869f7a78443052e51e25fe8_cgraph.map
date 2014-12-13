@@ -1,0 +1,7 @@
+<map id="view.UDCommandsView.update" name="view.UDCommandsView.update">
+<area shape="rect" id="node2" href="$d4/d36/classview_1_1_data_view_components.html#a05b49c46bdc53791b28b09bf91743124" title="view.DataViewComponents.add\lTextBoxWithDeleteButton" alt="" coords="278,5,501,46"/>
+<area shape="rect" id="node5" href="$d6/df7/classmodel_1_1_commands_list.html#a0f1df4e3621e54ac0d52131830128d78" title="model.CommandsList.generate" alt="" coords="277,71,501,97"/>
+<area shape="rect" id="node3" href="$d4/d36/classview_1_1_data_view_components.html#aaebf0a781dd02fe599176d57c2ea9a40" title="view.DataViewComponents.make\lDeleteButton" alt="" coords="581,5,816,46"/>
+<area shape="rect" id="node4" href="$d1/d69/interfacemodel_1_1_feature.html#ad39db6a63efe12b76e6b070a633db99e" title="model.Feature.remove" alt="" coords="897,12,1063,39"/>
+<area shape="rect" id="node6" href="$d6/df7/classmodel_1_1_commands_list.html#afe889d0ea233be74e064b369e68ad9d6" title="model.CommandsList.makeCommandsList" alt="" coords="549,71,848,97"/>
+</map>

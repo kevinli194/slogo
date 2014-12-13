@@ -1,0 +1,4 @@
+<map id="instructions.commands.SetPenColor.execute" name="instructions.commands.SetPenColor.execute">
+<area shape="rect" id="node2" href="$de/ded/classmodel_1_1_pen.html#abf9d008c3d0c568b6f5614d2f0e43b48" title="model.Pen.getCustom" alt="" coords="256,5,421,32"/>
+<area shape="rect" id="node3" href="$de/ded/classmodel_1_1_pen.html#a66364a974714d2b44c00ee26a57e5654" title="model.Pen.setPenColor" alt="" coords="253,56,424,83"/>
+</map>

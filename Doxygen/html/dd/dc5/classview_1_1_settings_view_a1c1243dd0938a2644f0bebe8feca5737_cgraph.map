@@ -1,0 +1,10 @@
+<map id="view.SettingsView.addPenColorPicker" name="view.SettingsView.addPenColorPicker">
+<area shape="rect" id="node2" href="$d6/d34/classmodel_1_1_turtle.html#aa3553e012611632ba498177bfb768339" title="model.Turtle.changePenColor" alt="" coords="244,5,452,32"/>
+<area shape="rect" id="node4" href="$dd/dc5/classview_1_1_settings_view.html#a2006562a7c50b7df6ddaa49b173fbe5f" title="view.SettingsView.getCustom\lColors" alt="" coords="244,57,452,98"/>
+<area shape="rect" id="node5" href="$d3/d88/classmodel_1_1_slogo_model.html#a356fe9ced691a6dba1992d41db95d5f7" title="model.SlogoModel.getMyData" alt="" coords="241,123,455,149"/>
+<area shape="rect" id="node6" href="$d8/d36/classmodel_1_1_observable_data.html#aa585e00721a74cba9ab459079945e15b" title="model.ObservableData.get\lTurtle" alt="" coords="507,166,701,207"/>
+<area shape="rect" id="node7" href="$d3/d88/classmodel_1_1_slogo_model.html#af0ff8ea4a04df315002c19967df477ee" title="model.SlogoModel.initialize\lPenColor" alt="" coords="251,225,445,266"/>
+<area shape="rect" id="node3" href="$de/ded/classmodel_1_1_pen.html#a66364a974714d2b44c00ee26a57e5654" title="model.Pen.setPenColor" alt="" coords="519,5,689,32"/>
+<area shape="rect" id="node8" href="$d6/d34/classmodel_1_1_turtle.html#ad38145f0d661fccdc638b4e3b814620d" title="model.Turtle.setPenCustom" alt="" coords="505,232,703,259"/>
+<area shape="rect" id="node9" href="$de/ded/classmodel_1_1_pen.html#a81b3b2c7a645a33687ca88624c0944d3" title="model.Pen.setCustom" alt="" coords="753,232,917,259"/>
+</map>

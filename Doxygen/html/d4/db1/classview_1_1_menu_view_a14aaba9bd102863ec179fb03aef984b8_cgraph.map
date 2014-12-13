@@ -1,0 +1,12 @@
+<map id="view.MenuView.MenuView" name="view.MenuView.MenuView">
+<area shape="rect" id="node2" href="$d4/db1/classview_1_1_menu_view.html#aab261b4132aef3d62fc610d0e259d126" title="view.MenuView.createFileMenu" alt="" coords="238,56,453,83"/>
+<area shape="rect" id="node10" href="$d4/db1/classview_1_1_menu_view.html#a66b41c6b57aeff374b1fc1907dce1de5" title="view.MenuView.setMap" alt="" coords="262,107,429,133"/>
+<area shape="rect" id="node11" href="$d4/db1/classview_1_1_menu_view.html#a70d517e21856a8a0348649dc8988c4f7" title="view.MenuView.setView" alt="" coords="261,157,429,184"/>
+<area shape="rect" id="node3" href="$d4/db1/classview_1_1_menu_view.html#ae9198689f86964211100210cb784c14e" title="view.MenuView.getLocale" alt="" coords="501,5,683,32"/>
+<area shape="rect" id="node6" href="$d4/db1/classview_1_1_menu_view.html#a3e352dab72fffb4ce40d6c91d7ea7d58" title="view.MenuView.setFile" alt="" coords="513,107,671,133"/>
+<area shape="rect" id="node4" href="$d4/db1/classview_1_1_menu_view.html#aed39c72c611c501f766867823a4ae8b5" title="view.MenuView.makeLanguageItem" alt="" coords="731,5,978,32"/>
+<area shape="rect" id="node5" href="$d4/db1/classview_1_1_menu_view.html#aa3be4d8cd01aebaadf5b02d4f74028ce" title="view.MenuView.clear" alt="" coords="1027,5,1178,32"/>
+<area shape="rect" id="node7" href="$d4/db1/classview_1_1_menu_view.html#a33d47eb47a1b9578dc9eae360ab777a9" title="view.MenuView.newFile" alt="" coords="773,56,937,83"/>
+<area shape="rect" id="node8" href="$d4/db1/classview_1_1_menu_view.html#af12d4e01bcb842629aebbaa00a386de2" title="view.MenuView.openFile" alt="" coords="769,107,940,133"/>
+<area shape="rect" id="node9" href="$d4/db1/classview_1_1_menu_view.html#a18d792fe8e7ffa13ab441172e110b9db" title="view.MenuView.saveFile" alt="" coords="770,157,939,184"/>
+</map>

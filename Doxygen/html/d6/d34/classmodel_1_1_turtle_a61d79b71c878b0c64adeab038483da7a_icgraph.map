@@ -1,0 +1,24 @@
+<map id="model.Turtle.getAngle" name="model.Turtle.getAngle">
+<area shape="rect" id="node2" href="$dc/dbc/classinstructions_1_1commands_1_1_heading.html#abd05dabc20d22717f68220019bb871a3" title="instructions.commands.Heading.execute" alt="" coords="217,5,501,32"/>
+<area shape="rect" id="node3" href="$de/d12/classinstructions_1_1commands_1_1_set_heading.html#af0af755f7179e359fc1d7635560a1cf4" title="instructions.commands.Set\lHeading.execute" alt="" coords="259,57,458,98"/>
+<area shape="rect" id="node4" href="$d2/d46/classinstructions_1_1commands_1_1_set_towards.html#a0d15df82bf7e36e711a35cf37c57a92c" title="instructions.commands.Set\lTowards.execute" alt="" coords="259,122,458,163"/>
+<area shape="rect" id="node5" href="$d6/d34/classmodel_1_1_turtle.html#a138e6be2a3c83aea4ef698bf9e499bcf" title="model.Turtle.setTurtleInfo" alt="" coords="268,188,449,215"/>
+<area shape="rect" id="node6" href="$d6/d34/classmodel_1_1_turtle.html#ab6189547e57f3e1c27ea2bb3c5925bc6" title="model.Turtle.Turtle" alt="" coords="1189,29,1328,56"/>
+<area shape="rect" id="node7" href="$d6/d34/classmodel_1_1_turtle.html#abf987ba62d49c24804d43b464f9b7410" title="model.Turtle.setCoordinates" alt="" coords="550,188,751,215"/>
+<area shape="rect" id="node9" href="$d6/d34/classmodel_1_1_turtle.html#ac03d013ad4b739b9d269ba8af8119ddb" title="model.Turtle.moveTurtleAnd\lDrawLine" alt="" coords="833,127,1031,169"/>
+<area shape="rect" id="node15" href="$d6/d34/classmodel_1_1_turtle.html#aa12e02cec0c9313dbd61f53df171b1bd" title="model.Turtle.clear" alt="" coords="865,244,999,271"/>
+<area shape="rect" id="node21" href="$d6/d34/classmodel_1_1_turtle.html#a83b066c32b3610e2b890169df88b94ed" title="model.Turtle.rotate" alt="" coords="579,295,722,321"/>
+<area shape="rect" id="node8" href="$d6/d34/classmodel_1_1_turtle.html#a3bef6e5b68b529d8ff0a6b6e84592587" title="model.Turtle.initializeTurtle" alt="" coords="837,76,1027,103"/>
+<area shape="rect" id="node12" href="$d6/d34/classmodel_1_1_turtle.html#a3024f63f36d1f06f8df9951c98538acf" title="model.Turtle.getCoordList" alt="" coords="839,193,1025,220"/>
+<area shape="rect" id="node10" href="$d9/da9/classinstructions_1_1commands_1_1_backward.html#a8f3dbbeb56ad5c4b7a64cabcc2d63daa" title="instructions.commands.Backward.execute" alt="" coords="1113,132,1405,159"/>
+<area shape="rect" id="node11" href="$d7/dab/classinstructions_1_1commands_1_1_forward.html#a8dd30560e81b026bf436c1502534cdfd" title="instructions.commands.Forward.execute" alt="" coords="1118,81,1399,108"/>
+<area shape="rect" id="node13" href="$d3/d16/classinstructions_1_1commands_1_1_home.html#a1f8a8a072657d0c9b6816e90d785308c" title="instructions.commands.Home.execute" alt="" coords="1123,249,1394,276"/>
+<area shape="rect" id="node14" href="$da/d22/classinstructions_1_1commands_1_1_set_position.html#a6a0f48e1a66d7fc7574ff5ad60ee9c33" title="instructions.commands.Set\lPosition.execute" alt="" coords="1159,183,1358,225"/>
+<area shape="rect" id="node16" href="$d8/d36/classmodel_1_1_observable_data.html#ad2bff2456394e252a20722f2b15e61d5" title="model.ObservableData.clear" alt="" coords="1157,367,1361,393"/>
+<area shape="rect" id="node20" href="$dd/d40/classinstructions_1_1commands_1_1_clear_screen.html#aafb8d43e9ee4c464de84de2f8ee2294d" title="instructions.commands.Clear\lScreen.execute" alt="" coords="1154,301,1363,342"/>
+<area shape="rect" id="node17" href="$d3/d88/classmodel_1_1_slogo_model.html#abfeceb3da7ed60166c8137597cacc2fc" title="model.SlogoModel.clear" alt="" coords="1454,367,1629,393"/>
+<area shape="rect" id="node18" href="$dd/dc5/classview_1_1_settings_view.html#a4ad3e69e9ba90e013df06b1f7b5ef6d0" title="view.SettingsView.addButtons" alt="" coords="1677,367,1888,393"/>
+<area shape="rect" id="node19" href="$dd/dc5/classview_1_1_settings_view.html#a34b8df753ce7a3b7d917a01ff315edc8" title="view.SettingsView.SettingsView" alt="" coords="1936,367,2155,393"/>
+<area shape="rect" id="node22" href="$d8/dd0/classinstructions_1_1commands_1_1_left.html#ae3fb479ded683475eae5d785e5010b0b" title="instructions.commands.Left.execute" alt="" coords="805,345,1059,372"/>
+<area shape="rect" id="node23" href="$df/dd2/classinstructions_1_1commands_1_1_right.html#a7e743a11dec0ce6dc86c25737c770127" title="instructions.commands.Right.execute" alt="" coords="801,295,1063,321"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="model.SlogoModel.getMyData" name="model.SlogoModel.getMyData">
+<area shape="rect" id="node2" href="$dd/dc5/classview_1_1_settings_view.html#a1ade97b4c15b11449f1124a6b6eb5e93" title="view.SettingsView.addBGColor\lPicker" alt="" coords="269,5,483,46"/>
+<area shape="rect" id="node4" href="$dd/dc5/classview_1_1_settings_view.html#a8b044653bb3dcbb300082c4103d14249" title="view.SettingsView.addLine\lProperty" alt="" coords="283,70,469,111"/>
+<area shape="rect" id="node5" href="$dd/dc5/classview_1_1_settings_view.html#a1c1243dd0938a2644f0bebe8feca5737" title="view.SettingsView.addPen\lColorPicker" alt="" coords="283,135,469,177"/>
+<area shape="rect" id="node6" href="$dd/dc5/classview_1_1_settings_view.html#a2647759701975998ceb6d36b40aa98ea" title="view.SettingsView.addTurtle\lChoices" alt="" coords="279,201,473,242"/>
+<area shape="rect" id="node7" href="$d0/dfc/classview_1_1_slogo_window.html#a4e82e7457d8111608df4750c10008869" title="view.SlogoWindow.loadFile" alt="" coords="283,267,469,293"/>
+<area shape="rect" id="node8" href="$d4/d90/classview_1_1_key_controls.html#a0c3663cb62e91e8919b0296aad899a8f" title="view.KeyControls.makeKey\lCommands" alt="" coords="281,318,471,359"/>
+<area shape="rect" id="node10" href="$d0/dfc/classview_1_1_slogo_window.html#ac299c416ca174b4ebe51eaf7d2700af3" title="view.SlogoWindow.onClick\lCommand" alt="" coords="285,383,467,425"/>
+<area shape="rect" id="node3" href="$dd/dc5/classview_1_1_settings_view.html#a34b8df753ce7a3b7d917a01ff315edc8" title="view.SettingsView.SettingsView" alt="" coords="532,111,751,137"/>
+<area shape="rect" id="node9" href="$d4/d90/classview_1_1_key_controls.html#a4b73546f8ba8feee9e878b3cf743fb61" title="view.KeyControls.KeyControls" alt="" coords="538,325,745,352"/>
+<area shape="rect" id="node11" href="$d0/dfc/classview_1_1_slogo_window.html#ad49eb4482b8bf39443afcdac5018e410" title="view.SlogoWindow.SlogoWindow" alt="" coords="531,391,752,417"/>
+</map>

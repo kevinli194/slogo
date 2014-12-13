@@ -1,0 +1,5 @@
+<map id="instructions.commands.Ask.execute" name="instructions.commands.Ask.execute">
+<area shape="rect" id="node2" href="$df/db7/classmodel_1_1_turtles_list.html#aa87ee4e1a6d9318419946ad23a9fbed4" title="model.TurtlesList.addScope" alt="" coords="309,5,507,32"/>
+<area shape="rect" id="node4" href="$df/db7/classmodel_1_1_turtles_list.html#a58ce38d8e7f46c0464022db8a079bf37" title="model.TurtlesList.remove\lScope" alt="" coords="317,57,499,98"/>
+<area shape="rect" id="node3" href="$df/db7/classmodel_1_1_turtles_list.html#a45041fe0cefc4a5b04cf27f63297f3a4" title="model.TurtlesList.setActive" alt="" coords="555,5,747,32"/>
+</map>

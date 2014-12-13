@@ -1,0 +1,6 @@
+<map id="view.VariablesView.update" name="view.VariablesView.update">
+<area shape="rect" id="node2" href="$d4/d36/classview_1_1_data_view_components.html#a05b49c46bdc53791b28b09bf91743124" title="view.DataViewComponents.add\lTextBoxWithDeleteButton" alt="" coords="241,5,463,46"/>
+<area shape="rect" id="node5" href="$d6/d2c/classmodel_1_1_variables_list.html#a0e44325b4baffec7b6e4820f863eefea" title="model.VariablesList.generate" alt="" coords="248,71,456,97"/>
+<area shape="rect" id="node3" href="$d4/d36/classview_1_1_data_view_components.html#aaebf0a781dd02fe599176d57c2ea9a40" title="view.DataViewComponents.make\lDeleteButton" alt="" coords="512,5,747,46"/>
+<area shape="rect" id="node4" href="$d1/d69/interfacemodel_1_1_feature.html#ad39db6a63efe12b76e6b070a633db99e" title="model.Feature.remove" alt="" coords="795,12,962,39"/>
+</map>

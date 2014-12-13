@@ -1,0 +1,5 @@
+<map id="instructions.commands.And" name="instructions.commands.And">
+<area shape="rect" id="node2" href="$d6/d3f/classinstructions_1_1_binary_instruction.html" title="instructions.BinaryInstruction" alt="" coords="147,251,353,277"/>
+<area shape="rect" id="node3" href="$d9/d85/classinstructions_1_1_parameter_instruction.html" title="instructions.ParameterInstruction" alt="" coords="133,173,367,200"/>
+<area shape="rect" id="node4" href="$d2/d93/interfaceinstructions_1_1_instruction.html" title="instructions.Instruction" alt="" coords="5,83,171,109"/>
+</map>

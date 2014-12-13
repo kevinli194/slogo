@@ -1,0 +1,26 @@
+<map id="view.SlogoWindow" name="view.SlogoWindow">
+<area shape="rect" id="node44" href="$d4/d90/classview_1_1_key_controls.html" title="view.KeyControls" alt="" coords="2205,145,2331,172"/>
+<area shape="rect" id="node4" href="$d3/d88/classmodel_1_1_slogo_model.html" title="model.SlogoModel" alt="" coords="1862,300,2002,327"/>
+<area shape="rect" id="node36" href="$d6/d0a/classview_1_1_input_view.html" title="view.InputView" alt="" coords="2211,1024,2325,1051"/>
+<area shape="rect" id="node47" href="$dd/dc5/classview_1_1_settings_view.html" title="view.SettingsView" alt="" coords="2201,572,2335,599"/>
+<area shape="rect" id="node11" href="$d8/d36/classmodel_1_1_observable_data.html" title="model.ObservableData" alt="" coords="953,443,1122,469"/>
+<area shape="rect" id="node29" href="$dc/da8/classview_1_1_history_results_view.html" title="view.HistoryResultsView" alt="" coords="3036,749,3207,776"/>
+<area shape="rect" id="node53" href="$de/d2f/classview_1_1_data_view.html" title="view.DataView" alt="" coords="3413,957,3525,984"/>
+<area shape="rect" id="node7" href="$d6/d95/classparser_1_1_parser.html" title="parser.Parser" alt="" coords="1607,300,1713,327"/>
+<area shape="rect" id="node10" href="$d3/d96/classparser_1_1_instruction_factory.html" title="parser.InstructionFactory" alt="" coords="1304,228,1483,255"/>
+<area shape="rect" id="node13" href="$d1/d69/interfacemodel_1_1_feature.html" title="model.Feature" alt="" coords="281,437,396,464"/>
+<area shape="rect" id="node28" href="$de/d6b/classparser_1_1_tokenizer.html" title="parser.Tokenizer" alt="" coords="456,109,581,136"/>
+<area shape="rect" id="node12" href="$df/db7/classmodel_1_1_turtles_list.html" title="model.TurtlesList" alt="" coords="650,383,779,409"/>
+<area shape="rect" id="node17" href="$d6/d34/classmodel_1_1_turtle.html" title="model.Turtle" alt="" coords="665,535,765,561"/>
+<area shape="rect" id="node18" href="$d5/dad/classmodel_1_1_turtle_abstract.html" title="model.TurtleAbstract" alt="" coords="261,539,416,565"/>
+<area shape="rect" id="node21" href="$de/ded/classmodel_1_1_pen.html" title="model.Pen" alt="" coords="293,691,384,717"/>
+<area shape="rect" id="node43" href="$d8/df7/classview_1_1_turtle_view.html" title="view.TurtleView" alt="" coords="2211,700,2325,727"/>
+<area shape="rect" id="node30" href="$dc/dc4/classview_1_1_pane_view.html" title="view.PaneView" alt="" coords="1876,903,1988,929"/>
+<area shape="rect" id="node34" href="$db/d98/classview_1_1_scroll_view.html" title="view.ScrollView" alt="" coords="2443,981,2559,1008"/>
+<area shape="rect" id="node33" href="$d1/d0e/classview_1_1_history_view.html" title="view.HistoryView" alt="" coords="2711,949,2838,976"/>
+<area shape="rect" id="node55" href="$d4/d36/classview_1_1_data_view_components.html" title="view.DataViewComponents" alt="" coords="2677,1000,2872,1027"/>
+<area shape="rect" id="node40" href="$d0/d12/classview_1_1_results_view.html" title="view.ResultsView" alt="" coords="2711,825,2838,852"/>
+<area shape="rect" id="node54" href="$d9/d93/classview_1_1_basic_commands_view.html" title="view.BasicCommandsView" alt="" coords="3027,1013,3216,1040"/>
+<area shape="rect" id="node57" href="$d8/d0c/classview_1_1_u_d_commands_view.html" title="view.UDCommandsView" alt="" coords="3034,912,3209,939"/>
+<area shape="rect" id="node58" href="$d9/dd3/classview_1_1_variables_view.html" title="view.VariablesView" alt="" coords="3052,963,3191,989"/>
+</map>

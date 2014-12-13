@@ -1,0 +1,13 @@
+<map id="model.SlogoModel.clear" name="model.SlogoModel.clear">
+<area shape="rect" id="node2" href="$d8/d36/classmodel_1_1_observable_data.html#ad2bff2456394e252a20722f2b15e61d5" title="model.ObservableData.clear" alt="" coords="230,56,434,83"/>
+<area shape="rect" id="node8" href="$de/ded/classmodel_1_1_pen.html#a92a7e8dd0f123fdd06a56982944a9128" title="model.Pen.clear" alt="" coords="269,107,395,133"/>
+<area shape="rect" id="node10" href="$d6/d34/classmodel_1_1_turtle.html#a3feaf892f3049394737e61453a1c320d" title="model.Turtle.getPen" alt="" coords="257,157,407,184"/>
+<area shape="rect" id="node11" href="$d8/d36/classmodel_1_1_observable_data.html#aa585e00721a74cba9ab459079945e15b" title="model.ObservableData.get\lTurtle" alt="" coords="235,209,429,250"/>
+<area shape="rect" id="node12" href="$d3/d88/classmodel_1_1_slogo_model.html#a5a328c6f896a5c150e95b49db71dea8f" title="model.SlogoModel.load" alt="" coords="247,275,417,301"/>
+<area shape="rect" id="node3" href="$d6/d34/classmodel_1_1_turtle.html#aa12e02cec0c9313dbd61f53df171b1bd" title="model.Turtle.clear" alt="" coords="501,56,635,83"/>
+<area shape="rect" id="node4" href="$d6/d34/classmodel_1_1_turtle.html#abf987ba62d49c24804d43b464f9b7410" title="model.Turtle.setCoordinates" alt="" coords="702,5,903,32"/>
+<area shape="rect" id="node5" href="$d6/d34/classmodel_1_1_turtle.html#a138e6be2a3c83aea4ef698bf9e499bcf" title="model.Turtle.setTurtleInfo" alt="" coords="952,31,1133,57"/>
+<area shape="rect" id="node7" href="$d6/d34/classmodel_1_1_turtle.html#a561398015768e49764442dfa298f1bd3" title="model.Turtle.setAngle" alt="" coords="723,107,883,133"/>
+<area shape="rect" id="node6" href="$d6/d34/classmodel_1_1_turtle.html#a61d79b71c878b0c64adeab038483da7a" title="model.Turtle.getAngle" alt="" coords="1182,31,1343,57"/>
+<area shape="rect" id="node9" href="$de/ded/classmodel_1_1_pen.html#a66364a974714d2b44c00ee26a57e5654" title="model.Pen.setPenColor" alt="" coords="483,107,653,133"/>
+</map>

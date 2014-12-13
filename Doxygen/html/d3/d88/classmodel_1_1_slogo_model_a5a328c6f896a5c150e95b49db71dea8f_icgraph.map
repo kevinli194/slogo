@@ -1,0 +1,16 @@
+<map id="model.SlogoModel.load" name="model.SlogoModel.load">
+<area shape="rect" id="node2" href="$d3/d88/classmodel_1_1_slogo_model.html#abfeceb3da7ed60166c8137597cacc2fc" title="model.SlogoModel.clear" alt="" coords="249,5,423,32"/>
+<area shape="rect" id="node5" href="$d3/d88/classmodel_1_1_slogo_model.html#a407690ec446fa165e17c41f6bc1f37cd" title="model.SlogoModel.rerun" alt="" coords="247,56,425,83"/>
+<area shape="rect" id="node6" href="$d3/d88/classmodel_1_1_slogo_model.html#ad52954c6dbfb83f7aa97a85116c25eb8" title="model.SlogoModel.showOnView" alt="" coords="225,259,447,285"/>
+<area shape="rect" id="node13" href="$d3/d88/classmodel_1_1_slogo_model.html#a396654689e37ebdc837f5623a25d08d3" title="model.SlogoModel.showToHistoryView" alt="" coords="497,159,759,185"/>
+<area shape="rect" id="node14" href="$d0/dfc/classview_1_1_slogo_window.html#ad49eb4482b8bf39443afcdac5018e410" title="view.SlogoWindow.SlogoWindow" alt="" coords="225,208,447,235"/>
+<area shape="rect" id="node15" href="$d3/d88/classmodel_1_1_slogo_model.html#a4dd110d0980b463d7b3130e3ad3393e6" title="model.SlogoModel.toggleTurtle" alt="" coords="227,107,445,133"/>
+<area shape="rect" id="node3" href="$dd/dc5/classview_1_1_settings_view.html#a4ad3e69e9ba90e013df06b1f7b5ef6d0" title="view.SettingsView.addButtons" alt="" coords="523,103,733,129"/>
+<area shape="rect" id="node4" href="$dd/dc5/classview_1_1_settings_view.html#a34b8df753ce7a3b7d917a01ff315edc8" title="view.SettingsView.SettingsView" alt="" coords="808,103,1027,129"/>
+<area shape="rect" id="node7" href="$d3/d88/classmodel_1_1_slogo_model.html#a54085c9bf13d8dcfd7deed3623be36f1" title="model.SlogoModel.execute\lCommands" alt="" coords="531,231,725,273"/>
+<area shape="rect" id="node8" href="$d3/d88/classmodel_1_1_slogo_model.html#ad096dbf0a253635d346a622540f472bd" title="model.SlogoModel.parseAnd\lExecute" alt="" coords="815,193,1020,234"/>
+<area shape="rect" id="node9" href="$d6/d0a/classview_1_1_input_view.html#a948930c9b825f34ef8f5def96910471b" title="view.InputView.initSubmit\lButton" alt="" coords="1079,159,1260,201"/>
+<area shape="rect" id="node11" href="$d4/d90/classview_1_1_key_controls.html#a0c3663cb62e91e8919b0296aad899a8f" title="view.KeyControls.makeKey\lCommands" alt="" coords="1075,225,1264,266"/>
+<area shape="rect" id="node10" href="$d6/d0a/classview_1_1_input_view.html#ac75e6562ed83ace6cb0a0ac886780054" title="view.InputView.InputView" alt="" coords="1327,167,1505,193"/>
+<area shape="rect" id="node12" href="$d4/d90/classview_1_1_key_controls.html#a4b73546f8ba8feee9e878b3cf743fb61" title="view.KeyControls.KeyControls" alt="" coords="1313,232,1519,259"/>
+</map>

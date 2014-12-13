@@ -1,0 +1,5 @@
+<map id="model.SlogoModel.setPenSize" name="model.SlogoModel.setPenSize">
+<area shape="rect" id="node2" href="$d6/d34/classmodel_1_1_turtle.html#a3feaf892f3049394737e61453a1c320d" title="model.Turtle.getPen" alt="" coords="292,5,441,32"/>
+<area shape="rect" id="node3" href="$d8/d36/classmodel_1_1_observable_data.html#aa585e00721a74cba9ab459079945e15b" title="model.ObservableData.get\lTurtle" alt="" coords="269,57,464,98"/>
+<area shape="rect" id="node4" href="$de/ded/classmodel_1_1_pen.html#aea4cc5396f9133c8695ee1c5ef5c95d5" title="model.Pen.setStrokeWidth" alt="" coords="271,123,462,149"/>
+</map>

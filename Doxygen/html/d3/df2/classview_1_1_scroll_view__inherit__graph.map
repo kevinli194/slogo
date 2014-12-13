@@ -1,0 +1,7 @@
+<map id="view.ScrollView" name="view.ScrollView">
+<area shape="rect" id="node3" href="$d4/d36/classview_1_1_data_view_components.html" title="view.DataViewComponents" alt="" coords="209,155,404,181"/>
+<area shape="rect" id="node7" href="$d1/d0e/classview_1_1_history_view.html" title="view.HistoryView" alt="" coords="429,155,555,181"/>
+<area shape="rect" id="node4" href="$d9/d93/classview_1_1_basic_commands_view.html" title="view.BasicCommandsView" alt="" coords="5,229,195,256"/>
+<area shape="rect" id="node5" href="$d8/d0c/classview_1_1_u_d_commands_view.html" title="view.UDCommandsView" alt="" coords="219,229,393,256"/>
+<area shape="rect" id="node6" href="$d9/dd3/classview_1_1_variables_view.html" title="view.VariablesView" alt="" coords="419,229,557,256"/>
+</map>

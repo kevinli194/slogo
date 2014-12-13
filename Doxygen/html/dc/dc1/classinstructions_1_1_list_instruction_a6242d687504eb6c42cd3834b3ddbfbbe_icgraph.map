@@ -1,0 +1,6 @@
+<map id="instructions.ListInstruction.getInstructionList" name="instructions.ListInstruction.getInstructionList">
+<area shape="rect" id="node2" href="$dd/de9/classinstructions_1_1commands_1_1_do_times.html#ae42180528b9ce237a22652ccf7c4048a" title="instructions.commands.Do\lTimes.execute" alt="" coords="283,5,477,46"/>
+<area shape="rect" id="node3" href="$dc/d89/classinstructions_1_1commands_1_1_make_user_instruction.html#a266ae5979c8a7fc525d334e2a0871680" title="instructions.commands.Make\lUserInstruction.execute" alt="" coords="275,70,485,111"/>
+<area shape="rect" id="node4" href="$d6/d75/classinstructions_1_1commands_1_1_tell.html#a840450d41463156112f5130fa78d720f" title="instructions.commands.Tell.get\lAskedIDs" alt="" coords="270,135,490,177"/>
+<area shape="rect" id="node5" href="$d6/d75/classinstructions_1_1commands_1_1_tell.html#a662583c3632eee012239f2b7fda7ef9c" title="instructions.commands.Tell.execute" alt="" coords="539,143,789,169"/>
+</map>

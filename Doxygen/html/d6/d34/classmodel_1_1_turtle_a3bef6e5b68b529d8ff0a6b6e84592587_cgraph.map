@@ -1,0 +1,7 @@
+<map id="model.Turtle.initializeTurtle" name="model.Turtle.initializeTurtle">
+<area shape="rect" id="node2" href="$d6/d34/classmodel_1_1_turtle.html#a37a8745062c1fb91ec53073667e376ec" title="model.Turtle.changeState" alt="" coords="251,5,437,32"/>
+<area shape="rect" id="node3" href="$d6/d34/classmodel_1_1_turtle.html#a561398015768e49764442dfa298f1bd3" title="model.Turtle.setAngle" alt="" coords="264,56,424,83"/>
+<area shape="rect" id="node4" href="$d6/d34/classmodel_1_1_turtle.html#abf987ba62d49c24804d43b464f9b7410" title="model.Turtle.setCoordinates" alt="" coords="243,107,445,133"/>
+<area shape="rect" id="node5" href="$d6/d34/classmodel_1_1_turtle.html#a138e6be2a3c83aea4ef698bf9e499bcf" title="model.Turtle.setTurtleInfo" alt="" coords="493,107,675,133"/>
+<area shape="rect" id="node6" href="$d6/d34/classmodel_1_1_turtle.html#a61d79b71c878b0c64adeab038483da7a" title="model.Turtle.getAngle" alt="" coords="723,107,885,133"/>
+</map>

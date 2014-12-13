@@ -1,0 +1,5 @@
+<map id="model.Turtle.getCoordinates" name="model.Turtle.getCoordinates">
+<area shape="rect" id="node2" href="$d0/d94/classinstructions_1_1commands_1_1_x_coordinate.html#a56e3908846e33a9ad81a0949a5e77d40" title="instructions.commands.XCoordinate.execute" alt="" coords="257,5,565,32"/>
+<area shape="rect" id="node3" href="$d8/d5d/classinstructions_1_1commands_1_1_y_coordinate.html#a5c5ac5bec7d2ab74992b957fdbf54490" title="instructions.commands.YCoordinate.execute" alt="" coords="257,56,564,83"/>
+<area shape="rect" id="node4" href="$dd/d40/classinstructions_1_1commands_1_1_clear_screen.html#aafb8d43e9ee4c464de84de2f8ee2294d" title="instructions.commands.Clear\lScreen.execute" alt="" coords="306,107,515,149"/>
+</map>

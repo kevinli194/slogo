@@ -1,0 +1,7 @@
+<map id="model.Pen.setPenDown" name="model.Pen.setPenDown">
+<area shape="rect" id="node2" href="$dd/dc5/classview_1_1_settings_view.html#a8b044653bb3dcbb300082c4103d14249" title="view.SettingsView.addLine\lProperty" alt="" coords="496,5,683,46"/>
+<area shape="rect" id="node4" href="$de/ded/classmodel_1_1_pen.html#a29799b12d4e0880c5479a4c059f5b8d2" title="model.Pen.changeLineProperty" alt="" coords="227,37,448,64"/>
+<area shape="rect" id="node5" href="$d6/d1f/classinstructions_1_1commands_1_1_pen_up.html#a83de05f9c5b0b6454ac03f3c38d8dfb1" title="instructions.commands.Pen\lUp.execute" alt="" coords="237,89,437,130"/>
+<area shape="rect" id="node6" href="$dc/df9/classinstructions_1_1commands_1_1_pen_down.html#a24297ec2491de8ad2c63f3f1a26b71f1" title="instructions.commands.Pen\lDown.execute" alt="" coords="237,154,437,195"/>
+<area shape="rect" id="node3" href="$dd/dc5/classview_1_1_settings_view.html#a34b8df753ce7a3b7d917a01ff315edc8" title="view.SettingsView.SettingsView" alt="" coords="731,12,949,39"/>
+</map>

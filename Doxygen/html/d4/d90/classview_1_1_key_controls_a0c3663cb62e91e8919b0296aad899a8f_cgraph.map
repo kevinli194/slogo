@@ -1,0 +1,22 @@
+<map id="view.KeyControls.makeKeyCommands" name="view.KeyControls.makeKeyCommands">
+<area shape="rect" id="node2" href="$d9/d85/classinstructions_1_1_parameter_instruction.html#af693c1c191008b556e8e4effaaddb2d1" title="instructions.ParameterInstruction.add\lParam" alt="" coords="243,6,506,47"/>
+<area shape="rect" id="node3" href="$d6/df7/classmodel_1_1_commands_list.html#ac763ff1a044da7e82be90d77ef8601ac" title="model.CommandsList.contains" alt="" coords="265,72,485,99"/>
+<area shape="rect" id="node4" href="$d8/d36/classmodel_1_1_observable_data.html#aa526df8e1adab74d19f2d89071560dcb" title="model.ObservableData.get" alt="" coords="1381,343,1576,369"/>
+<area shape="rect" id="node5" href="$d6/df7/classmodel_1_1_commands_list.html#a3a5d7af953dff13e1e5138d6191c69cf" title="model.CommandsList.get" alt="" coords="1385,180,1572,207"/>
+<area shape="rect" id="node6" href="$d3/d88/classmodel_1_1_slogo_model.html#a356fe9ced691a6dba1992d41db95d5f7" title="model.SlogoModel.getMyData" alt="" coords="267,224,482,251"/>
+<area shape="rect" id="node7" href="$d3/d88/classmodel_1_1_slogo_model.html#ad096dbf0a253635d346a622540f472bd" title="model.SlogoModel.parseAnd\lExecute" alt="" coords="272,345,477,386"/>
+<area shape="rect" id="node8" href="$d3/d88/classmodel_1_1_slogo_model.html#a54085c9bf13d8dcfd7deed3623be36f1" title="model.SlogoModel.execute\lCommands" alt="" coords="555,407,749,449"/>
+<area shape="rect" id="node13" href="$d6/d95/classparser_1_1_parser.html#aec8f2721f51a8a257b572c73d80d5d98" title="parser.Parser.parse" alt="" coords="579,541,725,568"/>
+<area shape="rect" id="node21" href="$d3/d88/classmodel_1_1_slogo_model.html#a396654689e37ebdc837f5623a25d08d3" title="model.SlogoModel.showToHistoryView" alt="" coords="798,275,1061,301"/>
+<area shape="rect" id="node9" href="$d2/d93/interfaceinstructions_1_1_instruction.html#ab47846ec32fac6e514e5ab7fe4db0254" title="instructions.Instruction.execute" alt="" coords="818,491,1041,517"/>
+<area shape="rect" id="node10" href="$d3/d88/classmodel_1_1_slogo_model.html#ad52954c6dbfb83f7aa97a85116c25eb8" title="model.SlogoModel.showOnView" alt="" coords="818,333,1041,360"/>
+<area shape="rect" id="node11" href="$d8/d36/classmodel_1_1_observable_data.html#a575297a6d90ca0223478c397de4a8296" title="model.ObservableData.change\lReturn" alt="" coords="1110,326,1330,367"/>
+<area shape="rect" id="node12" href="$d3/d88/classmodel_1_1_slogo_model.html#a5a328c6f896a5c150e95b49db71dea8f" title="model.SlogoModel.load" alt="" coords="1135,275,1305,301"/>
+<area shape="rect" id="node14" href="$d6/d95/classparser_1_1_parser.html#a0b953b563fd9171ad113c168900ba0ad" title="parser.Parser.parseTokens" alt="" coords="835,592,1023,619"/>
+<area shape="rect" id="node20" href="$de/d6b/classparser_1_1_tokenizer.html#ab347b4e57c1c6a0e09467b548025c2e8" title="parser.Tokenizer.tokenize" alt="" coords="838,541,1021,568"/>
+<area shape="rect" id="node15" href="$d6/d95/classparser_1_1_parser.html#a45262e7dc7f355abdb9df8fa3630c86f" title="parser.Parser.addParams" alt="" coords="1129,592,1311,619"/>
+<area shape="rect" id="node16" href="$d6/d95/classparser_1_1_parser.html#a4f0036d9216912f383261d0482cbb1b1" title="parser.Parser.findMatching\lBracket" alt="" coords="1125,526,1315,567"/>
+<area shape="rect" id="node18" href="$d6/d95/classparser_1_1_parser.html#ac2278cd512ecf95e7dbe39f1e381cef7" title="parser.Parser.isRightBracket" alt="" coords="1379,613,1579,640"/>
+<area shape="rect" id="node19" href="$d3/d96/classparser_1_1_instruction_factory.html#a4b06d4f5f8e173824966dd0ec1e00255" title="parser.InstructionFactory.make\lInstruction" alt="" coords="1111,391,1329,433"/>
+<area shape="rect" id="node17" href="$d6/d95/classparser_1_1_parser.html#abe383fbf6f2944c67226ac2432c548b2" title="parser.Parser.isLeftBracket" alt="" coords="1383,533,1575,560"/>
+</map>

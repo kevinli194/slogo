@@ -1,0 +1,4 @@
+<map id="instructions.commands.NumTurtles.execute" name="instructions.commands.NumTurtles.execute">
+<area shape="rect" id="node2" href="$df/db7/classmodel_1_1_turtles_list.html#af1db162a48f178873c80524503fff672" title="model.TurtlesList.getNum\lTurtles" alt="" coords="266,5,451,46"/>
+<area shape="rect" id="node3" href="$d8/d36/classmodel_1_1_observable_data.html#a062e866b404100bb3eb10a33b7c72fd7" title="model.ObservableData.get\lTurtles" alt="" coords="261,70,456,111"/>
+</map>

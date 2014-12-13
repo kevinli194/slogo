@@ -1,0 +1,7 @@
+<map id="view.SettingsView.addLineProperty" name="view.SettingsView.addLineProperty">
+<area shape="rect" id="node2" href="$de/ded/classmodel_1_1_pen.html#a29799b12d4e0880c5479a4c059f5b8d2" title="model.Pen.changeLineProperty" alt="" coords="240,5,461,32"/>
+<area shape="rect" id="node3" href="$de/ded/classmodel_1_1_pen.html#ad799d84679d9e8332c9cd2b428ea7384" title="model.Pen.setPenDown" alt="" coords="509,31,683,57"/>
+<area shape="rect" id="node4" href="$d3/d88/classmodel_1_1_slogo_model.html#a356fe9ced691a6dba1992d41db95d5f7" title="model.SlogoModel.getMyData" alt="" coords="243,107,458,133"/>
+<area shape="rect" id="node5" href="$d6/d34/classmodel_1_1_turtle.html#a3feaf892f3049394737e61453a1c320d" title="model.Turtle.getPen" alt="" coords="276,157,425,184"/>
+<area shape="rect" id="node6" href="$d8/d36/classmodel_1_1_observable_data.html#aa585e00721a74cba9ab459079945e15b" title="model.ObservableData.get\lTurtle" alt="" coords="253,209,448,250"/>
+</map>

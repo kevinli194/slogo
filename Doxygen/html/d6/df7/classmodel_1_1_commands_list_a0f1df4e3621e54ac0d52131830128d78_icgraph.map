@@ -1,0 +1,6 @@
+<map id="model.CommandsList.generate" name="model.CommandsList.generate">
+<area shape="rect" id="node2" href="$d9/d93/classview_1_1_basic_commands_view.html#a787c3d60d71cc35031fcc939758c25dc" title="view.BasicCommandsView.update" alt="" coords="277,5,515,32"/>
+<area shape="rect" id="node5" href="$d8/d0c/classview_1_1_u_d_commands_view.html#a07deb1195869f7a78443052e51e25fe8" title="view.UDCommandsView.update" alt="" coords="285,56,507,83"/>
+<area shape="rect" id="node3" href="$de/d2f/classview_1_1_data_view.html#ab1acc31f3125a6a1d52e21b05bae379b" title="view.DataView.update" alt="" coords="563,31,723,57"/>
+<area shape="rect" id="node4" href="$d0/dfc/classview_1_1_slogo_window.html#a1605d0405c7961727ef7c3d96e41b743" title="view.SlogoWindow.update" alt="" coords="771,31,954,57"/>
+</map>

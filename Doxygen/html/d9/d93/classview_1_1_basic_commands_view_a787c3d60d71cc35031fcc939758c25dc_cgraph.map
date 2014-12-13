@@ -1,0 +1,7 @@
+<map id="view.BasicCommandsView.update" name="view.BasicCommandsView.update">
+<area shape="rect" id="node2" href="$db/d98/classview_1_1_scroll_view.html#af810ea194b6bcd9c7c8da1f84ebd5ac2" title="view.ScrollView.addTextBox" alt="" coords="307,5,499,32"/>
+<area shape="rect" id="node5" href="$d6/df7/classmodel_1_1_commands_list.html#a0f1df4e3621e54ac0d52131830128d78" title="model.CommandsList.generate" alt="" coords="291,56,515,83"/>
+<area shape="rect" id="node3" href="$db/d98/classview_1_1_scroll_view.html#af8a9a83dc920350c521d6d78016cafce" title="view.ScrollView.makeClickableText" alt="" coords="594,5,830,32"/>
+<area shape="rect" id="node4" href="$d6/d0a/classview_1_1_input_view.html#a81954709509ce44f7fe364a24a613d66" title="view.InputView.addAndShowText" alt="" coords="909,5,1133,32"/>
+<area shape="rect" id="node6" href="$d6/df7/classmodel_1_1_commands_list.html#afe889d0ea233be74e064b369e68ad9d6" title="model.CommandsList.makeCommandsList" alt="" coords="563,56,861,83"/>
+</map>

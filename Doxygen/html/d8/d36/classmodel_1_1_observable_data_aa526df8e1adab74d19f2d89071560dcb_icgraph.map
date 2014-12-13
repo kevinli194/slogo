@@ -1,0 +1,20 @@
+<map id="model.ObservableData.get" name="model.ObservableData.get">
+<area shape="rect" id="node2" href="$dd/dc5/classview_1_1_settings_view.html#a1ade97b4c15b11449f1124a6b6eb5e93" title="view.SettingsView.addBGColor\lPicker" alt="" coords="540,34,753,75"/>
+<area shape="rect" id="node4" href="$dd/d05/classinstructions_1_1commands_1_1_is_showing.html#a905c79ac6835944155bd68af9c2a1d56" title="instructions.commands.Is\lShowing.execute" alt="" coords="264,122,451,163"/>
+<area shape="rect" id="node5" href="$d3/d88/classmodel_1_1_slogo_model.html#a54085c9bf13d8dcfd7deed3623be36f1" title="model.SlogoModel.execute\lCommands" alt="" coords="839,350,1033,391"/>
+<area shape="rect" id="node9" href="$d4/d90/classview_1_1_key_controls.html#a0c3663cb62e91e8919b0296aad899a8f" title="view.KeyControls.makeKey\lCommands" alt="" coords="1347,181,1536,222"/>
+<area shape="rect" id="node11" href="$d3/d88/classmodel_1_1_slogo_model.html#a80d95a95345028893cb013833fd32165" title="model.SlogoModel.initialize\lBGColor" alt="" coords="260,5,455,46"/>
+<area shape="rect" id="node12" href="$d3/d96/classparser_1_1_instruction_factory.html#a4b06d4f5f8e173824966dd0ec1e00255" title="parser.InstructionFactory.make\lInstruction" alt="" coords="249,239,466,281"/>
+<area shape="rect" id="node16" href="$d0/dfc/classview_1_1_slogo_window.html#ac299c416ca174b4ebe51eaf7d2700af3" title="view.SlogoWindow.onClick\lCommand" alt="" coords="266,407,449,449"/>
+<area shape="rect" id="node18" href="$d3/d88/classmodel_1_1_slogo_model.html#a407690ec446fa165e17c41f6bc1f37cd" title="model.SlogoModel.rerun" alt="" coords="268,473,447,500"/>
+<area shape="rect" id="node19" href="$d3/d88/classmodel_1_1_slogo_model.html#a396654689e37ebdc837f5623a25d08d3" title="model.SlogoModel.showToHistoryView" alt="" coords="515,303,778,329"/>
+<area shape="rect" id="node3" href="$dd/dc5/classview_1_1_settings_view.html#a34b8df753ce7a3b7d917a01ff315edc8" title="view.SettingsView.SettingsView" alt="" coords="827,41,1045,68"/>
+<area shape="rect" id="node6" href="$d3/d88/classmodel_1_1_slogo_model.html#ad096dbf0a253635d346a622540f472bd" title="model.SlogoModel.parseAnd\lExecute" alt="" coords="1093,298,1299,339"/>
+<area shape="rect" id="node7" href="$d6/d0a/classview_1_1_input_view.html#a948930c9b825f34ef8f5def96910471b" title="view.InputView.initSubmit\lButton" alt="" coords="1351,298,1532,339"/>
+<area shape="rect" id="node8" href="$d6/d0a/classview_1_1_input_view.html#ac75e6562ed83ace6cb0a0ac886780054" title="view.InputView.InputView" alt="" coords="1599,305,1777,332"/>
+<area shape="rect" id="node10" href="$d4/d90/classview_1_1_key_controls.html#a4b73546f8ba8feee9e878b3cf743fb61" title="view.KeyControls.KeyControls" alt="" coords="1585,217,1791,244"/>
+<area shape="rect" id="node13" href="$d6/d95/classparser_1_1_parser.html#a0b953b563fd9171ad113c168900ba0ad" title="parser.Parser.parseTokens" alt="" coords="553,247,741,273"/>
+<area shape="rect" id="node14" href="$d6/d95/classparser_1_1_parser.html#aec8f2721f51a8a257b572c73d80d5d98" title="parser.Parser.parse" alt="" coords="863,247,1009,273"/>
+<area shape="rect" id="node15" href="$d4/d90/classview_1_1_key_controls.html#a5139ba2a7cd205b996395f4f3e7f406c" title="view.KeyControls.setKeyMap" alt="" coords="1096,247,1296,273"/>
+<area shape="rect" id="node17" href="$d0/dfc/classview_1_1_slogo_window.html#ad49eb4482b8bf39443afcdac5018e410" title="view.SlogoWindow.SlogoWindow" alt="" coords="536,415,757,441"/>
+</map>

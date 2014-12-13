@@ -1,0 +1,12 @@
+<map id="model.CommandsList.get" name="model.CommandsList.get">
+<area shape="rect" id="node2" href="$dc/d89/classinstructions_1_1commands_1_1_make_user_instruction.html#a266ae5979c8a7fc525d334e2a0871680" title="instructions.commands.Make\lUserInstruction.execute" alt="" coords="244,5,455,46"/>
+<area shape="rect" id="node3" href="$d3/d96/classparser_1_1_instruction_factory.html#a4b06d4f5f8e173824966dd0ec1e00255" title="parser.InstructionFactory.make\lInstruction" alt="" coords="241,70,458,111"/>
+<area shape="rect" id="node9" href="$d4/d90/classview_1_1_key_controls.html#a0c3663cb62e91e8919b0296aad899a8f" title="view.KeyControls.makeKey\lCommands" alt="" coords="1192,133,1381,174"/>
+<area shape="rect" id="node4" href="$d6/d95/classparser_1_1_parser.html#a0b953b563fd9171ad113c168900ba0ad" title="parser.Parser.parseTokens" alt="" coords="507,77,695,104"/>
+<area shape="rect" id="node5" href="$d6/d95/classparser_1_1_parser.html#aec8f2721f51a8a257b572c73d80d5d98" title="parser.Parser.parse" alt="" coords="745,77,890,104"/>
+<area shape="rect" id="node6" href="$d3/d88/classmodel_1_1_slogo_model.html#ad096dbf0a253635d346a622540f472bd" title="model.SlogoModel.parseAnd\lExecute" alt="" coords="939,70,1144,111"/>
+<area shape="rect" id="node11" href="$d4/d90/classview_1_1_key_controls.html#a5139ba2a7cd205b996395f4f3e7f406c" title="view.KeyControls.setKeyMap" alt="" coords="941,17,1141,44"/>
+<area shape="rect" id="node7" href="$d6/d0a/classview_1_1_input_view.html#a948930c9b825f34ef8f5def96910471b" title="view.InputView.initSubmit\lButton" alt="" coords="1196,67,1377,109"/>
+<area shape="rect" id="node8" href="$d6/d0a/classview_1_1_input_view.html#ac75e6562ed83ace6cb0a0ac886780054" title="view.InputView.InputView" alt="" coords="1445,75,1622,101"/>
+<area shape="rect" id="node10" href="$d4/d90/classview_1_1_key_controls.html#a4b73546f8ba8feee9e878b3cf743fb61" title="view.KeyControls.KeyControls" alt="" coords="1430,132,1637,159"/>
+</map>

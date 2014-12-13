@@ -1,0 +1,14 @@
+<map id="view.DataView.update" name="view.DataView.update">
+<area shape="rect" id="node2" href="$d9/dd3/classview_1_1_variables_view.html#a298237e15137e0cf00d29789d6359c7c" title="view.VariablesView.update" alt="" coords="239,43,425,69"/>
+<area shape="rect" id="node7" href="$d9/d93/classview_1_1_basic_commands_view.html#a787c3d60d71cc35031fcc939758c25dc" title="view.BasicCommandsView.update" alt="" coords="213,144,451,171"/>
+<area shape="rect" id="node13" href="$d8/d0c/classview_1_1_u_d_commands_view.html#a07deb1195869f7a78443052e51e25fe8" title="view.UDCommandsView.update" alt="" coords="221,93,443,120"/>
+<area shape="rect" id="node3" href="$d6/d2c/classmodel_1_1_variables_list.html#a0e44325b4baffec7b6e4820f863eefea" title="model.VariablesList.generate" alt="" coords="507,5,715,32"/>
+<area shape="rect" id="node4" href="$d4/d36/classview_1_1_data_view_components.html#a05b49c46bdc53791b28b09bf91743124" title="view.DataViewComponents.add\lTextBoxWithDeleteButton" alt="" coords="499,57,722,98"/>
+<area shape="rect" id="node5" href="$d4/d36/classview_1_1_data_view_components.html#aaebf0a781dd02fe599176d57c2ea9a40" title="view.DataViewComponents.make\lDeleteButton" alt="" coords="803,57,1037,98"/>
+<area shape="rect" id="node6" href="$d1/d69/interfacemodel_1_1_feature.html#ad39db6a63efe12b76e6b070a633db99e" title="model.Feature.remove" alt="" coords="1146,64,1313,91"/>
+<area shape="rect" id="node8" href="$db/d98/classview_1_1_scroll_view.html#af810ea194b6bcd9c7c8da1f84ebd5ac2" title="view.ScrollView.addTextBox" alt="" coords="515,173,707,200"/>
+<area shape="rect" id="node11" href="$d6/df7/classmodel_1_1_commands_list.html#a0f1df4e3621e54ac0d52131830128d78" title="model.CommandsList.generate" alt="" coords="499,123,723,149"/>
+<area shape="rect" id="node9" href="$db/d98/classview_1_1_scroll_view.html#af8a9a83dc920350c521d6d78016cafce" title="view.ScrollView.makeClickableText" alt="" coords="802,173,1038,200"/>
+<area shape="rect" id="node10" href="$d6/d0a/classview_1_1_input_view.html#a81954709509ce44f7fe364a24a613d66" title="view.InputView.addAndShowText" alt="" coords="1117,173,1341,200"/>
+<area shape="rect" id="node12" href="$d6/df7/classmodel_1_1_commands_list.html#afe889d0ea233be74e064b369e68ad9d6" title="model.CommandsList.makeCommandsList" alt="" coords="771,123,1069,149"/>
+</map>

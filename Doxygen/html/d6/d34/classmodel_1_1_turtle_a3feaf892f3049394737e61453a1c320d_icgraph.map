@@ -1,0 +1,11 @@
+<map id="model.Turtle.getPen" name="model.Turtle.getPen">
+<area shape="rect" id="node2" href="$dd/dc5/classview_1_1_settings_view.html#a8b044653bb3dcbb300082c4103d14249" title="view.SettingsView.addLine\lProperty" alt="" coords="479,5,665,46"/>
+<area shape="rect" id="node4" href="$d3/d88/classmodel_1_1_slogo_model.html#abfeceb3da7ed60166c8137597cacc2fc" title="model.SlogoModel.clear" alt="" coords="223,63,398,89"/>
+<area shape="rect" id="node6" href="$db/d37/classinstructions_1_1commands_1_1_is_pen_down.html#a2640c38327efbb80401c844dcbee6f88" title="instructions.commands.Is\lPenDown.execute" alt="" coords="217,114,404,155"/>
+<area shape="rect" id="node7" href="$d6/d1f/classinstructions_1_1commands_1_1_pen_up.html#a83de05f9c5b0b6454ac03f3c38d8dfb1" title="instructions.commands.Pen\lUp.execute" alt="" coords="211,179,411,221"/>
+<area shape="rect" id="node8" href="$dc/df9/classinstructions_1_1commands_1_1_pen_down.html#a24297ec2491de8ad2c63f3f1a26b71f1" title="instructions.commands.Pen\lDown.execute" alt="" coords="211,245,411,286"/>
+<area shape="rect" id="node9" href="$d3/d88/classmodel_1_1_slogo_model.html#a57ae2fb85245476c02d5e7208bf64be3" title="model.SlogoModel.setPenSize" alt="" coords="203,311,418,337"/>
+<area shape="rect" id="node3" href="$dd/dc5/classview_1_1_settings_view.html#a34b8df753ce7a3b7d917a01ff315edc8" title="view.SettingsView.SettingsView" alt="" coords="725,71,944,97"/>
+<area shape="rect" id="node5" href="$dd/dc5/classview_1_1_settings_view.html#a4ad3e69e9ba90e013df06b1f7b5ef6d0" title="view.SettingsView.addButtons" alt="" coords="467,71,677,97"/>
+<area shape="rect" id="node10" href="$dd/dc5/classview_1_1_settings_view.html#af8bf8067258762b6b65bd149d2e5fbe8" title="view.SettingsView.addPen\lSlider" alt="" coords="479,213,665,254"/>
+</map>

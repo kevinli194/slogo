@@ -1,0 +1,4 @@
+<map id="instructions.commands.SetBackground.execute" name="instructions.commands.SetBackground.execute">
+<area shape="rect" id="node2" href="$dc/dff/classmodel_1_1_background_color.html#a76edb11d4068383e2829a2f8d5258420" title="model.BackgroundColor.get\lCustom" alt="" coords="254,5,453,46"/>
+<area shape="rect" id="node3" href="$dc/dff/classmodel_1_1_background_color.html#aeae66055bd64f0962edcc1874e673afc" title="model.BackgroundColor.set" alt="" coords="254,71,453,97"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="view.KeyControls" name="view.KeyControls">
+<area shape="rect" id="node2" href="$d3/d88/classmodel_1_1_slogo_model.html" title="model.SlogoModel" alt="" coords="1859,701,1999,728"/>
+<area shape="rect" id="node9" href="$d8/d36/classmodel_1_1_observable_data.html" title="model.ObservableData" alt="" coords="953,516,1122,543"/>
+<area shape="rect" id="node5" href="$d6/d95/classparser_1_1_parser.html" title="parser.Parser" alt="" coords="1605,701,1712,728"/>
+<area shape="rect" id="node8" href="$d3/d96/classparser_1_1_instruction_factory.html" title="parser.InstructionFactory" alt="" coords="1304,588,1483,615"/>
+<area shape="rect" id="node11" href="$d1/d69/interfacemodel_1_1_feature.html" title="model.Feature" alt="" coords="281,385,396,412"/>
+<area shape="rect" id="node26" href="$de/d6b/classparser_1_1_tokenizer.html" title="parser.Tokenizer" alt="" coords="456,665,581,692"/>
+<area shape="rect" id="node10" href="$df/db7/classmodel_1_1_turtles_list.html" title="model.TurtlesList" alt="" coords="650,479,779,505"/>
+<area shape="rect" id="node15" href="$d6/d34/classmodel_1_1_turtle.html" title="model.Turtle" alt="" coords="665,239,765,265"/>
+<area shape="rect" id="node16" href="$d5/dad/classmodel_1_1_turtle_abstract.html" title="model.TurtleAbstract" alt="" coords="261,5,416,32"/>
+<area shape="rect" id="node19" href="$de/ded/classmodel_1_1_pen.html" title="model.Pen" alt="" coords="293,335,384,361"/>
+</map>

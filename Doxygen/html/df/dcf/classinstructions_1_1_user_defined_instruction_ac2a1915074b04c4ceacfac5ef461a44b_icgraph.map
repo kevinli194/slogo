@@ -1,0 +1,8 @@
+<map id="instructions.UserDefinedInstruction.getName" name="instructions.UserDefinedInstruction.getName">
+<area shape="rect" id="node2" href="$dd/de9/classinstructions_1_1commands_1_1_do_times.html#ae42180528b9ce237a22652ccf7c4048a" title="instructions.commands.Do\lTimes.execute" alt="" coords="260,5,455,46"/>
+<area shape="rect" id="node3" href="$df/d40/classinstructions_1_1commands_1_1_make_variable.html#ab41d20d8160cb52fc4e0d7656236795c" title="instructions.commands.Make\lVariable.execute" alt="" coords="252,70,463,111"/>
+<area shape="rect" id="node4" href="$de/d23/classinstructions_1_1commands_1_1_for.html#afcedd294e27c3810d9f5c48ba871ad3a" title="instructions.commands.For.execute" alt="" coords="232,136,483,163"/>
+<area shape="rect" id="node5" href="$dc/d89/classinstructions_1_1commands_1_1_make_user_instruction.html#a266ae5979c8a7fc525d334e2a0871680" title="instructions.commands.Make\lUserInstruction.execute" alt="" coords="252,187,463,229"/>
+<area shape="rect" id="node6" href="$d2/d36/classinstructions_1_1_user_defined_command.html#ab0d767a2ed4e744757c7809dc04cb215" title="instructions.UserDefined\lCommand.setVariables" alt="" coords="268,253,447,294"/>
+<area shape="rect" id="node7" href="$d2/d36/classinstructions_1_1_user_defined_command.html#afe96555346246fb88ab982a75b5189ef" title="instructions.UserDefined\lCommand.execute" alt="" coords="531,253,709,294"/>
+</map>

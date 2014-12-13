@@ -1,0 +1,7 @@
+<map id="model.SlogoModel.executeCommands" name="model.SlogoModel.executeCommands">
+<area shape="rect" id="node2" href="$d2/d93/interfaceinstructions_1_1_instruction.html#ab47846ec32fac6e514e5ab7fe4db0254" title="instructions.Instruction.execute" alt="" coords="249,5,471,32"/>
+<area shape="rect" id="node3" href="$d8/d36/classmodel_1_1_observable_data.html#aa526df8e1adab74d19f2d89071560dcb" title="model.ObservableData.get" alt="" coords="263,56,457,83"/>
+<area shape="rect" id="node4" href="$d3/d88/classmodel_1_1_slogo_model.html#ad52954c6dbfb83f7aa97a85116c25eb8" title="model.SlogoModel.showOnView" alt="" coords="249,107,471,133"/>
+<area shape="rect" id="node5" href="$d8/d36/classmodel_1_1_observable_data.html#a575297a6d90ca0223478c397de4a8296" title="model.ObservableData.change\lReturn" alt="" coords="521,70,741,111"/>
+<area shape="rect" id="node6" href="$d3/d88/classmodel_1_1_slogo_model.html#a5a328c6f896a5c150e95b49db71dea8f" title="model.SlogoModel.load" alt="" coords="545,136,716,163"/>
+</map>

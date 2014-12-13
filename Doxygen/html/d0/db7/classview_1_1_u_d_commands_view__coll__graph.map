@@ -1,0 +1,16 @@
+<map id="view.UDCommandsView" name="view.UDCommandsView">
+<area shape="rect" id="node2" href="$d4/d36/classview_1_1_data_view_components.html" title="view.DataViewComponents" alt="" coords="2520,315,2715,341"/>
+<area shape="rect" id="node3" href="$db/d98/classview_1_1_scroll_view.html" title="view.ScrollView" alt="" coords="2353,315,2469,341"/>
+<area shape="rect" id="node6" href="$d6/d0a/classview_1_1_input_view.html" title="view.InputView" alt="" coords="2131,365,2245,392"/>
+<area shape="rect" id="node7" href="$dc/dc4/classview_1_1_pane_view.html" title="view.PaneView" alt="" coords="1841,196,1953,223"/>
+<area shape="rect" id="node9" href="$d3/d88/classmodel_1_1_slogo_model.html" title="model.SlogoModel" alt="" coords="1827,339,1967,365"/>
+<area shape="rect" id="node16" href="$d8/d36/classmodel_1_1_observable_data.html" title="model.ObservableData" alt="" coords="953,391,1122,417"/>
+<area shape="rect" id="node12" href="$d6/d95/classparser_1_1_parser.html" title="parser.Parser" alt="" coords="1605,545,1712,572"/>
+<area shape="rect" id="node15" href="$d3/d96/classparser_1_1_instruction_factory.html" title="parser.InstructionFactory" alt="" coords="1304,517,1483,544"/>
+<area shape="rect" id="node18" href="$d1/d69/interfacemodel_1_1_feature.html" title="model.Feature" alt="" coords="281,392,396,419"/>
+<area shape="rect" id="node33" href="$de/d6b/classparser_1_1_tokenizer.html" title="parser.Tokenizer" alt="" coords="456,645,581,672"/>
+<area shape="rect" id="node17" href="$df/db7/classmodel_1_1_turtles_list.html" title="model.TurtlesList" alt="" coords="650,475,779,501"/>
+<area shape="rect" id="node22" href="$d6/d34/classmodel_1_1_turtle.html" title="model.Turtle" alt="" coords="665,297,765,324"/>
+<area shape="rect" id="node23" href="$d5/dad/classmodel_1_1_turtle_abstract.html" title="model.TurtleAbstract" alt="" coords="261,341,416,368"/>
+<area shape="rect" id="node26" href="$de/ded/classmodel_1_1_pen.html" title="model.Pen" alt="" coords="293,68,384,95"/>
+</map>

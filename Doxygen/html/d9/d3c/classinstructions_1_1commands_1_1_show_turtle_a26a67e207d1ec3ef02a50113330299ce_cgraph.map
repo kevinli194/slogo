@@ -1,0 +1,6 @@
+<map id="instructions.commands.ShowTurtle.execute" name="instructions.commands.ShowTurtle.execute">
+<area shape="rect" id="node2" href="$d6/d34/classmodel_1_1_turtle.html#a874d4e1cf7547bbbf4f046d1d7b20e6e" title="model.Turtle.getDrawing" alt="" coords="273,5,449,32"/>
+<area shape="rect" id="node3" href="$d8/d36/classmodel_1_1_observable_data.html#aa585e00721a74cba9ab459079945e15b" title="model.ObservableData.get\lTurtle" alt="" coords="264,57,459,98"/>
+<area shape="rect" id="node4" href="$d6/d34/classmodel_1_1_turtle.html#a78e4cb5da4bfc50682b9cd4c05cbcbfd" title="model.Turtle.getTurtleImg" alt="" coords="270,123,453,149"/>
+<area shape="rect" id="node5" href="$d6/d34/classmodel_1_1_turtle.html#a772aad8bba7b5bc7bd3e95408478324f" title="model.Turtle.setVisible" alt="" coords="279,173,444,200"/>
+</map>

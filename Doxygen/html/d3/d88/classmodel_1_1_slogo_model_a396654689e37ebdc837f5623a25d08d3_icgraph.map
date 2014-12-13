@@ -1,0 +1,7 @@
+<map id="model.SlogoModel.showToHistoryView" name="model.SlogoModel.showToHistoryView">
+<area shape="rect" id="node2" href="$d3/d88/classmodel_1_1_slogo_model.html#ad096dbf0a253635d346a622540f472bd" title="model.SlogoModel.parseAnd\lExecute" alt="" coords="317,38,523,79"/>
+<area shape="rect" id="node3" href="$d6/d0a/classview_1_1_input_view.html#a948930c9b825f34ef8f5def96910471b" title="view.InputView.initSubmit\lButton" alt="" coords="575,5,756,46"/>
+<area shape="rect" id="node5" href="$d4/d90/classview_1_1_key_controls.html#a0c3663cb62e91e8919b0296aad899a8f" title="view.KeyControls.makeKey\lCommands" alt="" coords="571,70,760,111"/>
+<area shape="rect" id="node4" href="$d6/d0a/classview_1_1_input_view.html#ac75e6562ed83ace6cb0a0ac886780054" title="view.InputView.InputView" alt="" coords="823,12,1001,39"/>
+<area shape="rect" id="node6" href="$d4/d90/classview_1_1_key_controls.html#a4b73546f8ba8feee9e878b3cf743fb61" title="view.KeyControls.KeyControls" alt="" coords="809,77,1015,104"/>
+</map>

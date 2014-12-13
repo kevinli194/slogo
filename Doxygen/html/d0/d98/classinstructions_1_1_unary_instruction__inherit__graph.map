@@ -1,0 +1,23 @@
+<map id="instructions.UnaryInstruction" name="instructions.UnaryInstruction">
+<area shape="rect" id="node5" href="$de/d6a/classinstructions_1_1commands_1_1_arc_tangent.html" title="instructions.commands.Arc\lTangent" alt="" coords="927,5,1124,46"/>
+<area shape="rect" id="node6" href="$d9/da9/classinstructions_1_1commands_1_1_backward.html" title="instructions.commands.Backward" alt="" coords="907,71,1144,97"/>
+<area shape="rect" id="node7" href="$d8/d4a/classinstructions_1_1commands_1_1_cosine.html" title="instructions.commands.Cosine" alt="" coords="916,121,1135,148"/>
+<area shape="rect" id="node8" href="$d7/dab/classinstructions_1_1commands_1_1_forward.html" title="instructions.commands.Forward" alt="" coords="912,172,1139,199"/>
+<area shape="rect" id="node9" href="$df/d09/classinstructions_1_1commands_1_1_get_pen_color.html" title="instructions.commands.Get\lPenColor" alt="" coords="926,223,1125,265"/>
+<area shape="rect" id="node10" href="$de/d33/classinstructions_1_1commands_1_1_get_shape.html" title="instructions.commands.Get\lShape" alt="" coords="926,289,1125,330"/>
+<area shape="rect" id="node11" href="$d8/dd0/classinstructions_1_1commands_1_1_left.html" title="instructions.commands.Left" alt="" coords="925,355,1125,381"/>
+<area shape="rect" id="node12" href="$d7/d10/classinstructions_1_1commands_1_1_minus.html" title="instructions.commands.Minus" alt="" coords="919,405,1132,432"/>
+<area shape="rect" id="node13" href="$dc/ddb/classinstructions_1_1commands_1_1_natural_log.html" title="instructions.commands.NaturalLog" alt="" coords="902,456,1149,483"/>
+<area shape="rect" id="node14" href="$db/d3d/classinstructions_1_1commands_1_1_not.html" title="instructions.commands.Not" alt="" coords="926,507,1125,533"/>
+<area shape="rect" id="node15" href="$d8/d8d/classinstructions_1_1commands_1_1_random.html" title="instructions.commands.Random" alt="" coords="911,557,1140,584"/>
+<area shape="rect" id="node16" href="$df/dd2/classinstructions_1_1commands_1_1_right.html" title="instructions.commands.Right" alt="" coords="921,608,1129,635"/>
+<area shape="rect" id="node17" href="$dc/de0/classinstructions_1_1commands_1_1_set_background.html" title="instructions.commands.Set\lBackground" alt="" coords="926,659,1125,701"/>
+<area shape="rect" id="node18" href="$de/d12/classinstructions_1_1commands_1_1_set_heading.html" title="instructions.commands.Set\lHeading" alt="" coords="926,725,1125,766"/>
+<area shape="rect" id="node19" href="$dd/df0/classinstructions_1_1commands_1_1_set_pen_color.html" title="instructions.commands.Set\lPenColor" alt="" coords="926,790,1125,831"/>
+<area shape="rect" id="node20" href="$d1/dde/classinstructions_1_1commands_1_1_set_pen_size.html" title="instructions.commands.Set\lPenSize" alt="" coords="926,855,1125,897"/>
+<area shape="rect" id="node21" href="$da/dff/classinstructions_1_1commands_1_1_set_shape.html" title="instructions.commands.Set\lShape" alt="" coords="926,921,1125,962"/>
+<area shape="rect" id="node22" href="$d7/d67/classinstructions_1_1commands_1_1_sine.html" title="instructions.commands.Sine" alt="" coords="923,987,1127,1013"/>
+<area shape="rect" id="node23" href="$d2/da3/classinstructions_1_1commands_1_1_tangent.html" title="instructions.commands.Tangent" alt="" coords="912,1037,1139,1064"/>
+<area shape="rect" id="node2" href="$d9/d85/classinstructions_1_1_parameter_instruction.html" title="instructions.ParameterInstruction" alt="" coords="365,507,600,533"/>
+<area shape="rect" id="node3" href="$d2/d93/interfaceinstructions_1_1_instruction.html" title="instructions.Instruction" alt="" coords="150,507,317,533"/>
+</map>

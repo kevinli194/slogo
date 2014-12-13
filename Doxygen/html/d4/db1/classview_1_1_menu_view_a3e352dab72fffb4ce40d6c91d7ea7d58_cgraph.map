@@ -1,0 +1,5 @@
+<map id="view.MenuView.setFile" name="view.MenuView.setFile">
+<area shape="rect" id="node2" href="$d4/db1/classview_1_1_menu_view.html#a33d47eb47a1b9578dc9eae360ab777a9" title="view.MenuView.newFile" alt="" coords="217,5,381,32"/>
+<area shape="rect" id="node3" href="$d4/db1/classview_1_1_menu_view.html#af12d4e01bcb842629aebbaa00a386de2" title="view.MenuView.openFile" alt="" coords="213,56,384,83"/>
+<area shape="rect" id="node4" href="$d4/db1/classview_1_1_menu_view.html#a18d792fe8e7ffa13ab441172e110b9db" title="view.MenuView.saveFile" alt="" coords="214,107,383,133"/>
+</map>

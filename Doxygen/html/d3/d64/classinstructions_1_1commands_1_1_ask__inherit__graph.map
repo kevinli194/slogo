@@ -1,0 +1,5 @@
+<map id="instructions.commands.Ask" name="instructions.commands.Ask">
+<area shape="rect" id="node2" href="$d6/d75/classinstructions_1_1commands_1_1_tell.html" title="instructions.commands.Tell" alt="" coords="24,229,219,256"/>
+<area shape="rect" id="node3" href="$d9/d85/classinstructions_1_1_parameter_instruction.html" title="instructions.ParameterInstruction" alt="" coords="4,155,237,181"/>
+<area shape="rect" id="node4" href="$d2/d93/interfaceinstructions_1_1_instruction.html" title="instructions.Instruction" alt="" coords="38,80,204,107"/>
+</map>

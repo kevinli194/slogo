@@ -1,0 +1,4 @@
+<map id="instructions.commands.SetHeading.execute" name="instructions.commands.SetHeading.execute">
+<area shape="rect" id="node2" href="$d6/d34/classmodel_1_1_turtle.html#a61d79b71c878b0c64adeab038483da7a" title="model.Turtle.getAngle" alt="" coords="254,5,415,32"/>
+<area shape="rect" id="node3" href="$d6/d34/classmodel_1_1_turtle.html#a561398015768e49764442dfa298f1bd3" title="model.Turtle.setAngle" alt="" coords="255,56,415,83"/>
+</map>

@@ -1,0 +1,20 @@
+<map id="instructions.ZeroParamInstruction" name="instructions.ZeroParamInstruction">
+<area shape="rect" id="node4" href="$dd/d40/classinstructions_1_1commands_1_1_clear_screen.html" title="instructions.commands.Clear\lScreen" alt="" coords="675,5,885,46"/>
+<area shape="rect" id="node5" href="$d3/d91/classinstructions_1_1commands_1_1_clear_stamps.html" title="instructions.commands.Clear\lStamps" alt="" coords="675,70,885,111"/>
+<area shape="rect" id="node6" href="$dc/dbc/classinstructions_1_1commands_1_1_heading.html" title="instructions.commands.Heading" alt="" coords="665,136,895,163"/>
+<area shape="rect" id="node7" href="$d7/d53/classinstructions_1_1commands_1_1_hide_turtle.html" title="instructions.commands.Hide\lTurtle" alt="" coords="677,187,883,229"/>
+<area shape="rect" id="node8" href="$d3/d16/classinstructions_1_1commands_1_1_home.html" title="instructions.commands.Home" alt="" coords="673,253,887,280"/>
+<area shape="rect" id="node9" href="$dd/d3f/classinstructions_1_1commands_1_1_i_d.html" title="instructions.commands.ID" alt="" coords="685,304,875,331"/>
+<area shape="rect" id="node10" href="$db/d37/classinstructions_1_1commands_1_1_is_pen_down.html" title="instructions.commands.Is\lPenDown" alt="" coords="687,355,873,397"/>
+<area shape="rect" id="node11" href="$dd/d05/classinstructions_1_1commands_1_1_is_showing.html" title="instructions.commands.Is\lShowing" alt="" coords="687,421,873,462"/>
+<area shape="rect" id="node12" href="$d9/d38/classinstructions_1_1commands_1_1_num_turtles.html" title="instructions.commands.Num\lTurtles" alt="" coords="677,486,883,527"/>
+<area shape="rect" id="node13" href="$dc/df9/classinstructions_1_1commands_1_1_pen_down.html" title="instructions.commands.PenDown" alt="" coords="663,552,897,579"/>
+<area shape="rect" id="node14" href="$d6/d1f/classinstructions_1_1commands_1_1_pen_up.html" title="instructions.commands.PenUp" alt="" coords="671,603,889,629"/>
+<area shape="rect" id="node15" href="$df/df6/classinstructions_1_1commands_1_1_pi_constant.html" title="instructions.commands.Pi\lConstant" alt="" coords="687,654,873,695"/>
+<area shape="rect" id="node16" href="$db/d7c/classinstructions_1_1commands_1_1_stamp.html" title="instructions.commands.Stamp" alt="" coords="671,720,889,747"/>
+<area shape="rect" id="node17" href="$d0/d94/classinstructions_1_1commands_1_1_x_coordinate.html" title="instructions.commands.XCoordinate" alt="" coords="653,771,907,797"/>
+<area shape="rect" id="node18" href="$d8/d5d/classinstructions_1_1commands_1_1_y_coordinate.html" title="instructions.commands.YCoordinate" alt="" coords="654,821,906,848"/>
+<area shape="rect" id="node19" href="$dc/d9d/classinstructions_1_1_constant_instruction.html" title="instructions.ConstantInstruction" alt="" coords="667,872,893,899"/>
+<area shape="rect" id="node20" href="$dc/dc1/classinstructions_1_1_list_instruction.html" title="instructions.ListInstruction" alt="" coords="685,923,875,949"/>
+<area shape="rect" id="node2" href="$d2/d93/interfaceinstructions_1_1_instruction.html" title="instructions.Instruction" alt="" coords="150,493,317,520"/>
+</map>

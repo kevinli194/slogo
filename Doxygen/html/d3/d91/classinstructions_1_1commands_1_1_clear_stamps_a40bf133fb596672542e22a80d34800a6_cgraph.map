@@ -1,0 +1,4 @@
+<map id="instructions.commands.ClearStamps.execute" name="instructions.commands.ClearStamps.execute">
+<area shape="rect" id="node2" href="$d6/d34/classmodel_1_1_turtle.html#ac2303b3049b56a9156491059230a948e" title="model.Turtle.clearStamp" alt="" coords="272,5,451,32"/>
+<area shape="rect" id="node3" href="$d8/d36/classmodel_1_1_observable_data.html#aa585e00721a74cba9ab459079945e15b" title="model.ObservableData.get\lTurtle" alt="" coords="264,57,459,98"/>
+</map>

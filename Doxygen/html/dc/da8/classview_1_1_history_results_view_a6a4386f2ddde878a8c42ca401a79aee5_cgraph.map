@@ -1,0 +1,7 @@
+<map id="view.HistoryResultsView.update" name="view.HistoryResultsView.update">
+<area shape="rect" id="node2" href="$d1/d0e/classview_1_1_history_view.html#abfcd825b67237a6c1a803a1314b223f3" title="view.HistoryView.update" alt="" coords="273,5,447,32"/>
+<area shape="rect" id="node6" href="$d0/d12/classview_1_1_results_view.html#ae7a880bc8b3e73a919f9cea7c46703f9" title="view.ResultsView.update" alt="" coords="273,56,447,83"/>
+<area shape="rect" id="node3" href="$db/d98/classview_1_1_scroll_view.html#af810ea194b6bcd9c7c8da1f84ebd5ac2" title="view.ScrollView.addTextBox" alt="" coords="496,5,688,32"/>
+<area shape="rect" id="node4" href="$db/d98/classview_1_1_scroll_view.html#af8a9a83dc920350c521d6d78016cafce" title="view.ScrollView.makeClickableText" alt="" coords="737,5,973,32"/>
+<area shape="rect" id="node5" href="$d6/d0a/classview_1_1_input_view.html#a81954709509ce44f7fe364a24a613d66" title="view.InputView.addAndShowText" alt="" coords="1021,5,1245,32"/>
+</map>
